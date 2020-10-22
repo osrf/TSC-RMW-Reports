@@ -7,10 +7,10 @@
 ### Prepared by:
 ### Katherine Scott, William Woodall, Chris Lalancette, Dirk Thomas
 
-## Index
+# Index
 
 
-## Introduction
+# Introduction
 
 This report is intended to serve as a guide for the selection of the default ROS middleware (RMW) implementation for the ROS 2 Galactic Galapagos release. This report is intended to provide information about the Tier 1 RMW/DDS implementations along two broad axes of evaluation: application performance and community engagement. This report is intended to be purely informational and non-prescriptive; meaning this report does not make a recommendation for the default middleware.  Instead, it is an attempt to present objective data about the default RMW candidates in a neutral and factual manner. The final default ROS 2 Galactic middleware implementation will be selected by the ROS 2 Technical Steering Committee (TSC) after evaluation by both the ROS 2 Middleware Working Group and the TSC.  
 
@@ -27,12 +27,12 @@ In collecting these datasets we made our best effort to use the most recent vers
 Where possible we will provide the underlying data and source code for both experimentation and analysis. This process is intended to be repeated for each subsequent ROS 2 release and our hope is that it can become more automated and also serve as a community resource for selecting the best RMW for each user’s specific needs. 
 
 
-## Executive Summary
+# Executive Summary
 
 
-## 1. Build Farm Performance Data
+# 1. Build Farm Performance Data
 
-# 1.1 Overview and Description
+## 1.1 Overview and Description
 
 The first dataset collected for evaluating RMW performance comes by way of the ROS build farm. The ROS build farm hosts a collection of small integration tests that verify that a given RMW Implementation performs acceptably when connected to either a single ROS node or a single ROS publisher sending messages to a single ROS subscriber. Within the build farm there are also interoperability tests that examine the transport of messages between pairs of RMW/DDS implementations; however these tests are outside of the scope of this report. For this section of the report we looked at the performance of three different testing regimes:
 
@@ -42,7 +42,7 @@ The first dataset collected for evaluating RMW performance comes by way of the R
 
 All metrics for this portion of the report were collected using a custom performance metrics tool that can be found in this pull request. 
 
-# 1.2 Build Farm Test Results
+## 1.2 Build Farm Test Results
 
 
 The first set of data collected involved running a single, perpetually spinning ROS node a short time and collecting the peak, mean, and median, CPU and memory utilization statistics. The figures below summarize the results for both the Cyclone RMW and FastRTPS RMW in the asynchronous configuration. Full plots of all the RMW variants and configurations are available in Appendix A. The data for these plots was collected on October 14th 2020 as indicated by this build farm log. The full data set can be downloaded using this link. Summarized csv files of the data will be provided in the final report.  Figure 1.2.1 provides the CPU performance while Figure 1.2.2 provides the memory performance including virtual, resident, and physical memory allocation. Links to the source code for this test along with the analysis are available in the appendix. 
@@ -50,7 +50,7 @@ The first set of data collected involved running a single, perpetually spinning 
 A second bevy of tests were run using a single publisher and a single subscriber communicating across a host machine while varying both the underlying RMW as well as the message size. The publisher and subscriber were instrumented to collect both system performance metrics and transmission metrics. We have selected a few illustrative examples from the set to share including subscriber CPU versus message size, messages received versus message size, and message latency versus message size in figures 1.2.3, 1.2.4, and 1.2.5 respectively. 
 
 
-# 1.3 Build Farm Test Discussion
+## 1.3 Build Farm Test Discussion
 
 The results between two the RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU utilization and memory there the Cyclone RMW performed slightly better in terms of both memory and CPU performance. The memory advantage of Cyclone was not born out by plot in 1.2.3 where FastRTPS RMW seems to outperform for all message times. In terms of message latency and message both vendors appear to perform well up until approximately the 1mb message size. For messages greater than ~1Mb Cyclone RMW has better results with lower latency and the number of messages sent. 
 
