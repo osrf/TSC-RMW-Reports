@@ -1,4 +1,4 @@
-## ROS Middleware Report for ROS Galacic
+## ROS Middleware Report for ROS Galactic
 
 You can use the [editor on GitHub](https://github.com/osrf/TSC-RMW-Reports/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
 
