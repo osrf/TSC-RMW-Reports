@@ -64,7 +64,11 @@ latency versus message size in figures 1.2.3, 1.2.4, and 1.2.5 respectively.
 
 ### 1.2.2 Memory Utilization in a Spinning Node By RMW 
 
-![Build Farm Memory Consumption](https://github.com/osrf/TSC-RMW-Reports/blob/main/galactic/plots/BuildFarmRMWMemoryConsumption.png)
+![Build Farm Memory
+Consumption](https://github.com/osrf/TSC-RMW-Reports/blob/main/galactic/plots/BuildFarmRMWMemoryConsumption.png)
+
+![Build Farm Memory
+Consumption--try 2](https://github.com/osrf/TSC-RMW-Reports/blob/main/galactic/plots/BuildFarmRMWMemoryConsumption.png?raw=true)
 
 
 ## 1.3 Build Farm Test Discussion
