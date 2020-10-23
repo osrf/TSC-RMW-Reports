@@ -1,11 +1,8 @@
-## ROS Middleware Report for ROS Galactic
-
 # 2020 ROS Middleware Evaluation Report DRAFT
 
 ###  October 21st, 2020
 
-### Prepared by:
-### Katherine Scott, William Woodall, Chris Lalancette, Dirk Thomas
+### Prepared by: Katherine Scott, William Woodall, Chris Lalancette, Dirk Thomas
 
 # Index
 
@@ -40,7 +37,14 @@ The first dataset collected for evaluating RMW performance comes by way of the R
 2. A publisher subscriber pair where the publisher and subscriber each use a different RMW implementation. These tests are  instrumented to collect basic load statistics like CPU and memory utilization. These tests are included in Appendix A. 
 3. A ROS publisher and subscriber pair sending messages of varying sizes and instrumented to collect both host load statistics and network performance statistics. 
 
-All metrics for this portion of the report were collected using a custom performance metrics tool that can be found in this pull request. 
+All metrics for this portion of the report were collected using a custom
+performance metrics tool that can be found in this pull request. The Python
+Jupyter notebooks for pre-processing the data and plotting data can be found
+respectively
+[BuildFarmDataProcessing.ipynb](https://github.com/osrf/TSC-RMW-Reports/blob/main/galactic/BuildFarmDataProcessing.ipynb)
+and
+[BuildFarmPlots.ipynb](https://github.com/osrf/TSC-RMW-Reports/blob/main/galactic/BuildFarmPlots.ipynb). The
+post processed data can be found in the [buildfarm subdirectory](https://github.com/osrf/TSC-RMW-Reports/tree/main/galactic/data/build_farm). 
 
 ## 1.2 Build Farm Test Results
 
