@@ -6,6 +6,16 @@
 
 # Index
 
+1. Introduction
+2. [Executive Summary](#ExecutiveSummary)
+3. Build Farm Performance Metrics
+4. Mininet Simulation Results
+5. REP-2004 Table
+6. GitHub User Statistics
+7. User Survey Results
+8. Appendix A: Additional Build Farm Plots
+9. Appendix B: Additional Mininet Results
+
 
 # Introduction
 
@@ -24,7 +34,7 @@ In collecting these datasets we made our best effort to use the most recent vers
 Where possible we will provide the underlying data and source code for both experimentation and analysis. This process is intended to be repeated for each subsequent ROS 2 release and our hope is that it can become more automated and also serve as a community resource for selecting the best RMW for each user’s specific needs. 
 
 
-# Executive Summary
+# <a id="ExecutiveSummary"></a> Executive Summary 
 
 
 # 1. Build Farm Performance Data
