@@ -6,18 +6,19 @@
 
 # Index
 
-1. Introduction
-2. [Executive Summary](#ExecutiveSummary)
-3. Build Farm Performance Metrics
-4. Mininet Simulation Results
-5. REP-2004 Table
-6. GitHub User Statistics
-7. User Survey Results
-8. Appendix A: Additional Build Farm Plots
-9. Appendix B: Additional Mininet Results
+0. [Introduction](#Introduction)
+1. [Executive Summary](#ExecutiveSummary)
+2. [Build Farm Performance Metrics](#BuildFarm)
+3. [Mininet Simulation Results](#Mininet)
+4. [REP-2004 Code Quality Metrics Table](#CodeQuality)
+5. [GitHub User Statistics](#GithubStats)
+6. [User Survey Results](#Survey)
+7. [Discussion](#Discussion)
+8. [Appendix A: Additional Build Farm Plots](#AppendixB)
+9. [Appendix B: Additional Mininet Results](#AppendixA)
 
 
-# Introduction
+# Introduction <a id="Introduction"></a>
 
 This report is intended to serve as a guide for the selection of the default ROS middleware (RMW) implementation for the ROS 2 Galactic Galapagos release. This report is intended to provide information about the Tier 1 RMW/DDS implementations along two broad axes of evaluation: application performance and community engagement. This report is intended to be purely informational and non-prescriptive; meaning this report does not make a recommendation for the default middleware.  Instead, it is an attempt to present objective data about the default RMW candidates in a neutral and factual manner. The final default ROS 2 Galactic middleware implementation will be selected by the ROS 2 Technical Steering Committee (TSC) after evaluation by both the ROS 2 Middleware Working Group and the TSC.  
 
@@ -76,9 +77,6 @@ latency versus message size in figures 1.2.3, 1.2.4, and 1.2.5 respectively.
 
 ![Build Farm Memory
 Consumption](./galactic/plots/BuildFarmRMWMemoryConsumption.png)
-
-![Build Farm Memory
-Consumption--try 2](/galactic/plots/BuildFarmRMWMemoryConsumption.png)
 
 
 ## 1.3 Build Farm Test Discussion
