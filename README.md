@@ -144,6 +144,150 @@ Code quality is an important metric for project health.  ROS 2 has defined vario
 
 rmw_cyclonedds_cpp is missing a quality declaration making it difficult to perform and apples to apples comparison between the two. Under most of the categories for the parts that are documented each implementation are comparable. Despite this there is an appreciable difference as CycloneDDS is currently declared as quality level 3, and FastRTPS is rated as quality level 2.
 
+# Section 5: Community Five
+
+## 5.1 Overview and Description
+
+The final component of this document is a user survey on ROS user’s feelings about their selected RMW implementation conducted between September 17th and October 16th 2020. The survey was posted to ROS Discourse and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience. In conjunction with this evaluation data we also asked participants to provide basic demographic data and perform a self assessment of their skills. In total there 96 responses with 31 users reporting that they use Cyclone RMW and 60 users reporting they use FastRTPS RMW. All of the respondents were ROS 2 users with nearly three quarters of them presently working with ROS 2 Foxy. The users sampled come from a wide variety of backgrounds, industries and work on a variety of different projects. 
+
+In the following section we summarize the data and where possible provide the descriptive statistics for both RMWs as well for the ROS community. Section 5.1.1 summarizes the questions given to participants that are referenced by the plots in 5.2. There is summary of the results in 5.3 with a selection of user narrative responses included in section 5.4
+
+## 5.1.1 Survey Question Summary
+
+Survey participants were asked a total of nineteen questions related to their
+RMW experience, which each of the questions listed below along with a question
+number to reference them in the graphs in section 5.2. Survey participants were
+allowed to respond with one of the following: "Strongly Agree", "Agree",
+"Neutral", "Disagree", "Strongly Disagree", and "Not Applicable". For plotting
+the results the written scores were translated to numerical values with,
+"Strongly Agree" being given a score of 5, and "Strongly Disagree" being given a
+score of 1. Users who selected "Not Applicable" were not included in the final
+results. 
+
+
+- Q1: My current RMW worked out of the box for my application.
+- Q2: I understand how RMWs work.
+- Q3: I am capable of changing my RMW easily.
+- Q4: I would/have considered changing my RMW implementation.
+- Q5: Open Robotics provides sufficient information for me to make a sound RMW selection.
+- Q6: My current RMW implementation provides sufficient support.
+- Q7: My current RMW implementation provides sufficient  documentation.
+- Q8: My current RMW implementation provides sufficient debugging tools.
+- Q9: My current RMW implementation provides sufficient features for my application.
+- Q10: My current RMW implementation provides sufficient performance for my application.
+- Q11: I am considering or have considered changing my current RMW implementation due to technical challenges.
+- Q12: DDS/RMWs have improved the overall ROS experience.
+- Q13: I would advocate for my current RMW to be the default ROS 2.
+- Q14: I would recommend my current RMW to a friend.
+- Q15: My RMW interoperates well with other systems. 
+- Q16: Based on the out-of-the-box experience I would recommend ROS2 Foxy to a friend.
+- Q17: ROS should continue to use DDS as the default RMW implementation.
+- Q18: I consider my current RMW implementation robust, reliable, and ready for production.
+
+## 5.2 RMW User Survey Results
+
+### 5.2.1 Survey Participant Demographic Information 
+
+![Survey Demographic Information by RMW](./galactic/plots/SurveyCohorts.png)
+
+### 5.2.2 Survey Participant Skill Self Assesment 
+
+![Survey participant skill self assesment](./galactic/plots/SurveySkillReport.png)
+
+
+### 5.2.3 Survey Response Data by RMW 
+
+![Survey Question Response Data](./galactic/plots/SurveyResponses.png)
+
+
+### 5.2.4 Survey Question Drill Down 1
+
+![Survey Drill Down 1](./galactic/plots/SurveyDrillDown1.png)
+
+
+### 5.2.5 Survey Question Drill Down 2 
+
+![Survey Drill Down 1](./galactic/plots/SurveyDrillDown2.png)
+
+
+## 5.3 Survey Discussion
+
+We feel that we were able to collect a large and representative sample of the ROS community for this survey with a sufficient number of users for each RMW included in the final report. The respondents to the survey represent a wide swath of ROS 2 users with the preponderance of responses coming from ROS 2 Foxy Fitzroy users. These respondents reported a wide range of skill levels and varying degrees of competency in debugging, networking, and ROS development skills. What is remarkable about the responses is how uniform they were on most questions relating to their selected RMW vendor. The difference between most of the responses varies by no more than 5% for most of the questions.
+
+Questions one, two, and three are leader questions that help us understand the ROS 2 community’s understanding of ROS middleware. By and large ROS 2 users, using both RMWs, say that they understand how RMWs work, how to change them, and that their current RMW worked out of the box for them. However, Cyclone RMW users are slightly more likely to understand RMWs. Question four asks if a given user has changed their RMW, and unsurprisingly Cyclone RMW users are much more likely to have considered changing their RMW. Question five, “Does Open Robotics provide sufficient information to make a sound RMW selection” received on average a neutral response indicating we could do more to support the community. For questions six, seven, and eight, most users, from both RMWs, feel they have sufficient support, documentation, and debugging tools. Question nine asks if the selected RMW has sufficient features, and Cyclone RMW users believe it performs slightly better in this category.
+
+Question ten shows that Cyclone RMW users believe that they have sufficient performance for their application, but the difference is small, only 6%.
+Question eleven, “I am considering changing or have changed my RMW due to technical challenges” is interesting because the responses are nearly uniform between the two RMWs. In question twelve we find that ROS users generally agree that DDS RMWs have improved the overall ROS experience. Question thirteen asks respondents if they would recommend their RMW as the default, to which Cyclone RMW users have a more positive response. Similarly, question fourteen asks is the user would recommend their RMW to a friend, and a slightly higher percentage of Cyclone RMW users would do so. This question is very similar to the “net promoter score” used by product managers to understand customer attitudes towards a product.  Most of the remaining questions are fairly similar results except for question eighteen, “I consider my current RMW implementation robust, reliable, and ready for production.” Question eighteen had a slightly higher positive response rate from Cyclone RMW users.
+
+All in all, Cyclone RMW rated more favorably among its users, but only very slightly so.
+
+## 5.4 Survey Narrative Responses
+
+We provided a space in the user survey for respondents to communicate their feelings about their preferred middleware to the TSC, While not a formal evaluation, the experience of individuals is worth considering given our limited testing capabilities. The full list of responses will be provided to the TSC if requested. We have included a few of these excerpts in this document to capture the spirit of all the responses. 
+
+
+### 5.4.1 Cyclone User Responses 
+
+``` 
+“CycloneDDS has been more consistent with outputting the expected
+performance. The test we ran show that in many different scenarios CycloneDDS is
+able to work without a hitch, while Fast DDS's performance outperforms
+CycloneDDS in some scenarios it completely fails in others (100+ nodes in a
+distributed setup over VPN).”
+
+	                                      -- A ROS 2 Foxy user
+```
+
+
+``` 
+“Right now, I would advocate for Cyclone DDS, with FastDDS still being a
+relatively close second. I think FastDDS works for most users in most use-cases,
+particularly users who may not be working in commercial/industrial environments,
+such as university labs or personal projects, but I have had both performance
+and reliability issues with it relating to discovery, implementation of DDS
+features, sending of large-data, and more, which Cyclone fully resolved for
+me. License-wise, they are both agreeable options.”
+
+	                                      -- A ROS 2 Foxy user
+```
+
+
+
+``` markdown
+“CycloneDDS is the best. Only CycloneDDS can remote use rviz2 over Wi-Fi to
+ control the AMR doing navigation with Navigation2.”
+
+	                                      -- A ROS 2 Foxy user	
+```
+ 
+
+
+```
+“I would definitely advocate for a default RMW (and even further for only a
+single supported RMW). As for which one, I don't have a strong opinion, but I
+would be biased to cyclonedds simply because they seem extremely willing to
+engage with the community and to be responsive to its needs.”
+
+	                                      -- A ROS 2 Foxy user
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
