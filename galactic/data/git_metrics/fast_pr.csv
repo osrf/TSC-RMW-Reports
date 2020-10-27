@@ -1,0 +1,257 @@
+,state,opened_on,closed,time_to_close,commits,number,title,url,closed_at
+0,open,2020-10-17 08:13:08,,,1,1500,Support ack messages with garbage 1's [9633],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1500,
+1,closed,2020-10-16 14:59:11,,18243.0,4,1499,[Discovery Server] Send new updates,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1499,2020-10-16 20:03:14
+2,open,2020-10-16 11:51:04,,,12,1498,Sharing payloads on intra-process [9631],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1498,
+3,open,2020-10-16 10:46:56,,,4,1497,Fix transient local retransmission after participant drop [9630],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1497,
+4,open,2020-10-16 09:04:34,,,6,1496,Keep pending security messages directed for each local endpoint <master> [9627],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1496,
+5,closed,2020-10-15 19:19:42,,41574.0,1,1494,[Discovery Server] Cleanup mutex,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1494,2020-10-16 06:52:36
+6,closed,2020-10-15 15:05:06,,1497.0,1,1493,[Discovery Server] Fix intra-participant endpoint discovery,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1493,2020-10-15 15:30:03
+7,closed,2020-10-15 13:30:10,,1952.0,2,1492,Bump version 2.1.0,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1492,2020-10-15 14:02:42
+8,closed,2020-10-15 13:05:04,,78578.0,21,1491,Use topic payload pool on builtin endpoints [9613],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1491,2020-10-16 10:54:42
+9,open,2020-10-15 10:05:43,,,8,1490,Keep pending security messages directed for each local endpoint [9621],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1490,
+10,closed,2020-10-14 13:04:14,,74164.0,14,1488,Use topic payload pool on user created endpoints [9605],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1488,2020-10-15 09:40:18
+11,closed,2020-10-14 09:19:06,,72137.0,7,1486,Fixed interlocking on endpoint deletion <master> [9612],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1486,2020-10-15 05:21:23
+12,closed,2020-10-14 09:10:27,,20512.0,2,1485,[Discovery Server] Clear Database only one server version [9598],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1485,2020-10-14 14:52:19
+13,closed,2020-10-13 13:39:34,,295.0,2,1483,Documentation corrections for TopicPayloadPool branch,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1483,2020-10-13 13:44:29
+14,open,2020-10-13 10:56:44,,,14,1482,Added methods to get qos defined in XML Profile [9607],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1482,
+15,closed,2020-10-13 09:26:08,,99231.0,24,1481,Topic pool registry [9595],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1481,2020-10-14 12:59:59
+16,closed,2020-10-13 05:57:32,,34555.0,4,1480,[Discovery Server] Remove change in History comparing instance handle,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1480,2020-10-13 15:33:27
+17,closed,2020-10-10 08:45:53,,248921.0,1,1479,Fix wrong calculation of user multicast port [9599],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1479,2020-10-13 05:54:34
+18,closed,2020-10-09 13:08:58,,,46,1478,[Discovery Server] Reset and destroy database [9598],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1478,
+19,closed,2020-10-09 09:21:32,,373974.0,5,1477,[Discovery Server] Connect remote servers [9596],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1477,2020-10-13 17:14:26
+20,closed,2020-10-09 07:10:05,,353521.0,25,1476,RTPS reader creation with custom payload pool [9494],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1476,2020-10-13 09:22:06
+21,open,2020-10-08 15:29:03,,,5,1475,governance rules order <2.0.x> [9584],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1475,
+22,closed,2020-10-08 15:25:41,,601357.0,5,1474,governance rules order <master> [9583],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1474,2020-10-15 14:28:18
+23,closed,2020-10-08 14:48:10,,682772.0,10,1473,[Discovery Server] Propagation to other servers using virtual topics [9582],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1473,2020-10-16 12:27:42
+24,closed,2020-10-08 10:24:46,,123533.0,15,1472,Warning Log when an inconsistent acknack is received [9579],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1472,2020-10-09 20:43:39
+25,closed,2020-10-08 07:17:49,,630027.0,1,1470,Forwardport of #1469 into master [9574],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1470,2020-10-15 14:18:16
+26,closed,2020-10-08 07:00:28,,94704.0,3,1469,Account for new API on foonathan_memory [9545],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1469,2020-10-09 09:18:52
+27,closed,2020-10-08 06:44:42,,81149.0,2,1468,Added mising cleanup in XMLProfileParser [9572],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1468,2020-10-09 05:17:11
+28,closed,2020-10-07 14:25:52,,140517.0,1,1467,[Discovery Server] Identify writers and readers only with values valid in RTPS specification,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1467,2020-10-09 05:27:49
+29,closed,2020-10-07 05:14:40,,92723.0,1,1466,Use posix_fallocate <2.0.x>,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1466,2020-10-08 07:00:03
+30,closed,2020-10-07 05:12:53,,92777.0,1,1465,Use posix_fallocate,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1465,2020-10-08 06:59:10
+31,closed,2020-10-06 13:52:43,,149137.0,1,1463,Fixed RTPSWithRegistrationReader <2.0.x> [9538],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1463,2020-10-08 07:18:20
+32,closed,2020-10-06 12:50:43,,1870.0,1,1462,Discovery Server: Removed unnecessary find in create_readers/writers_from_change,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1462,2020-10-06 13:21:53
+33,closed,2020-10-06 11:19:48,,183707.0,5,1461,Use new IPayloadPool API on processDataMsg [9485],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1461,2020-10-08 14:21:35
+34,closed,2020-10-06 10:33:36,,847807.0,1,1460,Fixes profile section to allow multiple profiles in different order.,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1460,2020-10-16 06:03:43
+35,closed,2020-10-06 09:14:30,,4052.0,1,1459,Quick fix in is_writer and is_reader in DDB,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1459,2020-10-06 10:22:02
+36,closed,2020-10-06 06:56:04,,714662.0,4,1458,Add option to support TRANSIENT_LOCAL in persistence [9617],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1458,2020-10-14 13:27:06
+37,closed,2020-10-06 06:13:55,,85940.0,2,1457,Account for new API on foonathan_memory [9534],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1457,2020-10-07 06:06:15
+38,closed,2020-10-05 16:47:28,,45009.0,1,1456,remove QNX and add cmake builtin QNXNTO variable,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1456,2020-10-06 05:17:37
+39,closed,2020-10-05 13:38:34,,56307.0,1,1455,remove QNX and add cmake builtin QNXNTO variable,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1455,2020-10-06 05:17:01
+40,closed,2020-10-02 11:56:48,,,3,1450,Servers receive all clients info [9500],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1450,
+41,closed,2020-10-02 11:33:23,,536770.0,9,1449,Discovery Server: New design for process disposals [9499],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1449,2020-10-08 16:39:33
+42,closed,2020-10-02 10:26:11,,329291.0,2,1448,Improvements on StatefulWriter <master>,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1448,2020-10-06 05:54:22
+43,closed,2020-10-02 09:37:26,,591182.0,9,1447,Do not relay on first reader only to decode encrypted message [9502],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1447,2020-10-09 05:50:28
+44,closed,2020-10-02 08:26:50,,285503.0,7,1446,Fixed crash after recovery with persistence [9497],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1446,2020-10-05 15:45:13
+45,closed,2020-10-02 07:33:11,,366284.0,1,1445,Server DDB: Check sample id on ack [9496],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1445,2020-10-06 13:17:55
+46,closed,2020-10-02 05:24:00,,517479.0,5,1444,Improvements on StatefulWriter,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1444,2020-10-08 05:08:39
+47,closed,2020-10-01 17:30:18,,2895.0,1,1443,Fixed broken link to FastCDR Quality.md,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1443,2020-10-01 18:18:33
+48,closed,2020-10-01 15:58:52,,421585.0,5,1442,Server periodic announcements [9490],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1442,2020-10-06 13:05:17
+49,closed,2020-10-01 14:59:44,,318325.0,2,1441,Fixed RTPSWithRegistrationReader,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1441,2020-10-05 07:25:09
+50,closed,2020-10-01 14:47:36,,404257.0,4,1440,Server dedicated thread for routine processing [9488],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1440,2020-10-06 07:05:13
+51,closed,2020-10-01 08:01:26,,337554.0,24,1439,Ackfunctor and History refactoring [9443] ,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1439,2020-10-05 05:47:20
+52,closed,2020-10-01 05:58:20,,450312.0,19,1438,Deprecate methods on History [9476],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1438,2020-10-06 11:03:32
+53,closed,2020-09-30 12:40:34,,408095.0,1,1436,Clear changes to release [9483],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1436,2020-10-05 06:02:09
+54,closed,2020-09-30 11:00:25,,1036.0,1,1435,Fix enable separate sending in subscriptions writer [9477],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1435,2020-09-30 11:17:41
+55,closed,2020-09-30 10:00:30,,691555.0,7,1434,RTPS writer creation with custom payload pool [9473],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1434,2020-10-08 10:06:25
+56,closed,2020-09-30 09:53:17,,70509.0,12,1433,Allow RTPS readers to be constructed with custom pools [9474],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1433,2020-10-01 05:28:26
+57,closed,2020-09-30 09:24:36,,436307.0,6,1432,Server DATA(p) acked just checked when necessary [9472],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1432,2020-10-05 10:36:23
+58,closed,2020-09-30 07:57:00,,439133.0,3,1431,Server is acked by default in DDB [9470],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1431,2020-10-05 09:55:53
+59,closed,2020-09-30 06:16:13,,44026.0,5,1430,Bugfix: preprocess_secure_submsg should look both local and remote endpoints [9465],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1430,2020-09-30 18:29:59
+60,closed,2020-09-29 10:55:52,,165690.0,2,1429,Fix bug CryptographyPluginTest [9438],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1429,2020-10-01 08:57:22
+61,closed,2020-09-29 07:32:59,,165195.0,2,1428,Added unit tests for CacheChangePool + BasicPayloadPool [9436],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1428,2020-10-01 05:26:14
+62,closed,2020-09-28 14:30:44,,8807.0,2,1427,Fixed SKIP_DEFAULT_XML_FILE on Windows.,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1427,2020-09-28 16:57:31
+63,closed,2020-09-28 10:55:04,,166723.0,29,1426,Allow RTPS writers to be constructed with custom pools [9432],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1426,2020-09-30 09:13:47
+64,closed,2020-09-28 07:10:57,,1393.0,2,1425,Topic name as argument for the pub/sub in HelloWorldExampleDS,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1425,2020-09-28 07:34:10
+65,closed,2020-09-28 05:34:48,,949783.0,25,1424,Feature/topic payload pool implementation [9310 & 9393] ,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1424,2020-10-09 05:24:31
+66,closed,2020-09-27 07:40:49,,,2,1423,Server routine: Populate list of DATA(p) receivers,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1423,
+67,closed,2020-09-26 22:56:20,,29964.0,6,1422,Handle the release of CacheChanges of DDB,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1422,2020-09-27 07:15:44
+68,closed,2020-09-26 18:49:04,,7363.0,2,1421,announcement refactor for the prototype,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1421,2020-09-26 20:51:47
+69,closed,2020-09-26 16:40:21,,260.0,1,1420,Server routine: Database server prefix,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1420,2020-09-26 16:44:41
+70,closed,2020-09-26 15:57:55,,441.0,1,1419,Server routine: Server thread,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1419,2020-09-26 16:05:16
+71,closed,2020-09-26 06:53:50,,32143.0,6,1418,Server routine: Listeners,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1418,2020-09-26 15:49:33
+72,closed,2020-09-25 20:48:10,,47162.0,6,1417,Server routine: is_relevant functions,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1417,2020-09-26 09:54:12
+73,closed,2020-09-25 13:38:32,,,11,1416,Feature/discovery server/ddb functions,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1416,
+74,closed,2020-09-25 09:01:54,,32553.0,2,1415,Server routine: Process to-send lists sub-routine,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1415,2020-09-25 18:04:27
+75,closed,2020-09-25 08:24:47,,28811.0,12,1414,Server routine: Process data queue sub-routine,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1414,2020-09-25 16:24:58
+76,closed,2020-09-25 05:33:40,,41501.0,3,1413,Server routine: Process dirty topics sub-routine,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1413,2020-09-25 17:05:21
+77,closed,2020-09-25 01:43:15,,35921.0,1,1412,remove latomic to clang,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1412,2020-09-25 11:41:56
+78,closed,2020-09-24 13:27:06,,430955.0,1,1411,Add failing test to xfail list.,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1411,2020-09-29 13:09:41
+79,closed,2020-09-24 13:19:45,,95625.0,5,1410,Server routine: Process disposals sub-routine,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1410,2020-09-25 15:53:30
+80,closed,2020-09-24 10:45:29,,83701.0,9,1409,update prototype,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1409,2020-09-25 10:00:30
+81,closed,2020-09-24 10:33:42,,,13,1408,Feature/discovery server/data structures,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1408,
+82,closed,2020-09-24 09:38:59,,95063.0,2,1407,Server routine: Process writers acknowledgements sub-routine,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1407,2020-09-25 12:03:22
+83,closed,2020-09-23 14:56:28,,66013.0,12,1406,Feature/discovery server/data structures,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1406,2020-09-24 09:16:41
+84,closed,2020-09-23 12:20:32,,2069.0,2,1405,Update README: add Linux aarch64 support and badges [9400],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1405,2020-09-23 12:55:01
+85,closed,2020-09-23 10:39:23,,441501.0,5,1404,Add Quality Declaration for foonathan_memory external dependency [9398],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1404,2020-09-28 13:17:44
+86,closed,2020-09-23 08:41:21,,8191.0,2,1403,Add foonathan public API document [9395],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1403,2020-09-23 10:57:52
+87,closed,2020-09-22 17:41:58,,,1,1402,Fixes #1395. Removed ASIO_STANDALONE compile definition from CMakeList,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1402,
+88,closed,2020-09-22 07:15:14,,20470.0,4,1401,Fixed warnings on VS 2019 [9375],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1401,2020-09-22 12:56:24
+89,closed,2020-09-21 15:02:19,,752186.0,7,1400,Add Quality Declaration and update README [9371],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1400,2020-09-30 07:58:45
+90,closed,2020-09-21 14:28:04,,,4,1399,Unit tests for TopicPayloadPool,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1399,
+91,closed,2020-09-21 14:20:22,,773369.0,7,1398,Fixed SAT issues on security code <2.0.x> [9374],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1398,2020-09-30 13:09:51
+92,closed,2020-09-21 14:04:33,,2913.0,5,1397,Added document with supported platforms [9368],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1397,2020-09-21 14:53:06
+93,closed,2020-09-18 11:15:17,,259443.0,2,1394,Fix warnings,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1394,2020-09-21 11:19:20
+94,closed,2020-09-17 21:17:58,,42256.0,7,1393,Create server discovery endpoints,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1393,2020-09-18 09:02:14
+95,open,2020-09-17 10:43:47,,,6,1392,Set discovery tool to close with SIGINT [9336],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1392,
+96,closed,2020-09-17 09:19:56,,74417.0,2,1391,Discovery Data Filter,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1391,2020-09-18 06:00:13
+97,closed,2020-09-16 07:10:19,,459446.0,1,1390,Fix clang libcxx warnings <master>[9321],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1390,2020-09-21 14:47:45
+98,closed,2020-09-14 07:38:34,,16086.0,3,1389,Fixes for #1380 <master> [9302],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1389,2020-09-14 12:06:40
+99,closed,2020-09-14 05:45:37,,624976.0,54,1388,History pool refactor [9306],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1388,2020-09-21 11:21:53
+100,open,2020-09-11 15:59:06,,,11,1387,check remote permissions [9303],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1387,
+101,closed,2020-09-11 15:42:51,,82883.0,1,1386,Fix broken Windows build: Use bare ${TINYXML2_LIBRARY},https://api.github.com/repos/eProsima/Fast-DDS/pulls/1386,2020-09-12 14:44:14
+102,closed,2020-09-11 10:06:10,,241393.0,1,1384,Leave correct default values on WriterQos::clear [9298],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1384,2020-09-14 05:09:23
+103,closed,2020-09-10 14:45:14,,73454.0,4,1382,Handle missing PID_PARTICIPANT_GUID for readers and writers [9296],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1382,2020-09-11 11:09:28
+104,open,2020-09-09 14:41:39,,,4,1379,One way match of wildcards on permissions [9287],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1379,
+105,closed,2020-09-09 12:33:27,,1113794.0,3,1378,Add file package.xml with repo info to rosdistro display,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1378,2020-09-22 09:56:41
+106,closed,2020-09-08 13:56:54,,74828.0,1,1377,WriterProxy auto unmatch on destruction [9272],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1377,2020-09-09 10:44:02
+107,closed,2020-09-07 07:19:23,,1491032.0,8,1375,Enforce use of libraries in thirdparty with option THIRDPARTY=FORCE <master> [9222],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1375,2020-09-24 13:29:55
+108,closed,2020-09-07 06:08:30,,173118.0,2,1374,[9180] Solving VS2015 errors and warnings on sources,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1374,2020-09-09 06:13:48
+109,closed,2020-09-07 05:31:00,,,2,1373,Do not add alignment padding to payload [9219],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1373,
+110,closed,2020-09-05 06:03:39,,3542564.0,1,1372,Minor Typo: ms2_rmw_shared_memory_data_share_sony.md,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1372,2020-10-16 06:06:23
+111,closed,2020-09-04 08:32:08,,851991.0,2,1371,Autogenerate idl files in examples. Refactor executable names [9179],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1371,2020-09-14 05:11:59
+112,closed,2020-09-04 07:15:56,,14075.0,1,1370,Add SYSTEM_TESTS cmake option [9210],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1370,2020-09-04 11:10:31
+113,closed,2020-09-03 09:28:41,,12788.0,2,1368,Fix uncrustify issues CustomListeners,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1368,2020-09-03 13:01:49
+114,closed,2020-09-03 08:01:13,,82260.0,1,1367,Memcheck errors on RMW [9206],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1367,2020-09-04 06:52:13
+115,open,2020-09-03 07:45:28,,,5,1366,Added target reference instead of library path [9204],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1366,
+116,closed,2020-09-03 07:39:21,,1286450.0,2,1365,Increase Keys example with disposing functionality [9205],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1365,2020-09-18 05:00:11
+117,closed,2020-09-03 07:33:03,,,3,1364,Do note export tinyxml2 absolute path [9204],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1364,
+118,open,2020-09-02 09:29:57,,,1,1362,Delete continue in MessageReceiver::willAReaderAcceptMsgDirectedTo [9213],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1362,
+119,closed,2020-09-02 07:07:27,,512642.0,4,1361,Endianness macro [9189],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1361,2020-09-08 05:31:29
+120,closed,2020-09-02 06:15:16,,17867.0,1,1360,Increased writer depth on flaky test [9188],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1360,2020-09-02 11:13:03
+121,closed,2020-09-02 05:33:00,,3027759.0,18,1359,[9137] Removing C++17 warnings from sources,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1359,2020-10-07 06:35:39
+122,open,2020-09-01 08:44:05,,,2,1357,fixed warnings [9193],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1357,
+123,closed,2020-09-01 07:42:19,,855871.0,3,1356,Protect bitmap parsing methods <master> [9183],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1356,2020-09-11 05:26:50
+124,closed,2020-09-01 07:24:58,,104624.0,3,1355,Return false if type not found unregistering type [9182],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1355,2020-09-02 12:28:42
+125,closed,2020-08-31 09:29:59,,1281602.0,2,1354,Changed durability to transient local [9170],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1354,2020-09-15 05:30:01
+126,closed,2020-08-28 18:42:07,,328573.0,1,1352,adds qnx compiler id and removes librt for qnx,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1352,2020-09-01 13:58:20
+127,closed,2020-08-28 12:21:13,,,16,1351,Feature/gen examples [9179],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1351,
+128,closed,2020-08-28 10:36:13,,2665248.0,10,1350,Feature/skip xml [9139],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1350,2020-09-28 06:57:01
+129,closed,2020-08-28 09:54:53,,1829461.0,3,1349,Update CMakeLists.txt not setting C++11 compiler flag [9212],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1349,2020-09-18 14:05:54
+130,closed,2020-08-27 10:23:27,,507549.0,2,1348,Refs 9117. Initialize serialized payload buffer on realloc,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1348,2020-09-02 07:22:36
+131,closed,2020-08-27 05:26:30,,1603965.0,1,1347,Export DataReader::get_topicdescription,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1347,2020-09-14 18:59:15
+132,open,2020-08-17 15:56:37,,,4,1345,Support colon in type name for dynamic data types ,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1345,
+133,open,2020-08-07 11:12:35,,,1,1340,Log - StdoutErrConsumer [9069],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1340,
+134,open,2020-08-06 08:19:19,,,1,1339,Refs #9035 Added more log level and first mask checks. [9052],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1339,
+135,closed,2020-08-05 08:55:28,,2432530.0,4,1335,Added Example for CustomListener with StatusMask [9042],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1335,2020-09-02 12:37:38
+136,open,2020-08-05 08:25:47,,,2,1334,Refs #9037 Extend TopicDataType API [9041],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1334,
+137,closed,2020-08-05 07:00:09,,5437579.0,7,1333,Fix Writer history behavior when there are no matched readers <1.8.x> [9033],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1333,2020-10-07 05:26:28
+138,closed,2020-08-05 06:41:59,,5438441.0,7,1332,Fix Writer history behavior when there are no matched readers <ros2_eloquent> [9032],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1332,2020-10-07 05:22:40
+139,closed,2020-08-04 12:23:19,,3170961.0,7,1331,Fix Writer history behavior when there are no matched readers <2.0.x> [9031],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1331,2020-09-10 05:12:40
+140,closed,2020-08-04 11:36:48,,2655524.0,1,1330,Garbage collect remote SHM segments when origin Participant is closed… > 2.0.x [9029],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1330,2020-09-04 05:15:32
+141,closed,2020-08-04 11:12:15,,2503302.0,1,1329,SIGBUS in boost::interprocess when /dev/shm is full (#1248) > 2.0.x [9028],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1329,2020-09-02 10:33:57
+142,closed,2020-08-04 10:14:29,,5440890.0,2,1327,"Fix for late-joiners KEEP_LAST, RELIABLE, TRANSIENT_LOCAL <1.8.x> [9026]",https://api.github.com/repos/eProsima/Fast-DDS/pulls/1327,2020-10-06 09:35:59
+143,closed,2020-08-04 09:38:36,,2663538.0,4,1326,fastdds Python tool (#1252) > 2.0.x [9025],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1326,2020-09-04 05:30:54
+144,closed,2020-08-04 09:14:37,,2604997.0,2,1325,Update easy client-server environment mechanism (#1251) > 2.0.x [9024],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1325,2020-09-03 12:51:14
+145,closed,2020-08-04 08:16:01,,3185549.0,8,1324,Fix Writer history behavior when there are no matched readers [9030],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1324,2020-09-10 05:08:30
+146,open,2020-08-04 06:14:21,,,7,1323,Bug/persistence schema [9021],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1323,
+147,closed,2020-08-03 11:27:12,,5523132.0,2,1321,"Fix for late-joiners KEEP_LAST, RELIABLE, TRANSIENT_LOCAL <ros2_eloquent> [9016]",https://api.github.com/repos/eProsima/Fast-DDS/pulls/1321,2020-10-06 09:39:24
+148,closed,2020-08-03 10:30:57,,88874.0,2,1320,"Fix for late-joiners KEEP_LAST, RELIABLE, TRANSIENT_LOCAL <2.0.x> [9015]",https://api.github.com/repos/eProsima/Fast-DDS/pulls/1320,2020-08-04 11:12:11
+149,closed,2020-07-31 09:31:23,,259071.0,4,1318,Update the gtest macros from case to suite notation.,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1318,2020-08-03 09:29:14
+150,closed,2020-07-30 22:10:07,,562790.0,3,1317,adds compiler id and removes librt for QNX,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1317,2020-08-06 10:29:57
+151,closed,2020-07-30 10:53:50,,86996.0,4,1314,"Fix for late-joiners KEEP_LAST, RELIABLE, TRANSIENT_LOCAL [8986]",https://api.github.com/repos/eProsima/Fast-DDS/pulls/1314,2020-07-31 11:03:46
+152,closed,2020-07-29 10:48:49,,514610.0,10,1312,Perform payload protection on messages module. [8973],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1312,2020-08-04 09:45:39
+153,closed,2020-07-28 10:14:39,,3627080.0,6,1311,[8968] Added missing includes preventing correct realtime build.,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1311,2020-09-08 09:45:59
+154,closed,2020-07-23 09:34:44,,13953.0,1,1307,"Avoid exporting ""openssl_init""",https://api.github.com/repos/eProsima/Fast-DDS/pulls/1307,2020-07-23 13:27:17
+155,closed,2020-07-23 09:17:35,,29823.0,7,1306,Refs #8925 & #8926 DDS API XML fixes [8928],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1306,2020-07-23 17:34:38
+156,closed,2020-07-22 07:41:55,,20405.0,3,1305,"Refs #8913 Avoid exporting ""openssl_init"". [8917]",https://api.github.com/repos/eProsima/Fast-DDS/pulls/1305,2020-07-22 13:22:00
+157,closed,2020-07-17 07:20:21,,427326.0,9,1304,Fix clang libcxx warnings <2.0.x> [8905],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1304,2020-07-22 06:02:27
+158,closed,2020-07-16 11:41:53,,947221.0,12,1303,Refs #8882 Add unittests to check persistence guid property functionality [8901],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1303,2020-07-27 10:48:54
+159,closed,2020-07-16 10:36:57,,954209.0,1,1302,Only read on_data_available [8899],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1302,2020-07-27 11:40:26
+160,closed,2020-07-16 06:00:37,,97738.0,12,1301,Fix sending GAPs to late joiners <master> [8894],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1301,2020-07-17 09:09:35
+161,closed,2020-07-16 05:48:42,,9735.0,3,1300,Correctly asserting liveliness on data reception <2.0.x> [8893],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1300,2020-07-16 08:30:57
+162,closed,2020-07-15 09:51:17,,1136493.0,12,1299,Support large data in persistence [8890],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1299,2020-07-28 13:32:50
+163,closed,2020-07-14 11:05:21,,153491.0,12,1295,Fix sending GAPs to late joiners [8880],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1295,2020-07-16 05:43:32
+164,closed,2020-07-10 10:10:15,,1122490.0,13,1294,listener logic correction [8860],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1294,2020-07-23 09:58:25
+165,closed,2020-07-10 05:30:28,,1236.0,2,1293,Fixes topic name,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1293,2020-07-10 05:51:04
+166,closed,2020-07-09 20:36:03,,8412036.0,10,1292,[8709] Porting ros2 eloquent updates to master,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1292,2020-10-15 05:16:39
+167,closed,2020-07-09 14:55:55,,1606936.0,3,1291,Persistence guid property [8858],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1291,2020-07-28 05:18:11
+168,closed,2020-07-09 12:45:18,,1106295.0,2,1290,fixed warnings [8886],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1290,2020-07-22 08:03:33
+169,closed,2020-07-07 16:46:19,,663343.0,1,1289,Check for an empty string using empty(),https://api.github.com/repos/eProsima/Fast-DDS/pulls/1289,2020-07-15 09:02:02
+170,closed,2020-07-07 13:48:47,,949.0,1,1288,Fixed documentation links in README.md,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1288,2020-07-07 14:04:36
+171,closed,2020-07-07 06:59:28,,1992622.0,6,1285,Fixed docu typos,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1285,2020-07-30 08:29:50
+172,closed,2020-07-07 06:55:12,,1731486.0,2,1283,Update colcon installations instructions,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1283,2020-07-27 07:53:18
+173,closed,2020-07-06 15:06:28,,51336.0,1,1281,Fixed typo in readme,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1281,2020-07-07 05:22:04
+174,closed,2020-07-06 10:26:30,,779422.0,3,1278,Correctly asserting liveliness on data reception [8820],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1278,2020-07-15 10:56:52
+175,closed,2020-07-06 07:54:01,,77435.0,1,1277,Fixed maybe be used unitialized warnings,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1277,2020-07-07 05:24:36
+176,closed,2020-07-06 07:49:57,,,2,1276,Added install instructions for OpenSuSE and added missing cd,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1276,
+177,closed,2020-07-02 14:28:55,,80134.0,9,1274,Fixed behavior of get_liveliness_changed_status [8812],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1274,2020-07-03 12:44:29
+178,open,2020-06-30 10:40:34,,,19,1272,Several fixes for IDT persistency with KEEP_ALL and TRANSIENT_LOCAL. [8804],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1272,
+179,closed,2020-06-29 10:12:50,,1558198.0,26,1270,Performance tests improvements <master> [7971],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1270,2020-07-17 11:02:48
+180,closed,2020-06-26 14:47:37,,,4,1269,[8632] Solving discover server issues on participant drop.,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1269,
+181,closed,2020-06-26 11:09:17,,6633772.0,13,1267,[8632] Solving discover server issues on participant drop.,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1267,2020-09-11 05:52:09
+182,closed,2020-06-26 06:36:38,,425897.0,7,1266,set listener mask on set_listener [8787],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1266,2020-07-01 04:54:55
+183,closed,2020-06-22 07:34:36,,90513.0,1,1263,Correct Doxygen documentation,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1263,2020-06-23 08:43:09
+184,closed,2020-06-16 11:12:51,,288055.0,15,1259,Call listener on incompatible QoS [8707],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1259,2020-06-19 19:13:46
+185,closed,2020-06-12 10:35:52,,1510.0,4,1258,Fixing CI badges,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1258,2020-06-12 11:01:02
+186,open,2020-06-12 10:34:14,,,5,1257,Fix in EDP because wasn't setting first QoS correctly [8703],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1257,
+187,closed,2020-06-12 06:11:11,,1781.0,1,1255,Added support of DDS-RPC EDM on roadmap.,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1255,2020-06-12 06:40:52
+188,closed,2020-06-11 11:48:13,,98177.0,6,1254,Add xfail label to flaky tests [8687],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1254,2020-06-12 15:04:30
+189,closed,2020-06-09 07:49:53,,26138.0,2,1253,remove link libs rt for Android NDK compiling.,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1253,2020-06-09 15:05:31
+190,closed,2020-06-08 06:37:32,,4934714.0,25,1252,fastdds Python tool <master> [8631],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1252,2020-08-04 09:22:46
+191,closed,2020-06-08 05:54:45,,2515714.0,34,1251,[8632] Update easy client-server environment mechanism,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1251,2020-07-07 08:43:19
+192,closed,2020-06-04 14:34:18,,3522682.0,11,1250, Garbage collect remote SHM segments when origin Participant is closed / dead <master> [8607],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1250,2020-07-15 09:05:40
+193,closed,2020-06-04 13:54:34,,416297.0,1,1249,Disable default SHM on Windows installers [8605],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1249,2020-06-09 09:32:51
+194,closed,2020-06-04 11:18:07,,2830643.0,3,1248,SIGBUS in boost::interprocess when /dev/shm is full <master> [8603],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1248,2020-07-07 05:35:30
+195,closed,2020-06-02 13:13:27,,258658.0,11,1246,Avoid foonathan debug usage [8604],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1246,2020-06-05 13:04:25
+196,closed,2020-06-01 12:18:18,,288.0,1,1244,Update to Fast DDS,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1244,2020-06-01 12:23:06
+197,closed,2020-05-29 11:28:22,,1492.0,1,1242,Fixing DDS Use case example [8567],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1242,2020-05-29 11:53:14
+198,closed,2020-05-29 11:03:31,,5858048.0,17,1241,OSRF testing patches,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1241,2020-08-05 06:17:39
+199,closed,2020-05-29 10:39:36,,2386.0,2,1240,Fix examples files installation <2.0.x> [8566],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1240,2020-05-29 11:19:22
+200,closed,2020-05-29 09:27:22,,,1,1239,ThreadSanitizer: data race on socket close/receive_from.,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1239,
+201,closed,2020-05-29 06:51:53,,98.0,1,1238,Show latest release by version on release shield,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1238,2020-05-29 06:53:31
+202,closed,2020-05-28 13:17:52,,6611.0,1,1236,Update ReadMe,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1236,2020-05-28 15:08:03
+203,closed,2020-05-27 19:14:42,,80100.0,5,1235,Fixing access violations on intraprocess [8548],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1235,2020-05-28 17:29:42
+204,closed,2020-05-27 10:57:53,,158041.0,1,1234,2.0.0 [8544],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1234,2020-05-29 06:51:54
+205,closed,2020-05-27 09:45:39,,3681.0,7,1233,Add versioning documents [8531],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1233,2020-05-27 10:47:00
+206,closed,2020-05-26 21:15:36,,43644.0,1,1232,link atomic under clang,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1232,2020-05-27 09:23:00
+207,closed,2020-05-26 07:25:10,,1390.0,2,1231,Removed deprecated pcTests.,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1231,2020-05-26 07:48:20
+208,closed,2020-05-25 16:15:02,,52088.0,8,1230,Moved non-deprecated code out of fastrtps_deprecated,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1230,2020-05-26 06:43:10
+209,closed,2020-05-25 10:32:41,,11984.0,1,1229,Fixed VS-2015 build errors [8499],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1229,2020-05-25 13:52:25
+210,closed,2020-05-25 08:55:08,,239.0,1,1227,Removed eClock API <2.0.x> [8496],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1227,2020-05-25 08:59:07
+211,closed,2020-05-25 08:39:31,,27215.0,1,1226,Improved PDPSimple memory usage <2.0.x> [8491],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1226,2020-05-25 16:13:06
+212,closed,2020-05-21 15:25:37,,80683.0,17,1222,Compliant behavior of ENTITY_FACTORY and enable() <2.0.x> [8471],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1222,2020-05-22 13:50:20
+213,closed,2020-05-21 07:05:30,,,1,1220,Enable Shared Memory on default transports <2.0.x>,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1220,
+214,closed,2020-05-19 10:52:24,,155326.0,3,1218,Different return codes when extracting profile,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1218,2020-05-21 06:01:10
+215,closed,2020-05-19 10:47:50,,11742.0,1,1217,[8450] Update FindTinyXML2 module to solve cmake warning,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1217,2020-05-19 14:03:32
+216,closed,2020-05-18 14:22:02,,142460.0,2,1215,Fix SHM Watchdog race condition <2.0.x> [8449],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1215,2020-05-20 05:56:22
+217,closed,2020-05-18 06:15:18,,171722.0,12,1214,Unregister/Dispose instances on Writer side [8437],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1214,2020-05-20 05:57:20
+218,closed,2020-05-14 08:45:51,,336491.0,1,1213,Disable TCP Throughput test <2.0.x> [7439],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1213,2020-05-18 06:14:02
+219,closed,2020-05-12 13:48:51,,58582.0,1,1211,Fixed DomainParticipantFactory::participant_has_been_deleted <2.0.x>,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1211,2020-05-13 06:05:13
+220,closed,2020-05-11 15:34:04,,61500.0,8,1209,Writer improvements <2.0.x> [8382],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1209,2020-05-12 08:39:04
+221,closed,2020-05-11 07:38:25,,27273.0,5,1207,Readers fixes and improvements <2.0.x> [8375],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1207,2020-05-11 15:12:58
+222,closed,2020-05-10 22:55:21,,27722.0,2,1206,Initialize num_properties to 0 in ParameterSerializer.hpp,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1206,2020-05-11 06:37:23
+223,closed,2020-05-08 13:18:23,,236193.0,2,1204,Adding DCO to CONTRIBUTING.md,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1204,2020-05-11 06:54:56
+224,closed,2020-05-08 07:54:54,,875071.0,10,1202,DDS Fix doxygen [8422],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1202,2020-05-18 10:59:25
+225,closed,2020-05-07 13:24:00,,76127.0,3,1200,remove default QoS parameter from entity creation methods [8364],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1200,2020-05-08 10:32:47
+226,closed,2020-05-07 13:23:44,,,11,1199,remove default QoS parameter from entity creation methods <2.0.x>,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1199,
+227,closed,2020-05-06 10:34:27,,14764.0,4,1198,Fixing wrong check should be intraprocess [8356],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1198,2020-05-06 14:40:31
+228,closed,2020-05-05 14:43:51,,54594.0,3,1197,Fixed doxygen <2.0.x>,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1197,2020-05-06 05:53:45
+229,closed,2020-05-05 10:14:34,,83523.0,3,1196,Fix error on BitmapRange::remove [8354],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1196,2020-05-06 09:26:37
+230,closed,2020-05-04 11:23:09,,10991.0,1,1195,Improved best-effort late-joiners,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1195,2020-05-04 14:26:20
+231,closed,2020-05-04 06:39:12,,1669292.0,21,1194,DDS API Examples,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1194,2020-05-23 14:20:44
+232,closed,2020-05-01 09:39:46,,246207.0,1,1193,Fix #1192 using standard zero-initialization.,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1193,2020-05-04 06:03:13
+233,closed,2020-04-30 12:05:09,,509014.0,12,1191,DDS entity profiles management,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1191,2020-05-06 09:28:43
+234,closed,2020-04-30 06:13:32,,346728.0,14,1190,Fixes and improvements on StatefulWriter <2.0.x> [8324],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1190,2020-05-04 06:32:20
+235,closed,2020-04-27 16:32:16,,623.0,1,1188,Disable SHM as default transport on Windows <2.0.x>,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1188,2020-04-27 16:42:39
+236,closed,2020-04-27 16:20:19,,1781524.0,32,1187,SHM Tests & improvements <2.0.x>,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1187,2020-05-18 07:12:23
+237,open,2020-04-27 16:14:41,,,7,1186,Fixed interlocking on endpoint deletion [9196],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1186,
+238,open,2020-04-27 01:27:41,,,1,1185,reduce ubsan warnings,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1185,
+239,closed,2020-04-26 19:42:54,,39657.0,1,1184,bugfix on DDS Communication test,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1184,2020-04-27 06:43:51
+240,closed,2020-04-26 00:09:26,,,1,1183,memory test compilation fixes,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1183,
+241,closed,2020-04-24 16:04:47,,257486.0,4,1182,Load DDSParticipantQos from XML [8259],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1182,2020-04-27 15:36:13
+242,open,2020-04-24 15:49:23,,,31,1181,SHM Tests & improvements <1.10.x> [8250],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1181,
+243,closed,2020-04-24 11:33:43,,271823.0,6,1180,Fix PSM unit tests,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1180,2020-04-27 15:04:06
+244,closed,2020-04-24 07:32:03,,526015.0,8,1179,Remove dynamic allocations [8256],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1179,2020-04-30 09:38:58
+245,closed,2020-04-23 22:06:14,,33020.0,1,1177,[8255] Solving validation error when creating SERVER or BACKUP participant,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1177,2020-04-24 07:16:34
+246,open,2020-04-23 13:48:56,,,2,1175,Enable SHM as a default transport <1.10.x>,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1175,
+247,closed,2020-04-23 07:19:55,,4763.0,2,1174,Fix api break on profiling tests [8243],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1174,2020-04-23 08:39:18
+248,closed,2020-04-22 12:07:10,,7848.0,2,1172,Solve localhost issues on default server client discovery setup via environmental variable,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1172,2020-04-22 14:17:58
+249,closed,2020-04-22 10:04:15,,13331.0,2,1171,Feature/dds domainparticipant enable,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1171,2020-04-22 13:46:26
+250,closed,2020-04-22 07:57:21,,7911.0,1,1170,Fixing gcc 9 warnings [8231],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1170,2020-04-22 10:09:12
+251,closed,2020-04-22 05:51:23,,56398.0,4,1169,Adding default ctor to interprocess_semaphore <1.10.x> [8229],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1169,2020-04-22 21:31:21
+252,closed,2020-04-21 14:52:45,,110499.0,36,1167,DDS api blackboxtests adaptation [8230],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1167,2020-04-22 21:34:24
+253,closed,2020-04-21 14:41:48,,111273.0,9,1166,Shared Memory fixes and improvements,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1166,2020-04-22 21:36:21
+254,closed,2020-04-21 09:46:33,,12493.0,7,1165,Change register type return type [8227],https://api.github.com/repos/eProsima/Fast-DDS/pulls/1165,2020-04-21 13:14:46
+255,closed,2020-04-21 05:17:30,,9555.0,1,1164,Fixing AES-128 use cases. <master>,https://api.github.com/repos/eProsima/Fast-DDS/pulls/1164,2020-04-21 07:56:45

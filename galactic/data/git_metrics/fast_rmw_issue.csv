@@ -1,0 +1,94 @@
+,closed_at,created_at,labels,id,number,state,title,url,last_mod,comments,turn_round
+0,,2020-10-13 12:47:39,[],720207810,466,open,Update README to clarify the use of environment variable RMW_FASTRTPS_USE_QOS_FROM_XML,https://api.github.com/repos/ros2/rmw_fastrtps/issues/466,,0,
+1,,2020-10-13 10:47:53,[],720112732,465,closed,Not enough memory in the buffer stream error,https://api.github.com/repos/ros2/rmw_fastrtps/issues/465,,2,3744.0
+2,,2020-10-13 09:00:53,[],720025055,464,closed,Example xml does not change the qos of the simple ROS2 publisher,https://api.github.com/repos/ros2/rmw_fastrtps/issues/464,,2,5924.0
+3,,2020-09-23 11:01:08,"[Label(name=""bug"")]",718278752,463,open,Exception was thrown while recording into bag high frequency exchange of components,https://api.github.com/repos/ros2/rmw_fastrtps/issues/463,,7,
+4,,2020-10-09 07:19:39,[],717917950,462,closed,[Backport Foxy] Included improvements to increase code coverage,https://api.github.com/repos/ros2/rmw_fastrtps/issues/462,,5,541126.0
+5,,2020-10-09 01:00:30,[],717769371,461,open,Uncaught exception causing test failures in macOS,https://api.github.com/repos/ros2/rmw_fastrtps/issues/461,,2,
+6,,2020-10-08 14:49:13,"[Label(name=""more-information-needed"")]",717415728,460,open,ROS2 image topic publisher freezes when a subscriber is initiated at a remote PC,https://api.github.com/repos/ros2/rmw_fastrtps/issues/460,,8,
+7,,2020-10-06 23:43:00,[],716092272,459,closed,Update the package.xml files with the latest Open Robotics maintainers,https://api.github.com/repos/ros2/rmw_fastrtps/issues/459,,0,60895.0
+8,,2020-10-01 19:02:15,"[Label(name=""bug"")]",713107208,458,closed,Ensure rmw_destroy_node() completes despite run-time errors.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/458,,2,6292.0
+9,,2020-09-30 22:08:53,[],712313491,457,closed,Handle too large QoS queue depths. ,https://api.github.com/repos/ros2/rmw_fastrtps/issues/457,,1,6296.0
+10,,2020-09-30 19:08:47,[],712205264,456,closed,Update rmw_fastrtps_cpp and rmw_fastrtps_shared_cpp QDs to QL2.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/456,,1,14314.0
+11,,2020-09-30 09:18:08,[],711779441,455,closed,Update Quality Declarations and READMEs,https://api.github.com/repos/ros2/rmw_fastrtps/issues/455,,3,509287.0
+12,,2020-09-29 03:57:48,"[Label(name=""more-information-needed"")]",710740711,454,open,occasional long message delay in remote node subscription of pointcloud,https://api.github.com/repos/ros2/rmw_fastrtps/issues/454,,2,
+13,,2020-09-28 22:53:39,[],710629640,453,closed,Perform fault injection in all creation/destruction APIs.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/453,,4,310447.0
+14,,2020-09-28 15:08:14,"[Label(name=""tests"")]",710352836,452,closed,Return RMW_RET_UNSUPPORTED in rmw_get_serialized_message_size,https://api.github.com/repos/ros2/rmw_fastrtps/issues/452,,1,60970.0
+15,,2020-09-28 09:46:58,"[Label(name=""enhancement"")]",710114728,451,closed,Checked client implementation and return RMW_RET_INCORRECT_RMW_IMPLEMENTATION in rmw_service_server_is_available,https://api.github.com/repos/ros2/rmw_fastrtps/issues/451,,2,79918.0
+16,,2020-09-24 21:06:59,[],708474921,450,closed,Update service/client request/response API error returns,https://api.github.com/repos/ros2/rmw_fastrtps/issues/450,,4,351037.0
+17,,2020-09-24 16:11:18,[],708300031,449,closed,Add tests for RMW QoS to DDS attribute conversion.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/449,,1,8017.0
+18,,2020-09-24 16:00:43,"[Label(name=""bug"")]",708292682,448,closed,Fix array `get_function` semantics,https://api.github.com/repos/ros2/rmw_fastrtps/issues/448,,0,19915.0
+19,,2020-09-24 14:23:15,"[Label(name=""tests"")]",708217037,447,closed,Improved return error in __rmw_destroy_client,https://api.github.com/repos/ros2/rmw_fastrtps/issues/447,,2,87128.0
+20,,2020-09-23 18:07:27,[],707572145,445,closed,Make service/client construction/destruction implementation compliant,https://api.github.com/repos/ros2/rmw_fastrtps/issues/445,,2,84043.0
+21,,2020-09-23 10:51:49,"[Label(name=""enhancement"")]",707256887,443,closed,Updated rmw_* return codes,https://api.github.com/repos/ros2/rmw_fastrtps/issues/443,,2,189634.0
+22,,2020-09-22 14:34:40,"[Label(name=""tests"")]",706440044,442,closed,Added rmw_logging tests,https://api.github.com/repos/ros2/rmw_fastrtps/issues/442,,3,259214.0
+23,,2020-09-22 14:14:22,[],706423189,441,closed,Inject faults on __rmw_publish() and run_listener_thread() call.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/441,,1,83930.0
+24,,2020-09-21 22:51:33,[],705965533,440,closed,Update gid API return codes.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/440,,5,80932.0
+25,,2020-09-21 20:10:40,[],705882930,439,closed,Add tests for native entity getters,https://api.github.com/repos/ros2/rmw_fastrtps/issues/439,,0,62390.0
+26,,2020-09-21 16:28:04,[],705746859,438,closed,Avoid deadlock if graph update fails.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/438,,3,75113.0
+27,,2020-09-19 03:00:38,"[Label(name=""bug"")]",704779052,437,closed,Make sure type can be unregistered successfully,https://api.github.com/repos/ros2/rmw_fastrtps/issues/437,,5,409330.0
+28,,2020-09-18 20:40:17,[],704643886,436,closed,Update graph API return codes.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/436,,3,342846.0
+29,,2020-09-17 19:25:49,[],703851009,435,closed,Updated error returns on rmw_take_serialized and with_message_info ,https://api.github.com/repos/ros2/rmw_fastrtps/issues/435,,1,94627.0
+30,,2020-09-17 06:23:15,[],703304997,434,closed,Call Domain::removePublishe while failure occurs in create_publisher,https://api.github.com/repos/ros2/rmw_fastrtps/issues/434,,1,114017.0
+31,,2020-09-17 06:06:30,[],703297044,433,closed,Not call Domain::removePublisher while rmw_publisher_allocate return failure in rmw_fastrtps_cpp/dynamic_cpp::create_publisher,https://api.github.com/repos/ros2/rmw_fastrtps/issues/433,,5,115022.0
+32,,2020-09-14 14:51:18,[],701174393,432,closed,Updated error returns on rmw_take,https://api.github.com/repos/ros2/rmw_fastrtps/issues/432,,2,369994.0
+33,,2020-09-10 16:01:26,[],698173889,431,closed,Updated error returns on rmw_publish_serialize to comply with documentation,https://api.github.com/repos/ros2/rmw_fastrtps/issues/431,,1,99549.0
+34,,2020-09-09 18:04:28,[],697032910,430,closed,Updated error returns on rmw_publish to comply with documentation,https://api.github.com/repos/ros2/rmw_fastrtps/issues/430,,1,178654.0
+35,,2020-09-07 08:55:14,"[Label(name=""bug"")]",694881389,429,closed,Avoid memory leaks and undefined behavior in rmw_fastrtps_dynamic_cpp typesupport code,https://api.github.com/repos/ros2/rmw_fastrtps/issues/429,,5,207576.0
+36,,2020-09-03 20:56:58,"[Label(name=""bug"")]",692349076,428,closed,[rmw_fastrtps_dynamic_cpp] Typesupport implementation leaks and it relies in conceptually broken cpp,https://api.github.com/repos/ros2/rmw_fastrtps/issues/428,,3,509872.0
+37,,2020-08-27 13:08:45,[],687229544,427,closed,Improve __rmw_create_wait_set() implementation.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/427,,1,102382.0
+38,,2020-08-25 02:10:50,[],685101528,426,closed,[foxy] Fix memory leak that wait_set might be not destoryed in some case. (#423),https://api.github.com/repos/ros2/rmw_fastrtps/issues/426,,1,37961.0
+39,,2020-08-20 14:47:26,[],682777314,425,closed,Ensure compliant publisher QoS queries.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/425,,1,368741.0
+40,,2020-08-20 14:38:56,[],682770696,424,closed,Ensure compliant matched pub/sub count API.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/424,,1,609353.0
+41,,2020-08-12 06:34:59,[],677432148,423,closed,Fix memory leak that wait_set might be not destroyed in some case.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/423,,7,1079231.0
+42,,2020-08-07 13:42:15,[],675024891,422,closed,Avoid unused identifier variable warnings.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/422,,1,11553.0
+43,,2020-08-06 20:13:29,"[Label(name=""bug"")]",674573509,421,closed,[backport foxy] Fix trying to get topic data that was already removed,https://api.github.com/repos/ros2/rmw_fastrtps/issues/421,,0,4032.0
+44,,2020-08-05 17:09:09,[],673709551,420,closed,Use package path to TypeSupport.hpp headers in ServiceTypeSupport and MessageTypeSupport (foxy backport),https://api.github.com/repos/ros2/rmw_fastrtps/issues/420,,1,1208251.0
+45,,2020-07-31 21:32:29,[],670254275,419,closed,Ensure compliant subscription API.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/419,,1,490313.0
+46,,2020-07-31 08:41:17,[],669571160,418,open,Fast-DDS service discovery redesign,https://api.github.com/repos/ros2/rmw_fastrtps/issues/418,,5,
+47,,2020-07-29 08:13:13,"[Label(name=""bug"")]",667643496,417,closed,Fix trying to get topic data that was already removed.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/417,,12,734303.0
+48,,2020-07-29 01:48:49,[],667487320,416,closed,Unregister typesupport rather than delete,https://api.github.com/repos/ros2/rmw_fastrtps/issues/416,,5,1882047.0
+49,,2020-07-28 16:20:34,[],667203769,415,closed,Use package in path to TypeSupport header for ServiceTypeSupport/MessageTypeSupport,https://api.github.com/repos/ros2/rmw_fastrtps/issues/415,,0,693929.0
+50,,2020-07-22 17:35:07,[],663932971,414,closed,Ensure compliant publisher API.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/414,,2,534293.0
+51,,2020-07-21 19:48:53,[],663265730,413,closed,[foxy backport] Add missing thread-safety annotation in ServicePubListener (#409),https://api.github.com/repos/ros2/rmw_fastrtps/issues/413,,0,182.0
+52,,2020-07-21 18:26:39,[],663219893,412,closed,[foxy backport] Make service wait for response reader (#390),https://api.github.com/repos/ros2/rmw_fastrtps/issues/412,,7,3610.0
+53,,2020-07-20 08:44:05,[],661545880,411,open,[dashing] Support for API break on Fast DDS 2.0,https://api.github.com/repos/ros2/rmw_fastrtps/issues/411,,1,
+54,,2020-07-17 14:30:31,"[Label(name=""in review"")]",659303667,410,closed,Set context actual domain id,https://api.github.com/repos/ros2/rmw_fastrtps/issues/410,,0,426642.0
+55,,2020-07-15 17:59:22,[],657544878,409,closed,Add missing thread-safety annotation in ServicePubListener,https://api.github.com/repos/ros2/rmw_fastrtps/issues/409,,7,18988.0
+56,,2020-07-07 20:35:30,[],652622075,408,closed,Ensure compliant node construction/destruction API.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/408,,1,665275.0
+57,,2020-07-06 21:38:16,"[Label(name=""enhancement"")]",651835038,407,closed,Remove domain_id and localhost_only from node API,https://api.github.com/repos/ros2/rmw_fastrtps/issues/407,,0,142879.0
+58,,2020-07-06 20:25:44,[],651797668,406,closed,Amend rmw_init() implementation: require enclave.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/406,,1,62673.0
+59,,2020-07-02 02:31:15,[],649548568,405,open,ContentFilteredTopic Support,https://api.github.com/repos/ros2/rmw_fastrtps/issues/405,,0,
+60,,2020-06-29 20:07:11,[],647631345,404,closed,Update Quality Declarations to QL3.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/404,,0,75572.0
+61,,2020-06-26 17:27:09,[],646407438,403,closed,Update Quality Declaration to QL3.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/403,,1,247770.0
+62,,2020-06-25 15:06:25,[],645639435,402,closed,Do not use string literals as implementation identifiers in tests.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/402,,0,899.0
+63,,2020-06-24 22:53:31,[],645027483,401,closed,Ensure compliant init/shutdown API implementation.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/401,,3,411586.0
+64,,2020-06-24 22:33:59,"[Label(name=""bug"")]",645020033,400,closed,test failure on Windows debug,https://api.github.com/repos/ros2/rmw_fastrtps/issues/400,,0,60445.0
+65,,2020-06-23 18:38:57,[],644060378,399,closed,Ensure compliant init options API implementations.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/399,,2,94299.0
+66,,2020-06-22 23:21:00,[],643419120,398,closed,[foxy backport] Handle RMW_DEFAULT_DOMAIN_ID. (#394),https://api.github.com/repos/ros2/rmw_fastrtps/issues/398,,0,159620.0
+67,,2020-06-22 17:27:44,[],643244717,397,closed,Finalize init options in context.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/397,,1,252238.0
+68,,2020-06-22 15:17:00,[],643155608,396,closed,Finalize context if and only if it's shutdown.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/396,,2,87195.0
+69,,2020-06-19 21:43:46,"[Label(name=""enhancement""), Label(name=""help wanted"")]",642231824,395,open,Add support to message lost event status,https://api.github.com/repos/ros2/rmw_fastrtps/issues/395,,1,
+70,,2020-06-19 20:24:28,[],642201410,394,closed,Handle RMW_DEFAULT_DOMAIN_ID.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/394,,1,240222.0
+71,,2020-05-28 22:12:55,[],626849331,393,closed,Do not compile assert death tests in Release builds.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/393,,1,1201.0
+72,,2020-05-28 13:51:47,[],626526114,392,open,Improve service discovery,https://api.github.com/repos/ros2/rmw_fastrtps/issues/392,,19,
+73,,2020-05-27 14:25:10,[],625743340,391,closed,WARNING: ThreadSanitizer: data race,https://api.github.com/repos/ros2/rmw_fastrtps/issues/391,,4,232094.0
+74,,2020-05-24 17:14:59,[],623905880,390,closed,Make service wait for response reader,https://api.github.com/repos/ros2/rmw_fastrtps/issues/390,,38,2080533.0
+75,,2020-05-22 19:07:41,[],623426904,389,closed,QD Security Vulnerability Declaration: REP 2006,https://api.github.com/repos/ros2/rmw_fastrtps/issues/389,,0,610963.0
+76,,2020-05-18 19:35:38,[],620455715,388,closed,Add test coverage for name mangling and namespacing-specific API.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/388,,7,758201.0
+77,,2020-05-18 17:45:53,[],620391339,387,closed,Add test coverage for GUID utilities.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/387,,4,188985.0
+78,,2020-05-18 17:11:36,[],620371190,386,closed,Drop unused TopicCache sources.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/386,,2,12977.0
+79,,2020-05-18 17:04:00,[],620366787,385,closed,Add test coverage for rmw_init_options API.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/385,,7,8273.0
+80,,2020-05-15 17:44:16,"[Label(name=""backlog""), Label(name=""bug"")]",619138006,384,closed,No callback when AUTOMATIC liveliness is lost,https://api.github.com/repos/ros2/rmw_fastrtps/issues/384,,18,5368478.0
+81,,2020-05-12 21:57:15,[],616988095,383,closed,Update QDs for 1.0,https://api.github.com/repos/ros2/rmw_fastrtps/issues/383,,0,10743.0
+82,,2020-05-12 19:36:40,"[Label(name=""backlog""), Label(name=""enhancement""), Label(name=""help wanted"")]",616908371,382,open,rmw_fastrtps_dynamic_cpp shouldn't require rosidl_typesupport_fastrtps_*,https://api.github.com/repos/ros2/rmw_fastrtps/issues/382,,2,
+83,,2020-05-12 18:43:52,"[Label(name=""in review"")]",616876648,381,closed,Fix single rmw build for rmw_fastrtps_dynamic_cpp,https://api.github.com/repos/ros2/rmw_fastrtps/issues/381,,1,2566.0
+84,,2020-05-08 20:15:47,[],614963099,380,closed,Update quality declarations on feature testing.,https://api.github.com/repos/ros2/rmw_fastrtps/issues/380,,0,256313.0
+85,,2020-05-07 16:10:05,"[Label(name=""in review"")]",614176675,379,closed,Remove MANUAL_BY_NODE liveliness API,https://api.github.com/repos/ros2/rmw_fastrtps/issues/379,,0,438080.0
+86,,2020-05-04 19:53:31,[],612127129,378,closed,Fill service_info timestamps from sample_info,https://api.github.com/repos/ros2/rmw_fastrtps/issues/378,,0,60893.0
+87,,2020-04-30 18:36:42,[],610299503,377,closed,Fix unused variabled warning,https://api.github.com/repos/ros2/rmw_fastrtps/issues/377,,1,2937.0
+88,,2020-04-28 08:51:10,"[Label(name=""enhancement""), Label(name=""ready"")]",608139837,376,closed,Fixed rmw_fastrtps_dynamic_cpp package description,https://api.github.com/repos/ros2/rmw_fastrtps/issues/376,,1,31533.0
+89,,2020-04-28 01:53:00,[],607964597,375,closed,Add package READMEs and QUALITY_DECLARATION files,https://api.github.com/repos/ros2/rmw_fastrtps/issues/375,,0,152992.0
+90,,2020-04-27 00:51:34,[],607159211,374,closed,add missing export of rmw_dds_common,https://api.github.com/repos/ros2/rmw_fastrtps/issues/374,,0,59571.0
+91,,2020-04-24 13:30:03,[],606315190,373,closed,Rename rosidl_message_bounds_t,https://api.github.com/repos/ros2/rmw_fastrtps/issues/373,,1,26782.0
+92,,2020-04-23 14:34:06,"[Label(name=""documentation""), Label(name=""enhancement"")]",605590734,372,closed,Added doxyfiles,https://api.github.com/repos/ros2/rmw_fastrtps/issues/372,,1,512961.0
