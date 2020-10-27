@@ -73,17 +73,50 @@ latency versus message size in figures 1.2.3, 1.2.4, and 1.2.5 respectively.
 
 ### 1.2.1 CPU Utilization in a Spinning Node By RMW
 
+![Build Farm CPU Consumption](./galactic/plots/BuildFarmRMWCPUConsumption.png )
+
 ### 1.2.2 Memory Utilization in a Spinning Node By RMW 
 
 ![Build Farm Memory
 Consumption](./galactic/plots/BuildFarmRMWMemoryConsumption.png)
 
 
+### 1.2.3: Subscriber CPU Utilization, Latency, and Lost Messages  By Message Type and RMW 
+![Build Farm performance by message type](./galactic/plots/PerfTestVsMsgSize.png)
+
+
 ## 1.3 Build Farm Test Discussion
 
 The results between two the RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU utilization and memory there the Cyclone RMW performed slightly better in terms of both memory and CPU performance. The memory advantage of Cyclone was not born out by plot in 1.2.3 where FastRTPS RMW seems to outperform for all message times. In terms of message latency and message both vendors appear to perform well up until approximately the 1mb message size. For messages greater than ~1Mb Cyclone RMW has better results with lower latency and the number of messages sent. 
 
+# 3. Github Engagement Statistics 
 
+## 3.1 Overview and Statistics 
+
+Responsiveness to issues and pull requests in a Github repository is a good
+proxy measurement for how quickly a given vendor responds to their customer and
+users. The number of pull requests, and how quickly they are closed also give an
+indication to how much development is taking place on a given code base and how
+quickly issues are being resolved. To examine the responsiveness and development
+velocity of both RMW vendors we used the github API to collect commit, pull
+request, and issue data for the 180 days before the report was drafted on
+10/17/2020. The process of collecting this data was divided into two part, data
+collection which can be found in [this
+notebook](./galactic/GetGitRMWDDSMetrics.ipynb), and data analysis which can be [found here](./galactic/PlotGithubStats.ipynb). 
+
+## 3.2 Github Engagement Results 
+
+### 3.2.1 Open and Closed Pull Requests in the Previous Six Months 
+
+![Open and closed pull requests and issues](./galactic/plots/BuildFarmRMWCPUConsumption.png )
+
+### 3.2.2 Cumulative Time to Close Pull Requests and Issues
+
+![Time to close pull requests and issues](./galactic/plots/IssueAndPRTurnAround.png)
+
+# 3.3 Github Metrics Discussion 
+
+Generally, for the six month period sampled, both vendors are doing a great job responding to both issues and pull requests. In terms of RMW layers the vendors have only small differences, with Fast being slightly faster closing issues and tickets for their RMW layer. Fast DDS also appears to be under heavier development with almost three times the number of pull requests during the previous six months. It is unclear if this is caused by an increased number of ROS users, increased feature deployment, or addressing bugs and issues.
 
 # 4. Code Quality Metrics
 
