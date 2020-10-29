@@ -85,6 +85,23 @@ Consumption](./galactic/plots/BuildFarmRMWMemoryConsumption.png)
 ![Build Farm performance by message type](./galactic/plots/PerfTestVsMsgSize.png)
 
 
+
+# 2. Mininet Experiments
+
+## 2.1 
+
+## 2.2
+
+### 2.2.1 Experiments with Lost Packets or Latency at 54Mbs Bandwidth 
+![Build Farm performance by message type](./galactic/plots/PoorPerformersBW54.png)
+
+### 2.2.2 Experiments with Lost Packets or Latency at 300Mbs Bandwidth 
+![Build Farm performance by message type](./galactic/plots/PoorPerformersBW300.png)
+
+### 2.2.3 Experiments with Lost Packets or Latency at 1000Mbs Bandwidth 
+![Build Farm performance by message
+type](./galactic/plots/PoorPerformersBW1000.png)
+
 ## 1.3 Build Farm Test Discussion
 
 The results between two the RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU utilization and memory there the Cyclone RMW performed slightly better in terms of both memory and CPU performance. The memory advantage of Cyclone was not born out by plot in 1.2.3 where FastRTPS RMW seems to outperform for all message times. In terms of message latency and message both vendors appear to perform well up until approximately the 1mb message size. For messages greater than ~1Mb Cyclone RMW has better results with lower latency and the number of messages sent. 
