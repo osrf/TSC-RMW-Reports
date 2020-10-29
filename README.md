@@ -10,15 +10,12 @@
 1. [Executive Summary](#ExecutiveSummary)
 2. [Build Farm Performance Metrics](#BuildFarm)
 3. [Mininet Simulation Results](#Mininet)
-4. [REP-2004 Code Quality Metrics Table](#CodeQuality)
+4. [REP-2004 Code Quality Metrics](#CodeQuality)
 5. [GitHub User Statistics](#GithubStats)
 6. [User Survey Results](#Survey)
-7. [Discussion](#Discussion)
-8. [Appendix A: Additional Build Farm Plots](#AppendixB)
-9. [Appendix B: Additional Mininet Results](#AppendixA)
 
 
-# Introduction <a id="Introduction"></a>
+# <a id="Introduction"></a> Introduction
 
 This report is intended to serve as a guide for the selection of the default ROS middleware (RMW) implementation for the ROS 2 Galactic Galapagos release. This report is intended to provide information about the Tier 1 RMW/DDS implementations along two broad axes of evaluation: application performance and community engagement. This report is intended to be purely informational and non-prescriptive; meaning this report does not make a recommendation for the default middleware.  Instead, it is an attempt to present objective data about the default RMW candidates in a neutral and factual manner. The final default ROS 2 Galactic middleware implementation will be selected by the ROS 2 Technical Steering Committee (TSC) after evaluation by both the ROS 2 Middleware Working Group and the TSC.
 
@@ -38,7 +35,7 @@ Where possible we will provide the underlying data and source code for both expe
 # <a id="ExecutiveSummary"></a> Executive Summary
 
 
-# 1. Build Farm Performance Data
+# <a id="BuildFarm"></a> 1. Build Farm Performance Metrics
 
 ## 1.1 Overview and Description
 
@@ -88,7 +85,7 @@ Consumption](./galactic/plots/BuildFarmRMWMemoryConsumption.png)
 The results between two the RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU utilization and memory there the Cyclone RMW performed slightly better in terms of both memory and CPU performance. The memory advantage of Cyclone was not born out by plot in 1.2.3 where FastRTPS RMW seems to outperform for all message times. In terms of message latency and message both vendors appear to perform well up until approximately the 1mb message size. For messages greater than ~1Mb Cyclone RMW has better results with lower latency and the number of messages sent.
 
 
-# 2. Mininet Experiments
+# <a id="Mininet"></a> 2. Mininet Simulation Results
 
 ## 2.1
 
@@ -105,7 +102,7 @@ The results between two the RMW implementations were reasonably close, particula
 type](./galactic/plots/PoorPerformersBW1000.png)
 
 
-# 3. Github Engagement Statistics
+# <a id="GithubStats"></a> 3. GitHub User Statistics
 
 ## 3.1 Overview and Statistics
 
@@ -134,7 +131,7 @@ notebook](./galactic/GetGitRMWDDSMetrics.ipynb), and data analysis which can be 
 
 Generally, for the six month period sampled, both vendors are doing a great job responding to both issues and pull requests. In terms of RMW layers the vendors have only small differences, with Fast being slightly faster closing issues and tickets for their RMW layer. Fast DDS also appears to be under heavier development with almost three times the number of pull requests during the previous six months. It is unclear if this is caused by an increased number of ROS users, increased feature deployment, or addressing bugs and issues.
 
-# 4. Code Quality Metrics
+# <a id="CodeQuality"></a> 4. REP-2004 Code Quality Metrics
 
 ## 4.1 Overview and Description
 
@@ -160,7 +157,7 @@ Code quality is an important metric for project health.  ROS 2 has defined vario
 
 rmw_cyclonedds_cpp is missing a quality declaration making it difficult to perform an apples to apples comparison between the two. Under most of the categories for the parts that are documented each implementation are comparable. Despite this there is an appreciable difference as CycloneDDS is currently declared as quality level 3, and FastRTPS is rated as quality level 2.
 
-# Section 5: Community
+# <a id="Survey"></a> 5.  User Survey Results
 
 ## 5.1 Overview and Description
 
