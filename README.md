@@ -60,7 +60,7 @@ post processed data can be found in the [buildfarm subdirectory](https://github.
 ## 1.2 Build Farm Test Results
 
 
-The first set of data collected involved running a single, perpetually spinning ROS node a short time and collecting the peak, mean, and median, CPU and memory utilization statistics. The figures below summarize the results for both the Cyclone RMW and FastRTPS RMW in the asynchronous configuration. Full plots of all the RMW variants and configurations are available in Appendix A. The data for these plots was collected on October 14th 2020 as indicated by this build farm log. The full data set can be downloaded using this link. Summarized csv files of the data will be provided in the final report.  Figure 1.2.1 provides the CPU performance while Figure 1.2.2 provides the memory performance including virtual, resident, and physical memory allocation. Links to the source code for this test along with the analysis are available in the appendix. 
+The first set of data collected involved running a single, perpetually spinning ROS node a short time and collecting the peak, mean, and median, CPU and memory utilization statistics. The figures below summarize the results for both the Cyclone RMW and FastRTPS RMW in the asynchronous configuration. Full plots of all the RMW variants and configurations are available in Appendix A. The data for these plots was collected on October 14th 2020 as indicated by this build farm log. The full data set can be downloaded using this link. Summarized csv files of the data will be provided in the final report.  Figure 1.2.1 provides the CPU performance while Figure 1.2.2 provides the memory performance including virtual, resident, and physical memory allocation. Links to the source code for this test along with the analysis are available in the appendix.
 
 A second bevy of tests were run using a single publisher and a single subscriber
 communicating across a host machine while varying both the underlying RMW as
@@ -80,10 +80,12 @@ latency versus message size in figures 1.2.3, 1.2.4, and 1.2.5 respectively.
 ![Build Farm Memory
 Consumption](./galactic/plots/BuildFarmRMWMemoryConsumption.png)
 
-
 ### 1.2.3: Subscriber CPU Utilization, Latency, and Lost Messages  By Message Type and RMW 
 ![Build Farm performance by message type](./galactic/plots/PerfTestVsMsgSize.png)
 
+## 1.3 Build Farm Test Discussion
+
+The results between two the RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU utilization and memory there the Cyclone RMW performed slightly better in terms of both memory and CPU performance. The memory advantage of Cyclone was not born out by plot in 1.2.3 where FastRTPS RMW seems to outperform for all message times. In terms of message latency and message both vendors appear to perform well up until approximately the 1mb message size. For messages greater than ~1Mb Cyclone RMW has better results with lower latency and the number of messages sent.
 
 
 # 2. Mininet Experiments
@@ -102,9 +104,6 @@ Consumption](./galactic/plots/BuildFarmRMWMemoryConsumption.png)
 ![Build Farm performance by message
 type](./galactic/plots/PoorPerformersBW1000.png)
 
-## 1.3 Build Farm Test Discussion
-
-The results between two the RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU utilization and memory there the Cyclone RMW performed slightly better in terms of both memory and CPU performance. The memory advantage of Cyclone was not born out by plot in 1.2.3 where FastRTPS RMW seems to outperform for all message times. In terms of message latency and message both vendors appear to perform well up until approximately the 1mb message size. For messages greater than ~1Mb Cyclone RMW has better results with lower latency and the number of messages sent. 
 
 # 3. Github Engagement Statistics 
 
