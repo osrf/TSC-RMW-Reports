@@ -68,7 +68,7 @@ well as the message size. The publisher and subscriber were instrumented to
 collect both system performance metrics and transmission metrics. We have
 selected a few illustrative examples from the set to share including subscriber
 CPU versus message size, messages received versus message size, and message
-latency versus message size in figures 1.2.3, 1.2.4, and 1.2.5 respectively. 
+latency versus message size in figures 1.2.3, 1.2.4, and 1.2.5 respectively.
 
 
 ### 1.2.1 CPU Utilization in a Spinning Node By RMW
@@ -125,7 +125,7 @@ notebook](./galactic/GetGitRMWDDSMetrics.ipynb), and data analysis which can be 
 
 ### 3.2.1 Open and Closed Pull Requests in the Previous Six Months 
 
-![Open and closed pull requests and issues](./galactic/plots/BuildFarmRMWCPUConsumption.png )
+![Open and closed pull requests and issues](./galactic/plots/PullRequestsAndIssues.png )
 
 ### 3.2.2 Cumulative Time to Close Pull Requests and Issues
 
