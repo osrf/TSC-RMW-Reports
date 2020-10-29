@@ -11,7 +11,7 @@
 2. [Build Farm Performance Metrics](#BuildFarm)
 3. [Mininet Simulation Results](#Mininet)
 N. [WiFi Results](#WiFi)
-4. [REP-2004 Code Quality Metrics Table](#CodeQuality)
+4. [REP-2004 Code Quality Metrics](#CodeQuality)
 5. [GitHub User Statistics](#GithubStats)
 6. [User Survey Results](#Survey)
 
@@ -34,7 +34,7 @@ In collecting these datasets we made our best effort to use the most recent vers
 Where possible we will provide the underlying data and source code for both experimentation and analysis. This process is intended to be repeated for each subsequent ROS 2 release and our hope is that it can become more automated and also serve as a community resource for selecting the best RMW for each user’s specific needs.
 
 
-# Executive Summary <a id="ExecutiveSummary"></a>
+# <a id="ExecutiveSummary"></a> Executive Summary
 
 
 # <a id="BuildFarm"></a> 1. Build Farm Performance Metrics
