@@ -160,7 +160,7 @@ Code quality is an important metric for project health.  ROS 2 has defined vario
 
 rmw_cyclonedds_cpp is missing a quality declaration making it difficult to perform and apples to apples comparison between the two. Under most of the categories for the parts that are documented each implementation are comparable. Despite this there is an appreciable difference as CycloneDDS is currently declared as quality level 3, and FastRTPS is rated as quality level 2.
 
-# Section 5: Community Five
+# Section 5: Community
 
 ## 5.1 Overview and Description
 
