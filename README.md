@@ -135,7 +135,7 @@ We should add this, but it still does not address the issue of which settings to
 
 ### 2.1.5 Performance and Behavior Differences
 
-In this subsection, we will motivate why this setting matters so much and should be considered when comparing the "out-of-the-box" behavior of `rmw_fastrtps_cpp` and `rmw_cyclonedds_cpp`, and why we should be care when considering switching the default setting for users.
+In this subsection, we will motivate why this setting matters so much and should be considered when comparing the "out-of-the-box" behavior of `rmw_fastrtps_cpp` and `rmw_cyclonedds_cpp`, and why we should be careful when considering switching the default setting for users.
 
 #### 2.1.5.1 Impact on Performance
 
@@ -145,7 +145,7 @@ This report doesn't have very good data supporting this point, but one of the pu
 
 [https://fast-dds.docs.eprosima.com/en/v1.8.1/advanced.html#sending-large-data](https://fast-dds.docs.eprosima.com/en/v1.8.1/advanced.html#sending-large-data)
 
-Also this graph from the build farm's performance dataset show how CPU utilization falls off for very large messages, even though messaged received is lower than synchronous in this example:
+Also this graph from the build farm's performance dataset show how CPU utilization falls off for very large messages, even though messages received is lower than synchronous in this example:
 
 ![Build Farm performance by message type](./galactic/plots/PerfTestVsMsgSize.png)
 
@@ -295,7 +295,7 @@ Now consider these two series of plots between `rmw_fastrtps_cpp async` and `rmw
 Notice in the async case that the publish rate almost achieves the desired 30Hz, whereas the publish rate for sync is clamped to the capacity of the network almost immediately.
 The publish rate for async is quite noisy, which is something we could investigate further, but the average is quite close the desired goal.
 
-This is can be a very serious issue if the user's code is designed under the assumption that publishing is always relatively quick, which is a likely assumption for ROS 1 users (ROS 1 behaved most similarly to asynchronous publishing in ROS 2) or for users thinking that "keep last" will just replace messages in the history cache if there's a backlog.
+This can be a very serious issue if the user's code is designed under the assumption that publishing is always relatively quick, which is a likely assumption for ROS 1 users (ROS 1 behaved most similarly to asynchronous publishing in ROS 2) or for users thinking that "keep last" will just replace messages in the history cache if there's a backlog.
 We can document this behavior, but the impact is quite subtle and could lead to hard to diagnose problems in user's applications.
 
 This example was intended to demonstrate why it is important to be cautious when changing this behavior for all users.
