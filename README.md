@@ -1,26 +1,26 @@
-# 2020 ROS Middleware Evaluation Report DRAFT
+# 2020 ROS Middleware Evaluation Report
 
-###  October 21st, 2020
+###  November 5, 2020
 
 ### Prepared by: Katherine Scott, William Woodall, Chris Lalancette, Dirk Thomas
 
 # Index
 
-0. [Introduction](#Introduction)
-1. [Executive Summary](#ExecutiveSummary)
-2. [Build Farm Performance Metrics](#BuildFarm)
-3. [Mininet Simulation Results](#Mininet)
-N. [WiFi Results](#WiFi)
-4. [REP-2004 Code Quality Metrics](#CodeQuality)
-5. [GitHub User Statistics](#GithubStats)
-6. [User Survey Results](#Survey)
+* [Introduction](#Introduction)
+* [Executive Summary](#ExecutiveSummary)
+* [Build Farm Performance Metrics](#BuildFarm)
+* [Mininet Simulation Results](#Mininet)
+* [WiFi Results](#WiFi)
+* [REP-2004 Code Quality Metrics](#CodeQuality)
+* [GitHub User Statistics](#GithubStats)
+* [User Survey Results](#Survey)
 
 
 # <a id="Introduction"></a> Introduction
 
 This report is intended to serve as a guide for the selection of the default ROS middleware (RMW) implementation for the ROS 2 Galactic Galapagos release. This report is intended to provide information about the Tier 1 RMW/DDS implementations along two broad axes of evaluation: application performance and community engagement. This report is intended to be purely informational and non-prescriptive; meaning this report does not make a recommendation for the default middleware.  Instead, it is an attempt to present objective data about the default RMW candidates in a neutral and factual manner. The final default ROS 2 Galactic middleware implementation will be selected by the ROS 2 Technical Steering Committee (TSC) after evaluation by both the ROS 2 Middleware Working Group and the TSC.
 
-This report evaluates two Data Distribution Service (DDS) implementations along with their RMW implementations for ROS 2 Foxy, namely Cyclone RMW and FastRTPS RMW. These two Tier 1 ROS 2 RMW implementations along with the underlying DDS implementations are evaluated along two broad rubrics: application performance, as in the overall computational performance of the RMW, and community engagement, or how the RMW’s users perceived the utility of the RMW for their application. These two broad categories of evaluation are supported by the analysis of five recently collected datasets. The datasets collected and how they were analyzed are summarized below:
+This report evaluates two Data Distribution Service (DDS) implementations along with their RMW implementations for ROS 2 Foxy, namely Cyclone RMW and FastRTPS RMW. These two Tier 1 ROS 2 RMW implementations along with the underlying DDS implementations are evaluated along two broad rubrics: application performance, as in the overall computational performance of the RMW, and community engagement, or how the RMW’s users perceived the utility of the RMW for their application. These two broad categories of evaluation are supported by the analysis of some recently collected datasets. The datasets collected and how they were analyzed are summarized below:
 
 1. Build Farm Performance Data -- this dataset covers basic RMW performance in terms of memory, cpu utilization, and interoperability between RMWs using a simplified network under optimal conditions
 2. Mininet Performance Data -- this data set is an initial attempt to evaluate RMW performance under simulated real-world conditions. It attempts to understand what conditions cause each RMW to fail.
@@ -299,7 +299,7 @@ We can document this behavior, but the impact is quite subtle and could lead to 
 
 This example was intended to demonstrate why it is important to be cautious when changing this behavior for all users.
 
-## 2.2
+## 2.2 Mininet test results
 
 ### 2.2.1 Experiments with Lost Packets or Latency at 54Mbs Bandwidth
 
@@ -313,7 +313,7 @@ This example was intended to demonstrate why it is important to be cautious when
 
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW1000.png)
 
-# N. WiFi Results
+# 3. WiFi Results
 
 * Description of the test setup
 * Invoked command lines
@@ -322,9 +322,9 @@ This example was intended to demonstrate why it is important to be cautious when
 * Summarize the results
 
 
-# <a id="GithubStats"></a> 3. GitHub User Statistics
+# <a id="GithubStats"></a> 4. GitHub User Statistics
 
-## 3.1 Overview and Statistics
+## 4.1 Overview and Statistics
 
 Responsiveness to issues and pull requests in a Github repository is a good
 proxy measurement for how quickly a given vendor responds to their customer and
@@ -339,27 +339,27 @@ request, and issue data for the 180 days before the report was drafted on
 collection which can be found in [this
 notebook](./galactic/GetGitRMWDDSMetrics.ipynb), and data analysis which can be [found here](./galactic/PlotGithubStats.ipynb).
 
-## 3.2 Github Engagement Results
+## 4.2 Github Engagement Results
 
-### 3.2.1 Open and Closed Pull Requests in the Previous Six Months
+### 4.2.1 Open and Closed Pull Requests in the Previous Six Months
 
 ![Open and closed pull requests and issues](./galactic/plots/PullRequestsAndIssues.png )
 
-### 3.2.2 Cumulative Time to Close Pull Requests and Issues
+### 4.2.2 Cumulative Time to Close Pull Requests and Issues
 
 ![Time to close pull requests and issues](./galactic/plots/IssueAndPRTurnAround.png)
 
-# 3.3 Github Metrics Discussion
+# 4.3 Github Metrics Discussion
 
 Generally, for the six month period sampled, both vendors are doing a great job responding to both issues and pull requests. In terms of RMW layers the vendors have only small differences, with Fast being slightly faster closing issues and tickets for their RMW layer. Fast DDS also appears to be under heavier development with almost three times the number of pull requests during the previous six months. It is unclear if this is caused by an increased number of ROS users, increased feature deployment, or addressing bugs and issues.
 
-# <a id="CodeQuality"></a> 4. REP-2004 Code Quality Metrics
+# <a id="CodeQuality"></a> 5. REP-2004 Code Quality Metrics
 
-## 4.1 Overview and Description
+## 5.1 Overview and Description
 
 Code quality is an important metric for project health.  ROS 2 has defined various levels of package quality in [REP-2004](https://ros.org/reps/rep-2004.html).  Declaring a package to be in one of those quality levels means that it meets all of the requirements for that particular quality level.  The quality level of each of the middlewares and their RMW implementation is summarized below.  For more details, the reader is encouraged to look at the corresponding source repository for each middleware or RMW, where the quality level is declared in a file named QUALITY_DECLARATION.md or similar.
 
-## 4.2 Results
+## 5.2 Results
 
 | Package/Quality Metric | [cyclonedds](https://github.com/ros2/rmw_cyclonedds/blob/3fa62f4f8fa9b3cc624879e9c085ad19aa9c1977/CYCLONEDDS_QUALITY_DECLARATION.md) | cyclonedds RMW | [FastRTPS](https://github.com/eProsima/Fast-DDS/blob/08100416cd82950cafd37ce8b34c3a0cc02b3ba2/QUALITY.md) | [FastRTPS RMW](https://github.com/ros2/rmw_fastrtps/blob/4e0fce977c993f840b013c444d603842fb39ad64/rmw_fastrtps_cpp/QUALITY_DECLARATION.md) |
 | ---------------------- | ---------- | -------------- | -------- | ------------ |
@@ -375,19 +375,19 @@ Code quality is an important metric for project health.  ROS 2 has defined vario
 
 \* OpenSSL dependency for Fast-RTPS is optional, but used in ROS 2.
 
-## 4.3 Discussion
+## 5.3 Discussion
 
 rmw_cyclonedds_cpp is missing a quality declaration making it difficult to perform an apples to apples comparison between the two. Under most of the categories for the parts that are documented each implementation are comparable. Despite this there is an appreciable difference as CycloneDDS is currently declared as quality level 3, and FastRTPS is rated as quality level 2.
 
-# <a id="Survey"></a> 5.  User Survey Results
+# <a id="Survey"></a> 6.  User Survey Results
 
-## 5.1 Overview and Description
+## 6.1 Overview and Description
 
 The final component of this document is a user survey on ROS user’s feelings about their selected RMW implementation conducted between September 17th and October 16th 2020. The survey was posted to ROS Discourse and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience. In conjunction with this evaluation data we also asked participants to provide basic demographic data and perform a self assessment of their skills. In total there 96 responses with 31 users reporting that they use Cyclone RMW and 60 users reporting they use FastRTPS RMW. All of the respondents were ROS 2 users with nearly three quarters of them presently working with ROS 2 Foxy. The users sampled come from a wide variety of backgrounds, industries and work on a variety of different projects.
 
 In the following section we summarize the data and where possible provide the descriptive statistics for both RMWs as well for the ROS community. Section 5.1.1 summarizes the questions given to participants that are referenced by the plots in 5.2. There is summary of the results in 5.3 with a selection of user narrative responses included in section 5.4
 
-## 5.1.1 Survey Question Summary
+## 6.1.1 Survey Question Summary
 
 Survey participants were asked a total of nineteen questions related to their
 RMW experience, which each of the questions listed below along with a question
@@ -419,33 +419,33 @@ results.
 - Q17: ROS should continue to use DDS as the default RMW implementation.
 - Q18: I consider my current RMW implementation robust, reliable, and ready for production.
 
-## 5.2 RMW User Survey Results
+## 6.2 RMW User Survey Results
 
-### 5.2.1 Survey Participant Demographic Information
+### 6.2.1 Survey Participant Demographic Information
 
 ![Survey Demographic Information by RMW](./galactic/plots/SurveyCohorts.png)
 
-### 5.2.2 Survey Participant Skill Self Assesment
+### 6.2.2 Survey Participant Skill Self Assesment
 
 ![Survey participant skill self assesment](./galactic/plots/SurveySkillReport.png)
 
 
-### 5.2.3 Survey Response Data by RMW
+### 6.2.3 Survey Response Data by RMW
 
 ![Survey Question Response Data](./galactic/plots/SurveyResponses.png)
 
 
-### 5.2.4 Survey Question Drill Down 1
+### 6.2.4 Survey Question Drill Down 1
 
 ![Survey Drill Down 1](./galactic/plots/SurveyDrillDown1.png)
 
 
-### 5.2.5 Survey Question Drill Down 2
+### 6.2.5 Survey Question Drill Down 2
 
 ![Survey Drill Down 1](./galactic/plots/SurveyDrillDown2.png)
 
 
-## 5.3 Survey Discussion
+## 6.3 Survey Discussion
 
 We feel that we were able to collect a large and representative sample of the ROS community for this survey with a sufficient number of users for each RMW included in the final report. The respondents to the survey represent a wide swath of ROS 2 users with the preponderance of responses coming from ROS 2 Foxy Fitzroy users. These respondents reported a wide range of skill levels and varying degrees of competency in debugging, networking, and ROS development skills. What is remarkable about the responses is how uniform they were on most questions relating to their selected RMW vendor. The difference between most of the responses varies by no more than 5% for most of the questions.
 
@@ -456,12 +456,12 @@ Question eleven, “I am considering changing or have changed my RMW due to tech
 
 All in all, Cyclone RMW rated more favorably among its users, but only very slightly so.
 
-## 5.4 Survey Narrative Responses
+## 6.4 Survey Narrative Responses
 
 We provided a space in the user survey for respondents to communicate their feelings about their preferred middleware to the TSC, While not a formal evaluation, the experience of individuals is worth considering given our limited testing capabilities. The full list of responses will be provided to the TSC if requested. We have included a few of these excerpts in this document to capture the spirit of all the responses.
 
 
-### 5.4.1 Cyclone User Responses
+### 6.4.1 Cyclone User Responses
 
 ```
 “CycloneDDS has been more consistent with outputting the expected
