@@ -1,8 +1,8 @@
 # Comparing RMW Implementations Across Bandwidths and Packet Losses
 
-Comparison is between the rmw implementations rmw_cyclonedds_cpp sync, rmw_fastrtps_cpp async, and rmw_fastrtps_cpp sync, and is
+Comparison is between the rmw implementations rmw_fastrtps_cpp sync, rmw_fastrtps_cpp async, and rmw_cyclonedds_cpp sync, and is
 varied across bandwidth limits (1000, 300, and 54) and message type/rate
-combinations (PointCloud512k@30 and Array1k@30).
+combinations (Array1k@30 and PointCloud512k@30).
 
 Data was collected using the `run_experiments.py` script, and uses [mininet](http://mininet.org/)
 to simulate adverse network conditions, potentially varying the bandwidth limit, packet loss,
@@ -24,7 +24,7 @@ The specific details for this experiment are as follows:
 - Separate Processes
 - Single Machine
 - Number of Runs Averaged: 10
-- RMW Implementation: rmw_cyclonedds_cpp sync/rmw_fastrtps_cpp async/rmw_fastrtps_cpp sync
+- RMW Implementation: rmw_fastrtps_cpp sync/rmw_fastrtps_cpp async/rmw_cyclonedds_cpp sync
 - Message Type: Array1k
 - Message Rate: 30
 - Reliability QoS: reliable
@@ -41,21 +41,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/resource.png)
 
 #### rmw_fastrtps_cpp async
 
@@ -63,21 +83,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/resource.png)
 
 #### rmw_fastrtps_cpp sync
 
@@ -85,21 +125,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/resource.png)
 
 ### Comparison Publishing PointCloud512k@30
 
@@ -110,7 +170,7 @@ The specific details for this experiment are as follows:
 - Separate Processes
 - Single Machine
 - Number of Runs Averaged: 10
-- RMW Implementation: rmw_cyclonedds_cpp sync/rmw_fastrtps_cpp async/rmw_fastrtps_cpp sync
+- RMW Implementation: rmw_fastrtps_cpp sync/rmw_fastrtps_cpp async/rmw_cyclonedds_cpp sync
 - Message Type: PointCloud512k
 - Message Rate: 30
 - Reliability QoS: reliable
@@ -127,21 +187,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/resource.png)
 
 #### rmw_fastrtps_cpp async
 
@@ -149,21 +229,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/resource.png)
 
 #### rmw_fastrtps_cpp sync
 
@@ -171,21 +271,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/resource.png)
 
 ## Comparisons with Bandwidth Limited to 300Mbps
 
@@ -198,7 +318,7 @@ The specific details for this experiment are as follows:
 - Separate Processes
 - Single Machine
 - Number of Runs Averaged: 10
-- RMW Implementation: rmw_cyclonedds_cpp sync/rmw_fastrtps_cpp async/rmw_fastrtps_cpp sync
+- RMW Implementation: rmw_fastrtps_cpp sync/rmw_fastrtps_cpp async/rmw_cyclonedds_cpp sync
 - Message Type: Array1k
 - Message Rate: 30
 - Reliability QoS: reliable
@@ -215,21 +335,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/resource.png)
 
 #### rmw_fastrtps_cpp async
 
@@ -237,21 +377,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/resource.png)
 
 #### rmw_fastrtps_cpp sync
 
@@ -259,21 +419,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/resource.png)
 
 ### Comparison Publishing PointCloud512k@30
 
@@ -284,7 +464,7 @@ The specific details for this experiment are as follows:
 - Separate Processes
 - Single Machine
 - Number of Runs Averaged: 10
-- RMW Implementation: rmw_cyclonedds_cpp sync/rmw_fastrtps_cpp async/rmw_fastrtps_cpp sync
+- RMW Implementation: rmw_fastrtps_cpp sync/rmw_fastrtps_cpp async/rmw_cyclonedds_cpp sync
 - Message Type: PointCloud512k
 - Message Rate: 30
 - Reliability QoS: reliable
@@ -301,21 +481,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/resource.png)
 
 #### rmw_fastrtps_cpp async
 
@@ -323,21 +523,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/resource.png)
 
 #### rmw_fastrtps_cpp sync
 
@@ -345,21 +565,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_300bw_40loss_0delay/resource.png)
 
 ## Comparisons with Bandwidth Limited to 1000Mbps
 
@@ -372,7 +612,7 @@ The specific details for this experiment are as follows:
 - Separate Processes
 - Single Machine
 - Number of Runs Averaged: 10
-- RMW Implementation: rmw_cyclonedds_cpp sync/rmw_fastrtps_cpp async/rmw_fastrtps_cpp sync
+- RMW Implementation: rmw_fastrtps_cpp sync/rmw_fastrtps_cpp async/rmw_cyclonedds_cpp sync
 - Message Type: Array1k
 - Message Rate: 30
 - Reliability QoS: reliable
@@ -389,21 +629,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/resource.png)
 
 #### rmw_fastrtps_cpp async
 
@@ -411,21 +671,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_Array1k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/resource.png)
 
 #### rmw_fastrtps_cpp sync
 
@@ -433,21 +713,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_Array1k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/resource.png)
 
 ### Comparison Publishing PointCloud512k@30
 
@@ -458,7 +758,7 @@ The specific details for this experiment are as follows:
 - Separate Processes
 - Single Machine
 - Number of Runs Averaged: 10
-- RMW Implementation: rmw_cyclonedds_cpp sync/rmw_fastrtps_cpp async/rmw_fastrtps_cpp sync
+- RMW Implementation: rmw_fastrtps_cpp sync/rmw_fastrtps_cpp async/rmw_cyclonedds_cpp sync
 - Message Type: PointCloud512k
 - Message Rate: 30
 - Reliability QoS: reliable
@@ -475,21 +775,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/average_latency.png)
+
+![](rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/resource.png)
 
 #### rmw_fastrtps_cpp async
 
@@ -497,21 +817,41 @@ The specific details for this experiment are as follows:
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/resource.png)
 
 #### rmw_fastrtps_cpp sync
 
@@ -519,19 +859,39 @@ The specific details for this experiment are as follows:
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_0loss_0delay/resource.png)
+
 ##### Packet Loss: 10%
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_10loss_0delay/resource.png)
 
 ##### Packet Loss: 20%
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_20loss_0delay/resource.png)
+
 ##### Packet Loss: 30%
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/average_sent_received.png)
 
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_30loss_0delay/resource.png)
+
 ##### Packet Loss: 40%
 
 ![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/average_sent_received.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/average_latency.png)
+
+![](rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_1000bw_40loss_0delay/resource.png)
 

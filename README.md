@@ -101,7 +101,7 @@ In this section, we present some details of experiments made using [mininet](htt
 
 The priority of this section and these experiments is to highlight interesting differences in either the rmw implementations or settings that can be changed within those implementations.
 
-See Appendix B for the complete report.
+The full report and data can be found here: [./galactic/mininet_experiments/generated_report/report.md](./galactic/mininet_experiments/generated_report/report.md)
 
 ## 2.1 Synchronous Versus Asynchronous Publishing
 
@@ -159,13 +159,14 @@ Also this graph from the build farm's performance dataset show how CPU utilizati
 It is likely that customization of a flow controller is also required to get the optimal large data performance when used with asynchronous publishing.
 
 Aside from the potential benefits of asynchronous publishing in certain situations, it is clear that comparing synchronous publishing in `rmw_cyclonedds_cpp` with asynchronous publishing in `rmw_fastrtps_cpp` is not a fair comparison.
-The "Messages Recv" part of the graph above demonstrates this as the sync mode for the two implementations are the same curve shape and close, whereas the asynchronous mode diverges from the other two.
+The "Messages Recv" part of the graph above demonstrates this, by showing that the sync mode for the two implementations have the same curve shape and are close in performance, whereas the asynchronous mode diverges from the other two.
 
 #### 2.1.5.2 Impact on Publish Behavior
 
-In a situation where the bandwidth required for publishing exceeds the available bandwidth, in this case limited artificially by mininet, you can observe a difference in publish blocking behavior.
+In a situation where the bandwidth required for publishing exceeds the available bandwidth you can observe a difference in publish blocking behavior.
+We emulate this situation by using mininet to limit the bandwidth artificially.
 
-To illustrate this difference consider this experiment case:
+To illustrate this difference in behavior consider this experiment case:
 
 - a single publisher publishing a "PointCloud512k" at 30Hz to a single subscription in a separate process,
 - using the QoS:
