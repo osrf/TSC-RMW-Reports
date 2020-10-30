@@ -368,14 +368,11 @@ The output of all test runs can be found [here](./galactic/data/wifi).
 
 ## Test results
 
-![Fast-RTPS with 80Hz](./galactic/plots/wifi/f-80.png)
-![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-80.png)
-
-![Fast-RTPS with 100Hz](./galactic/plots/wifi/f-100.png)
-![Cyclone DDS with 100Hz](./galactic/plots/wifi/c-100.png)
-
-![Fast-RTPS with 120Hz](./galactic/plots/wifi/f-120.png)
-![Cyclone DDS with 120Hz](./galactic/plots/wifi/c-120.png)
+| Fast RTPS                                               | Cyclone DDS                                               |
+| -                                                       | -                                                         |
+| ![Fast-RTPS with 80Hz](./galactic/plots/wifi/f-80.png)  | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-80.png)  |
+| ![Fast-RTPS with 80Hz](./galactic/plots/wifi/f-100.png) | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-100.png) |
+| ![Fast-RTPS with 80Hz](./galactic/plots/wifi/f-120.png) | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-120.png) |
 
 ## Test summary
 
