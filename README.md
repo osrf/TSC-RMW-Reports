@@ -10,7 +10,8 @@
 1. [Executive Summary](#ExecutiveSummary)
 2. [Build Farm Performance Metrics](#BuildFarm)
 3. [Mininet Simulation Results](#Mininet)
-4. [REP-2004 Code Quality Metrics](#CodeQuality)
+N. [WiFi Results](#WiFi)
+4. [REP-2004 Code Quality Metrics Table](#CodeQuality)
 5. [GitHub User Statistics](#GithubStats)
 6. [User Survey Results](#Survey)
 
@@ -23,16 +24,17 @@ This report evaluates two Data Distribution Service (DDS) implementations along 
 
 1. Build Farm Performance Data -- this dataset covers basic RMW performance in terms of memory, cpu utilization, and interoperability between RMWs using a simplified network under optimal conditions
 2. Mininet Performance Data -- this data set is an initial attempt to evaluate RMW performance under simulated real-world conditions. It attempts to understand what conditions cause each RMW to fail.
-3. REP-2004 Code Quality Data -- this simple table presents the REP-2004 code quality standards as implemented for both the RMW and underlying DDS implementation.
-4. GitHub Engagement Data -- this section looks at GitHub community engagement data over the preceding six months for both the RMWs and DDS implementation.
-5. User Survey Data -- this section presents the results of a survey of the ROS 2 community asking them about the overall end-user experience.
+3. WiFi Performance Data -- this data set is an attempt to evaluate RMW performance in real-world scenarios using WiFi. It attempts to determine how each RMW behaves in cases where available bandwidth limits are reached.
+4. REP-2004 Code Quality Data -- this simple table presents the REP-2004 code quality standards as implemented for both the RMW and underlying DDS implementation.
+5. GitHub Engagement Data -- this section looks at GitHub community engagement data over the preceding six months for both the RMWs and DDS implementation.
+6. User Survey Data -- this section presents the results of a survey of the ROS 2 community asking them about the overall end-user experience.
 
 In collecting these datasets we made our best effort to use the most recent version of each RMW; but in many cases, particularly with outside parties, there was some variation in the implementation under test. As such, it is important to understand that these data do not represent a single snap-shot in time of each RMW implementation; instead they represent a more holistic evaluation of performance over the preceding six months. It is also important to note that many of these values may shift in the future based on implementation updates. Moreover, fixating on or overweighting a single metric in the evaluation of the RMW implementations could lead to poor outcomes, as the underlying tests are imperfect representations of the real world. This is to say that the data collected for this report are merely an imperfect sample of a moving target. Finally, please keep in mind that this report is geared towards selecting the default ROS 2 RMW. As shown by the data, most ROS users are perfectly content to change the default RMW if it addresses their use case. The core use-case for the ROS 2 RMW is as the starting point for new ROS adopters; and as such a preference should be given to the needs of this group of individuals.
 
 Where possible we will provide the underlying data and source code for both experimentation and analysis. This process is intended to be repeated for each subsequent ROS 2 release and our hope is that it can become more automated and also serve as a community resource for selecting the best RMW for each user’s specific needs.
 
 
-# <a id="ExecutiveSummary"></a> Executive Summary
+# Executive Summary <a id="ExecutiveSummary"></a>
 
 
 # <a id="BuildFarm"></a> 1. Build Farm Performance Metrics
@@ -74,32 +76,250 @@ latency versus message size in figures 1.2.3, 1.2.4, and 1.2.5 respectively.
 
 ### 1.2.2 Memory Utilization in a Spinning Node By RMW
 
-![Build Farm Memory
-Consumption](./galactic/plots/BuildFarmRMWMemoryConsumption.png)
+![Build Farm Memory Consumption](./galactic/plots/BuildFarmRMWMemoryConsumption.png)
 
-### 1.2.3: Subscriber CPU Utilization, Latency, and Lost Messages  By Message Type and RMW
+### 1.2.3: Subscriber CPU Utilization, Latency, and Lost Messages By Message Type and RMW
+
 ![Build Farm performance by message type](./galactic/plots/PerfTestVsMsgSize.png)
 
 ## 1.3 Build Farm Test Discussion
 
-The results between two the RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU utilization and memory there the Cyclone RMW performed slightly better in terms of both memory and CPU performance. The memory advantage of Cyclone was not born out by plot in 1.2.3 where FastRTPS RMW seems to outperform for all message times. In terms of message latency and message both vendors appear to perform well up until approximately the 1mb message size. For messages greater than ~1Mb Cyclone RMW has better results with lower latency and the number of messages sent.
+The results between two the RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU utilization and memory there the Cyclone RMW performed slightly better in terms of both memory and CPU performance. The memory advantage of Cyclone was not born out by plot in 1.2.3 where FastRTPS RMW seems to outperform for all message times. In terms of message latency and message both vendors appear to perform well up until approximately the 1mb message size. For messages greater than \~1Mb Cyclone RMW has better results with lower latency and the number of messages sent.
 
 
 # <a id="Mininet"></a> 2. Mininet Simulation Results
 
-## 2.1
+In this section, we present some details of experiments made using [mininet](http://mininet.org/) to simulate degraded network conditions.
+
+The priority of this section and these experiments is to highlight interesting differences in either the rmw implementations or settings that can be changed within those implementations.
+
+See Appendix B for the complete report.
+
+## 2.1 Synchronous Versus Asynchronous Publishing
+
+There is a significant difference in both performance and behavior when using asynchronous publishing versus synchronous publishing.
+Also, there is currently an asymmetry in the default behavior of `rmw_fastrtps_cpp` and `rmw_cyclonedds_cpp` on this point.
+
+### 2.1.1 Overview
+
+Briefly, the different modes dictate how publishing data is handled when the user calls something like `publish(msg)`.
+In asynchronous publishing, the publish call puts the message on a queue and some significant part of sending it to remote subscriptions is done in a separate thread, allowing the publish call to return quickly and generally spend a more consistent amount of time in the publish call, especially when publishing large data where serialization, sending to the network, and other tasks could take a significant amount of time.
+In synchronous publishing, the publish call does much more of the work to send the message to the network within the publish call, which is often more efficient and lower latency, but can cause issues with throughput when publishing large data and can cause the publish call to block longer than might be expected.
+
+### 2.1.2 Current Situation
+
+Currently `rmw_fastrpts_cpp` uses asynchronous publishing by default, but it also supports synchronous publishing as well.
+Currently `rmw_cyclonedds_cpp` uses synchronous publishing, and does not support asynchronous publishing, this was reported in [this](https://github.com/ros2/rmw_cyclonedds/issues/89) issue.
+
+A proposal was made to change `rmw_fastrtps_cpp` to use synchronous publishing by default, but it was rejected by request of the ROS 2 core maintainers (see [this](https://github.com/ros2/rmw_fastrtps/pull/343#pullrequestreview-346228522) pull request).
+It is possible to change `rmw_fastrtps_cpp` to use synchronous publishing using non-portable environment variables and a custom XML configuration file, which is what is used in these experiments to generate the `rmw_fastrtps_cpp sync` results, versus the `rmw_fastrtps_cpp async` results which use the default settings.
+
+### 2.1.3 The Possible Options
+
+This change in behavior was blocked, in part, to avoid breaking behavioral changes between ROS distributions, i.e. one version is using async by default, and the next is using sync by default.
+However, with the TSC approval, we could allow `rmw_fastrtps_cpp` to default to synchronous publishing, which would be a break in default behavior, but would bring it in line with how publishing works with `rmw_cyclonedds_cpp`.
+
+Deciding to switch the default to `rmw_cyclonedds_cpp` is implicitly making this change in default behavior, from `rmw_fasrtps_cpp` with asynchronous publishing to `rmw_cyclonedds_cpp` with synchronous publishing.
+
+Therefore there are three related possible outcomes from this process:
+
+- Do nothing, keep `rmw_fastrtps_cpp` as the default, keep asynchronous publishing as the default.
+- Switch to `rmw_cyclonedds_cpp` as the default, implicitly changing the publishing behavior to synchronous in the process.
+- Stick with `rmw_fastrtps_cpp`, but change the default publishing mode to synchronous.
+
+### 2.1.4 Improvements to ROS 2
+
+Ideally we would have a portable way in the ROS 2 API for users to choose which publishing mode they want.
+We should add this, but it still does not address the issue of which settings to use by default, and whether or not to breaking existing behavior by changing `rmw_fastrtps_cpp` to synchronous publishing by default.
+
+### 2.1.5 Performance and Behavior Differences
+
+In this subsection, we will motivate why this setting matters so much and should be considered when comparing the "out-of-the-box" behavior of `rmw_fastrtps_cpp` and `rmw_cyclonedds_cpp`, and why we should be careful when considering switching the default setting for users.
+
+#### 2.1.5.1 Impact on Performance
+
+Asynchronous publishing can have a positive impact on throughput when publishing large data where fragmentation is involved.
+
+This report doesn't have very good data supporting this point, but one of the purposes of this feature is to provide better performance when publishing large messages or streaming video, see Fast-DDS's documentation as an example:
+
+[https://fast-dds.docs.eprosima.com/en/v1.8.1/advanced.html#sending-large-data](https://fast-dds.docs.eprosima.com/en/v1.8.1/advanced.html#sending-large-data)
+
+Also this graph from the build farm's performance dataset show how CPU utilization falls off for very large messages, even though messages received is lower than synchronous in this example:
+
+![Build Farm performance by message type](./galactic/plots/PerfTestVsMsgSize.png)
+
+It is likely that customization of a flow controller is also required to get the optimal large data performance when used with asynchronous publishing.
+
+Aside from the potential benefits of asynchronous publishing in certain situations, it is clear that comparing synchronous publishing in `rmw_cyclonedds_cpp` with asynchronous publishing in `rmw_fastrtps_cpp` is not a fair comparison.
+The "Messages Recv" part of the graph above demonstrates this as the sync mode for the two implementations are the same curve shape and close, whereas the asynchronous mode diverges from the other two.
+
+#### 2.1.5.2 Impact on Publish Behavior
+
+In a situation where the bandwidth required for publishing exceeds the available bandwidth, in this case limited artificially by mininet, you can observe a difference in publish blocking behavior.
+
+To illustrate this difference consider this experiment case:
+
+- a single publisher publishing a "PointCloud512k" at 30Hz to a single subscription in a separate process,
+- using the QoS:
+  - reliable,
+  - volatile, and
+  - keep last with a history depth of 10, and
+- using mininet to limit the bandwidth to 54Mbps.
+
+This case is interesting because the required bandwidth exceeds the limit imposed by mininet, i.e. the message is roughly 512 kilobytes being published at 30Hz, so a rough calculation is that it would require 122Mbps to transmit all of the data (not including the overhead of transport or resent data).
+
+In this scenario, a backlog of messages is produced and the history cache is full in the first few seconds of publishing.
+
+To understand this point, it is also important understand how the "Messages Sent" is calculated by the publishing process.
+Each time a message is published, a time stamp is recorded, the remaining time until the next publish period is calculated and the publishing thread sleeps until that time has elapsed before publishing again.
+So if publishing takes a long time it can begin to impact the effective publish rate.
+
+Consider these two series of plots comparing `rmw_fastrtps_cpp sync` and `rmw_cyclonedds_cpp sync` with varying packet loss:
+
+<table>
+  <tr>
+    <td></td>
+    <td>rmw_cyclonedds_cpp sync</td>
+    <td>rmw_fastrtps_cpp sync</td>
+  </tr>
+  <tr>
+    <td>Packet Loss: 0%</td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.svg">
+    </td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.svg">
+    </td>
+  </tr>
+  <tr>
+    <td>Packet Loss: 10%</td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.svg">
+    </td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.svg">
+    </td>
+  </tr>
+  <tr>
+    <td>Packet Loss: 20%</td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.svg">
+    </td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.svg">
+    </td>
+  </tr>
+  <tr>
+    <td>Packet Loss: 30%</td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.svg">
+    </td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.svg">
+    </td>
+  </tr>
+  <tr>
+    <td>Packet Loss: 40%</td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.svg">
+    </td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.svg">
+    </td>
+  </tr>
+</table>
+
+As you can see, the publishing rate does not meet the target of 30 per second, but are fairly consistent between the two implementations.
+
+An oddity is that as the packet loss increases, the effective publishing rate increases as well, approaching the desired rate of 30.
+
+Note that these plots show both individual runs (with reduced alpha) and averages of those 10 runs (solid lines).
+The dotted lines are averages rates for the entire run.
+
+Now consider these two series of plots between `rmw_fastrtps_cpp async` and `rmw_fastrtps_cpp sync`:
+
+<table>
+  <tr>
+    <td></td>
+    <td>rmw_fastrtps_cpp async</td>
+    <td>rmw_fastrtps_cpp sync</td>
+  </tr>
+  <tr>
+    <td>Packet Loss: 0%</td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.svg">
+    </td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.svg">
+    </td>
+  </tr>
+  <tr>
+    <td>Packet Loss: 10%</td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.svg">
+    </td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.svg">
+    </td>
+  </tr>
+  <tr>
+    <td>Packet Loss: 20%</td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.svg">
+    </td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.svg">
+    </td>
+  </tr>
+  <tr>
+    <td>Packet Loss: 30%</td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.svg">
+    </td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.svg">
+    </td>
+  </tr>
+  <tr>
+    <td>Packet Loss: 40%</td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.svg">
+    </td>
+    <td>
+      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.svg">
+    </td>
+  </tr>
+</table>
+
+Notice in the async case that the publish rate almost achieves the desired 30Hz, whereas the publish rate for sync is clamped to the capacity of the network almost immediately.
+The publish rate for async is quite noisy, which is something we could investigate further, but the average is quite close the desired goal.
+
+This can be a very serious issue if the user's code is designed under the assumption that publishing is always relatively quick, which is a likely assumption for ROS 1 users (ROS 1 behaved most similarly to asynchronous publishing in ROS 2) or for users thinking that "keep last" will just replace messages in the history cache if there's a backlog.
+We can document this behavior, but the impact is quite subtle and could lead to hard to diagnose problems in user's applications.
+
+This example was intended to demonstrate why it is important to be cautious when changing this behavior for all users.
 
 ## 2.2
 
 ### 2.2.1 Experiments with Lost Packets or Latency at 54Mbs Bandwidth
+
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW54.png)
 
 ### 2.2.2 Experiments with Lost Packets or Latency at 300Mbs Bandwidth
+
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW300.png)
 
 ### 2.2.3 Experiments with Lost Packets or Latency at 1000Mbs Bandwidth
-![Build Farm performance by message
-type](./galactic/plots/PoorPerformersBW1000.png)
+
+![Build Farm performance by message type](./galactic/plots/PoorPerformersBW1000.png)
+
+# N. WiFi Results
+
+* Description of the test setup
+* Invoked command lines
+* Process to convert output into plots
+* Show plots with 80/100/120 Hz
+* Summarize the results
 
 
 # <a id="GithubStats"></a> 3. GitHub User Statistics
@@ -110,7 +330,9 @@ Responsiveness to issues and pull requests in a Github repository is a good
 proxy measurement for how quickly a given vendor responds to their customer and
 users. The number of pull requests, and how quickly they are closed also give an
 indication to how much development is taking place on a given code base and how
-quickly issues are being resolved. To examine the responsiveness and development
+quickly issues are being resolved. To examine the responsiveness and development>>>>>>> main
+17
+
 velocity of both RMW vendors we used the github API to collect commit, pull
 request, and issue data for the 180 days before the report was drafted on
 10/17/2020. The process of collecting this data was divided into two part, data

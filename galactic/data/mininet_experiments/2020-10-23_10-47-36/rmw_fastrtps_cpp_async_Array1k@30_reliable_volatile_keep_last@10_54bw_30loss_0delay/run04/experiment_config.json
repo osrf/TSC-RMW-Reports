@@ -1,0 +1,13 @@
+{
+    "rmw_implementation": "rmw_fastrtps_cpp",
+    "async_pub": "async",
+    "bandwidth": 54,
+    "loss": 30,
+    "delay": 0,
+    "message_rate": 30,
+    "message_type": "Array1k",
+    "reliability": "reliable",
+    "durability": "volatile",
+    "history_kind": "keep_last",
+    "history_depth": 10
+}
