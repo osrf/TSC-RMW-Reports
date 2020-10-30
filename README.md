@@ -323,7 +323,7 @@ This example was intended to demonstrate why it is important to be cautious when
 
 # <a id="WiFi"></a> 3. WiFi Results
 
-## Test scenario
+## 3.1 Test scenario
 
 To test the performance and behavior in a real world scenario we tested the
 communication over WiFi.
@@ -339,7 +339,7 @@ settings:
 * Reliability: reliable
 * History: keep latest with a queue depth of 10
 
-## Test invocation
+## 3.2 Test invocation
 
 On each side the *perf_test* executable from the
 [performance_test package](https://github.com/ros2/performance_test/) was
@@ -366,15 +366,15 @@ invoked with the following configuration:
 
 The output of all test runs can be found [here](./galactic/data/wifi).
 
-## Test results
+## 3.3 Test results
 
-| Fast RTPS                                               | Cyclone DDS                                               |
+| Fast-RTPS                                               | Cyclone DDS                                               |
 | -                                                       | -                                                         |
 | ![Fast-RTPS with 80Hz](./galactic/plots/wifi/f-80.png)  | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-80.png)  |
 | ![Fast-RTPS with 80Hz](./galactic/plots/wifi/f-100.png) | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-100.png) |
 | ![Fast-RTPS with 80Hz](./galactic/plots/wifi/f-120.png) | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-120.png) |
 
-## Test summary
+## 3.4 Test summary
 
 The user expectation is that when the bandwidth limit is reached that less
 messages are being received than published.
