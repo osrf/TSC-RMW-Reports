@@ -1,0 +1,38 @@
+Experiment id: d7a28073-0481-4fa8-89ab-cbe17b99d03b
+Performance Test Version: 4807992
+Logfile name: pub_log_PointCloud512k_23-10-2020_13-00-26
+Communication mean: ROS2
+RMW Implementation: rmw_fastrtps_cpp
+DDS domain id: 0
+QOS: Reliability: RELIABLE Durability: VOLATILE History kind: KEEP_LAST History depth: 10 Sync. pub/sub: 0
+Publishing rate: 30
+Topic name: PointCloud512k
+Maximum runtime (sec): 15
+Number of publishers: 1
+Number of subscribers:0
+Memory check enabled: 0
+Use ros SHM: 0
+Use single participant: 0
+Not using waitset: 0
+Not using Connext DDS Micro INTRA: 0
+With security: 0
+Roundtrip Mode: NONE
+Ignore seconds from beginning: 0
+
+---EXPERIMENT-START---
+T_experiment,	T_loop,	received,	sent,	lost,	relative_loss,	data_received,	latency_min (ms),	latency_max (ms),	latency_mean (ms),	latency_variance (ms),	pub_loop_res_min (ms),	pub_loop_res_max (ms),	pub_loop_res_mean (ms),	pub_loop_res_variance (ms),	sub_loop_res_min (ms),	sub_loop_res_max (ms),	sub_loop_res_mean (ms),	sub_loop_res_variance (ms),	ru_utime,	ru_stime,	ru_maxrss,	ru_ixrss,	ru_idrss,	ru_isrss,	ru_minflt,	ru_majflt,	ru_nswap,	ru_inblock,	ru_oublock,	ru_msgsnd,	ru_msgrcv,	ru_nsignals,	ru_nvcsw,	ru_nivcsw,	cpu_usage (%),	
+1.002177,		1.002175,		0,		31,		0,		0.00,		0,		inf,		-inf,		0,		0,		-0.1919,		33.12,		29.47,		0.04743,		inf,		-inf,		0,		0,		0.03933,		0.1093,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		758,		31,		1.07,		
+2.002559,		1.000181,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		5.837,		33.11,		30.89,		0.02149,		inf,		-inf,		0,		0,		0.05452,		0.1817,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		963,		37,		0.833,		
+3.003063,		1.000227,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		16.18,		32.98,		31.15,		0.008141,		inf,		-inf,		0,		0,		0.1026,		0.2274,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		1164,		41,		0.7496,		
+4.003424,		1.000075,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		-6.153,		32.99,		24.12,		0.1603,		inf,		-inf,		0,		0,		0.1529,		0.2965,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		1758,		51,		0.9997,		
+5.003938,		1.000311,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		30.9,		32.95,		31.71,		0.0005418,		inf,		-inf,		0,		0,		0.1934,		0.3454,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		1892,		57,		0.7496,		
+6.004268,		1.000149,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		30.65,		33.09,		31.83,		0.0005404,		inf,		-inf,		0,		0,		0.228,		0.3922,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		2034,		64,		0.6665,		
+7.005415,		1.001005,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		9.893,		32.9,		30.12,		0.02604,		inf,		-inf,		0,		0,		0.2684,		0.4582,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		2330,		68,		0.8324,		
+8.005663,		1.000103,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		30.93,		32.86,		31.45,		0.0002074,		inf,		-inf,		0,		0,		0.3273,		0.4887,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		2460,		70,		0.7498,		
+9.006727,		1.000915,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		30.93,		32.85,		31.46,		0.0002617,		inf,		-inf,		0,		0,		0.3589,		0.5452,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		2591,		77,		0.7492,		
+10.008224,		1.001343,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		-3.427,		33.06,		27.64,		0.07406,		inf,		-inf,		0,		0,		0.3851,		0.6404,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		3074,		86,		1.082,		
+11.009717,		1.001213,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		30.9,		32.93,		31.42,		0.0003837,		inf,		-inf,		0,		0,		0.42,		0.694,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		3203,		91,		0.6657,		
+12.012107,		1.002108,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		30.9,		32.96,		31.67,		0.0002794,		inf,		-inf,		0,		0,		0.4524,		0.7465,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		3346,		98,		0.7482,		
+13.014454,		1.002185,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		-3.585,		32.91,		28.92,		0.0586,		inf,		-inf,		0,		0,		0.4854,		0.8166,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		3761,		102,		0.8314,		
+14.016941,		1.002203,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		30.92,		32.93,		31.68,		0.0003337,		inf,		-inf,		0,		0,		0.5198,		0.8663,		34792,		0,		0,		0,		5253,		0,		0,		0,		8,		0,		0,		0,		3896,		107,		0.665,		
+15.017380,		1.000135,		0,		29,		0,		0.00,		0,		inf,		-inf,		0,		0,		30.93,		32.93,		31.71,		0.000394,		inf,		-inf,		0,		0,		0.5638,		0.9104,		34792,		0,		0,		0,		5253,		0,		0,		0,		16,		0,		0,		0,		4028,		112,		0.833,		
