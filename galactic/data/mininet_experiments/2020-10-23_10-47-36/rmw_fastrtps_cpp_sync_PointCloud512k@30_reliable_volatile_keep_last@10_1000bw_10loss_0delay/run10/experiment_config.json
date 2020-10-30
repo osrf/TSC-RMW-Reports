@@ -1,0 +1,13 @@
+{
+    "rmw_implementation": "rmw_fastrtps_cpp",
+    "async_pub": "sync",
+    "bandwidth": 1000,
+    "loss": 10,
+    "delay": 0,
+    "message_rate": 30,
+    "message_type": "PointCloud512k",
+    "reliability": "reliable",
+    "durability": "volatile",
+    "history_kind": "keep_last",
+    "history_depth": 10
+}

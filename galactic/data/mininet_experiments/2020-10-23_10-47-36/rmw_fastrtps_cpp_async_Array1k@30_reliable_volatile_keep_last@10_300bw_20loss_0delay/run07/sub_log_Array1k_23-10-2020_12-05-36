@@ -1,0 +1,38 @@
+Experiment id: 854f521b-6c31-4c97-99bd-5c226389f05d
+Performance Test Version: 4807992
+Logfile name: sub_log_Array1k_23-10-2020_12-05-36
+Communication mean: ROS2
+RMW Implementation: rmw_fastrtps_cpp
+DDS domain id: 0
+QOS: Reliability: RELIABLE Durability: VOLATILE History kind: KEEP_LAST History depth: 10 Sync. pub/sub: 0
+Publishing rate: 30
+Topic name: Array1k
+Maximum runtime (sec): 15
+Number of publishers: 0
+Number of subscribers:1
+Memory check enabled: 0
+Use ros SHM: 0
+Use single participant: 0
+Not using waitset: 0
+Not using Connext DDS Micro INTRA: 0
+With security: 0
+Roundtrip Mode: NONE
+Ignore seconds from beginning: 0
+
+---EXPERIMENT-START---
+T_experiment,	T_loop,	received,	sent,	lost,	relative_loss,	data_received,	latency_min (ms),	latency_max (ms),	latency_mean (ms),	latency_variance (ms),	pub_loop_res_min (ms),	pub_loop_res_max (ms),	pub_loop_res_mean (ms),	pub_loop_res_variance (ms),	sub_loop_res_min (ms),	sub_loop_res_max (ms),	sub_loop_res_mean (ms),	sub_loop_res_variance (ms),	ru_utime,	ru_stime,	ru_maxrss,	ru_ixrss,	ru_idrss,	ru_isrss,	ru_minflt,	ru_majflt,	ru_nswap,	ru_inblock,	ru_oublock,	ru_msgsnd,	ru_msgrcv,	ru_nsignals,	ru_nvcsw,	ru_nivcsw,	cpu_usage (%),	
+1.015395,		1.015393,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.03759,		0.009397,		28156,		0,		0,		0,		3679,		0,		0,		0,		8,		0,		0,		0,		126,		1,		0.1628,		
+2.032573,		1.017061,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.05584,		0.009397,		28156,		0,		0,		0,		3679,		0,		0,		0,		8,		0,		0,		0,		141,		2,		0.1639,		
+3.049225,		1.016520,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.07369,		0.009397,		28156,		0,		0,		0,		3679,		0,		0,		0,		8,		0,		0,		0,		156,		2,		0.1639,		
+4.064538,		1.015184,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.08869,		0.009397,		28156,		0,		0,		0,		3679,		0,		0,		0,		8,		0,		0,		0,		172,		2,		0.08208,		
+5.080693,		1.016017,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.1046,		0.009397,		28156,		0,		0,		0,		3679,		0,		0,		0,		8,		0,		0,		0,		184,		2,		0.164,		
+6.091021,		1.010177,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.1129,		0.01302,		28156,		0,		0,		0,		3682,		0,		0,		0,		8,		0,		0,		0,		206,		3,		0.165,		
+7.102474,		1.011323,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.1247,		0.01336,		28156,		0,		0,		0,		3682,		0,		0,		0,		8,		0,		0,		0,		226,		3,		0.08239,		
+8.116775,		1.014159,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.1395,		0.0135,		28156,		0,		0,		0,		3695,		0,		0,		0,		8,		0,		0,		0,		244,		3,		0.08216,		
+9.135847,		1.018954,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.1609,		0.01379,		28156,		0,		0,		0,		3695,		0,		0,		0,		8,		0,		0,		0,		265,		3,		0.2453,		
+10.149126,		1.013145,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.1711,		0.01801,		28156,		0,		0,		0,		3695,		0,		0,		0,		8,		0,		0,		0,		282,		3,		0.08224,		
+11.160256,		1.010988,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.1797,		0.02191,		28156,		0,		0,		0,		3701,		0,		0,		0,		8,		0,		0,		0,		306,		4,		0.08242,		
+12.175838,		1.015447,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.1965,		0.02233,		28156,		0,		0,		0,		3701,		0,		0,		0,		8,		0,		0,		0,		325,		4,		0.1641,		
+13.190948,		1.014976,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.2097,		0.02621,		28156,		0,		0,		0,		3701,		0,		0,		0,		8,		0,		0,		0,		344,		4,		0.08209,		
+14.205398,		1.014328,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.2242,		0.02638,		28156,		0,		0,		0,		3701,		0,		0,		0,		8,		0,		0,		0,		365,		4,		0.1643,		
+15.219970,		1.014432,		0,		0,		0,		-nan,		0,		inf,		-inf,		0,		-nan,		inf,		-inf,		0,		0,		0,		0,		0,		0,		0.2404,		0.02638,		28156,		0,		0,		0,		3703,		0,		0,		0,		8,		0,		0,		0,		407,		4,		0.1643,		
