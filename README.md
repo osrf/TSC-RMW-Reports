@@ -12,7 +12,7 @@
 * [Mininet Simulation Results](#Mininet)
 * [WiFi Results](#WiFi)
 * [REP-2004 Code Quality Metrics](#CodeQuality)
-* [GitHub User Statistics](#GithubStats)
+* [GitHub User Statistics](#GitHubStats)
 * [User Survey Results](#Survey)
 
 
@@ -321,13 +321,13 @@ This example was intended to demonstrate why it is important to be cautious when
 
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW1000.png)
 
-# 3. WiFi Results
+# <a id="WiFi"></a> 3. WiFi Results
 
 ## Test scenario
 
 To test the performance and behavior in a real world scenario we tested the
 communication over WiFi.
-For the test two laptops where used which were conntected to a 2.4 GHz network
+For the test two laptops were used which were connected to a 2.4 GHz network
 provided by an ASUS RT-AC86U.
 The goal was to push the transmitted bandwidth to the limit and observe the
 performance and behavior of the RMW implementation since this was a common pain
@@ -353,29 +353,28 @@ invoked with the following configuration:
 * The option **--ignore 1** to ignore the first second of statistics
 * The option **--reliable --keep_last --history_depth 10** to configure the QoS
 * The option **-s 0** for the publisher / **-p 0** for the subscriber
-* The option **-r 80** / **-r 100** / **-r 120** for the publising frequency in
+* The option **-r 80** / **-r 100** / **-r 120** for the publishing frequency in
   Hz
 * Piping the result into a file with the following pattern:
   **\<RMW>-\<SIDE>-\<FREQ>-\<RUN>.txt**
 
-  * **\<RMW>**: either **f** for Fast RTPS or **c** for Cyclone DDS
+  * **\<RMW>**: either **f** for Fast-RTPS or **c** for Cyclone DDS
   * **\<SIDE>**: either **p** for the publisher side or **s** for the subscriber
     side
   * **\<FREQ>**: the frequency in Hz which was either 80, 100, or 120
   * **\<RUN>**: the index of the run, which we performed 10 of each
 
-The output of all test runs can be found in the directory
-**galactic/data/wifi**.
+The output of all test runs can be found [here](./galactic/data/wifi).
 
 ## Test results
 
-![Fast RTPS with 80Hz](./galactic/plots/wifi/f-80.png)
+![Fast-RTPS with 80Hz](./galactic/plots/wifi/f-80.png)
 ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-80.png)
 
-![Fast RTPS with 100Hz](./galactic/plots/wifi/f-100.png)
+![Fast-RTPS with 100Hz](./galactic/plots/wifi/f-100.png)
 ![Cyclone DDS with 100Hz](./galactic/plots/wifi/c-100.png)
 
-![Fast RTPS with 120Hz](./galactic/plots/wifi/f-120.png)
+![Fast-RTPS with 120Hz](./galactic/plots/wifi/f-120.png)
 ![Cyclone DDS with 120Hz](./galactic/plots/wifi/c-120.png)
 
 ## Test summary
@@ -387,24 +386,22 @@ after messages are received initially after some time no more messages are
 being received anymore.
 
 
-# <a id="GithubStats"></a> 4. GitHub User Statistics
+# <a id="GitHubStats"></a> 4. GitHub User Statistics
 
 ## 4.1 Overview and Statistics
 
-Responsiveness to issues and pull requests in a Github repository is a good
+Responsiveness to issues and pull requests in a GitHub repository is a good
 proxy measurement for how quickly a given vendor responds to their customer and
 users. The number of pull requests, and how quickly they are closed also give an
 indication to how much development is taking place on a given code base and how
-quickly issues are being resolved. To examine the responsiveness and development>>>>>>> main
-17
-
+quickly issues are being resolved. To examine the responsiveness and development
 velocity of both RMW vendors we used the github API to collect commit, pull
 request, and issue data for the 180 days before the report was drafted on
 10/17/2020. The process of collecting this data was divided into two part, data
 collection which can be found in [this
 notebook](./galactic/GetGitRMWDDSMetrics.ipynb), and data analysis which can be [found here](./galactic/PlotGithubStats.ipynb).
 
-## 4.2 Github Engagement Results
+## 4.2 GitHub Engagement Results
 
 ### 4.2.1 Open and Closed Pull Requests in the Previous Six Months
 
@@ -414,7 +411,7 @@ notebook](./galactic/GetGitRMWDDSMetrics.ipynb), and data analysis which can be 
 
 ![Time to close pull requests and issues](./galactic/plots/IssueAndPRTurnAround.png)
 
-# 4.3 Github Metrics Discussion
+# 4.3 GitHub Metrics Discussion
 
 Generally, for the six month period sampled, both vendors are doing a great job responding to both issues and pull requests. In terms of RMW layers the vendors have only small differences, with Fast-RTPS being slightly faster closing issues and tickets for their RMW layer. Fast-RTPS also appears to be under heavier development with almost three times the number of pull requests during the previous six months. It is unclear if this is caused by an increased number of ROS users, increased feature deployment, or addressing bugs and issues.
 
