@@ -323,11 +323,67 @@ This example was intended to demonstrate why it is important to be cautious when
 
 # 3. WiFi Results
 
-* Description of the test setup
-* Invoked command lines
-* Process to convert output into plots
-* Show plots with 80/100/120 Hz
-* Summarize the results
+## Test scenario
+
+To test the performance and behavior in a real world scenario we tested the
+communication over WiFi.
+For the test two laptops where used which were conntected to a 2.4 GHz network
+provided by an ASUS RT-AC86U.
+The goal was to push the transmitted bandwidth to the limit and observe the
+performance and behavior of the RMW implementation since this was a common pain
+point reported by users.
+
+A single topic with **Array60k** messages was used with the following QoS
+settings:
+
+* Reliability: reliable
+* History: keep latest with a queue depth of 10
+
+## Test invocation
+
+On each side the *perf_test* executable from the
+[performance_test package](https://github.com/ros2/performance_test/) was
+invoked with the following configuration:
+
+* The environment **RMW_IMPLEMENTATION** was set to the RMW implementation
+* The option **-c ROS2** to test the RMW implementation rather than the native
+  API
+* The option **-t Array60k** for the specific message type to send / received
+* The option **--max_runtime 30** to run the publisher / subscriber for 30s
+* The option **--ignore 1** to ignore the first second of statistics
+* The option **--reliable --keep_last --history_depth 10** to configure the QoS
+* The option **-s 0** for the publisher / **-p 0** for the subscriber
+* The option **-r 80** / **-r 100** / **-r 120** for the publising frequency in
+  Hz
+* Piping the result into a file with the following pattern:
+  **\<RMW>-\<SIDE>-\<FREQ>-\<RUN>.txt**
+
+  * **\<RMW>**: either **f** for Fast RTPS or **c** for Cyclone DDS
+  * **\<SIDE>**: either **p** for the publisher side or **s** for the subscriber
+    side
+  * **\<FREQ>**: the frequency in Hz which was either 80, 100, or 120
+  * **\<RUN>**: the index of the run, which we performed 10 of each
+
+The output of all test runs can be found in the directory
+**galactic/data/wifi**.
+
+## Test results
+
+![Fast RTPS with 80Hz](./galactic/plots/wifi/f-80.png)
+![Fast RTPS with 100Hz](./galactic/plots/wifi/f-100.png)
+![Fast RTPS with 120Hz](./galactic/plots/wifi/f-120.png)
+
+![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-80.png)
+![Cyclone DDS with 100Hz](./galactic/plots/wifi/c-100.png)
+![Cyclone DDS with 120Hz](./galactic/plots/wifi/c-120.png)
+
+## Test summary
+
+The user expectation is that when the bandwidth limit is reached that less
+messages are being received than published.
+But for both tested RMW implementations the higher frequency tests show that
+after messages are received initially after some time no more messages are
+being received anymore.
 
 
 # <a id="GithubStats"></a> 4. GitHub User Statistics
