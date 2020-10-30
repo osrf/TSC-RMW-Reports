@@ -10,6 +10,7 @@
 1. [Executive Summary](#ExecutiveSummary)
 2. [Build Farm Performance Metrics](#BuildFarm)
 3. [Mininet Simulation Results](#Mininet)
+N. [WiFi Results](#WiFi)
 4. [REP-2004 Code Quality Metrics Table](#CodeQuality)
 5. [GitHub User Statistics](#GithubStats)
 6. [User Survey Results](#Survey)
@@ -26,9 +27,10 @@ This report evaluates two Data Distribution Service (DDS) implementations along 
 
 1. Build Farm Performance Data -- this dataset covers basic RMW performance in terms of memory, cpu utilization, and interoperability between RMWs using a simplified network under optimal conditions
 2. Mininet Performance Data -- this data set is an initial attempt to evaluate RMW performance under simulated real-world conditions. It attempts to understand what conditions cause each RMW to fail.
-3. REP-2004 Code Quality Data -- this simple table presents the REP-2004 code quality standards as implemented for both the RMW and underlying DDS implementation.
-4. GitHub Engagement Data -- this section looks at GitHub community engagement data over the preceding six months for both the RMWs and DDS implementation.
-5. User Survey Data -- this section presents the results of a survey of the ROS 2 community asking them about the overall end-user experience.
+3. WiFi Performance Data -- this data set is an attempt to evaluate RMW performance in real-world scenarios using WiFi. It attempts to determine how each RMW behaves in cases where available bandwidth limits are reached.
+4. REP-2004 Code Quality Data -- this simple table presents the REP-2004 code quality standards as implemented for both the RMW and underlying DDS implementation.
+5. GitHub Engagement Data -- this section looks at GitHub community engagement data over the preceding six months for both the RMWs and DDS implementation.
+6. User Survey Data -- this section presents the results of a survey of the ROS 2 community asking them about the overall end-user experience.
 
 In collecting these datasets we made our best effort to use the most recent version of each RMW; but in many cases, particularly with outside parties, there was some variation in the implementation under test. As such, it is important to understand that these data do not represent a single snap-shot in time of each RMW implementation; instead they represent a more holistic evaluation of performance over the preceding six months. It is also important to note that many of these values may shift in the future based on implementation updates. Moreover, fixating on or overweighting a single metric in the evaluation of the RMW implementations could lead to poor outcomes, as the underlying tests are imperfect representations of the real world. This is to say that the data collected for this report are merely an imperfect sample of a moving target. Finally, please keep in mind that this report is geared towards selecting the default ROS 2 RMW. As shown by the data, most ROS users are perfectly content to change the default RMW if it addresses their use case. The core use-case for the ROS 2 RMW is as the starting point for new ROS adopters; and as such a preference should be given to the needs of this group of individuals.
 
@@ -103,6 +105,15 @@ The results between two the RMW implementations were reasonably close, particula
 ### 2.2.3 Experiments with Lost Packets or Latency at 1000Mbs Bandwidth
 ![Build Farm performance by message
 type](./galactic/plots/PoorPerformersBW1000.png)
+
+
+# N. WiFi Results
+
+* Description of the test setup
+* Invoked command lines
+* Process to convert output into plots
+* Show plots with 80/100/120 Hz
+* Summarize the results
 
 
 # 3. Github Engagement Statistics
