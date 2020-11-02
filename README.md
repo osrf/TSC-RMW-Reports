@@ -68,7 +68,7 @@ It is difficult to draw a meaningful conclusion from the data available.
 In Section 5, adherence to REP-2004 is compared, and the only significant thing to note is that `rmw_cyclonedds_cpp` does not have its own Quality Declaration, but the CycloneDDS repository does have one, which is apparently an oversight.
 Otherwise the implementations are quite similar, despite some inconsistencies in the reporting due to differences in self reporting.
 
-In Section 6, the user survey results are presented, and there is an advantage there for `rmw_cyclonedds_cpp` in plots in section 6.2.5, but there potential sources of bias which affect this result.
+In Section 6, the user survey results are presented, and there is an advantage there for `rmw_cyclonedds_cpp` in plots in section 6.2.5, but there are potential sources of bias which affect this result.
 For example, `rmw_cyclonedds_cpp` users are more likely to submit to the survey because they may have had a bad experience causing them to switch and follow these discussions.
 In contrast, users of the default middleware, i.e. `rmw_fastrtps_cpp`, that had no issues may be less likely to submit to the survey.
 
