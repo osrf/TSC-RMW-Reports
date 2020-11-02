@@ -565,3 +565,40 @@ engage with the community and to be responsive to its needs.”
 
 	                                      -- A ROS 2 Foxy user
 ```
+
+### 6.4.2 Fast-RTPS Narrative Responses
+
+```
+“I am lacking the technical knowledge of the RMW details for a decision like that.
+All I can say is that the default didn't work well at all for our use case.”
+
+                                          -- A ROS 2 Eloquent user
+```
+
+```
+“I would vote positively for the current one, in fact I'have gone through their
+documentation (Fast DDS, XRCE DDS and Integration Service) besides the official
+ROS documentation. To me, the integration service is being quite useful to promote
+the acceptance of ROS2 features. I am familiar with this stuff and I am not willing
+to experience changes on this part of my systems.”
+
+                                          -- A ROS 2 Foxy user
+```
+
+```
+“Cannot advocate for a particular RMW, as we only used the default one. However, we
+never had any trouble with it, and we prefer it that way. Should the default RMW change,
+we would consider configuring our solution to use the current one, as we already know it
+works for us.”
+
+                                          -- A ROS 2 Foxy user
+```
+
+```
+“I advocate for FastDDS (formerly FastRTPS) from eProsima. I think their implementation
+works great for most of the situations. Also, they have a full and large team dedicated
+to develop and improve it. Finally, they have specialised services for companies that need
+extra development on top of that. And it is open source”
+
+                                          -- A ROS 2 Eloquent user
+```
