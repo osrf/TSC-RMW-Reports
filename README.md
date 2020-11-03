@@ -69,9 +69,7 @@ It is difficult to draw a meaningful conclusion from the data available.
 In [Section 5](#-5-rep-2004-code-quality-metrics), adherence to [REP-2004](https://www.ros.org/reps/rep-2004.html) is compared, and the only significant thing to note is that Cyclone DDS does not have its own Quality Declaration, but the Cyclone DDS repository does have one, which is apparently an oversight.
 Otherwise the implementations are quite similar, despite some inconsistencies in the reporting due to differences in self reporting.
 
-In [Section 6](#-6-user-survey-results), the user survey results are presented, and there is an advantage there for Cyclone DDS in plots in section [6.2.5](#625-survey-question-drill-down-2), but there are potential sources of bias which affect this result.
-For example, Cyclone DDS users are more likely to submit to the survey because they may have had a bad experience causing them to switch and follow these discussions.
-In contrast, users of the default middleware, i.e. Fast RTPS, that had no issues may be less likely to submit to the survey.
+In [Section 6](#-6-user-survey-results), the user survey results are presented, and there is an advantage there for Cyclone DDS in plots in section [6.2.5](#625-survey-question-drill-down-2), but there are potential sources of bias which may affect this result.
 
 Also from [Section 6](#-6-user-survey-results), users of all levels who submitted to the survey felt comfortable switching rmw implementations.
 
