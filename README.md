@@ -46,34 +46,34 @@ Where possible we will provide the underlying data and source code for both expe
 
 This section will attempt to summarize the most important parts from each of the sections in this report.
 
-In Section 1, the plots in 1.2.1 and 1.2.2 show an advantage for Cyclone DDS, but since it only includes spinning without any publishers or subscriptions, it serves as only a baseline comparison for their memory and CPU footprint.
+In [Section 1](#-1-build-farm-performance-metrics), the plots in [1.2.1](#121-cpu-utilization-in-a-spinning-node-by-rmw) and [1.2.2](#122-memory-utilization-in-a-spinning-node-by-rmw) show an advantage for Cyclone DDS, but since it only includes spinning without any publishers or subscriptions, it serves as only a baseline comparison for their memory and CPU footprint.
 
-Also in Section 1, plots in 1.2.3 show Fast RTPS with synchronous publishing to be the best implementation, having the same shape to the curve as message size increases, but with a better score in each case.
+Also in [Section 1](#-1-build-farm-performance-metrics), plots in [1.2.3](#123-subscriber-cpu-utilization-latency-and-lost-messages-by-message-type-and-rmw) show Fast RTPS with synchronous publishing to be the best implementation, having the same shape to the curve as message size increases, but with a better score in each case.
 Note, these plots show only a single run of the performance tests each, as they come from a single night of the nightly performance jobs.
 They also show clear trade-offs between synchronous and asynchronous publishing modes.
 
-In Section 2, there is a summary of the difference in asynchronous and synchronous publishing behavior and performance, mostly in subsections 2.2.x.
+In [Section 2](#-2-mininet-simulation-results), there is a summary of the difference in asynchronous and synchronous publishing behavior and performance, mostly in [2.1](#21-synchronous-versus-asynchronous-publishing) and its subsections.
 It concludes that comparing Fast RTPS's default behavior, which is using asynchronous publishing, to Cyclone DDS's default behavior, which is using synchronous publishing, is not a fair comparison.
 It uses data from the mininet experiments to demonstrate how asynchronous publishing is different from synchronous publishing, and it also highlights comparisons between Fast RTPS using synchronous publishing, which is done with special configuration, and Cyclone DDS which is always using synchronous publishing.
 
-Also in Section 2, TBD (this would be about the results of the latency and message loss in different scenarios, pending Katt's updated handling of inf)
+Also in [Section 2](#-2-mininet-simulation-results), TBD (this would be about the results of the latency and message loss in different scenarios, pending Katt's updated handling of inf)
 
-In Section 3, some observations from "real life" WiFi testing were presented, showing that both implementations started to suffer significant performance issues, in terms of message delivery, at similar publishing frequencies, i.e. between 80Hz-100Hz with an Array60K message.
+In [Section 3](#-3-wifi-results), some observations from "real life" WiFi testing were presented, showing that both implementations started to suffer significant performance issues, in terms of message delivery, at similar publishing frequencies, i.e. between 80Hz-100Hz with an Array60K message.
 There was not an obviously better implementation in this experiment.
-See Section 3 for more details of the experiment.
+See [Section 3](#-3-wifi-results) for more details of the experiment.
 
-In Section 4, data from GitHub about the two vendor's repositories is compared, and we see similar results.
+In [Section 4](#-4-github-user-statistics), data from GitHub about the two vendor's repositories is compared, and we see similar results.
 Issues are handled in a timely fashion for the most part, and those that are not could be special cases.
 It is difficult to draw a meaningful conclusion from the data available.
 
-In Section 5, adherence to REP-2004 is compared, and the only significant thing to note is that Cyclone DDS does not have its own Quality Declaration, but the Cyclone DDS repository does have one, which is apparently an oversight.
+In [Section 5](#-5-rep-2004-code-quality-metrics), adherence to [REP-2004](https://www.ros.org/reps/rep-2004.html) is compared, and the only significant thing to note is that Cyclone DDS does not have its own Quality Declaration, but the Cyclone DDS repository does have one, which is apparently an oversight.
 Otherwise the implementations are quite similar, despite some inconsistencies in the reporting due to differences in self reporting.
 
-In Section 6, the user survey results are presented, and there is an advantage there for Cyclone DDS in plots in section 6.2.5, but there are potential sources of bias which affect this result.
+In [Section 6](#-6-user-survey-results), the user survey results are presented, and there is an advantage there for Cyclone DDS in plots in section [6.2.5](#625-survey-question-drill-down-2), but there are potential sources of bias which affect this result.
 For example, Cyclone DDS users are more likely to submit to the survey because they may have had a bad experience causing them to switch and follow these discussions.
 In contrast, users of the default middleware, i.e. Fast RTPS, that had no issues may be less likely to submit to the survey.
 
-Also from Section 6, users of all levels who submitted to the survey felt comfortable switching rmw implementations.
+Also from [Section 6](#-6-user-survey-results), users of all levels who submitted to the survey felt comfortable switching rmw implementations.
 
 # <a id="BuildFarm"></a> 1. Build Farm Performance Metrics
 
@@ -482,7 +482,7 @@ Code quality is an important metric for project health.  ROS 2 has defined vario
 
 rmw_cyclonedds_cpp is missing a quality declaration making it difficult to perform an apples to apples comparison between the two. Under most of the categories for the parts that are documented each implementation are comparable. Despite this there is an appreciable difference as Cyclone DDS is currently declared as quality level 3, and Fast RTPS is rated as quality level 2.
 
-# <a id="Survey"></a> 6.  User Survey Results
+# <a id="Survey"></a> 6. User Survey Results
 
 ## 6.1 Overview and Description
 
