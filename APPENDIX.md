@@ -757,27 +757,27 @@ generally smaller memory footprint for `Cyclone DDS sync`.
 
 #### CPU and Memory Consumption for Bandwidth 54Mb, Message Size 1k Array
 
-![Resource consumption BW=54 Msg=Array1k](./plots/ResourceBW54-Array1k.png)
+![Resource consumption BW=54 Msg=Array1k](./galactic/plots/ResourceBW54-Array1k.png)
 
 #### CPU and Memory Consumption for Bandwidth 54Mb, Message Size 512k 
 
-![Resource consumption BW=54 Msg=512](./plots/ResourceBW54-512k.png)
+![Resource consumption BW=54 Msg=512](./galactic/plots/ResourceBW54-512k.png)
 
 #### CPU and Memory Consumption for Bandwidth 300Mb, Message Size 1k Array
 
-![Resource consumption BW=300 Msg=Array1k](./plots/ResourceBW300-Array1k.png)
+![Resource consumption BW=300 Msg=Array1k](./galactic/plots/ResourceBW300-Array1k.png)
 
 #### CPU and Memory Consumption for Bandwidth 300Mb, Message Size 512k 
 
-![Resource consumption BW=300 Msg=512k](./plots/ResourceBW300-512k.png)
+![Resource consumption BW=300 Msg=512k](./galactic/plots/ResourceBW300-512k.png)
 
 #### CPU and Memory Consumption for Bandwidth 1000Mb, Message Size 1k Array
 
-![Resource consumption BW=1000 Msg=Array1k](./plots/ResourceBW1000-Array1k.png)
+![Resource consumption BW=1000 Msg=Array1k](./galactic/plots/ResourceBW1000-Array1k.png)
 
 #### CPU and Memory Consumption for Bandwidth 1000Mb, Message Size 512k 
 
-![Resource consumption BW=1000 Msg=512k](./plots/ResourceBW1000-512k.png)
+![Resource consumption BW=1000 Msg=512k](./galactic/plots/ResourceBW1000-512k.png)
 
 
 
