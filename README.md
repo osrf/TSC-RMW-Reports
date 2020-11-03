@@ -137,7 +137,7 @@ In this section, we present some details of experiments made using [mininet](htt
 
 The priority of this section and these experiments is to highlight interesting differences in either the rmw implementations or settings that can be changed within those implementations.
 
-The full report and data can be found here: [./galactic/mininet_experiments/generated_report/report.md](./galactic/mininet_experiments/generated_report/report.md)
+The full report and data can be found here: [./galactic/data/mininet_experiments/generated_report/report.md](./galactic/data/mininet_experiments/generated_report/report.md)
 
 ## 2.1 Synchronous Versus Asynchronous Publishing
 
