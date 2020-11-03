@@ -14,6 +14,7 @@
 * [REP-2004 Code Quality Metrics](#CodeQuality)
 * [GitHub User Statistics](#GitHubStats)
 * [User Survey Results](#Survey)
+* [Appendix](APPENDIX.md)
 
 # <a id="Introduction"></a> Introduction
 
@@ -81,7 +82,7 @@ Also from Section 6, users of all levels who submitted to the survey felt comfor
 The first dataset collected for evaluating RMW performance comes by way of the [ROS build farm](http://build.ros2.org). The ROS build farm hosts a collection of small integration tests that verify that a given RMW Implementation performs acceptably when connected to either a single ROS node or a single ROS publisher sending messages to a single ROS subscriber. Within the build farm there are also interoperability tests that examine the transport of messages between pairs of RMW/DDS implementations; however these tests are outside of the scope of this report. For this section of the report we looked at the performance of three different testing regimes:
 
 1. A single, spinning, ROS node backed by an DDS/RMW pair and instrumented to collect general performance data like mean and median CPU and memory consumption.
-2. A publisher subscriber pair where the publisher and subscriber each use a different RMW implementation. These tests are  instrumented to collect basic load statistics like CPU and memory utilization. These tests are included in Appendix A.
+2. A publisher subscriber pair where the publisher and subscriber each use a different RMW implementation. These tests are  instrumented to collect basic load statistics like CPU and memory utilization. These tests are included in [Appendix A](APPENDIX.md#appendix_a).
 3. A ROS publisher and subscriber pair sending messages of varying sizes and instrumented to collect both host load statistics and network performance statistics.
 
 All metrics for this portion of the report were collected using a custom
@@ -96,7 +97,7 @@ post processed data can be found in the [buildfarm subdirectory](https://github.
 ## 1.2 Build Farm Test Results
 
 
-The first set of data collected involved running a single, perpetually spinning ROS node a short time and collecting the peak, mean, and median, CPU and memory utilization statistics. The figures below summarize the results for both the Cyclone DDS RMW and Fast-RTPS RMW in the asynchronous configuration. Full plots of all the RMW variants and configurations are available in Appendix A. The data for these plots was collected on October 14th 2020 as indicated by this build farm log. The full data set can be downloaded using this link. Summarized csv files of the data will be provided in the final report.  Figure 1.2.1 provides the CPU performance while Figure 1.2.2 provides the memory performance including virtual, resident, and physical memory allocation. Links to the source code for this test along with the analysis are available in the appendix.
+The first set of data collected involved running a single, perpetually spinning ROS node a short time and collecting the peak, mean, and median, CPU and memory utilization statistics. The figures below summarize the results for both the Cyclone DDS RMW and Fast-RTPS RMW in the asynchronous configuration. Full plots of all the RMW variants and configurations are available in [Appendix A](APPENDIX.md#appendix_a). The data for these plots was collected on October 14th 2020 as indicated by this build farm log. The full data set can be downloaded using this link. Summarized csv files of the data will be provided in the final report.  Figure 1.2.1 provides the CPU performance while Figure 1.2.2 provides the memory performance including virtual, resident, and physical memory allocation. Links to the source code for this test along with the analysis are available in the [appendix](APPENDIX.md).
 
 A second bevy of tests were run using a single publisher and a single subscriber
 communicating across a host machine while varying both the underlying RMW as
@@ -137,7 +138,7 @@ In this section, we present some details of experiments made using [mininet](htt
 
 The priority of this section and these experiments is to highlight interesting differences in either the rmw implementations or settings that can be changed within those implementations.
 
-The full report and data can be found here: [./galactic/data/mininet_experiments/generated_report/report.md](./galactic/data/mininet_experiments/generated_report/report.md)
+The full report and data can be found here: [Appendix B](APPENDIX.md#appendix_b)
 
 ## 2.1 Synchronous Versus Asynchronous Publishing
 
@@ -348,7 +349,7 @@ This example was intended to demonstrate why it is important to be cautious when
 
 ### 2.2.1 Experiments with Lost Packets or Latency at 54Mbps Bandwidth
 
-This plot shows several poorly performing cases with the mininet bandwidth set at 54Mbps.  Each label across the X-axis describes the simulated packet loss percentage and the size of the message.  For example, "L:0/PointCloud512k" shows the results from simulating 0% packet loss with a 512k message size and 54Mbps bandwidth cap.  The top plot shows the mean latency to receive the messages, while the bottom plot shows what percent of the messages were lost.  It should be noted that only poorly-performing cases are illustrated here; see the Appendix for all of the data, including the successful ones.  For this plot, Quality of Service options of reliable, keep last, and a history depth of 10 were used.
+This plot shows several poorly performing cases with the mininet bandwidth set at 54Mbps.  Each label across the X-axis describes the simulated packet loss percentage and the size of the message.  For example, "L:0/PointCloud512k" shows the results from simulating 0% packet loss with a 512k message size and 54Mbps bandwidth cap.  The top plot shows the mean latency to receive the messages, while the bottom plot shows what percent of the messages were lost.  It should be noted that only poorly-performing cases are illustrated here; see [Appendix B](APPENDIX.md#appendix_b) for all of the data, including the successful ones.  For this plot, Quality of Service options of reliable, keep last, and a history depth of 10 were used.
 
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW54.png)
 
