@@ -376,7 +376,7 @@ winner in terms of CPU consumption, and slightly better memory consumption
 across the board for `Cyclone DDS sync`. The complete set of bandwidth and message size
 permutations are available in [Appendix B](APPENDIX.md#appendix_b).
 
-![Build Farm performance by message type](./plots/ResourceBW54-512k.png)
+![Build Farm performance by message type](/galactic/plots/ResourceBW54-512k.png)
 
 
 # <a id="WiFi"></a> 3. WiFi Results
