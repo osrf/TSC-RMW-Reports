@@ -365,6 +365,20 @@ This plot shows several poorly performing cases with the mininet bandwidth set a
 
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW1000.png)
 
+
+### 2.2.4 Publisher and Subscriber Memory and CPU Consumption for Select Experiments
+
+The plot below gives the average of ten Mininet experiments for both memory and
+CPU consumption broken down by publisher and subscriber. In this case we're
+using a configuration where the network bandwidth was limited to 54Mb and a
+message size of 512k. The results are fairly representative; with no clear
+winner in terms of CPU consumption, and slightly better memory consumption
+across the board for `Cyclone DDS sync`. The complete set of bandwidth and message size
+permutations are available in [Appendix B](APPENDIX.md#appendix_b).
+
+![Build Farm performance by message type](./plots/ResourceBW54-512k.png)
+
+
 # <a id="WiFi"></a> 3. WiFi Results
 
 ## 3.1 Test scenario
