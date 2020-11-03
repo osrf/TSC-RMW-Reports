@@ -80,19 +80,26 @@ latency versus message size in figures 1.2.3, 1.2.4, and 1.2.5 respectively.
 
 ### 1.2.1 CPU Utilization in a Spinning Node By RMW
 
+This plot shows the CPU usage of a single, empty spinning node.  The node being empty means that it has no publishers, subscribers, services, actions, or timers attached.  Thus, this is a test of just the overhead of a node.
+
 ![Build Farm CPU Consumption](./galactic/plots/BuildFarmRMWCPUConsumption.png )
 
+
 ### 1.2.2 Memory Utilization in a Spinning Node By RMW
+
+This plot shows the memory usage of a single, empty spinning node.  The node being empty means that it has no publishers, subscribers, services, actions, or timers attached.  Thus, this is a test of just the overhead of a node.
 
 ![Build Farm Memory Consumption](./galactic/plots/BuildFarmRMWMemoryConsumption.png)
 
 ### 1.2.3: Subscriber CPU Utilization, Latency, and Lost Messages By Message Type and RMW
 
+In this plot, 1000 messages of the specified size were sent between a publisher and subscriber on the same machine.  For each message size, the above plots show how many messages out of 1000 were received by the publisher, the average latency to receive each of the messages, and the average CPU utilization to receive the messages.  For this plot, Quality of Service options of best-effort, keep last, and a depth of 10 were used.
+
 ![Build Farm performance by message type](./galactic/plots/PerfTestVsMsgSize.png)
 
 ## 1.3 Build Farm Test Discussion
 
-The results between two the RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU utilization and memory Cyclone DDS RMW performed slightly better. The memory advantage of Cyclone was not born out by plot in 1.2.3 where Fast-RTPS RMW seems to outperform for all message times. In terms of message latency and message both vendors appear to perform well up until approximately the 1mb message size. For messages greater than \~1Mb Cyclone RMW has better results with lower latency and the number of messages sent.
+The results between the two RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU and memory utilization Cyclone DDS RMW performed slightly better. In terms of message latency and messages received both vendors appear to perform well up until approximately the 1MB message size. For messages greater than \~1MB Cyclone RMW has better results with lower latency and the number of messages sent.
 
 
 # <a id="Mininet"></a> 2. Mininet Simulation Results
@@ -310,15 +317,21 @@ This example was intended to demonstrate why it is important to be cautious when
 
 ## 2.2 Mininet test results
 
-### 2.2.1 Experiments with Lost Packets or Latency at 54Mbs Bandwidth
+### 2.2.1 Experiments with Lost Packets or Latency at 54Mbps Bandwidth
+
+This plot shows several poorly performing cases with the mininet bandwidth set at 54Mbps.  Each label across the X-axis describes the simulated packet loss percentage and the size of the message.  For example, "L:0/PointCloud512k" shows the results from simulating 0% packet loss with a 512k message size and 54Mbps bandwidth cap.  The top plot shows the mean latency to receive the messages, while the bottom plot shows what percent of the messages were lost.  It should be noted that only poorly-performing cases are illustrated here; see the Appendix for all of the data, including the successful ones.  For this plot, Quality of Service options of reliable, keep last, and a history depth of 10 were used.
 
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW54.png)
 
-### 2.2.2 Experiments with Lost Packets or Latency at 300Mbs Bandwidth
+### 2.2.2 Experiments with Lost Packets or Latency at 300Mbps Bandwidth
+
+This plot shows several poorly performing cases with the mininet bandwidth set at 300Mbps.  The rest of the description in 2.2.1 applies to this plot as well.
 
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW300.png)
 
-### 2.2.3 Experiments with Lost Packets or Latency at 1000Mbs Bandwidth
+### 2.2.3 Experiments with Lost Packets or Latency at 1000Mbps Bandwidth
+
+This plot shows several poorly performing cases with the mininet bandwidth set at 1000Mbps.  The rest of the description in 2.2.1 applies to this plot as well.
 
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW1000.png)
 
