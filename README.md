@@ -99,7 +99,7 @@ In this plot, 1000 messages of the specified size were sent between a publisher 
 
 ## 1.3 Build Farm Test Discussion
 
-The results between two the RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU utilization and memory Cyclone DDS RMW performed slightly better. In terms of message latency and message both vendors appear to perform well up until approximately the 1mb message size. For messages greater than \~1Mb Cyclone RMW has better results with lower latency and the number of messages sent.
+The results between the two RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU and memory utilization Cyclone DDS RMW performed slightly better. In terms of message latency and messages received both vendors appear to perform well up until approximately the 1MB message size. For messages greater than \~1MB Cyclone RMW has better results with lower latency and the number of messages sent.
 
 
 # <a id="Mininet"></a> 2. Mininet Simulation Results
@@ -319,7 +319,7 @@ This example was intended to demonstrate why it is important to be cautious when
 
 ### 2.2.1 Experiments with Lost Packets or Latency at 54Mbps Bandwidth
 
-This plot shows several poorly performing cases with the mininet bandwidth set at 54Mbps.  Each label across the X-axis describes the percentage loss and the size of the message.  For example, "L:0/PointCloud512k" shows the results from losing 0% of the packets with a 512k message size and 54Mbps bandwidth cap.  The top plot shows the mean latency to receive the messages, while the bottom plot shows what percent of the messages were lost.  It should be noted that only poorly-performing cases are illustrated here; see the Appendix for all of the data, including the successful ones.  For this plot, Quality of Service options of best-effort, keep last, and a depth of 10 were used.
+This plot shows several poorly performing cases with the mininet bandwidth set at 54Mbps.  Each label across the X-axis describes the simulated packet loss percentage and the size of the message.  For example, "L:0/PointCloud512k" shows the results from simulating 0% packet loss with a 512k message size and 54Mbps bandwidth cap.  The top plot shows the mean latency to receive the messages, while the bottom plot shows what percent of the messages were lost.  It should be noted that only poorly-performing cases are illustrated here; see the Appendix for all of the data, including the successful ones.  For this plot, Quality of Service options of reliable, keep last, and a history depth of 10 were used.
 
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW54.png)
 
