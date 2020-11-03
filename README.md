@@ -15,6 +15,7 @@
 * [GitHub User Statistics](#GitHubStats)
 * [User Survey Results](#Survey)
 
+
 # <a id="Introduction"></a> Introduction
 
 This report is intended to serve as a guide for the selection of the default ROS middleware (RMW) implementation for the ROS 2 Galactic Geochelone release. This report is intended to provide information about the Tier 1 RMW/DDS implementations along two broad axes of evaluation: application performance and community engagement. This report is intended to be purely informational and non-prescriptive; meaning this report does not make a recommendation for the default middleware.  Instead, it is an attempt to present objective data about the default RMW candidates in a neutral and factual manner. The final default ROS 2 Galactic middleware implementation will be selected by the ROS 2 Technical Steering Committee (TSC) after evaluation by both the ROS 2 Middleware Working Group and the TSC.
@@ -43,36 +44,6 @@ Where possible we will provide the underlying data and source code for both expe
 
 # <a id="ExecutiveSummary"></a> Executive Summary
 
-This section will attempt to summarize the most important parts from each of the sections in this report.
-
-In Section 1, the plots in 1.2.1 and 1.2.2 show an advantage for cyclone, but since it only includes spinning without any publishers or subscriptions, it serves as only a baseline comparison for their memory and CPU footprint.
-
-Also in Section 1, plots in 1.2.3 show `rmw_fastrtps_cpp` with synchronous publishing to be the best implementation, having the same shape to the curve as message size increases, but with a better score in each case.
-Note, these plots show only a single run of the performance tests each, as they come from a single night of the nightly performance jobs.
-They also show clear trade-offs between synchronous and asynchronous publishing modes.
-
-In Section 2, there is a summary of the difference in asynchronous and synchronous publishing behavior and performance, mostly in subsections 2.2.x.
-It concludes that comparing `rmw_fastrtps_cpp`'s default behavior, which is using asynchronous publishing, to `rmw_cyclonedds_cpp`'s default behavior, which is using synchronous publishing, is not a fair comparison.
-It uses data from the mininet experiments to demonstrate how asynchronous publishing is different from synchronous publishing, and it also highlights comparisons between `rmw_fastrtps_cpp` using synchronous publishing, which is done with special configuration, and `rmw_cyclonedds_cpp` which is always using synchronous publishing.
-
-Also in Section 2, TBD (this would be about the results of the latency and message loss in different scenarios, pending Katt's updated handling of inf)
-
-In Section 3, some observations from "real life" WiFi testing were presented, showing that both implementations started to suffer significant performance issues, in terms of message delivery, at similar publishing frequencies, i.e. between 80Hz-100Hz with an Array60K message.
-There was not an obviously better implementation in this experiment.
-See Section 3 for more details of the experiment.
-
-In Section 4, data from GitHub about the two vendor's repositories is compared, and we see similar results.
-Issues are handled in a timely fashion for the most part, and those that are not could be special cases.
-It is difficult to draw a meaningful conclusion from the data available.
-
-In Section 5, adherence to REP-2004 is compared, and the only significant thing to note is that `rmw_cyclonedds_cpp` does not have its own Quality Declaration, but the CycloneDDS repository does have one, which is apparently an oversight.
-Otherwise the implementations are quite similar, despite some inconsistencies in the reporting due to differences in self reporting.
-
-In Section 6, the user survey results are presented, and there is an advantage there for `rmw_cyclonedds_cpp` in plots in section 6.2.5, but there are potential sources of bias which affect this result.
-For example, `rmw_cyclonedds_cpp` users are more likely to submit to the survey because they may have had a bad experience causing them to switch and follow these discussions.
-In contrast, users of the default middleware, i.e. `rmw_fastrtps_cpp`, that had no issues may be less likely to submit to the survey.
-
-Also from Section 6, users of all levels who submitted to the survey felt comfortable switching rmw implementations.
 
 # <a id="BuildFarm"></a> 1. Build Farm Performance Metrics
 
