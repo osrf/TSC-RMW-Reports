@@ -138,7 +138,7 @@ In this section, we present some details of experiments made using [mininet](htt
 
 The priority of this section and these experiments is to highlight interesting differences in either the rmw implementations or settings that can be changed within those implementations.
 
-The full report and data can be found here: [./galactic/data/mininet_experiments/generated_report/report.md](./galactic/data/mininet_experiments/generated_report/report.md)
+The full report and data can be found here: [Appendix B](APPENDIX.md#appendix_b)
 
 ## 2.1 Synchronous Versus Asynchronous Publishing
 
@@ -349,7 +349,7 @@ This example was intended to demonstrate why it is important to be cautious when
 
 ### 2.2.1 Experiments with Lost Packets or Latency at 54Mbps Bandwidth
 
-This plot shows several poorly performing cases with the mininet bandwidth set at 54Mbps.  Each label across the X-axis describes the simulated packet loss percentage and the size of the message.  For example, "L:0/PointCloud512k" shows the results from simulating 0% packet loss with a 512k message size and 54Mbps bandwidth cap.  The top plot shows the mean latency to receive the messages, while the bottom plot shows what percent of the messages were lost.  It should be noted that only poorly-performing cases are illustrated here; see the [Appendix](APPENDIX.md#appendix_b) for all of the data, including the successful ones.  For this plot, Quality of Service options of reliable, keep last, and a history depth of 10 were used.
+This plot shows several poorly performing cases with the mininet bandwidth set at 54Mbps.  Each label across the X-axis describes the simulated packet loss percentage and the size of the message.  For example, "L:0/PointCloud512k" shows the results from simulating 0% packet loss with a 512k message size and 54Mbps bandwidth cap.  The top plot shows the mean latency to receive the messages, while the bottom plot shows what percent of the messages were lost.  It should be noted that only poorly-performing cases are illustrated here; see [Appendix B](APPENDIX.md#appendix_b) for all of the data, including the successful ones.  For this plot, Quality of Service options of reliable, keep last, and a history depth of 10 were used.
 
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW54.png)
 
