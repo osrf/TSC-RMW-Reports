@@ -1,8 +1,8 @@
 # Comparing RMW Implementations Across Bandwidths and Packet Losses
 
-Comparison is between the rmw implementations rmw_fastrtps_cpp sync, rmw_fastrtps_cpp async, and rmw_cyclonedds_cpp sync, and is
+Comparison is between the rmw implementations rmw_fastrtps_cpp async, rmw_fastrtps_cpp sync, and rmw_cyclonedds_cpp sync, and is
 varied across bandwidth limits (1000, 300, and 54) and message type/rate
-combinations (Array1k@30 and PointCloud512k@30).
+combinations (PointCloud512k@30 and Array1k@30).
 
 Data was collected using the `run_experiments.py` script, and uses [mininet](http://mininet.org/)
 to simulate adverse network conditions, potentially varying the bandwidth limit, packet loss,
@@ -24,7 +24,7 @@ The specific details for this experiment are as follows:
 - Separate Processes
 - Single Machine
 - Number of Runs Averaged: 10
-- RMW Implementation: rmw_fastrtps_cpp sync/rmw_fastrtps_cpp async/rmw_cyclonedds_cpp sync
+- RMW Implementation: rmw_fastrtps_cpp async/rmw_fastrtps_cpp sync/rmw_cyclonedds_cpp sync
 - Message Type: Array1k
 - Message Rate: 30
 - Reliability QoS: reliable
@@ -143,7 +143,7 @@ The specific details for this experiment are as follows:
 - Separate Processes
 - Single Machine
 - Number of Runs Averaged: 10
-- RMW Implementation: rmw_fastrtps_cpp sync/rmw_fastrtps_cpp async/rmw_cyclonedds_cpp sync
+- RMW Implementation: rmw_fastrtps_cpp async/rmw_fastrtps_cpp sync/rmw_cyclonedds_cpp sync
 - Message Type: PointCloud512k
 - Message Rate: 30
 - Reliability QoS: reliable
@@ -264,7 +264,7 @@ The specific details for this experiment are as follows:
 - Separate Processes
 - Single Machine
 - Number of Runs Averaged: 10
-- RMW Implementation: rmw_fastrtps_cpp sync/rmw_fastrtps_cpp async/rmw_cyclonedds_cpp sync
+- RMW Implementation: rmw_fastrtps_cpp async/rmw_fastrtps_cpp sync/rmw_cyclonedds_cpp sync
 - Message Type: Array1k
 - Message Rate: 30
 - Reliability QoS: reliable
@@ -383,7 +383,7 @@ The specific details for this experiment are as follows:
 - Separate Processes
 - Single Machine
 - Number of Runs Averaged: 10
-- RMW Implementation: rmw_fastrtps_cpp sync/rmw_fastrtps_cpp async/rmw_cyclonedds_cpp sync
+- RMW Implementation: rmw_fastrtps_cpp async/rmw_fastrtps_cpp sync/rmw_cyclonedds_cpp sync
 - Message Type: PointCloud512k
 - Message Rate: 30
 - Reliability QoS: reliable
@@ -504,7 +504,7 @@ The specific details for this experiment are as follows:
 - Separate Processes
 - Single Machine
 - Number of Runs Averaged: 10
-- RMW Implementation: rmw_fastrtps_cpp sync/rmw_fastrtps_cpp async/rmw_cyclonedds_cpp sync
+- RMW Implementation: rmw_fastrtps_cpp async/rmw_fastrtps_cpp sync/rmw_cyclonedds_cpp sync
 - Message Type: Array1k
 - Message Rate: 30
 - Reliability QoS: reliable
@@ -623,7 +623,7 @@ The specific details for this experiment are as follows:
 - Separate Processes
 - Single Machine
 - Number of Runs Averaged: 10
-- RMW Implementation: rmw_fastrtps_cpp sync/rmw_fastrtps_cpp async/rmw_cyclonedds_cpp sync
+- RMW Implementation: rmw_fastrtps_cpp async/rmw_fastrtps_cpp sync/rmw_cyclonedds_cpp sync
 - Message Type: PointCloud512k
 - Message Rate: 30
 - Reliability QoS: reliable

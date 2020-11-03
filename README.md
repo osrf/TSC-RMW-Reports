@@ -26,9 +26,9 @@ In order to be considered for this report, middleware implementations needed to 
 2. It is an open-source project under a permissive license
 3. It is an RTPS/DDS implementation
 
-Two middlewares currently meet this minimum bar: [Cyclone DDS](https://github.com/eclipse-cyclonedds/cyclonedds) and [Fast-RTPS](https://github.com/eProsima/Fast-RTPS).
+Two middlewares currently meet this minimum bar: [Cyclone DDS](https://github.com/eclipse-cyclonedds/cyclonedds) and [Fast RTPS](https://github.com/eProsima/Fast-RTPS).
 
-This report evaluates these two DDS implementations along with their RMW implementations for ROS 2, namely Cyclone DDS and Fast-RTPS (this is now called Fast-DDS, but this report will continue to refer to it as Fast-RTPS). These two Tier 1 ROS 2 RMW implementations along with the underlying DDS implementations are evaluated along two broad rubrics: application performance, as in the overall computational performance of the RMW, and community engagement, or how the RMW’s users perceived the utility of the RMW for their application. These two broad categories of evaluation are supported by the analysis of some recently collected datasets. The datasets collected and how they were analyzed are summarized below:
+This report evaluates these two DDS implementations along with their RMW implementations for ROS 2, namely Cyclone DDS and Fast RTPS (this is now called Fast DDS, but this report will continue to refer to it as Fast RTPS). These two Tier 1 ROS 2 RMW implementations along with the underlying DDS implementations are evaluated along two broad rubrics: application performance, as in the overall computational performance of the RMW, and community engagement, or how the RMW’s users perceived the utility of the RMW for their application. These two broad categories of evaluation are supported by the analysis of some recently collected datasets. The datasets collected and how they were analyzed are summarized below:
 
 1. Build Farm Performance Data -- this dataset covers basic RMW performance in terms of memory, cpu utilization, and interoperability between RMWs using a simplified network under optimal conditions
 2. Mininet Performance Data -- this data set is an initial attempt to evaluate RMW performance under simulated real-world conditions. It attempts to understand what conditions cause each RMW to fail.
@@ -46,15 +46,15 @@ Where possible we will provide the underlying data and source code for both expe
 
 This section will attempt to summarize the most important parts from each of the sections in this report.
 
-In Section 1, the plots in 1.2.1 and 1.2.2 show an advantage for cyclone, but since it only includes spinning without any publishers or subscriptions, it serves as only a baseline comparison for their memory and CPU footprint.
+In Section 1, the plots in 1.2.1 and 1.2.2 show an advantage for Cyclone DDS, but since it only includes spinning without any publishers or subscriptions, it serves as only a baseline comparison for their memory and CPU footprint.
 
-Also in Section 1, plots in 1.2.3 show `rmw_fastrtps_cpp` with synchronous publishing to be the best implementation, having the same shape to the curve as message size increases, but with a better score in each case.
+Also in Section 1, plots in 1.2.3 show Fast RTPS with synchronous publishing to be the best implementation, having the same shape to the curve as message size increases, but with a better score in each case.
 Note, these plots show only a single run of the performance tests each, as they come from a single night of the nightly performance jobs.
 They also show clear trade-offs between synchronous and asynchronous publishing modes.
 
 In Section 2, there is a summary of the difference in asynchronous and synchronous publishing behavior and performance, mostly in subsections 2.2.x.
-It concludes that comparing `rmw_fastrtps_cpp`'s default behavior, which is using asynchronous publishing, to `rmw_cyclonedds_cpp`'s default behavior, which is using synchronous publishing, is not a fair comparison.
-It uses data from the mininet experiments to demonstrate how asynchronous publishing is different from synchronous publishing, and it also highlights comparisons between `rmw_fastrtps_cpp` using synchronous publishing, which is done with special configuration, and `rmw_cyclonedds_cpp` which is always using synchronous publishing.
+It concludes that comparing Fast RTPS's default behavior, which is using asynchronous publishing, to Cyclone DDS's default behavior, which is using synchronous publishing, is not a fair comparison.
+It uses data from the mininet experiments to demonstrate how asynchronous publishing is different from synchronous publishing, and it also highlights comparisons between Fast RTPS using synchronous publishing, which is done with special configuration, and Cyclone DDS which is always using synchronous publishing.
 
 Also in Section 2, TBD (this would be about the results of the latency and message loss in different scenarios, pending Katt's updated handling of inf)
 
@@ -66,12 +66,12 @@ In Section 4, data from GitHub about the two vendor's repositories is compared, 
 Issues are handled in a timely fashion for the most part, and those that are not could be special cases.
 It is difficult to draw a meaningful conclusion from the data available.
 
-In Section 5, adherence to REP-2004 is compared, and the only significant thing to note is that `rmw_cyclonedds_cpp` does not have its own Quality Declaration, but the CycloneDDS repository does have one, which is apparently an oversight.
+In Section 5, adherence to REP-2004 is compared, and the only significant thing to note is that Cyclone DDS does not have its own Quality Declaration, but the Cyclone DDS repository does have one, which is apparently an oversight.
 Otherwise the implementations are quite similar, despite some inconsistencies in the reporting due to differences in self reporting.
 
-In Section 6, the user survey results are presented, and there is an advantage there for `rmw_cyclonedds_cpp` in plots in section 6.2.5, but there are potential sources of bias which affect this result.
-For example, `rmw_cyclonedds_cpp` users are more likely to submit to the survey because they may have had a bad experience causing them to switch and follow these discussions.
-In contrast, users of the default middleware, i.e. `rmw_fastrtps_cpp`, that had no issues may be less likely to submit to the survey.
+In Section 6, the user survey results are presented, and there is an advantage there for Cyclone DDS in plots in section 6.2.5, but there are potential sources of bias which affect this result.
+For example, Cyclone DDS users are more likely to submit to the survey because they may have had a bad experience causing them to switch and follow these discussions.
+In contrast, users of the default middleware, i.e. Fast RTPS, that had no issues may be less likely to submit to the survey.
 
 Also from Section 6, users of all levels who submitted to the survey felt comfortable switching rmw implementations.
 
@@ -97,7 +97,7 @@ post processed data can be found in the [buildfarm subdirectory](https://github.
 ## 1.2 Build Farm Test Results
 
 
-The first set of data collected involved running a single, perpetually spinning ROS node a short time and collecting the peak, mean, and median, CPU and memory utilization statistics. The figures below summarize the results for both the Cyclone DDS RMW and Fast-RTPS RMW in the asynchronous configuration. Full plots of all the RMW variants and configurations are available in [Appendix A](APPENDIX.md#appendix_a). The data for these plots was collected on October 14th 2020 as indicated by this build farm log. The full data set can be downloaded using this link. Summarized csv files of the data will be provided in the final report.  Figure 1.2.1 provides the CPU performance while Figure 1.2.2 provides the memory performance including virtual, resident, and physical memory allocation. Links to the source code for this test along with the analysis are available in the [appendix](APPENDIX.md).
+The first set of data collected involved running a single, perpetually spinning ROS node a short time and collecting the peak, mean, and median, CPU and memory utilization statistics. The figures below summarize the results for both the Cyclone DDS RMW and Fast RTPS RMW in the asynchronous configuration. Full plots of all the RMW variants and configurations are available in [Appendix A](APPENDIX.md#appendix_a). The data for these plots was collected on October 14th 2020 as indicated by this build farm log. The full data set can be downloaded using this link. Summarized csv files of the data will be provided in the final report.  Figure 1.2.1 provides the CPU performance while Figure 1.2.2 provides the memory performance including virtual, resident, and physical memory allocation. Links to the source code for this test along with the analysis are available in the [appendix](APPENDIX.md).
 
 A second bevy of tests were run using a single publisher and a single subscriber
 communicating across a host machine while varying both the underlying RMW as
@@ -129,7 +129,7 @@ In this plot, 1000 messages of the specified size were sent between a publisher 
 
 ## 1.3 Build Farm Test Discussion
 
-The results between the two RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU and memory utilization Cyclone DDS RMW performed slightly better. In terms of message latency and messages received both vendors appear to perform well up until approximately the 1MB message size. For messages greater than \~1MB Cyclone RMW has better results with lower latency and the number of messages sent.
+The results between the two RMW implementations were reasonably close, particularly in light of other RMW implementations visible on the build farm. In terms of CPU and memory utilization Cyclone DDS RMW performed slightly better. In terms of message latency and messages received both vendors appear to perform well up until approximately the 1MB message size. For messages greater than \~1MB Cyclone DDS RMW has better results with lower latency and the number of messages sent.
 
 
 # <a id="Mininet"></a> 2. Mininet Simulation Results
@@ -143,7 +143,7 @@ The full report and data can be found here: [Appendix B](APPENDIX.md#appendix_b)
 ## 2.1 Synchronous Versus Asynchronous Publishing
 
 There is a significant difference in both performance and behavior when using asynchronous publishing versus synchronous publishing.
-Also, there is currently an asymmetry in the default behavior of `rmw_fastrtps_cpp` and `rmw_cyclonedds_cpp` on this point.
+Also, there is currently an asymmetry in the default behavior of Fast RTPS and Cyclone DDS on this point.
 
 ### 2.1.1 Overview
 
@@ -153,39 +153,39 @@ In synchronous publishing, the publish call does much more of the work to send t
 
 ### 2.1.2 Current Situation
 
-Currently `rmw_fastrpts_cpp` uses asynchronous publishing by default, but it also supports synchronous publishing as well.
-Currently `rmw_cyclonedds_cpp` uses synchronous publishing, and does not support asynchronous publishing, this was reported in [this](https://github.com/ros2/rmw_cyclonedds/issues/89) issue.
+Currently Fast RTPS uses asynchronous publishing by default, but it also supports synchronous publishing as well.
+Currently Cyclone DDS uses synchronous publishing, and does not support asynchronous publishing, this was reported in [this](https://github.com/ros2/rmw_cyclonedds/issues/89) issue.
 
-A proposal was made to change `rmw_fastrtps_cpp` to use synchronous publishing by default, but it was rejected by request of the ROS 2 core maintainers (see [this](https://github.com/ros2/rmw_fastrtps/pull/343#pullrequestreview-346228522) pull request).
-It is possible to change `rmw_fastrtps_cpp` to use synchronous publishing using non-portable environment variables and a custom XML configuration file, which is what is used in these experiments to generate the `rmw_fastrtps_cpp sync` results, versus the `rmw_fastrtps_cpp async` results which use the default settings.
+A proposal was made to change Fast RTPS to use synchronous publishing by default, but it was rejected by request of the ROS 2 core maintainers (see [this](https://github.com/ros2/rmw_fastrtps/pull/343#pullrequestreview-346228522) pull request).
+It is possible to change Fast RTPS to use synchronous publishing using non-portable environment variables and a custom XML configuration file, which is what is used in these experiments to generate the `Fast RTPS sync` results, versus the `Fast RTPS async` results which use the default settings.
 
 ### 2.1.3 The Possible Options
 
 This change in behavior was blocked, in part, to avoid breaking behavioral changes between ROS distributions, i.e. one version is using async by default, and the next is using sync by default.
-However, with the TSC approval, we could allow `rmw_fastrtps_cpp` to default to synchronous publishing, which would be a break in default behavior, but would bring it in line with how publishing works with `rmw_cyclonedds_cpp`.
+However, with the TSC approval, we could allow Fast RTPS to default to synchronous publishing, which would be a break in default behavior, but would bring it in line with how publishing works with Cyclone DDS.
 
-Deciding to switch the default to `rmw_cyclonedds_cpp` is implicitly making this change in default behavior, from `rmw_fasrtps_cpp` with asynchronous publishing to `rmw_cyclonedds_cpp` with synchronous publishing.
+Deciding to switch the default to Cyclone DDS is implicitly making this change in default behavior, from Fast RT{S with asynchronous publishing to Cyclone DDS with synchronous publishing.
 
 Therefore there are three related possible outcomes from this process:
 
-- Do nothing, keep `rmw_fastrtps_cpp` as the default, keep asynchronous publishing as the default.
-- Switch to `rmw_cyclonedds_cpp` as the default, implicitly changing the publishing behavior to synchronous in the process.
-- Stick with `rmw_fastrtps_cpp`, but change the default publishing mode to synchronous.
+- Do nothing, keep Fast RTPS as the default, keep asynchronous publishing as the default.
+- Switch to Cyclone DDS as the default, implicitly changing the publishing behavior to synchronous in the process.
+- Stick with Fast RTPS, but change the default publishing mode to synchronous.
 
 ### 2.1.4 Improvements to ROS 2
 
 Ideally we would have a portable way in the ROS 2 API for users to choose which publishing mode they want.
-We should add this, but it still does not address the issue of which settings to use by default, and whether or not to breaking existing behavior by changing `rmw_fastrtps_cpp` to synchronous publishing by default.
+We should add this, but it still does not address the issue of which settings to use by default, and whether or not to breaking existing behavior by changing Fast RTPS to synchronous publishing by default.
 
 ### 2.1.5 Performance and Behavior Differences
 
-In this subsection, we will motivate why this setting matters so much and should be considered when comparing the "out-of-the-box" behavior of `rmw_fastrtps_cpp` and `rmw_cyclonedds_cpp`, and why we should be careful when considering switching the default setting for users.
+In this subsection, we will motivate why this setting matters so much and should be considered when comparing the "out-of-the-box" behavior of Fast RTPS and Cyclone DDS, and why we should be careful when considering switching the default setting for users.
 
 #### 2.1.5.1 Impact on Performance
 
 Asynchronous publishing can have a positive impact on throughput when publishing large data where fragmentation is involved.
 
-This report doesn't have very good data supporting this point, but one of the purposes of this feature is to provide better performance when publishing large messages or streaming video, see Fast-RTPS's documentation as an example:
+This report doesn't have very good data supporting this point, but one of the purposes of this feature is to provide better performance when publishing large messages or streaming video, see Fast RTPS's documentation as an example:
 
 [https://fast-dds.docs.eprosima.com/en/v1.8.1/advanced.html#sending-large-data](https://fast-dds.docs.eprosima.com/en/v1.8.1/advanced.html#sending-large-data)
 
@@ -195,7 +195,7 @@ Also this graph from the build farm's performance dataset show how CPU utilizati
 
 It is likely that customization of a flow controller is also required to get the optimal large data performance when used with asynchronous publishing.
 
-Aside from the potential benefits of asynchronous publishing in certain situations, it is clear that comparing synchronous publishing in `rmw_cyclonedds_cpp` with asynchronous publishing in `rmw_fastrtps_cpp` is not a fair comparison.
+Aside from the potential benefits of asynchronous publishing in certain situations, it is clear that comparing synchronous publishing in Cyclone DDS with asynchronous publishing in Fast RTPS is not a fair comparison.
 The "Messages Recv" part of the graph above demonstrates this, by showing that the sync mode for the two implementations have the same curve shape and are close in performance, whereas the asynchronous mode diverges from the other two.
 
 #### 2.1.5.2 Impact on Publish Behavior
@@ -220,13 +220,13 @@ To understand this point, it is also important understand how the "Messages Sent
 Each time a message is published, a time stamp is recorded, the remaining time until the next publish period is calculated and the publishing thread sleeps until that time has elapsed before publishing again.
 So if publishing takes a long time it can begin to impact the effective publish rate.
 
-Consider these two series of plots comparing `rmw_fastrtps_cpp sync` and `rmw_cyclonedds_cpp sync` with varying packet loss:
+Consider these two series of plots comparing `Fast RTPS sync` and `Cyclone DDS sync` with varying packet loss:
 
 <table>
   <tr>
     <td></td>
-    <td>rmw_cyclonedds_cpp sync</td>
-    <td>rmw_fastrtps_cpp sync</td>
+    <td>Cyclone DDS sync</td>
+    <td>Fast RTPS sync</td>
   </tr>
   <tr>
     <td>Packet Loss: 0%</td>
@@ -282,13 +282,13 @@ An oddity is that as the packet loss increases, the effective publishing rate in
 Note that these plots show both individual runs (with reduced alpha) and averages of those 10 runs (solid lines).
 The dotted lines are averages rates for the entire run.
 
-Now consider these two series of plots between `rmw_fastrtps_cpp async` and `rmw_fastrtps_cpp sync`:
+Now consider these two series of plots between `Fast RTPS async` and `Fast RTPS sync`:
 
 <table>
   <tr>
     <td></td>
-    <td>rmw_fastrtps_cpp async</td>
-    <td>rmw_fastrtps_cpp sync</td>
+    <td>Fast RTPS async</td>
+    <td>Fast RTPS sync</td>
   </tr>
   <tr>
     <td>Packet Loss: 0%</td>
@@ -402,7 +402,7 @@ invoked with the following configuration:
 * Piping the result into a file with the following pattern:
   **\<RMW>-\<SIDE>-\<FREQ>-\<RUN>.txt**
 
-  * **\<RMW>**: either **f** for Fast-RTPS or **c** for Cyclone DDS
+  * **\<RMW>**: either **f** for Fast RTPS or **c** for Cyclone DDS
   * **\<SIDE>**: either **p** for the publisher side or **s** for the subscriber
     side
   * **\<FREQ>**: the frequency in Hz which was either 80, 100, or 120
@@ -412,11 +412,11 @@ The output of all test runs can be found [here](./galactic/data/wifi).
 
 ## 3.3 Test results
 
-| Fast-RTPS                                               | Cyclone DDS                                               |
+| Fast RTPS                                               | Cyclone DDS                                               |
 | -                                                       | -                                                         |
-| ![Fast-RTPS with 80Hz](./galactic/plots/wifi/f-80.png)  | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-80.png)  |
-| ![Fast-RTPS with 80Hz](./galactic/plots/wifi/f-100.png) | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-100.png) |
-| ![Fast-RTPS with 80Hz](./galactic/plots/wifi/f-120.png) | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-120.png) |
+| ![Fast RTPS with 80Hz](./galactic/plots/wifi/f-80.png)  | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-80.png)  |
+| ![Fast RTPS with 80Hz](./galactic/plots/wifi/f-100.png) | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-100.png) |
+| ![Fast RTPS with 80Hz](./galactic/plots/wifi/f-120.png) | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-120.png) |
 
 ## 3.4 Test summary
 
@@ -454,7 +454,7 @@ notebook](./galactic/GetGitRMWDDSMetrics.ipynb), and data analysis which can be 
 
 # 4.3 GitHub Metrics Discussion
 
-Generally, for the six month period sampled, both vendors are doing a great job responding to both issues and pull requests. In terms of RMW layers the vendors have only small differences, with Fast-RTPS being slightly faster closing issues and tickets for their RMW layer. Fast-RTPS also appears to be under heavier development with almost three times the number of pull requests during the previous six months. It is unclear if this is caused by an increased number of ROS users, increased feature deployment, or addressing bugs and issues.
+Generally, for the six month period sampled, both vendors are doing a great job responding to both issues and pull requests. In terms of RMW layers the vendors have only small differences, with Fast RTPS being slightly faster closing issues and tickets for their RMW layer. Fast RTPS also appears to be under heavier development with almost three times the number of pull requests during the previous six months. It is unclear if this is caused by an increased number of ROS users, increased feature deployment, or addressing bugs and issues.
 
 # <a id="CodeQuality"></a> 5. REP-2004 Code Quality Metrics
 
@@ -464,29 +464,29 @@ Code quality is an important metric for project health.  ROS 2 has defined vario
 
 ## 5.2 Results
 
-| Package/Quality Metric | [Cyclone DDS](https://github.com/ros2/rmw_cyclonedds/blob/3fa62f4f8fa9b3cc624879e9c085ad19aa9c1977/CYCLONEDDS_QUALITY_DECLARATION.md) | rmw_cyclonedds | [Fast-RTPS](https://github.com/eProsima/Fast-DDS/blob/08100416cd82950cafd37ce8b34c3a0cc02b3ba2/QUALITY.md) | [rmw_fastrtps](https://github.com/ros2/rmw_fastrtps/blob/4e0fce977c993f840b013c444d603842fb39ad64/rmw_fastrtps_cpp/QUALITY_DECLARATION.md) |
+| Package/Quality Metric | [Cyclone DDS](https://github.com/ros2/rmw_cyclonedds/blob/3fa62f4f8fa9b3cc624879e9c085ad19aa9c1977/CYCLONEDDS_QUALITY_DECLARATION.md) | rmw_cyclonedds | [Fast RTPS](https://github.com/eProsima/Fast-DDS/blob/08100416cd82950cafd37ce8b34c3a0cc02b3ba2/QUALITY.md) | [rmw_fastrtps](https://github.com/ros2/rmw_fastrtps/blob/4e0fce977c993f840b013c444d603842fb39ad64/rmw_fastrtps_cpp/QUALITY_DECLARATION.md) |
 | ---------------------- | ---------- | -------------- | -------- | ------------ |
 | Current Quality Level  |      3     |      N/A       |    2     |     2            |
 | 1. Version Policy      | 1. follows semver by major 0 is stable<br>2. current version is stable<br>3. `dds_` or `DDS_` symbols are public API, others may change<br>4. no major releases in stable allowed<br>5. no major releases in stable allowed<br>6. no major releases in stable allowed | N/A | 1. follows semver<br>2. current version is stable<br>3. API documentation [available](https://fast-dds.docs.eprosima.com/en/latest/fastdds/api_reference/api_reference.html)<br>4. no major releases in stable allowed<br>5. only minor releases break ABI<br>6. N/A | 1. follows semver<br>2. current version is stable<br>3. public API is in the headers<br>4. no major releases in stable allowed<br>5. no major releases in stable allowed<br>6. no major releases in stable allowed |
 | 2. Change control      | 1. changes must be in PR<br>2. DCO required<br>3. one review for merge (except when no reviewers available<br>4. CI required to pass<br>5. documentation required | N/A | 1. changes must be in a PR<br>2. DCO required<br>3. at least one review required for merge<br>4. CI required to pass<br>5. documentation required | 1. changes must be in PR<br>2. DCO required<br>3. at least one review required for merge<br>4. CI required to pass<br>5. documentation required |
 | 3. Documentation       | 1. no high-level/concept documentation<br>2. API docs are embedded in the code<br>3. Eclipse Public License 2.0/Eclipse Distribution License 1.0<br>4. copyright statement included with the code | N/A | 1. all features are documented<br>2. API reference is hosted at [readthedocs](https://fast-dds.docs.eprosima.com/en/latest/fastdds/api_reference/api_reference.html)<br>3. Apache 2.0 license<br>4. copyright statement included with the code | 1. all features are documented<br>2. API docs are embedded in the code<br>3. Apache 2.0 license<br>4. copyright statement included with the code |
 | 4. Testing             | 1. system tests cover features<br>2. tests cover all of the public API<br>3. line coverage should increase with changes<br>4. no performance tests<br>5. uses coverity for static analysis | N/A | 1. simulation tests cover features<br>2. tests cover typical usage of public API<br>3. best-effort line coverage increase with changes<br>4. automatic performance test on changes<br>5. uses linters, but only for new code | 1. system tests cover features<br>2. tests cover all of the API<br>3. line coverage should increase with changes<br>4. no performance tests<br>5. uses standard ROS linters and tests |
-| 5. Dependencies        | 1. no ROS dependencies<br>2. no ROS dependencies<br>3. OpenSSL external dependency | N/A | 1. no ROS dependencies<br>2. no ROS dependencies<br>3. libasio, libtinyxml2, Fast-CDR, foonathan_memory, and OpenSSL* external dependencies | 1. all direct runtime ROS deps at some level<br>2. no optional direct runtime ROS deps<br>3. Fast-CDR/Fast-RTPS claim to be at QL 2 |
+| 5. Dependencies        | 1. no ROS dependencies<br>2. no ROS dependencies<br>3. OpenSSL external dependency | N/A | 1. no ROS dependencies<br>2. no ROS dependencies<br>3. libasio, libtinyxml2, Fast CDR, foonathan_memory, and OpenSSL* external dependencies | 1. all direct runtime ROS deps at some level<br>2. no optional direct runtime ROS deps<br>3. Fast CDR/Fast RTPS claim to be at QL 2 |
 | 6. Platform            | 1. supports all ROS 2 Tier 1 platforms | N/A | 1. supports all ROS 2 Tier 1 platforms | 1. supports all ROS 2 Tier 1 platforms |
 | 7. Security            | 1. conforms to [REP-2006](https://ros.org/reps/rep-2006.html) | N/A | 1. [Vulnerability disclosure policy](https://github.com/eProsima/policies/blob/main/VULNERABILITY.md) | 1. Conforms to [REP-2006](https://ros.org/reps/rep-2006.html) |
 
 
-\* OpenSSL dependency for Fast-RTPS is optional, but used in ROS 2.
+\* OpenSSL dependency for Fast RTPS is optional, but used in ROS 2.
 
 ## 5.3 Discussion
 
-rmw_cyclonedds_cpp is missing a quality declaration making it difficult to perform an apples to apples comparison between the two. Under most of the categories for the parts that are documented each implementation are comparable. Despite this there is an appreciable difference as Cyclone DDS is currently declared as quality level 3, and Fast-RTPS is rated as quality level 2.
+rmw_cyclonedds_cpp is missing a quality declaration making it difficult to perform an apples to apples comparison between the two. Under most of the categories for the parts that are documented each implementation are comparable. Despite this there is an appreciable difference as Cyclone DDS is currently declared as quality level 3, and Fast RTPS is rated as quality level 2.
 
 # <a id="Survey"></a> 6.  User Survey Results
 
 ## 6.1 Overview and Description
 
-The final component of this document is a user survey on ROS user’s feelings about their selected RMW implementation conducted between September 17th and October 16th 2020. The survey was posted to ROS Discourse and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience. In conjunction with this evaluation data we also asked participants to provide basic demographic data and perform a self assessment of their skills. In total there 96 responses with 31 users reporting that they use Cyclone DDS RMW and 60 users reporting they use Fast-RTPS RMW. All of the respondents were ROS 2 users with nearly three quarters of them presently working with ROS 2 Foxy. The users sampled come from a wide variety of backgrounds, industries and work on a variety of different projects.
+The final component of this document is a user survey on ROS user’s feelings about their selected RMW implementation conducted between September 17th and October 16th 2020. The survey was posted to ROS Discourse and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience. In conjunction with this evaluation data we also asked participants to provide basic demographic data and perform a self assessment of their skills. In total there 96 responses with 31 users reporting that they use Cyclone DDS RMW and 60 users reporting they use Fast RTPS RMW. All of the respondents were ROS 2 users with nearly three quarters of them presently working with ROS 2 Foxy. The users sampled come from a wide variety of backgrounds, industries and work on a variety of different projects.
 
 In the following section we summarize the data and where possible provide the descriptive statistics for both RMWs as well for the ROS community. Section 5.1.1 summarizes the questions given to participants that are referenced by the plots in 5.2. There is summary of the results in 5.3 with a selection of user narrative responses included in section 5.4
 
@@ -609,7 +609,7 @@ engage with the community and to be responsive to its needs.”
 	                                      -- A ROS 2 Foxy user
 ```
 
-### 6.4.2 Fast-RTPS Narrative Responses
+### 6.4.2 Fast RTPS Narrative Responses
 
 ```
 “I am lacking the technical knowledge of the RMW details for a decision like that.
