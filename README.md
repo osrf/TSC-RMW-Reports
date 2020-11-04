@@ -394,17 +394,18 @@ performance. Out of the 30 experimental configurations
 (permutations of
 Loss=[L00,L10,L20,L30,L40],Bandwidth=[54,300,1000],MessageType=[Array1k,PointCloud512k])
 in only five cases did all vendors have acceptable latency and message loss
-(BW54-L00-Array1k, BW300-L00-Array1k, BW300-L00-PointCloud512k,
-BW1000-L00-Array1k, BW1000-L00-PointCloud512k). In all of these cases packet
+(`BW54-L00-Array1k`, `BW300-L00-Array1k`, `BW300-L00-PointCloud512k`,
+`BW1000-L00-Array1k`, `BW1000-L00-PointCloud512k`). In all of these cases packet
 loss was set to zero. Of the twenty-five remaining cases with performance degradation, eleven showed zero data
 transmission, and four only had a small percentage of messages sent by `Cyclone DDS
-sync` (between 0.5% and 7%, see BW54-L10-PointCloud512k as an example). Of the
+sync` (between 0.5% and 7%, see `BW54-L10-PointCloud512k` as an example). Of the
 ten cases where messages were sent with degraded performance `Cyclone DDS sync`
 generally had fewer messages lost in all of these cases
-(e.g. BW54-[L10,L20,L30]-Array1k). In sixty percent of these  cases `Cyclone DDS sync`
-also generally had lower latency (see BW54-L10-Array1k, BW54-L20-Array1k, et
-cetera). In terms of performance under adverse networking conditions `Cyclone
-DDS sync` generally performed bettered. 
+(e.g. `BW54-[L10,L20,L30]-Array1k`). In sixty percent of these  cases `Cyclone DDS sync`
+also generally had lower latency (see `BW54-L10-Array1k`, `BW54-L20-Array1k`,
+etc). In terms of performance under adverse networking conditions `Cyclone DDS
+sync` generally performed bettered overall. 
+
 
 Similarly to our latency and message loss experiments the plots in 2.2.4
 indicate that `Cyclone DDS sync` has a smaller memory footprint for both the
