@@ -173,7 +173,7 @@ It is possible to change Fast RTPS to use synchronous publishing using non-porta
 This change in behavior was blocked, in part, to avoid breaking behavioral changes between ROS distributions, i.e. one version is using async by default, and the next is using sync by default.
 However, with the TSC approval, we could allow Fast RTPS to default to synchronous publishing, which would be a break in default behavior, but would bring it in line with how publishing works with Cyclone DDS.
 
-Deciding to switch the default to Cyclone DDS is implicitly making this change in default behavior, from Fast RT{S with asynchronous publishing to Cyclone DDS with synchronous publishing.
+Deciding to switch the default to Cyclone DDS is implicitly making this change in default behavior, from Fast RTPS with asynchronous publishing to Cyclone DDS with synchronous publishing.
 
 Therefore there are three related possible outcomes from this process:
 
