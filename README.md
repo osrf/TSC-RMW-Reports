@@ -56,7 +56,16 @@ In [Section 2](#-2-mininet-simulation-results), there is a summary of the differ
 It concludes that comparing Fast RTPS's default behavior, which is using asynchronous publishing, to Cyclone DDS's default behavior, which is using synchronous publishing, is not a fair comparison.
 It uses data from the mininet experiments to demonstrate how asynchronous publishing is different from synchronous publishing, and it also highlights comparisons between Fast RTPS using synchronous publishing, which is done with special configuration, and Cyclone DDS which is always using synchronous publishing.
 
-Also in [Section 2](#-2-mininet-simulation-results), TBD (this would be about the results of the latency and message loss in different scenarios, pending Katt's updated handling of inf)
+Also in [Section 2](#-2-mininet-simulation-results),  While the Mininet tests
+are imperfect they are the best tool at our disposal for creating controlled
+tests for each RMW, and our ability to run the results multiple times gives us
+confidence that the results are repeatable. Using the simulator we are able to
+push each RMW to the breaking point. Our results indicate that `Cyclone DDS
+sync` has lower latency and fewer lost messages in adverse networking
+conditions. There were multiple cases where `Cyclone DDS
+sync` was the only RMW to deliver messages (albeit very few of them). Moreover,
+we found that `Cyclone DDS sync` also had a slightly smaller memory footprint
+with a slightly better CPU profile. 
 
 In [Section 3](#-3-wifi-results), some observations from "real life" WiFi testing were presented, showing that both implementations started to suffer significant performance issues, in terms of message delivery, at similar publishing frequencies, i.e. between 80Hz-100Hz with an Array60K message.
 There was not an obviously better implementation in this experiment.
@@ -389,9 +398,11 @@ This plot shows several poorly performing cases with the mininet bandwidth set a
 The plots below gives the average of ten Mininet experiments for both memory and
 CPU consumption broken down by publisher and subscriber. As with all of the
 Mininet experiments Quality of Service options of
-reliable, keep last, and a history depth of 10 were used. In this case we're
-using a configuration where the network bandwidth was limited to 54Mb and a
-message size of Array1k. The results are fairly representative; with no clear
+reliable, keep last, and a history depth of 10 were used. We have chosen to
+include two of the resource consumption plots pertaining to the cases that most
+often demonstrated sucessful message transmission. These two plots used the
+  * [ ] configuration where the network bandwidth was limited to 54Mb or 300Mb and a
+message of size Array1k was used as the payload. The results are fairly representative; with no clear
 winner in terms of CPU consumption, and slightly better memory consumption
 across the board for `Cyclone DDS sync`. The CPU results should also be
 considered with respect to the latency and lost numbers in the previous
