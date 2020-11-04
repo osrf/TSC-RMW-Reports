@@ -2,7 +2,7 @@
 
 ###  November 5, 2020
 
-### Prepared by: Katherine Scott, William Woodall, Chris Lalancette, Dirk Thomas
+### Prepared by: Katherine Scott, William Woodall, Chris Lalancette
 
 # Index
 
