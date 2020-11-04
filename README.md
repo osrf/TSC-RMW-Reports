@@ -387,7 +387,9 @@ This plot shows several poorly performing cases with the mininet bandwidth set a
 ### 2.2.4 Publisher and Subscriber Memory and CPU Consumption for Select Experiments
 
 The plots below gives the average of ten Mininet experiments for both memory and
-CPU consumption broken down by publisher and subscriber. In this case we're
+CPU consumption broken down by publisher and subscriber. As with all of the
+Mininet experiments Quality of Service options of
+reliable, keep last, and a history depth of 10 were used. In this case we're
 using a configuration where the network bandwidth was limited to 54Mb and a
 message size of Array1k. The results are fairly representative; with no clear
 winner in terms of CPU consumption, and slightly better memory consumption
@@ -395,9 +397,16 @@ across the board for `Cyclone DDS sync`. The CPU results should also be
 considered with respect to the latency and lost numbers in the previous
 plots. Experiments with packet loss rates above 20% with Array1k message size
 generally have no or few messages received.  The complete set of bandwidth and message size
-permutations are available in [Appendix B](APPENDIX.md#appendix_b).
+permutations are available in [Appendix B](APPENDIX.md#appendix_b). The notebook for data processing can be found
+[here](https://github.com/osrf/TSC-RMW-Reports/blob/main/galactic/MininetExperimentResults.ipynb),
+while the processed data can be found in
+[MininetResults.csv](https://github.com/osrf/TSC-RMW-Reports/blob/main/galactic/data/mininet_experiments/MininetResults.csv). 
+
+#### 2.2.4.1 Memory and CPU Utilization At Bandwidth = 54Mb with Message Type Array1k
 
 ![Build Farm performance by message type](/galactic/plots/ResourceBW54-Array1k.png)
+
+#### 2.2.4.1 Memory and CPU Utilization At Bandwidth = 300Mb with Message Type Array1k
 
 ![Build Farm performance by message type](/galactic/plots/ResourceBW300-Array1k.png)
 
