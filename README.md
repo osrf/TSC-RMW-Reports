@@ -368,15 +368,51 @@ This plot shows several poorly performing cases with the mininet bandwidth set a
 
 ### 2.2.4 Publisher and Subscriber Memory and CPU Consumption for Select Experiments
 
-The plot below gives the average of ten Mininet experiments for both memory and
+The plots below gives the average of ten Mininet experiments for both memory and
 CPU consumption broken down by publisher and subscriber. In this case we're
 using a configuration where the network bandwidth was limited to 54Mb and a
-message size of 512k. The results are fairly representative; with no clear
+message size of Array1k. The results are fairly representative; with no clear
 winner in terms of CPU consumption, and slightly better memory consumption
-across the board for `Cyclone DDS sync`. The complete set of bandwidth and message size
+across the board for `Cyclone DDS sync`. The CPU results should also be
+considered with respect to the latency and lost numbers in the previous
+plots. Experiments with packet loss rates above 20% with Array1k message size
+generally have no or few messages received.  The complete set of bandwidth and message size
 permutations are available in [Appendix B](APPENDIX.md#appendix_b).
 
-![Build Farm performance by message type](/galactic/plots/ResourceBW54-512k.png)
+![Build Farm performance by message type](/galactic/plots/ResourceBW54-Array1k.png)
+
+![Build Farm performance by message type](/galactic/plots/ResourceBW300-Array1k.png)
+
+
+### 2.3.1 Mininet Results Summary
+
+While the Mininet tests are imperfect they are the best tool at our disposal for
+creating controlled tests for each RMW, and our ability to run the results
+multiple times gives us confidence that the results are repeatable. At best
+these Mininet tests allow us to establish and upper bound on
+performance. Out of the 30 experimental configurations
+(permutations of
+Loss=[L00,L10,L20,L30,L40],Bandwidth=[54,300,1000],MessageType=[Array1k,PointCloud512k])
+in only five cases did all vendors have acceptable latency and message loss
+(BW54-L00-Array1k, BW300-L00-Array1k, BW300-L00-PointCloud512k,
+BW1000-L00-Array1k, BW1000-L00-PointCloud512k). In all of these cases packet
+loss was set to zero. Of the twenty-five remaining cases with performance degradation, eleven showed zero data
+transmission, and four only had a small percentage of messages sent by `Cyclone DDS
+sync` (between 0.5% and 7%, see BW54-L10-PointCloud512k as an example). Of the
+ten cases where messages were sent with degraded performance `Cyclone DDS sync`
+generally had fewer messages lost in all of these cases
+(e.g. BW54-[L10,L20,L30]-Array1k). In sixty percent of these  cases `Cyclone DDS sync`
+also generally had lower latency (see BW54-L10-Array1k, BW54-L20-Array1k, et
+cetera). In terms of performance under adverse networking conditions `Cyclone
+DDS sync` generally performed bettered. 
+
+Similarly to our latency and message loss experiments the plots in 2.2.4
+indicate that `Cyclone DDS sync` has a smaller memory footprint for both the
+publisher and subscriber. The CPU performance for both publisher and subscriber
+are less clear; and before looking at the raw values one should condition that
+value on the number of messages being sent successfully. Generally in the cases
+where messages are sent successfully `Cyclone DDS sync` has lower CPU
+consumption. 
 
 
 # <a id="WiFi"></a> 3. WiFi Results
