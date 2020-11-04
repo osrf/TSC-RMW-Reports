@@ -424,10 +424,10 @@ while the processed data can be found in
 
 ### 2.3.1 Mininet Results Summary
 
-While the Mininet tests are imperfect they are the best tool at our disposal for
+While the Mininet tests are imperfect, they are the best tool at our disposal for
 creating controlled tests for each RMW, and our ability to run the results
 multiple times gives us confidence that the results are repeatable. At best
-these Mininet tests allow us to establish and upper bound on
+these Mininet tests allow us to establish an upper bound on
 performance. Out of the 30 experimental configurations
 (permutations of
 Loss=[L00,L10,L20,L30,L40], Bandwidth=[54,300,1000], MessageType=[Array1k,PointCloud512k])
@@ -442,10 +442,9 @@ generally had fewer messages lost in all of these cases
 (e.g. `BW54-[L10,L20,L30]-Array1k`). In sixty percent of these  cases `Cyclone DDS sync`
 also generally had lower latency (see `BW54-L10-Array1k`, `BW54-L20-Array1k`,
 etc). In terms of performance under adverse networking conditions `Cyclone DDS
-sync` generally performed bettered overall. 
+sync` generally performed better overall. 
 
-
-Similarly to our latency and message loss experiments the plots in 2.2.4
+Similarly to our latency and message loss experiments, the plots in 2.2.4
 indicate that `Cyclone DDS sync` has a smaller memory footprint for both the
 publisher and subscriber. The CPU performance for both publisher and subscriber
 are less clear; and before looking at the raw values one should condition that
