@@ -188,7 +188,7 @@ There is a significant difference in both performance and behavior when using as
 Also, there is currently an asymmetry in the default behavior of Fast RTPS and
 Cyclone DDS on this point. To provide a clear result we have produced results
 for both the synchronous and asynchronous variants of Fast RTPS along with
-results for Cyclone DDS. 
+results for Cyclone DDS.
 
 ### 2.1.1 Overview
 
@@ -474,7 +474,7 @@ generally have no or few messages received.  The complete set of bandwidth and m
 permutations are available in [Appendix B](APPENDIX.md#appendix_b). The notebook for data processing can be found
 [here](https://github.com/osrf/TSC-RMW-Reports/blob/main/galactic/MininetExperimentResults.ipynb),
 while the processed data can be found in
-[MininetResults.csv](https://github.com/osrf/TSC-RMW-Reports/blob/main/galactic/data/mininet_experiments/MininetResults.csv). 
+[MininetResults.csv](https://github.com/osrf/TSC-RMW-Reports/blob/main/galactic/data/mininet_experiments/MininetResults.csv).
 
 #### 2.2.4.1 Memory and CPU Utilization At Bandwidth = 54Mb with Message Type Array1k
 
@@ -505,7 +505,7 @@ generally had fewer messages lost in all of these cases
 (e.g. `BW54-[L10,L20,L30]-Array1k`). In sixty percent of these  cases `Cyclone DDS sync`
 also generally had lower latency (see `BW54-L10-Array1k`, `BW54-L20-Array1k`,
 etc). In terms of performance under adverse networking conditions Cyclone DDS
-sync generally performed better overall. 
+sync generally performed better overall.
 
 Similarly to our latency and message loss experiments, the plots in 2.2.4
 indicate that Cyclone DDS sync has a smaller memory footprint for both the
@@ -513,7 +513,7 @@ publisher and subscriber. The CPU performance for both publisher and subscriber
 are less clear; and before looking at the raw values one should condition that
 value on the number of messages being sent successfully. Generally in the cases
 where messages are sent successfully Cyclone DDS sync has lower CPU
-consumption. 
+consumption.
 
 
 # <a id="WiFi"></a> 3. WiFi Results
@@ -599,14 +599,14 @@ notebook](./galactic/GetGitRMWDDSMetrics.ipynb), and data analysis which can be 
 ### 4.2.1 Open and Closed Pull Requests in the Previous Six Months
 
 The following plot gives the open and closed issues and pull requests broken
-down by both DDS implementation and RMW implementation. 
+down by both DDS implementation and RMW implementation.
 
 ![Open and closed pull requests and issues](./galactic/plots/PullRequestsAndIssues.png )
 
 ### 4.2.2 Cumulative Time to Close Pull Requests and Issues
 
 These cumulative histograms give the percentage of issues and pull requests
-closed within a certain time frame over the 90 day sample period. 
+closed within a certain time frame over the 90 day sample period.
 
 ![Time to close pull requests and issues](./galactic/plots/IssueAndPRTurnAround.png)
 
@@ -646,7 +646,7 @@ Cyclone DDS is missing a quality declaration making it difficult to perform an a
 
 The final component of this document is a user survey on ROS user’s feelings about their selected RMW implementation conducted between September 17th and October 16th 2020. The survey was posted to ROS Discourse and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience. In conjunction with this evaluation data we also asked participants to provide basic demographic data and perform a self assessment of their skills. In total there 96 responses with 31 users reporting that they use Cyclone DDS RMW and 60 users reporting they use Fast RTPS RMW. All of the respondents were ROS 2 users with nearly three quarters of them presently working with ROS 2 Foxy. The users sampled come from a wide variety of backgrounds, industries and work on a variety of different projects.
 
-In the following section we summarize the data and where possible provide the descriptive statistics for both RMWs as well for the ROS community. Section 5.1.1 summarizes the questions given to participants that are referenced by the plots in 5.2. There is summary of the results in 5.3 with a selection of user narrative responses included in section 5.4
+In the following section we summarize the data and where possible provide the descriptive statistics for both RMWs as well for the ROS community. Section 5.1.1 summarizes the questions given to participants that are referenced by the plots in 5.2. There is a summary of the results in 5.3 with a selection of user narrative responses included in section 5.4.
 
 ## 6.1.1 Survey Question Summary
 
@@ -660,7 +660,7 @@ the results the written scores were translated to numerical values with,
 score of 1. Users who selected "Not Applicable" were not included in the final
 results.
 
-* Full Survey Questions *
+### Full List of Survey Questions
 
 - Q1: My current RMW worked out of the box for my application.
 - Q2: I understand how RMWs work.
@@ -691,7 +691,7 @@ the two Tier 1 RMW vendors. The data shows that approximately three quarters of
 participants are using ROS 2 Foxy. Of those users there is a good distribution
 of application types (a proxy for network topology) and application domain. As
 such we don't believe that the survey data is unfairly biased towards a
-particular application type or domain. 
+particular application type or domain.
 
 ![Survey Demographic Information by RMW](./galactic/plots/SurveyCohorts.png)
 
@@ -699,7 +699,7 @@ particular application type or domain.
 
 Survey participants were also asked to report their skill level in a variety of
 domains. Our goal was to verify that we sampled a wide variety of skill levels
-and captured both the experience of the novice user and the professional. 
+and captured both the experience of the novice user and the professional.
 
 ![Survey participant skill self assessment](./galactic/plots/SurveySkillReport.png)
 
@@ -708,8 +708,8 @@ and captured both the experience of the novice user and the professional.
 
 The following plot gives the results for the questions outlined in section
 6.1.1. The error bars give the first standard deviation of the results. We
-report the dataset mean along with values for Fast RTPS and Cyclone DDS users. 
-For most questions the values from Cyclone DDS users are higher. 
+report the dataset mean along with values for Fast RTPS and Cyclone DDS users.
+For most questions the values from Cyclone DDS users are higher.
 
 ![Survey Question Response Data](./galactic/plots/SurveyResponses.png)
 
@@ -717,7 +717,7 @@ For most questions the values from Cyclone DDS users are higher.
 ### 6.2.4 Survey Question Drill Down 1
 
 This plot drills down for questions four, five, and eleven to show the
-distribution of responses. 
+distribution of responses.
 
 - Q4: I would/have considered changing my RMW implementation.
 - Q11: I am considering or have considered changing my current RMW implementation due to technical challenges.
@@ -731,7 +731,7 @@ distribution of responses.
 ### 6.2.5 Survey Question Drill Down 2
 
 This plot drills down for questions four, five, and eleven to show the
-distribution of responses. 
+distribution of responses.
 
 
 - Q13: I would advocate for my current RMW to be the default ROS 2.
@@ -776,7 +776,7 @@ managers to understand customer attitudes towards a product.  Most of the
 remaining questions are fairly similar results except for question eighteen, “I
 consider my current RMW implementation robust, reliable, and ready for
 production.” Question eighteen had a slightly higher positive response rate from
-Cyclone DDS RMW users than Fast RTPS users. 
+Cyclone DDS RMW users than Fast RTPS users.
 
 All in all, Cyclone DDS RMW rated more favorably among its users, but only very slightly so.
 
