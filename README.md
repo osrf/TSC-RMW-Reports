@@ -18,15 +18,16 @@
 
 # <a id="Introduction"></a> Introduction
 
-This report is intended to serve as a guide for the selection of the default ROS middleware (RMW) implementation for the ROS 2 Galactic Geochelone release. This report is intended to provide information about the Tier 1 RMW/DDS implementations along two broad axes of evaluation: application performance and community engagement. This report is intended to be purely informational and non-prescriptive; meaning this report does not make a recommendation for the default middleware.  Instead, it is an attempt to present objective data about the default RMW candidates in a neutral and factual manner. The final default ROS 2 Galactic middleware implementation will be selected by the ROS 2 Technical Steering Committee (TSC) after evaluation by both the ROS 2 Middleware Working Group and the TSC.
+This report is intended to serve as a guide for the selection of the default ROS middleware (RMW) implementation for the ROS 2 Galactic Geochelone release. This report is intended to provide information about the qualifying Tier 1 RMW implementations along two broad axes of evaluation: application performance and community engagement. This report is intended to be purely informational and non-prescriptive; meaning this report does not make a recommendation for the default middleware.  Instead, it is an attempt to present objective data about the default RMW candidates in a neutral and factual manner. The final default ROS 2 Galactic middleware implementation will be selected by the ROS 2 Technical Steering Committee (TSC) after evaluation by both the ROS 2 Middleware Working Group and the TSC.
 
 In order to be considered for this report, middleware implementations needed to meet a minimum bar:
 
 1. It is considered a Tier 1 implementation in [REP-2000](https://ros.org/reps/rep-2000.html#rolling-ridley-june-2020-ongoing)
-2. It is an open-source project under a permissive license
-3. It is an RTPS/DDS implementation
+2. It, and the middleware it depends on, are open-source projects under a permissive license
+3. It is based on a middleware that uses RTPS or is a DDS implementation
 
-Two middlewares currently meet this minimum bar: [Cyclone DDS](https://github.com/eclipse-cyclonedds/cyclonedds) and [Fast RTPS](https://github.com/eProsima/Fast-RTPS).
+Two rmw implementations currently meet this minimum bar: `rmw_cyclonedds_cpp` based on [Cyclone DDS](https://github.com/eclipse-cyclonedds/cyclonedds) and `rmw_fastrtps_cpp` based on [Fast RTPS](https://github.com/eProsima/Fast-RTPS).
+From here on out, Cyclone DDS will be used synonymously with `rmw_cyclonedds_cpp` and Fast RTPS will be used synonymously with `rmw_fastrtps_cpp` unless otherwise specified.
 
 This report evaluates these two DDS implementations along with their RMW implementations for ROS 2, namely Cyclone DDS and Fast RTPS (this is now called Fast DDS, but this report will continue to refer to it as Fast RTPS). These two Tier 1 ROS 2 RMW implementations along with the underlying DDS implementations are evaluated along two broad rubrics: application performance, as in the overall computational performance of the RMW, and community engagement, or how the RMW’s users perceived the utility of the RMW for their application. These two broad categories of evaluation are supported by the analysis of some recently collected datasets. The datasets collected and how they were analyzed are summarized below:
 
