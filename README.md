@@ -54,7 +54,7 @@ Also in [Section 1](#-1-build-farm-performance-metrics), plots in [1.2.3](#123-s
 Note, these plots show only a single run of the performance tests each, as they come from a single night of the nightly performance jobs.
 They also show clear trade-offs between synchronous and asynchronous publishing modes.
 
-In [Section 2](#-2-mininet-simulation-results), summarizes of the difference in asynchronous and synchronous publishing behavior and performance, mostly in [2.1](#21-synchronous-versus-asynchronous-publishing) and its subsections.
+In [Section 2](#-2-mininet-simulation-results), there is a summary of the difference in asynchronous and synchronous publishing behavior and performance, mostly in [2.1](#21-synchronous-versus-asynchronous-publishing) and its subsections.
 It concludes that comparing Fast RTPS's default behavior, which is using asynchronous publishing, to Cyclone DDS's default behavior, which is using synchronous publishing, is not a fair comparison.
 It uses data from the Mininet experiments to demonstrate how asynchronous publishing is different from synchronous publishing, and it also highlights comparisons between Fast RTPS using synchronous publishing, which is done with special configuration, and Cyclone DDS which is always using synchronous publishing.
 
