@@ -183,7 +183,10 @@ The full report and data can be found here: [Appendix B](APPENDIX.md#appendix_b)
 ## 2.1 Synchronous Versus Asynchronous Publishing
 
 There is a significant difference in both performance and behavior when using asynchronous publishing versus synchronous publishing.
-Also, there is currently an asymmetry in the default behavior of Fast RTPS and Cyclone DDS on this point.
+Also, there is currently an asymmetry in the default behavior of Fast RTPS and
+Cyclone DDS on this point. To provide a clear result we have produced results
+for both the synchronous and asynchronous variants of Fast RTPS along with
+results for Cyclone DDS. 
 
 ### 2.1.1 Overview
 
@@ -194,7 +197,7 @@ In synchronous publishing, the publish call does much more of the work to send t
 ### 2.1.2 Current Situation
 
 Currently Fast RTPS uses asynchronous publishing by default, but it also supports synchronous publishing as well.
-Currently Cyclone DDS uses synchronous publishing, and does not support asynchronous publishing, this was reported in [this](https://github.com/ros2/rmw_cyclonedds/issues/89) issue.
+Cyclone DDS uses synchronous publishing, and does not support asynchronous publishing, this was reported in [this](https://github.com/ros2/rmw_cyclonedds/issues/89) issue.
 
 A proposal was made to change Fast RTPS to use synchronous publishing by default, but it was rejected by request of the ROS 2 core maintainers (see [this](https://github.com/ros2/rmw_fastrtps/pull/343#pullrequestreview-346228522) pull request).
 It is possible to change Fast RTPS to use synchronous publishing using non-portable environment variables and a custom XML configuration file, which is what is used in these experiments to generate the `Fast RTPS sync` results, versus the `Fast RTPS async` results which use the default settings.
@@ -225,9 +228,7 @@ In this subsection, we will motivate why this setting matters so much and should
 
 Asynchronous publishing can have a positive impact on throughput when publishing large data where fragmentation is involved.
 
-This report doesn't have very good data supporting this point, but one of the purposes of this feature is to provide better performance when publishing large messages or streaming video, see Fast RTPS's documentation as an example:
-
-[https://fast-dds.docs.eprosima.com/en/v1.8.1/advanced.html#sending-large-data](https://fast-dds.docs.eprosima.com/en/v1.8.1/advanced.html#sending-large-data)
+This report doesn't have very good data supporting this point, but one of the purposes of this feature is to provide better performance when publishing large messages or streaming video, see [Fast RTPS's documentation as an example](https://fast-dds.docs.eprosima.com/en/v1.8.1/advanced.html#sending-large-data).
 
 Also this graph from the build farm's performance dataset show how CPU utilization falls off for very large messages, even though messages received is lower than synchronous in this example:
 
@@ -252,13 +253,18 @@ To illustrate this difference in behavior consider this experiment case:
   - keep last with a history depth of 10, and
 - using Mininet to limit the bandwidth to 54Mbps.
 
-This case is interesting because the required bandwidth exceeds the limit imposed by Mininet, i.e. the message is roughly 512 kilobytes being published at 30Hz, so a rough calculation is that it would require 122Mbps to transmit all of the data (not including the overhead of transport or resent data).
-
-In this scenario, a backlog of messages is produced and the history cache is full in the first few seconds of publishing.
-
-To understand this point, it is also important understand how the "Messages Sent" is calculated by the publishing process.
-Each time a message is published, a time stamp is recorded, the remaining time until the next publish period is calculated and the publishing thread sleeps until that time has elapsed before publishing again.
-So if publishing takes a long time it can begin to impact the effective publish rate.
+This case is interesting because the required bandwidth exceeds the limit
+imposed by Mininet, i.e. the message is roughly 512 kilobytes being published at
+30Hz, so a rough calculation is that it would require 122Mbps to transmit all of
+the data (not including the overhead of transport or resent data). In this
+scenario, a backlog of messages is produced and the history cache is
+full in the first few seconds of publishing. To understand this point, it is
+also important understand how the "Messages Sent" is calculated by the
+publishing process. Each time a message is published, a time stamp is recorded,
+the remaining time until the next publish period is calculated and the
+publishing thread sleeps until that time has elapsed before publishing
+again. Therefore if publishing takes a long time it can begin to impact the
+effective  publish rate.
 
 Consider these two series of plots comparing `Fast RTPS sync` and `Cyclone DDS sync` with varying packet loss:
 
@@ -315,12 +321,12 @@ Consider these two series of plots comparing `Fast RTPS sync` and `Cyclone DDS s
   </tr>
 </table>
 
-As you can see, the publishing rate does not meet the target of 30 per second, but are fairly consistent between the two implementations.
-
-An oddity is that as the packet loss increases, the effective publishing rate increases as well, approaching the desired rate of 30.
-
-Note that these plots show both individual runs (with reduced alpha) and averages of those 10 runs (solid lines).
-The dotted lines are averages rates for the entire run.
+As you can see, the publishing rate does not meet the target of 30 per second,
+but are fairly consistent between the two implementations. An oddity is that as
+the packet loss increases, the effective publishing rate increases as well,
+approaching the desired rate of 30. Note that these plots show both individual
+runs (with reduced alpha) and averages of those 10 runs (solid lines). The
+dotted lines are averages rates for the entire run.
 
 Now consider these two series of plots between `Fast RTPS async` and `Fast RTPS sync`:
 
@@ -377,33 +383,39 @@ Now consider these two series of plots between `Fast RTPS async` and `Fast RTPS 
   </tr>
 </table>
 
-Notice in the async case that the publish rate almost achieves the desired 30Hz, whereas the publish rate for sync is clamped to the capacity of the network almost immediately.
-The publish rate for async is quite noisy, which is something we could investigate further, but the average is quite close the desired goal.
-
-This can be a very serious issue if the user's code is designed under the assumption that publishing is always relatively quick, which is a likely assumption for ROS 1 users (ROS 1 behaved most similarly to asynchronous publishing in ROS 2) or for users thinking that "keep last" will just replace messages in the history cache if there's a backlog.
-We can document this behavior, but the impact is quite subtle and could lead to hard to diagnose problems in user's applications.
-
-This example was intended to demonstrate why it is important to be cautious when changing this behavior for all users.
+Notice in the async case that the publish rate almost achieves the desired 30Hz,
+whereas the publish rate for sync is clamped to the capacity of the network
+almost immediately. The publish rate for async is quite noisy, which is
+something we could investigate further, but the average is quite close the
+desired goal. This can be a very serious issue if the user's code is designed
+under the assumption that publishing is always relatively quick, which is a
+likely assumption for ROS 1 users (ROS 1 behaved most similarly to asynchronous
+publishing in ROS 2) or for users thinking that "keep last" will just replace
+messages in the history cache if there's a backlog. We can document this
+behavior, but the impact is quite subtle and could lead to hard to diagnose
+problems in user's applications. This example was intended to demonstrate why it
+is important to be cautious when changing this behavior for all users.
 
 ## 2.2 Mininet test results
 
 ### 2.2.1 Experiments with Lost Packets or Latency at 54Mbps Bandwidth
 
 This plot shows several poorly performing cases with the Mininet bandwidth set
-at 54Mbps.  To generate these plots we first took the average value across a
-Mininet experiment and then averaged the value for all ten Mininet experimental
-runs. When calculating latency we first examined the number of packets received
+at 54Mbps.  To generate these plots we first took the average value across
+a single Mininet experiment and then averaged that value across ten Mininet
+runs (i.e. first average the time series, then take the average of the ten
+runs). When calculating latency we first examined the number of packets received
 for a given time slice, and then, if a packet was received in a time slice we
-then calculate the average latency. Each label across the X-axis describes the
+then calculate the average latency for that time slice. Each label across the X-axis describes the
 simulated packet loss percentage and the size of the message.  For example,
 "L:0/PointCloud512k" shows the results from simulating 0% packet loss with a
 512k message size and 54Mbps bandwidth cap.  The top plot shows the mean latency
 to receive the messages, while the bottom plot shows what percent of the
 messages were lost.  It should be noted that only poorly-performing cases are
 illustrated here; see [Appendix B](APPENDIX.md#appendix_b) for all of the data,
-including the successful ones.  For this plot, Quality of Service options of
+including the successful ones. For this plot, Quality of Service options of
 reliable, keep last, and a history depth of 10 were used. *The black error bars
-indicate are used to indicate the maximum and minimum value in the ten runs
+indicate the maximum and minimum value in the ten runs
 performed for a given experiment.* The notebook for data processing can be found
 [here](https://github.com/osrf/TSC-RMW-Reports/blob/main/galactic/MininetExperimentResults.ipynb),
 while the processed data can be found in
@@ -411,15 +423,34 @@ while the processed data can be found in
 
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW54.png)
 
+In this plot we can see three cases where no RMW successfully transmitted any
+messages, two cases where only Cyclone transmitted a message (with varying
+degrees of latency), and four cases where all the RMWs under test transmitted
+messages. For the four cases where all RMWs transmitted messages Cyclone
+generally had lower latency and more messages delivered (e.g. L10/Array1k,
+L20/Array1k, L0:PointCloud512k).
+
 ### 2.2.2 Experiments with Lost Packets or Latency at 300Mbps Bandwidth
 
-This plot shows several poorly performing cases with the Mininet bandwidth set at 300Mbps.  The rest of the description in 2.2.1 applies to this plot as well.
+This plot shows several poorly performing cases with the Mininet bandwidth set
+at 300Mbps.  The rest of the description in 2.2.1 applies to this plot as
+well. In this plot we see three cases where all RMWs failed (
+L20,30,40/PointCloud512k), two cases where Cyclone was able to deliver a small
+number of messages (L40/Array1k and L10/PointCloud512k), and three cases where
+all RMWs were able to deliver some messages. In the cases where all three RMWs
+delivered messages Cyclone generally delivered more messages but only had lower
+latency in one of those cases (L10/Array1k). 
 
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW300.png)
 
 ### 2.2.3 Experiments with Lost Packets or Latency at 1000Mbps Bandwidth
 
-This plot shows several poorly performing cases with the Mininet bandwidth set at 1000Mbps.  The rest of the description in 2.2.1 applies to this plot as well.
+This plot shows several poorly performing cases with the Mininet bandwidth set
+at 1000Mbps.  The rest of the description in 2.2.1 applies to this plot as
+well. On the right of this plot we see five cases where no messages were
+delivered, and three cases where all RMW vendors were able to transmit some
+number of messages. In these cases Cyclone had more messages delivered and lower
+latency in two of the cases. 
 
 ![Build Farm performance by message type](./galactic/plots/PoorPerformersBW1000.png)
 
@@ -431,12 +462,11 @@ CPU consumption broken down by publisher and subscriber. As with all of the
 Mininet experiments Quality of Service options of
 reliable, keep last, and a history depth of 10 were used. We have chosen to
 include two of the resource consumption plots pertaining to the cases that most
-often demonstrated sucessful message transmission. These two plots used the
-  * [ ] configuration where the network bandwidth was limited to 54Mb or 300Mb and a
-message of size Array1k was used as the payload. The results are fairly representative; with no clear
-winner in terms of CPU consumption, and slightly better memory consumption
-across the board for `Cyclone DDS sync`. The CPU results should also be
-considered with respect to the latency and lost numbers in the previous
+often demonstrated sucessful message transmission. These two plots used the configuration where the network bandwidth was limited to 54Mb or 300Mb and a
+message of size Array1k was used as the payload. The results are fairly
+representative; with no clear winner in terms of CPU consumption, and slightly
+better memory consumption across the board for Cyclone DDS sync. The CPU
+results should also be considered with respect to the latency and lost numbers in the previous
 plots. Experiments with packet loss rates above 20% with Array1k message size
 generally have no or few messages received.  The complete set of bandwidth and message size
 permutations are available in [Appendix B](APPENDIX.md#appendix_b). The notebook for data processing can be found
@@ -472,15 +502,15 @@ ten cases where messages were sent with degraded performance `Cyclone DDS sync`
 generally had fewer messages lost in all of these cases
 (e.g. `BW54-[L10,L20,L30]-Array1k`). In sixty percent of these  cases `Cyclone DDS sync`
 also generally had lower latency (see `BW54-L10-Array1k`, `BW54-L20-Array1k`,
-etc). In terms of performance under adverse networking conditions `Cyclone DDS
-sync` generally performed better overall. 
+etc). In terms of performance under adverse networking conditions Cyclone DDS
+sync generally performed better overall. 
 
 Similarly to our latency and message loss experiments, the plots in 2.2.4
-indicate that `Cyclone DDS sync` has a smaller memory footprint for both the
+indicate that Cyclone DDS sync has a smaller memory footprint for both the
 publisher and subscriber. The CPU performance for both publisher and subscriber
 are less clear; and before looking at the raw values one should condition that
 value on the number of messages being sent successfully. Generally in the cases
-where messages are sent successfully `Cyclone DDS sync` has lower CPU
+where messages are sent successfully Cyclone DDS sync has lower CPU
 consumption. 
 
 
