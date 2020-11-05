@@ -78,7 +78,9 @@ Issues are handled in a timely fashion for the most part, and those that are not
 It is difficult to draw a meaningful conclusion from the data available.
 
 In [Section 5](#-5-rep-2004-code-quality-metrics), adherence to [REP-2004](https://www.ros.org/reps/rep-2004.html) is compared, and the only significant thing to note is that Cyclone DDS does not have its own Quality Declaration, but the Cyclone DDS repository does have one, which is apparently an oversight.
-Otherwise the implementations are quite similar, despite some inconsistencies in the reporting due to differences in self reporting.
+Otherwise the implementations are quite similar, despite some inconsistencies in
+the reporting due to differences in self reporting. Cyclone DDS is missing a quality declaration making it difficult to perform an apples to apples comparison between the two. Under most of the categories for the parts that are documented each implementation are comparable. Despite this there is an appreciable difference as Cyclone DDS is currently declared as quality level 3, and Fast RTPS is rated as quality level 2.
+
 
 In [Section 6](#-6-user-survey-results), the user survey results are presented,
 and there is a slight advantage for Cyclone DDS as highlighted in the plots for
@@ -519,11 +521,11 @@ consumption.
 ## 3.1 Test scenario
 
 To test the performance and behavior in a real world scenario we tested the
-communication over WiFi.
-For the test two laptops were used which were connected to a 2.4 GHz network
-provided by an ASUS RT-AC86U.
+communication over a home WiFi router.
+For this test two laptops were used which were connected to a 2.4 GHz network
+provided by an ASUS RT-AC86U home router.
 The goal was to push the transmitted bandwidth to the limit and observe the
-performance and behavior of the RMW implementation since this was a common pain
+performance and behavior of the RMW implementations since this was a common pain
 point reported by users.
 
 A single topic with **Array60k** messages was used with the following QoS
@@ -581,8 +583,9 @@ being received anymore.
 ## 4.1 Overview and Statistics
 
 Responsiveness to issues and pull requests in a GitHub repository is a good
-proxy measurement for how quickly a given vendor responds to their customer and
-users. The number of pull requests, and how quickly they are closed also give an
+proxy measurement for how quickly a given vendor responds to their customers and
+users. The number of pull requests, and how quickly they are closed, can also
+give us an
 indication to how much development is taking place on a given code base and how
 quickly issues are being resolved. To examine the responsiveness and development
 velocity of both RMW vendors we used the github API to collect commit, pull
@@ -595,9 +598,15 @@ notebook](./galactic/GetGitRMWDDSMetrics.ipynb), and data analysis which can be 
 
 ### 4.2.1 Open and Closed Pull Requests in the Previous Six Months
 
+The following plot gives the open and closed issues and pull requests broken
+down by both DDS implementation and RMW implementation. 
+
 ![Open and closed pull requests and issues](./galactic/plots/PullRequestsAndIssues.png )
 
 ### 4.2.2 Cumulative Time to Close Pull Requests and Issues
+
+These cumulative histograms give the percentage of issues and pull requests
+closed within a certain time frame over the 90 day sample period. 
 
 ![Time to close pull requests and issues](./galactic/plots/IssueAndPRTurnAround.png)
 
@@ -629,7 +638,7 @@ Code quality is an important metric for project health.  ROS 2 has defined vario
 
 ## 5.3 Discussion
 
-rmw_cyclonedds_cpp is missing a quality declaration making it difficult to perform an apples to apples comparison between the two. Under most of the categories for the parts that are documented each implementation are comparable. Despite this there is an appreciable difference as Cyclone DDS is currently declared as quality level 3, and Fast RTPS is rated as quality level 2.
+Cyclone DDS is missing a quality declaration making it difficult to perform an apples to apples comparison between the two. Under most of the categories for the parts that are documented each implementation are comparable. Despite this there is an appreciable difference as Cyclone DDS is currently declared as quality level 3, and Fast RTPS is rated as quality level 2.
 
 # <a id="Survey"></a> 6. User Survey Results
 
@@ -651,6 +660,7 @@ the results the written scores were translated to numerical values with,
 score of 1. Users who selected "Not Applicable" were not included in the final
 results.
 
+* Full Survey Questions *
 
 - Q1: My current RMW worked out of the box for my application.
 - Q2: I understand how RMWs work.
@@ -675,24 +685,59 @@ results.
 
 ### 6.2.1 Survey Participant Demographic Information
 
+Before asking the general survey questions we also asked for some basic
+demographic data from participants. The plot below breaks the data down between
+the two Tier 1 RMW vendors. The data shows that approximately three quarters of
+participants are using ROS 2 Foxy. Of those users there is a good distribution
+of application types (a proxy for network topology) and application domain. As
+such we don't believe that the survey data is unfairly biased towards a
+particular application type or domain. 
+
 ![Survey Demographic Information by RMW](./galactic/plots/SurveyCohorts.png)
 
-### 6.2.2 Survey Participant Skill Self Assesment
+### 6.2.2 Survey Participant Skill Self Assessment
 
-![Survey participant skill self assesment](./galactic/plots/SurveySkillReport.png)
+Survey participants were also asked to report their skill level in a variety of
+domains. Our goal was to verify that we sampled a wide variety of skill levels
+and captured both the experience of the novice user and the professional. 
+
+![Survey participant skill self assessment](./galactic/plots/SurveySkillReport.png)
 
 
 ### 6.2.3 Survey Response Data by RMW
+
+The following plot gives the results for the questions outlined in section
+6.1.1. The error bars give the first standard deviation of the results. We
+report the dataset mean along with values for Fast RTPS and Cyclone DDS users. 
+For most questions the values from Cyclone DDS users are higher. 
 
 ![Survey Question Response Data](./galactic/plots/SurveyResponses.png)
 
 
 ### 6.2.4 Survey Question Drill Down 1
 
+This plot drills down for questions four, five, and eleven to show the
+distribution of responses. 
+
+- Q4: I would/have considered changing my RMW implementation.
+- Q11: I am considering or have considered changing my current RMW implementation due to technical challenges.
+- Q5: Open Robotics provides sufficient information for me to make a sound RMW selection.
+
+
 ![Survey Drill Down 1](./galactic/plots/SurveyDrillDown1.png)
 
 
+
 ### 6.2.5 Survey Question Drill Down 2
+
+This plot drills down for questions four, five, and eleven to show the
+distribution of responses. 
+
+
+- Q13: I would advocate for my current RMW to be the default ROS 2.
+- Q14: I would recommend my current RMW to a friend.
+- Q16: Based on the out-of-the-box experience I would recommend ROS2 Foxy to a friend.
+
 
 ![Survey Drill Down 1](./galactic/plots/SurveyDrillDown2.png)
 
@@ -701,10 +746,37 @@ results.
 
 We feel that we were able to collect a large and representative sample of the ROS community for this survey with a sufficient number of users for each RMW included in the final report. The respondents to the survey represent a wide swath of ROS 2 users with the preponderance of responses coming from ROS 2 Foxy Fitzroy users. These respondents reported a wide range of skill levels and varying degrees of competency in debugging, networking, and ROS development skills. What is remarkable about the responses is how uniform they were on most questions relating to their selected RMW vendor. The difference between most of the responses varies by no more than 5% for most of the questions.
 
-Questions one, two, and three are leader questions that help us understand the ROS 2 community’s understanding of ROS middleware. By and large ROS 2 users, using both RMWs, say that they understand how RMWs work, how to change them, and that their current RMW worked out of the box for them. However, Cyclone DDS RMW users are slightly more likely to understand RMWs. Question four asks if a given user has changed their RMW, and unsurprisingly Cyclone DDS RMW users are much more likely to have considered changing their RMW. Question five, “Does Open Robotics provide sufficient information to make a sound RMW selection” received on average a neutral response indicating we could do more to support the community. For questions six, seven, and eight, most users, from both RMWs, feel they have sufficient support, documentation, and debugging tools. Question nine asks if the selected RMW has sufficient features, and Cyclone DDS RMW users believe it performs slightly better in this category.
+Questions one, two, and three are leader questions that help us understand the
+ROS 2 community’s understanding of ROS middleware. By and large ROS 2 users,
+using both RMWs, say that they understand how RMWs work, how to change them, and
+that their current RMW worked out of the box for them. However, Cyclone DDS RMW
+users are slightly more likely to understand RMWs. Question four asks if a given
+user has changed their RMW, and unsurprisingly Cyclone DDS RMW users are much
+more likely to have considered changing their RMW. Question five, “Does Open
+Robotics provide sufficient information to make a sound RMW selection” received
+on average a neutral response indicating we could do more to support the
+community. For questions six, seven, and eight, most users, from both RMWs, feel
+they have sufficient support, documentation, and debugging tools, with Cyclone
+DDS users believing they have slightly better support and debugging tools, and
+Fast RTPS users feeling like they have better documentation.  Question nine asks if the selected RMW has sufficient features, and Cyclone DDS RMW users believe it performs slightly better in this category.
 
-Question ten shows that Cyclone DDS RMW users believe that they have sufficient performance for their application, but the difference is small, only 6%.
-Question eleven, “I am considering changing or have changed my RMW due to technical challenges” is interesting because the responses are nearly uniform between the two RMWs. In question twelve we find that ROS users generally agree that DDS RMWs have improved the overall ROS experience. Question thirteen asks respondents if they would recommend their RMW as the default, to which Cyclone DDS RMW users have a more positive response. Similarly, question fourteen asks is the user would recommend their RMW to a friend, and a slightly higher percentage of Cyclone DDS RMW users would do so. This question is very similar to the “net promoter score” used by product managers to understand customer attitudes towards a product.  Most of the remaining questions are fairly similar results except for question eighteen, “I consider my current RMW implementation robust, reliable, and ready for production.” Question eighteen had a slightly higher positive response rate from Cyclone DDS RMW users.
+Question ten shows that Cyclone DDS RMW users believe that they have sufficient
+performance for their application, but the difference is small, only
+6%. Question eleven, “I am considering changing or have changed my RMW due to
+technical challenges” is interesting because the responses are nearly uniform
+between the two RMWs. In question twelve we find that ROS users generally agree
+that DDS RMWs have improved the overall ROS experience; but those who have had
+issues and had to switch to Cyclone having a less rosy view of DDS in
+general.  Question thirteen asks respondents if they would recommend their RMW
+as the default, to which Cyclone DDS RMW users have a more positive
+response. Similarly, question fourteen asks is the user would recommend their
+RMW to a friend, and a slightly higher percentage of Cyclone DDS RMW users would
+do so. This question is very similar to the “net promoter score” used by product
+managers to understand customer attitudes towards a product.  Most of the
+remaining questions are fairly similar results except for question eighteen, “I
+consider my current RMW implementation robust, reliable, and ready for
+production.” Question eighteen had a slightly higher positive response rate from
+Cyclone DDS RMW users than Fast RTPS users. 
 
 All in all, Cyclone DDS RMW rated more favorably among its users, but only very slightly so.
 
