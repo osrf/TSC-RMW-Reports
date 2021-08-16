@@ -150,7 +150,7 @@ empty means that it has no publishers, subscribers, services, actions, or timers
 attached.  Thus, this is a test of just the overhead of a node. The 95% CPU measurement
 indicates the 95% percentile (i.e. peak) CPU utilization of the node.
 
-![Build Farm CPU Consumption](./galactic/plots/BuildFarmRMWCPUConsumption.png )
+![Build Farm CPU Consumption](./plots/BuildFarmRMWCPUConsumption.png )
 
 
 ### 1.2.2 Memory Utilization in a Spinning Node By RMW
@@ -162,13 +162,13 @@ indicates the 95% percentile (i.e. peak) memory utilization of the node.
 
 
 
-![Build Farm Memory Consumption](./galactic/plots/BuildFarmRMWMemoryConsumption.png)
+![Build Farm Memory Consumption](./plots/BuildFarmRMWMemoryConsumption.png)
 
 ### 1.2.3: Subscriber CPU Utilization, Latency, and Lost Messages By Message Type and RMW
 
 In this plot, 1000 messages of the specified size were sent between a publisher and subscriber on the same machine.  For each message size, the above plots show how many messages out of 1000 were received by the publisher, the average latency to receive each of the messages, and the average CPU utilization to receive the messages.  For this plot, Quality of Service options of best-effort, keep last, and a depth of 10 were used.
 
-![Build Farm performance by message type](./galactic/plots/PerfTestVsMsgSize.png)
+![Build Farm performance by message type](./plots/PerfTestVsMsgSize.png)
 
 ## 1.3 Build Farm Test Discussion
 
@@ -235,7 +235,7 @@ This report doesn't have very good data supporting this point, but one of the pu
 
 Also this graph from the build farm's performance dataset show how CPU utilization falls off for very large messages, even though messages received is lower than synchronous in this example:
 
-![Build Farm performance by message type](./galactic/plots/PerfTestVsMsgSize.png)
+![Build Farm performance by message type](./plots/PerfTestVsMsgSize.png)
 
 It is likely that customization of a flow controller is also required to get the optimal large data performance when used with asynchronous publishing.
 
@@ -280,46 +280,46 @@ Consider these two series of plots comparing `Fast RTPS sync` and `Cyclone DDS s
   <tr>
     <td>Packet Loss: 0%</td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.svg">
     </td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.svg">
     </td>
   </tr>
   <tr>
     <td>Packet Loss: 10%</td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.svg">
     </td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.svg">
     </td>
   </tr>
   <tr>
     <td>Packet Loss: 20%</td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.svg">
     </td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.svg">
     </td>
   </tr>
   <tr>
     <td>Packet Loss: 30%</td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.svg">
     </td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.svg">
     </td>
   </tr>
   <tr>
     <td>Packet Loss: 40%</td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_cyclonedds_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.svg">
     </td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.svg">
     </td>
   </tr>
 </table>
@@ -342,46 +342,46 @@ Now consider these two series of plots between `Fast RTPS async` and `Fast RTPS 
   <tr>
     <td>Packet Loss: 0%</td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.svg">
     </td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_0loss_0delay/average_sent_received.svg">
     </td>
   </tr>
   <tr>
     <td>Packet Loss: 10%</td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.svg">
     </td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_10loss_0delay/average_sent_received.svg">
     </td>
   </tr>
   <tr>
     <td>Packet Loss: 20%</td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.svg">
     </td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_20loss_0delay/average_sent_received.svg">
     </td>
   </tr>
   <tr>
     <td>Packet Loss: 30%</td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.svg">
     </td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_30loss_0delay/average_sent_received.svg">
     </td>
   </tr>
   <tr>
     <td>Packet Loss: 40%</td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_async_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.svg">
     </td>
     <td>
-      <img src="galactic/data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.svg">
+      <img src="data/mininet_experiments/generated_report/rmw_fastrtps_cpp_sync_PointCloud512k@30_reliable_volatile_keep_last@10_54bw_40loss_0delay/average_sent_received.svg">
     </td>
   </tr>
 </table>
@@ -424,7 +424,7 @@ performed for a given experiment.* The notebook for data processing can be found
 while the processed data can be found in
 [MininetResults.csv](https://github.com/osrf/TSC-RMW-Reports/blob/main/galactic/data/mininet_experiments/MininetResults.csv).
 
-![Build Farm performance by message type](./galactic/plots/PoorPerformersBW54.png)
+![Build Farm performance by message type](./plots/PoorPerformersBW54.png)
 
 In this plot we can see three cases where no RMW successfully transmitted any
 messages, two cases where only Cyclone transmitted a message (with varying
@@ -444,7 +444,7 @@ all RMWs were able to deliver some messages. In the cases where all three RMWs
 delivered messages Cyclone generally delivered more messages but only had lower
 latency in one of those cases (L10/Array1k).
 
-![Build Farm performance by message type](./galactic/plots/PoorPerformersBW300.png)
+![Build Farm performance by message type](./plots/PoorPerformersBW300.png)
 
 ### 2.2.3 Experiments with Lost Packets or Latency at 1000Mbps Bandwidth
 
@@ -455,7 +455,7 @@ delivered, and three cases where all RMW vendors were able to transmit some
 number of messages. In these cases Cyclone had more messages delivered and lower
 latency in two of the cases.
 
-![Build Farm performance by message type](./galactic/plots/PoorPerformersBW1000.png)
+![Build Farm performance by message type](./plots/PoorPerformersBW1000.png)
 
 
 ### 2.2.4 Publisher and Subscriber Memory and CPU Consumption for Select Experiments
@@ -479,11 +479,11 @@ while the processed data can be found in
 
 #### 2.2.4.1 Memory and CPU Utilization At Bandwidth = 54Mb with Message Type Array1k
 
-![Build Farm performance by message type](/galactic/plots/ResourceBW54-Array1k.png)
+![Build Farm performance by message type](./plots/ResourceBW54-Array1k.png)
 
 #### 2.2.4.1 Memory and CPU Utilization At Bandwidth = 300Mb with Message Type Array1k
 
-![Build Farm performance by message type](/galactic/plots/ResourceBW300-Array1k.png)
+![Build Farm performance by message type](./plots/ResourceBW300-Array1k.png)
 
 
 ### 2.3.1 Mininet Results Summary
@@ -560,15 +560,15 @@ invoked with the following configuration:
   * **\<FREQ>**: the frequency in Hz which was either 80, 100, or 120
   * **\<RUN>**: the index of the run, which we performed 10 of each
 
-The output of all test runs can be found [here](./galactic/data/wifi).
+The output of all test runs can be found [here](./data/wifi).
 
 ## 3.3 Test results
 
 | Fast RTPS                                               | Cyclone DDS                                               |
 | -                                                       | -                                                         |
-| ![Fast RTPS with 80Hz](./galactic/plots/wifi/f-80.png)  | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-80.png)  |
-| ![Fast RTPS with 80Hz](./galactic/plots/wifi/f-100.png) | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-100.png) |
-| ![Fast RTPS with 80Hz](./galactic/plots/wifi/f-120.png) | ![Cyclone DDS with 80Hz](./galactic/plots/wifi/c-120.png) |
+| ![Fast RTPS with 80Hz](./plots/wifi/f-80.png)  | ![Cyclone DDS with 80Hz](./plots/wifi/c-80.png)  |
+| ![Fast RTPS with 80Hz](./plots/wifi/f-100.png) | ![Cyclone DDS with 80Hz](./plots/wifi/c-100.png) |
+| ![Fast RTPS with 80Hz](./plots/wifi/f-120.png) | ![Cyclone DDS with 80Hz](./plots/wifi/c-120.png) |
 
 ## 3.4 Test summary
 
@@ -593,7 +593,7 @@ velocity of both RMW vendors we used the github API to collect commit, pull
 request, and issue data for the 180 days before the report was drafted on
 10/17/2020. The process of collecting this data was divided into two part, data
 collection which can be found in [this
-notebook](./galactic/GetGitRMWDDSMetrics.ipynb), and data analysis which can be [found here](./galactic/PlotGithubStats.ipynb).
+notebook](./GetGitRMWDDSMetrics.ipynb), and data analysis which can be [found here](./PlotGithubStats.ipynb).
 
 ## 4.2 GitHub Engagement Results
 
@@ -602,14 +602,14 @@ notebook](./galactic/GetGitRMWDDSMetrics.ipynb), and data analysis which can be 
 The following plot gives the open and closed issues and pull requests broken
 down by both DDS implementation and RMW implementation.
 
-![Open and closed pull requests and issues](./galactic/plots/PullRequestsAndIssues.png )
+![Open and closed pull requests and issues](./plots/PullRequestsAndIssues.png )
 
 ### 4.2.2 Cumulative Time to Close Pull Requests and Issues
 
 These cumulative histograms give the percentage of issues and pull requests
 closed within a certain time frame over the 90 day sample period.
 
-![Time to close pull requests and issues](./galactic/plots/IssueAndPRTurnAround.png)
+![Time to close pull requests and issues](./plots/IssueAndPRTurnAround.png)
 
 # 4.3 GitHub Metrics Discussion
 
@@ -694,7 +694,7 @@ of application types (a proxy for network topology) and application domain. As
 such we don't believe that the survey data is unfairly biased towards a
 particular application type or domain.
 
-![Survey Demographic Information by RMW](./galactic/plots/SurveyCohorts.png)
+![Survey Demographic Information by RMW](./plots/SurveyCohorts.png)
 
 ### 6.2.2 Survey Participant Skill Self Assessment
 
@@ -702,7 +702,7 @@ Survey participants were also asked to report their skill level in a variety of
 domains. Our goal was to verify that we sampled a wide variety of skill levels
 and captured both the experience of the novice user and the professional.
 
-![Survey participant skill self assessment](./galactic/plots/SurveySkillReport.png)
+![Survey participant skill self assessment](./plots/SurveySkillReport.png)
 
 
 ### 6.2.3 Survey Response Data by RMW
@@ -712,7 +712,7 @@ The following plot gives the results for the questions outlined in section
 report the dataset mean along with values for Fast RTPS and Cyclone DDS users.
 For most questions the values from Cyclone DDS users are higher.
 
-![Survey Question Response Data](./galactic/plots/SurveyResponses.png)
+![Survey Question Response Data](./plots/SurveyResponses.png)
 
 
 ### 6.2.4 Survey Question Drill Down 1
@@ -725,7 +725,7 @@ distribution of responses.
 - Q5: Open Robotics provides sufficient information for me to make a sound RMW selection.
 
 
-![Survey Drill Down 1](./galactic/plots/SurveyDrillDown1.png)
+![Survey Drill Down 1](./plots/SurveyDrillDown1.png)
 
 
 
@@ -740,7 +740,7 @@ distribution of responses.
 - Q16: Based on the out-of-the-box experience I would recommend ROS2 Foxy to a friend.
 
 
-![Survey Drill Down 1](./galactic/plots/SurveyDrillDown2.png)
+![Survey Drill Down 1](./plots/SurveyDrillDown2.png)
 
 
 ## 6.3 Survey Discussion
