@@ -3,7 +3,7 @@
 ## Introduction
 Every year, the ROS 2 TSC is mandated to choose a default RMW provider for the next ROS 2 release.
 In 2021, that selection will affect Humble Hawksbill, the release scheduled for May 2022.
-The default RMW provider must be a Tier 1 provider as specified in REP-2000 (https://www.ros.org/reps/rep-2000.html), and must be open-source.
+The default RMW provider must be a Tier 1 provider as specified in [REP-2000](https://www.ros.org/reps/rep-2000.html), and must be open-source.
 For Humble Hawksbill, the two RMW providers that meet this criteria are rmw_cyclonedds_cpp and rmw_fastrtps_cpp.
 
 In order to make an informed decision, the TSC needs to be provided with a report that has details about each of the available choices.
@@ -25,10 +25,10 @@ That means that a detailed description of how any data was collected and analyze
 Graphs are very useful and encouraged for each answer where it makes sense.
 Where relevant, graphs should show the data from the same test run using rmw_cyclonedds_cpp and rmw_fastrtps_cpp.
 
-Data should be taken using the following ros2.repos file: https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/ros2.repos.
+Data should be taken using the specific [ros2.repos file](https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/ros2.repos).
 When building these packages, they must be built in the default configuration as they will be delivered in ROS 2 Humble.
 
-When the RMW providers are ready to deliver the report (see the Relevant Dates below), they should open a pull request to the TSC repository https://github.com/osrf/TSC-RMW-Reports, targeting https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/README.md.
+When the RMW providers are ready to deliver the report (see the Relevant Dates below), they should open a pull request to the [TSC repository](https://github.com/osrf/TSC-RMW-Reports), targeting [README.md](https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/README.md).
 The format of the reports should be Markdown, as that is what will be rendered by GitHub into the final report.
 
 ## Relevant Dates
@@ -60,11 +60,11 @@ If additional space is needed, feel free to provide a link to an external resour
 
 ### Services
 * Several users have reported instances where services never appear, or they never get responses. What do you think the problems might be, and what are you doing to try and address these problems?
-    * https://github.com/ros2/ros2/issues/1074
-    * https://github.com/ros2/rmw_fastrtps/issues/392
-    * https://github.com/ros2/rmw_fastrtps/pull/418
-    * https://github.com/ros2/rmw_cyclonedds/issues/74
-    * https://github.com/ros2/rmw_cyclonedds/issues/191
+    * <https://github.com/ros2/ros2/issues/1074>
+    * <https://github.com/ros2/rmw_fastrtps/issues/392>
+    * <https://github.com/ros2/rmw_fastrtps/pull/418>
+    * <https://github.com/ros2/rmw_cyclonedds/issues/74>
+    * <https://github.com/ros2/rmw_cyclonedds/issues/191>
 
 * How do services scale with the number of clients? And/or the amount of request traffic?
 
@@ -73,9 +73,9 @@ We’ve had a lot of reports from users of problems using ROS 2 over WiFi.
 What do you think the causes of the problems are, and what are you doing to try to address these problems?
 
 * Some example issues from users:
-    * https://answers.ros.org/question/362065/bad-performance-of-ros2-via-wifi/
-    * https://discourse.ros.org/t/ros2-default-behavior-wifi/13460/38
-    * https://discourse.ros.org/t/bad-networks-dragging-down-localhost-communication/20611
+    * <https://answers.ros.org/question/362065/bad-performance-of-ros2-via-wifi/>
+    * <https://discourse.ros.org/t/ros2-default-behavior-wifi/13460/38>
+    * <https://discourse.ros.org/t/bad-networks-dragging-down-localhost-communication/20611>
 
 * How well does the implementation work out-of-the-box over WiFi?
 
@@ -103,7 +103,7 @@ What do you think the causes of the problems are, and what are you doing to try 
 * Does the package have explicit tooling and support for protocol dissection?
 
 ### Quality
-* What is the currently declared REP-2004 (https://www.ros.org/reps/rep-2004.html) quality of the package implementing the RTPS/DDS protocols and the RMW?
+* What is the currently declared [REP-2004](https://www.ros.org/reps/rep-2004.html) quality of the package implementing the RTPS/DDS protocols and the RMW?
 
 * How else does the package measure quality? Please list specific procedures or tools that are used.
 
