@@ -103,7 +103,7 @@ What do you think the causes of the problems are, and what are you doing to try 
 * Does the package have explicit tooling and support for protocol dissection?
 
 ### Quality
-* What is the currently declared [REP-2004](https://www.ros.org/reps/rep-2004.html) quality of the package implementing the RTPS/DDS protocols and the RMW?
+* What is the currently self-declared [REP-2004](https://www.ros.org/reps/rep-2004.html) quality of the package implementing the RTPS/DDS protocols and the RMW?
 
 * How else does the package measure quality? Please list specific procedures or tools that are used.
 

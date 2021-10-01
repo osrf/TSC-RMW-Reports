@@ -1,0 +1,82 @@
+{
+    "multiprocess": {
+        "runtime": {
+            "max": 30,
+            "ignore": 5,
+            "cooldown": 5
+        },
+        "matrix": {
+            "topics": [
+                "Array16k",
+                "Array2m",
+                "Struct32k",
+                "Struct16",
+                "PointCloud1m",
+                "PointCloud4m"
+            ],
+            "rates": [
+                20,
+                100,
+                500
+            ],
+            "subs": [
+                1,
+                3,
+                10
+            ],
+            "reliability": [
+                "--reliable"
+            ],
+            "durability": [
+                ""
+            ],
+            "keep_last": [
+                "--keep-last --history-depth 16"
+            ],
+            "rmw": [
+                "rmw_cyclonedds_cpp"
+            ],
+            "extra_args": [
+                "--zero-copy"
+            ]
+        },
+        "exclude": [
+            {
+                "topic": "Array2m",
+                "subs": 10
+            },
+            {
+                "topic": "PointCloud4m",
+                "subs": 10
+            },
+            {
+                "topic": "PointCloud4m",
+                "rate": 500,
+                "reliability": "--reliable",
+                "durability": "--transient",
+                "subs": 1
+            },
+            {
+                "topic": "PointCloud1m",
+                "rate": 500,
+                "subs": 10
+            },
+            {
+                "topic": "PointCloud4m",
+                "rate": 500,
+                "subs": 3
+            },
+            {
+                "topic": "Array2m",
+                "rate": "500",
+                "subs": "3",
+                "reliability": "--reliable"
+            },
+            {
+                "topic": "Struct32k",
+                "subs": 10,
+                "rate": 500
+            }
+        ]
+    }
+}
