@@ -1,12 +1,14 @@
 # 2021 ROS Middleware Evaluation Report
 
-## Default DDS vendor template
+## Default DDS provider template
 
-On August 31, 2021, the vendors in contention for the default DDS vendor in ROS 2 Humble Hawksbill were provided with a set of questions to answer about their implementation.
+On August 31, 2021, the providers of DDS implementations considered for the default DDS in ROS 2 Humble Hawksbill were provided with a set of questions to answer about their implementation.
 The questionnaire is available [here](dds_provider_question_template.md).
 
 Once responses from that questionnaire are received, a full report will be produced.
 
-## DDS vendor responses
+## DDS provider responses
 
-- [rmw_fasrtps_cpp](eProsima-response.md).
+- [rmw_fasrtps_cpp](eProsima-response.md)
+
+- [2021 Eclipse Cyclone DDS ROS Middleware Evaluation Report with iceoryx and Zenoh](eclipse-cyclonedds-report.md)
