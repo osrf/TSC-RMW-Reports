@@ -53,7 +53,7 @@ deployments with a single subscriber, Cyclone DDS's throughput degrades rapidly 
 
 Fast DDS seems to be rather unaffected by the number of topics, maintaining similar performance than with a single topic. Cyclone DDS however increases about 5% latency with each added topic.
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_topics.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_topics.png">
 
 
 ### Without configuration, how does the implementation scale with the number of nodes in the system?
@@ -66,10 +66,10 @@ However, the throughput with Fast DDS is much less affected than with Cyclone DD
  * On intra-process deployments, throughput in Fast DDS is almost unaffected by the number of subscribers up to 10 subscribers by topic, increasing only 1% with each new subscriber. In Cyclone DDS however, it increases 10% with each subscriber.
  * On intra-process deployments, Cyclone DDS's throughput is affected much earlier than in Fast DDS. Fast DDS is still able to keep the expected publication rate of 2000 Mbps with 10 subscribers, but Cyclone DDS clearly cannot keep up and it degrades to around 700, one third of the required throughput.
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_latency_by_subscribers_2m.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_subscribers_2m_2.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_throughput.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_throughput_2.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_latency_by_subscribers_2m.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_subscribers_2m_2.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_throughput.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_throughput_2.png">
 
 
 ### Please provide benchmarks for inter-host, inter-process (with and without LoanedMessages), and intra-process (with and without LoanedMessages) throughput for both large and small message sizes, on both Linux and Windows.
@@ -102,13 +102,13 @@ Also, we found that even though the numbers may vary, the conclusions are simila
  * Latencies seem to increase at a similar rate with the number of subscribers.
  * Surprisingly, in all implementations the latency falls down with increasing publication rates. We believe this is a consequence of the process becoming idle on lower rates and the platform's scheduler changing to another job, so that when the next sample is sent, it has to wait until a running slot is available.
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_subscribers.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_rate.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_size.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_subscribers.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_rate.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_size.png">
 
 The following plot shows the latency on a windows platform beyond 2M. Note that these results were taken on a different machine than the one used in the main benchmark.
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/windows/latency_two_processes.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/windows/latency_two_processes.png">
 
 **Throughput**
 
@@ -119,11 +119,11 @@ In order to get throughput values, we used the tests for 2MB data size and a rat
  * Fast DDS shared-memory delivery is the implementation that is least affected by the number of subscribers. It is able to keep the required 2000 Mbps rate up to 10 subscribers.
  * We extended some tests on the Windows platform beyond 2MB that confirm that throughput in Cyclone DDS decreases at a much larger rate than in Fast DDS.
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_throughput.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_throughput.png">
 
 The following plot shows the throughput on a windows platform beyond 2M. Note that these results were taken on a different machine than the one used in the main benchmark.
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/windows/throughput_two_processes.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/windows/throughput_two_processes.png">
 
 
 **CPU**
@@ -133,9 +133,9 @@ We are considering here the CPU usage of a single participant. For example, in t
  * Fast DDS seems to scale much better than Cyclone DDS with the data size. Cyclone DDS's CPU usage is multiplied by 6 from 4KB to 2MB sizes. In the same range, Fast DDS (non data-sharing) only increases by 3. Fast DDS data-sharing is virtually not affected by data size.
  * The publication rate is the parameter that most affects the CPU usage. However, all implementations seem to be equally affected.
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_cpu_by_subscribers.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_cpu_by_rate.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_cpu_by_size.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_cpu_by_subscribers.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_cpu_by_rate.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_cpu_by_size.png">
 
 
 **Memory**
@@ -150,9 +150,9 @@ Also, Fast DDS offers mechanisms to reduce the memory use if necessary, by corre
  * As expected, data size is the parameter that affects memory the most, since the histories need to allocate larger memory chunks for the data.
  * Especially in Cyclone DDS, memory usage grows very quickly with the data size, and with large data sizes the memory usage is larger than that of Fast DDS.
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_subscribers.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_rate.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_size.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_subscribers.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_rate.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_size.png">
 
 
 ## Services
@@ -355,39 +355,39 @@ The following plots illustrate these conclusions. For coherence, these are extra
 
 #### Latency
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_be_latency_by_size.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_latency_by_size.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_be_latency_by_size.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_size.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_be_latency_by_size.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_latency_by_size.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_be_latency_by_size.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_size.png">
 
 The following plot shows the latency on a windows platform beyond 2M:
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/windows/latency_two_processes.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/windows/latency_two_processes.png">
 
 #### Throughput
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_be_throughput.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_throughput.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_be_throughput.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_throughput.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_be_throughput.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_throughput.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_be_throughput.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_throughput.png">
 
 The following plot shows the throughput on a windows platform beyond 2M:
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/windows/throughput_two_processes.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/windows/throughput_two_processes.png">
 
 #### CPU usage
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_be_cpu_by_size.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_cpu_by_size.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_be_cpu_by_size.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_cpu_by_size.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_be_cpu_by_size.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_cpu_by_size.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_be_cpu_by_size.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_cpu_by_size.png">
 
 #### Memory usage
 
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_be_mem_by_size.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_mem_by_size.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_be_mem_by_size.png" width=50% height=50%>
-<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_size.png" width=50% height=50%>
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_be_mem_by_size.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_mem_by_size.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_be_mem_by_size.png">
+<img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_size.png">
 
 
 
