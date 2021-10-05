@@ -41,7 +41,7 @@ Here we can see that Fast DDS has much better response than cyclone in terms of 
 
 * For a single subscriber on inter-process deployments, Fast DDS gets more than **double** the throughput.
 * Even though both implementations are able to keep the maximum publication rate in intra-process
-deployments with a single subscriber, cycloneDDS's throughput degrades rapidly with increasing number of subscribers (see following questions). 
+deployments with a single subscriber, cycloneDDS's throughput degrades rapidly with increasing number of subscribers (see following questions).
 
 |          | Inter-process | Intra-process |
 |-|-|-|
@@ -79,7 +79,7 @@ For a complete description of the benchmark and the resulting conclusions, see s
 Note that we had trouble collecting inter-machine data with cycloneDDS implementation, since cycloneDDS selects only one of the available network interfaces for the communication. In our tests this resulted in cycloneDDS selecting some virtual interface that was not connected to any physical interface. As a result, we got no communication between the processes. Although this can be corrected through configuration, we had no time to repeat the whole benchmark and, thus, we have no data to characterize cycloneDDS on inter-machine deployments.
 
 Also note that Fast DDS uses Boost.interprocess to implement shared memory and data sharing deliveries. While performance results for Fast DDS on Ẅindows were similar to other platforms on Windows 10 Version 21H1 (May 2021 Update), a recent Windows patch changed the behavior of Boost.intraprocess. This results on bad performance of Fast DDS on updated Windows platforms. Undefining `BOOST_INTERPROCESS_FORCE_GENERIC_EMULATION` on Boost.interprocess restores the previous behavior, which are the results we are presenting here.
- 
+
 
 ### For a pub/sub pair in separate processes, what is the average round-trip time, throughput, and CPU/memory utilization? How does this scale with topic frequency and topic size?
 
@@ -88,11 +88,11 @@ If we want to have a fair comparison, we should be comparing cycloneDDS (which h
 Also, we found that even though the numbers may vary, the conclusions are similar for all platforms. You can check the complete results on section [Benchmarking](#benchmarking). The general conclusions can be summarized as follows:
 
  * Fast DDS has much better scallability with the data size than cycloneDDS, in latency, CPU usage and throughput. For 2MB data sizes, Fast DDS has double the throughput, half the latency and half the CPU usage. This with the default configuration. Using data-sharing results are much better yet.
- * Fast DDS consistently gets **at least double** the throughput than cycloneDDS, with all configurations. 
+ * Fast DDS consistently gets **at least double** the throughput than cycloneDDS, with all configurations.
  * For smaller data sizes, Latency with Fast DDS synchronous mode configurations is better than latency with cycloneDDS. As expected, latency with asynchronous mode is worse.
  * Memory consumption in Fast DDS is higher than in cycloneDDS. This was somehow expected, since Fast DDS supports many more configurations and features that require data structures residing in memory.
 
- 
+
 **Latency**
 
  * Fast DDS (on synchronous mode) has consistently lower latencies than cycloneDDS.
@@ -101,7 +101,7 @@ Also, we found that even though the numbers may vary, the conclusions are simila
  * Results are even better if using Fast DDS data-sharing delivery, especially on large data sizes, since data copies are avoided. Total latency is **a quarter** of the latency of cycloneDDS.
  * Latencies seem to increase at a similar rate with the number of subscribers.
  * Surprisingly, in all implementations the latency falls down with increasing publication rates. We believe this is a consequence of the process becoming idle on lower rates and the platform's scheduler changing to another job, so that when the next sample is sent, it has to wait until a running slot is available.
- 
+
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_subscribers.png" width=50% height=50%>
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_rate.png" width=50% height=50%>
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_size.png" width=50% height=50%>
@@ -118,7 +118,7 @@ In order to get throughput values, we used the tests for 2MB data size and a rat
  * For example, all tested Fast DDS configurations can keep with the required publication rate of 2000 Mbps with one subscriber, while cycloneDDS does not get to half that rate.
  * Fast DDS shared-memory delivery is the implementation that is least affected by the number of subscribers. It is able to keep the required 2000 Mbps rate up to 10 subscribers.
  * We extended some tests on the Windows platform beyond 2MB that confirm that throughput in cycloneDDS decreases at a much larger rate than in Fast DDS.
- 
+
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_throughput.png" width=50% height=50%>
 
 The following plot shows the throughput on a windows platform beyond 2M. Note that these results were taken on a different machine than the one used in the main benchmark.
@@ -132,7 +132,7 @@ We are considering here the CPU usage of a single participant. For example, in t
 
  * Fast DDS seems to scale much better than cycloneDDS with the data size. cycloneDDS's CPU usage is multiplied by 6 from 4KB to 2MB sizes. In the same range, Fast DDS (non data-sharing) only increases by 3. Fast DDS data-sharing is virtually not affected by data size.
  * The publication rate is the parameter that most affects the CPU usage. However, all implementations seem to be equally affected.
- 
+
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_cpu_by_subscribers.png" width=50% height=50%>
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_cpu_by_rate.png" width=50% height=50%>
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_cpu_by_size.png" width=50% height=50%>
@@ -149,7 +149,7 @@ Also, Fast DDS offers mechanisms to reduce the memory use if necessary, by corre
  * Memory seems fairly stable with the number of subscribers and the publication rate.
  * As expected, data size is the parameter that affects memory the most, since the histories need to allocate larger memory chunks for the data.
  * Especially in cycloneDDS, memory usage grows very quickly with the data size, and with large data sizes the memory usage is larger than that of Fast DDS.
- 
+
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_subscribers.png" width=50% height=50%>
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_rate.png" width=50% height=50%>
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_size.png" width=50% height=50%>
@@ -188,7 +188,7 @@ This will avoid sending the response to subscribers that will discard it.
 
 ### How does the system behave when a robot leaves WiFi range and then reconnects?
 
-The result depends on whether the robot keeps the IP address or not. 
+The result depends on whether the robot keeps the IP address or not.
 If the robot keeps its IP address, the robot will be able to reconnect to the other nodes. Otherwise, the nodes in the robot will need to be relaunched.
 
 We are working on a solution where the participant on the node can update its network interface information and communicate this information to the rest of the peers.
@@ -208,7 +208,7 @@ Additionally, Fast DDS provides solutions to avoid multicast discovery:
 
  * [Configuring initial peers](https://fast-dds.docs.eprosima.com/en/latest/fastdds/use_cases/wifi/initial_peers.html) so that the node can set unicast communication with them.
    This way, the use of multicast is not needed to discover these peers. If all the peers are known and configured beforehand, all multicast communication can be removed.
-   
+
  * Using a [Discovery server](https://fast-dds.docs.eprosima.com/en/latest/fastdds/use_cases/wifi/discovery_server_use_case.html),
    a DomainParticipant with a well-known address that provides the rest of the participants the information required to connect among them using unicast connections.
 
@@ -247,7 +247,7 @@ DDS-security specification version 1.1 is fully supported, except only `file` sc
 
 ### Does the package have explicit tooling and support for protocol dissection?
 
-The [eProsima Fast DDS Monitor](https://www.eprosima.com/index.php/products-all/eprosima-fast-dds-monitor) 
+The [eProsima Fast DDS Monitor](https://www.eprosima.com/index.php/products-all/eprosima-fast-dds-monitor)
 is an open source graphical desktop application aimed to monitor DDS environments deployed using eProsima Fast DDS.
 The user can track the status of publication/subscription communications between DDS entities in real-time, and measure communication parameters such as latency, throughput, packet loss and others.
 
@@ -299,11 +299,11 @@ All tests are run on linux, windows, MacOS and linux aarch64 platforms.
 ### Has the DDS Security implementation been audited by a third-party?
 
 Each of the Fast DDS security plugins were implemented with a third party entities that reviewed the code:
- 
+
  * Authentication and encryption plugins were implemented with Open Robotics.
  * Access control plugin was implemented with Apex.
  * Logging plugin was implemented with Canonical
- 
+
 Additionally, the implementation is checked with the [OMG interoperability tests](https://github.com/omg-dds/dds-security).
 
 
@@ -325,7 +325,7 @@ We have prepared a [set of scripts](https://github.com/eProsima/benchmarking/tre
  * Downloading the aforementioned fork of the Apex performance tool.
  * Compiling ROS 2 and the performance tool
  * Launching the tests with the configuration specified on a json file
- 
+
 All tests were executed for 5 minutes.
 During this time, Apex performance tool outputs measurements every second.
 This means that every test has around 300 measured samples that are statistically analysed.
