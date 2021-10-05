@@ -323,7 +323,7 @@ You can get the fork [here](https://gitlab.com/MiguelCompany/performance_test), 
 We have prepared a [set of scripts](https://github.com/eProsima/benchmarking/tree/tsc_rmw_report_2021/scripts/TSC_RMW_report_2021) to help automatize the launch of the tests with different configurations. These scripts include:
  * Downloading the specified [ros2.repos file](https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/ros2.repos).
  * Downloading the aforementioned fork of the Apex performance tool.
- * Compiling ROS2 and the performance tool
+ * Compiling ROS 2 and the performance tool
  * Launching the tests with the configuration specified on a json file
  
 All tests were executed for 5 minutes.
@@ -397,7 +397,7 @@ The following plot shows the throughput on a windows platform beyond 2M:
 
 ## **Prologue - What is really important when performance is similar?**
 
-Fast DDS has plenty of unique features driven by ROS2 requirements, and the difference in functionality and quality between Fast DDS and CycloneDDS is huge.
+Fast DDS has plenty of unique features driven by ROS 2 requirements, and the difference in functionality and quality between Fast DDS and CycloneDDS is huge.
 
 It is important to note that for many cases, both implementations have equal performance, and latencies and throughputs are going to be very similar as it has been shown in the benchmarking. In this scenario, it is very hard to choose just looking at numbers or graphs. But being the performance very similar, **there are other dimensions where the difference is really huge**. This section reviews these: A lot More Features, better quality and documentation, stronger team and community. Here is where Fast DDS really makes the difference.
 
@@ -425,17 +425,17 @@ On the other hand, [cycloneDDS published a very aggressive roadmap](https://disc
 
 As it has been shown in this report, while for many cases the performance of both implementations is similar, Fast DDS outperformed CycloneDDS in very significant cases, being especially noticeable in the Windows platform. Fast DDS supports Shared memory in all supported platforms including windows, while cycloneDDS has [many limitations](https://cyclonedds.io/docs/cyclonedds/latest/shared_memory.html#limitations) and **no windows support.**
 
-## **Unique**  **Features** : All available in ROS2.
+## **Unique**  **Features** : All available in ROS 2.
 
-Fast DDS has a rich set of features and tools, and the difference from the competition is really noticeable. One quick look at the documentation of both implementations already sets the difference as overwhelming, but it can be also quickly guessed from the main repos line count (510K vs 177K), stars (875 vs 300) or forks (362 vs 152). **In the following sections we will review many of them, only available if you choose Fast DDS as your Open-Source default DDS implementation for ROS2.**
+Fast DDS has a rich set of features and tools, and the difference from the competition is really noticeable. One quick look at the documentation of both implementations already sets the difference as overwhelming, but it can be also quickly guessed from the main repos line count (510K vs 177K), stars (875 vs 300) or forks (362 vs 152). **In the following sections we will review many of them, only available if you choose Fast DDS as your Open-Source default DDS implementation for ROS 2.**
 
 It is important to note that any of these features can be used with no coding required, just using the [XML Configuration Profiles](https://fast-dds.docs.eprosima.com/en/latest/fastdds/xml_configuration/xml_configuration.html) available in Fast DDS.
 
 ## Discovery Server - Wifi &amp; Lossy networks/Scalability Solution
 
-During the last year, ROS2 Wifi performance has been a hot issue. DDS default discovery process requires many messages and does not scale well in lossy networks.
+During the last year, ROS 2 Wifi performance has been a hot issue. DDS default discovery process requires many messages and does not scale well in lossy networks.
 
-eProsima has been working hard to offer ROS2 solutions in this environment, releasing the [Discovery Server](https://www.eprosima.com/index.php/products-all/tools/eprosima-discovery-server), [fully documented](https://fast-dds.docs.eprosima.com/en/v2.3.3/fastdds/discovery/discovery_server.html) (Server &amp; Client configuration), and with tutorials on [how to use it with ROS](https://docs.ros.org/en/foxy/Tutorials/Discovery-Server/Discovery-Server.html).
+eProsima has been working hard to offer ROS 2 solutions in this environment, releasing the [Discovery Server](https://www.eprosima.com/index.php/products-all/tools/eprosima-discovery-server), [fully documented](https://fast-dds.docs.eprosima.com/en/v2.3.3/fastdds/discovery/discovery_server.html) (Server &amp; Client configuration), and with tutorials on [how to use it with ROS](https://docs.ros.org/en/foxy/Tutorials/Discovery-Server/Discovery-Server.html).
 
 ![](fastrtps_images/clinic_world.png)
 
@@ -466,7 +466,7 @@ Another important feature for this kind of network is the [flow control](https:/
 
 The flow controller can also be used in situations where you have high bandwidth but you are sending large amounts of data, such as video streaming.
 
-## Shared Memory &amp; Zero-Copy - Full support for **ALL**  **ROS2 platforms**
+## Shared Memory &amp; Zero-Copy - Full support for **ALL**  **ROS 2 platforms**
 
 [Fast DDS supports Shared memory &amp; Zero-copy](https://www.eprosima.com/index.php/products-all/tools/eprosima-shared-memory) **in all supported platforms** including windows, while cycloneDDS has [many limitations](https://cyclonedds.io/docs/cyclonedds/latest/shared_memory.html#limitations) and **no windows support.**
 
@@ -474,7 +474,7 @@ Another interesting feature of our shared memory implementation is that it is fu
 
 ![](fastrtps_images/zero_copy.png)
 
-## Statistics and ROS2/DDS Monitor - Total control of your system behaviour.
+## Statistics and ROS 2/DDS Monitor - Total control of your system behaviour.
 
 We consider this probably the most important announcement for Fast DDS this year. We added a [statistics module](https://fast-dds.docs.eprosima.com/en/latest/fastdds/statistics/statistics.html) that can be activated to publish a lot of statistics about the protocol. Many different measures are published by communication flow: [Latency, Throughput, Msgs Sent, Msgs Lost, Heartbeats, ACKNACKs… and a lot more](https://fast-dds.docs.eprosima.com/en/latest/fastdds/statistics/dds_layer/topic_names.html).
 
@@ -482,7 +482,7 @@ And to see this statistics, we created a super complete GUI Tool called [Fast DD
 
 ![](fastrtps_images/monitor_tool.png)
 
-**We published very recently a** [**video demonstrating how to monitor ROS2 topics**](https://discourse.ros.org/t/how-to-track-dds-performance-in-ros-2/22498) **.** Please take a look, just 3 minutes.
+**We published very recently a** [**video demonstrating how to monitor ROS 2 topics**](https://discourse.ros.org/t/how-to-track-dds-performance-in-ros-2/22498) **.** Please take a look, just 3 minutes.
 
 Monitoring information is helpful, especially during the application development phase when a significant number of nodes (readers and writers) is used, or when having high volume data exchanged among nodes. In these cases, it is very common that network overload issues arise, so correct DDS configuration and design are key to avoid them. The Fast DDS Monitor in combination with the Statistics Module integrated in Fast DDS will help detect these bottlenecks in communications, network misbehavior, QoS incompatibilities, performance hinders, etc.
 
@@ -504,7 +504,7 @@ We have a comprehensive guide on how to use this feature and a complete use case
 
 As in any other case, you can set up this feature just using XML profiles.
 
-## ROS2 5G Native Support &amp; TSN.
+## ROS 2 5G Native Support &amp; TSN.
 
 Any communications middleware can use 5G as a data link, and ROS 2 is going to work &quot;out of the box&quot; in these networks, but Ericsson presented some ideas to enable ROS 2 to use the advanced features of 5G.
 
@@ -516,7 +516,7 @@ TSN is also possible, and it is described by NXP [here](https://github.55860.com
 
 ## Micro-ROS
 
-[Micro-ROS](https://micro.ros.org/) is the official extension of ROS2 for Microcontrollers. eProsima is the leader and main contributor of Micro-ROS, already in its 4th year of development. The project is already huge, and we support a[large number of RTOS](https://micro.ros.org/docs/overview/rtos/) (FrerRTOS, Zephyr, NuttX, Arduino, Mbed) and even bare metal, and many boards ([take a look at our list of supported hardware](https://micro.ros.org/docs/overview/hardware/))
+[Micro-ROS](https://micro.ros.org/) is the official extension of ROS 2 for Microcontrollers. eProsima is the leader and main contributor of Micro-ROS, already in its 4th year of development. The project is already huge, and we support a[large number of RTOS](https://micro.ros.org/docs/overview/rtos/) (FrerRTOS, Zephyr, NuttX, Arduino, Mbed) and even bare metal, and many boards ([take a look at our list of supported hardware](https://micro.ros.org/docs/overview/hardware/))
 
 ![](fastrtps_images/ros_logo.png)
 
@@ -524,11 +524,11 @@ Micro-ROS is based on[eProsima Micro XRCE-DDS](https://www.eprosima.com/index.ph
 
 ![](fastrtps_images/dds_diagram.png)
 
-Micro-ROS connects to the ROS2 world using an agent, based on Fast DDS, which acts as a proxy to the ROS2 regular world. We support our middleware products as a suite, having continuous integration between Micro XRCE-DDS and Fast DDS.
+Micro-ROS connects to the ROS 2 world using an agent, based on Fast DDS, which acts as a proxy to the ROS 2 regular world. We support our middleware products as a suite, having continuous integration between Micro XRCE-DDS and Fast DDS.
 
-**In order to ensure everything is going to work properly, if you plan to use Micro-ROS, it is strongly encouraged to use ROS2 based on Fast DDS.**
+**In order to ensure everything is going to work properly, if you plan to use Micro-ROS, it is strongly encouraged to use ROS 2 based on Fast DDS.**
 
-## SROS2 PKCS#11 Support - Security
+## SROS 2 PKCS#11 Support - Security
 
 In cryptography, [PKCS #11](https://en.wikipedia.org/wiki/PKCS_11) is one of the Public-Key Cryptography Standards,and also refers to the programming interface to create and manipulate cryptographic tokens.
 
@@ -538,7 +538,7 @@ This is a major security improvement for SROS2.
 
 ## Tons of details more:
 
-There are a lot of minor features that we can not include here for space reasons, but you can review our [release notes](https://fast-dds.docs.eprosima.com/en/latest/notes/notes.html), we are continuously releasing new features for Fast DDS driven by the requirements of ROS2.
+There are a lot of minor features that we can not include here for space reasons, but you can review our [release notes](https://fast-dds.docs.eprosima.com/en/latest/notes/notes.html), we are continuously releasing new features for Fast DDS driven by the requirements of ROS 2.
 
 Also you can take a look at our [news section](https://www.eprosima.com/index.php/company-all/news) or [twitter](https://twitter.com/eprosima), we are publishing new content almost every day.
 
@@ -546,12 +546,12 @@ Also our user base is growing every day: around 50K clones per month of our main
 
 ## To be released before the end of 2021 - already in development.
 
-- **Dynamic Network interfaces** : Until now when the network interfaces changed, you needed to re-start ROS2 to make it aware of the changes. With this new feature, Fast DDS will detect the changes and everything will work properly. To be released in december.
+- **Dynamic Network interfaces** : Until now when the network interfaces changed, you needed to re-start ROS 2 to make it aware of the changes. With this new feature, Fast DDS will detect the changes and everything will work properly. To be released in december.
 
 - **Python Bindings** : Complete python bindings, to be released in november.
 
 - [**Visual-ROS**](https://eprosima.com/index.php/products-all/r-d-projects/eu-project-dih2-visual-ros): Visual ROS is already in beta, and we will start doing demos in the next few weeks. You can read more about this tool in our news release [here](https://www.eprosima.com/index.php/company-all/news/175-eprosima-presents-visual-ros)
 
-- **Content Filter Topic:** This is a feature that allows the user to subscribe just to a subset of the topic, filtering with a rich filter expression. The filtering is smart, and it can be applied on the publisher side, so the information does not have to travel to the subscriber if it does not pass the filter. This is useful for any kind of topic, but it is straightforward to see their use in parameter events or actions topics ([See the Sony presentation about this.](https://www.slideshare.net/FujitaTomoya/ros2-contentfilteredtopic-proposal-introduction)) Sony and eProsima have joined forces, and this feature will be available in ROS2. We will demonstrate the feature during the ROSCON in a common presentation.
+- **Content Filter Topic:** This is a feature that allows the user to subscribe just to a subset of the topic, filtering with a rich filter expression. The filtering is smart, and it can be applied on the publisher side, so the information does not have to travel to the subscriber if it does not pass the filter. This is useful for any kind of topic, but it is straightforward to see their use in parameter events or actions topics ([See the Sony presentation about this.](https://www.slideshare.net/FujitaTomoya/ros2-contentfilteredtopic-proposal-introduction)) Sony and eProsima have joined forces, and this feature will be available in ROS 2. We will demonstrate the feature during the ROSCON in a common presentation.
 
 You can also check our [roadmap](https://github.com/eProsima/Fast-DDS/blob/master/roadmap.md).
