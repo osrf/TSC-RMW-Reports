@@ -6,3 +6,7 @@ On August 31, 2021, the vendors in contention for the default DDS vendor in ROS 
 The questionnaire is available [here](dds_provider_question_template.md).
 
 Once responses from that questionnaire are received, a full report will be produced.
+
+## DDS vendor responses
+
+- [rmw_fasrtps_cpp](eProsima-response.md).
