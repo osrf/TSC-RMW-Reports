@@ -164,7 +164,7 @@ We found there are two kinds of problems with services: requests that are lost d
 Service discovery relies on the discovery of the request/reply topics.
 However, both topics are discovered asynchronously, so it is possible that the request topic entities are matched while the response entities are not fully matched yet.
 In this situation, if the client makes a request, the response will be lost.
-We already proposed a possible solution to this in https://github.com/ros2/rmw_fastrtps/pull/418.
+We already proposed a possible solution to this in [https://github.com/ros2/rmw_fastrtps/pull/418](https://github.com/ros2/rmw_fastrtps/pull/418).
 Summarizing, this solution proposes that the request publisher sends the GUID of its corresponding response subscriber,
 and the server will hold a list of pending requests that will be answered only when the response subscriber has been discovered.
 This solution requires RMW implementations to agree how the GUID is going to be sent, to avoid interoperability issues.
@@ -220,11 +220,11 @@ You can find a complete analysis of the discovery performance of Fast DDS over W
 
 ### What is the roadmap and where is it documented?
 
-You can find the roadmap [here](https://github.com/eProsima/Fast-DDS/blob/master/roadmap.md)
+You can find the roadmap [here](https://github.com/eProsima/Fast-DDS/blob/master/roadmap.md).
 
 ### Can the middleware be configured to be memory-static at runtime?
 
-Yes, see [the documentation](https://fast-dds.docs.eprosima.com/en/latest/fastdds/use_cases/realtime/allocations.html#realtime-allocations)
+Yes, see [the documentation](https://fast-dds.docs.eprosima.com/en/latest/fastdds/use_cases/realtime/allocations.html#realtime-allocations).
 
 ### What support is there for microcontrollers?
 
@@ -257,7 +257,7 @@ The user can track the status of publication/subscription communications between
 
 ### What is the currently declared REP-2004 quality of the package implementing the RTPS/DDS protocols and the RMW?
 
-- eProsima Fast DDS has QL1. The Quality declaration document can be found [here](https://github.com/eProsima/Fast-DDS/blob/master/QUALITY.md)
+- eProsima Fast DDS has QL1. The Quality declaration document can be found [here](https://github.com/eProsima/Fast-DDS/blob/master/QUALITY.md).
 - rmw_fastrtps has QL2.
 
 ### How else does the package measure quality? Please list specific procedures or tools that are used.
@@ -294,7 +294,7 @@ The process can be found in [CONTRIBUTING](https://github.com/eProsima/policies/
 Unit tests, integration tests and coverage tests are run before accepting any pull request and on nightly jobs.
 Performance tests are run after merging to the master branch.
 
-All tests are run on linux, windows, MacOS and linux aarch64 platforms.
+All tests are run on Linux, Windows, MacOS and Linux aarch64 platforms.
 
 ### Has the DDS Security implementation been audited by a third-party?
 
@@ -314,7 +314,7 @@ For a complete description of the benchmark framework, procedure and results, pl
 
 ### Testing framework
 
-Tests have been executed on Raspberry-pi 4b+, linux laptops and windows laptops.
+Tests have been executed on Raspberry-pi 4b+, Linux laptops and Windows laptops.
 
 For the test to be reproducible, they were performed using a fork of the [Apex performance test tool](https://gitlab.com/ApexAI/performance_test.git).
 This fork has the necessary changes needed for the tools to build on Windows systems.
@@ -399,7 +399,7 @@ The following plot shows the throughput on a windows platform beyond 2M:
 
 Fast DDS has plenty of unique features driven by ROS 2 requirements, and the difference in functionality and quality between Fast DDS and Cyclone DDS is huge.
 
-It is important to note that for many cases, both implementations have equal performance, and latencies and throughputs are going to be very similar as it has been shown in the benchmarking. In this scenario, it is very hard to choose just looking at numbers or graphs. But being the performance very similar, **there are other dimensions where the difference is really huge**. This section reviews these: A lot More Features, better quality and documentation, stronger team and community. Here is where Fast DDS really makes the difference.
+It is important to note that for many cases, both implementations have equal performance, and latencies and throughputs are going to be very similar as it has been shown in the benchmarking. In this scenario, it is very hard to choose just looking at numbers or graphs. But being the performance very similar, **there are other dimensions where the difference is really huge**. This section reviews these: a lot more features, better quality and documentation, stronger team and community. Here is where Fast DDS really makes the difference.
 
 ## **Documentation** :
 
@@ -417,13 +417,13 @@ Fast DDS QL1 vs Cyclone DDS is QL2 (and this is a [huge difference](https://www.
 - **Visual-ROS** : Beta already available. We will show the result during the ROSCON, as promised.
 - **Micro-ROS Galactic** : **Released!** In this case, we delivered what was planned and a lot more. [Take a look](https://discourse.ros.org/t/micro-ros-galactic-release/20765)
 
-Besides the planned roadmap, we delivered many new features not planned initially: [Conditions and waitsets](https://fast-dds.docs.eprosima.com/en/latest/fastdds/dds_layer/core/waitsets/waitsets.html#dds-layer-core-waitsets),
+Besides the planned roadmap, we delivered many new features not planned initially: [Conditions and waitsets](https://fast-dds.docs.eprosima.com/en/latest/fastdds/dds_layer/core/waitsets/waitsets.html#dds-layer-core-waitsets).
 
 On the other hand, [Cyclone DDS published a very aggressive roadmap](https://discourse.ros.org/t/cyclonedds-roadmap-multi-network-async-content-filtering-ql1-et-al/17561/19) to win the latest votation, which has been demonstrated as pure [vaporware](https://en.wikipedia.org/wiki/Vaporware).
 
 ## **Performance** :
 
-As it has been shown in this report, while for many cases the performance of both implementations is similar, Fast DDS outperformed Cyclone DDS in very significant cases, being especially noticeable in the Windows platform. Fast DDS supports Shared memory in all supported platforms including windows, while Cyclone DDS has [many limitations](https://cyclonedds.io/docs/cyclonedds/latest/shared_memory.html#limitations) and **no windows support.**
+As it has been shown in this report, while for many cases the performance of both implementations is similar, Fast DDS outperformed Cyclone DDS in very significant cases, being especially noticeable in the Windows platform. Fast DDS supports Shared memory in all supported platforms including windows, while Cyclone DDS has [many limitations](https://cyclonedds.io/docs/cyclonedds/latest/shared_memory.html#limitations) and **no Windows support.**
 
 ## **Unique**  **Features** : All available in ROS 2.
 
@@ -449,7 +449,7 @@ This tool saves many messages and it has been proved the perfect discovery solut
 - **Flexibility** : Every node can act as a Server or Client distinctively, no daemon process is needed.
 - **Ease-of-use** : Configuration can be done using either an environment variable or XML files. Furthermore, Fast DDS brings a new CLI that enables launching a Discovery Server with a simple command.
 
-The performance and scalability of this mechanism has been extensively tested, and we published a [very complete study](https://www.eprosima.com/index.php/resources-all/scalability/fast-rtps-discovery-mechanisms-analysis)
+The performance and scalability of this mechanism has been extensively tested, and we published a [very complete study](https://www.eprosima.com/index.php/resources-all/scalability/fast-rtps-discovery-mechanisms-analysis).
 
 During the latest year we have been improving even more this tool, and in our latest release we added two important features:
 
@@ -468,7 +468,7 @@ The flow controller can also be used in situations where you have high bandwidth
 
 ## Shared Memory &amp; Zero-Copy - Full support for **ALL**  **ROS 2 platforms**
 
-[Fast DDS supports Shared memory &amp; Zero-copy](https://www.eprosima.com/index.php/products-all/tools/eprosima-shared-memory) **in all supported platforms** including windows, while Cyclone DDS has [many limitations](https://cyclonedds.io/docs/cyclonedds/latest/shared_memory.html#limitations) and **no windows support.**
+[Fast DDS supports Shared memory &amp; Zero-copy](https://www.eprosima.com/index.php/products-all/tools/eprosima-shared-memory) **in all supported platforms** including windows, while Cyclone DDS has [many limitations](https://cyclonedds.io/docs/cyclonedds/latest/shared_memory.html#limitations) and **no Windows support.**
 
 Another interesting feature of our shared memory implementation is that it is fully integrated with Fast DDS, and **it does not require to run any external daemon** , as in other implementations.
 
@@ -512,7 +512,7 @@ Any communications middleware can use 5G as a data link, and ROS 2 is going to w
 
 In order to simplify this process, Ericsson and eProsima released native ROS 2 support for [creating unique network flows using Fast DDS](https://fast-dds.docs.eprosima.com/en/latest/fastdds/use_cases/unique_network_flows/unique_network_flows.html).
 
-TSN is also possible, and it is described by NXP [here](https://github.55860.com/NXP/dds-tsn)
+TSN is also possible, and it is described by NXP [here](https://github.55860.com/NXP/dds-tsn).
 
 ## Micro-ROS
 
@@ -546,9 +546,9 @@ Also our user base is growing every day: around 50K clones per month of our main
 
 ## To be released before the end of 2021 - already in development.
 
-- **Dynamic Network interfaces** : Until now when the network interfaces changed, you needed to re-start ROS 2 to make it aware of the changes. With this new feature, Fast DDS will detect the changes and everything will work properly. To be released in december.
+- **Dynamic Network interfaces** : Until now when the network interfaces changed, you needed to re-start ROS 2 to make it aware of the changes. With this new feature, Fast DDS will detect the changes and everything will work properly. To be released in December.
 
-- **Python Bindings** : Complete python bindings, to be released in november.
+- **Python Bindings** : Complete python bindings, to be released in November.
 
 - [**Visual-ROS**](https://eprosima.com/index.php/products-all/r-d-projects/eu-project-dih2-visual-ros): Visual ROS is already in beta, and we will start doing demos in the next few weeks. You can read more about this tool in our news release [here](https://www.eprosima.com/index.php/company-all/news/175-eprosima-presents-visual-ros)
 
