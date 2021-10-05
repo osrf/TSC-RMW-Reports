@@ -13,45 +13,45 @@ We consider this whole section should have been entrusted to a neutral third par
 That is why, apart from our full range of performance tests, we asked Sony to perform their own testing.
 The results can be found [here](sony-test-results/ROS-2_Fast-DDS_interprocess_performance-test-result.pdf).
 
-**We also consider that focusing only on the performance of certain use cases is not the best approach. There is a large set of ROS 2 applications, with very different requirements in terms of data sizes, topics, number of nodes and publication rates. In most of the proposed tests the differences are not significant. However, having the ability to adapt the RMW behavior to so many use cases seems more critical. Please, refer to the section [about Fast DDS](#about-fast-dds) to learn about all the feature comparison between Fast DDS and cycloneDDS.**
+**We also consider that focusing only on the performance of certain use cases is not the best approach. There is a large set of ROS 2 applications, with very different requirements in terms of data sizes, topics, number of nodes and publication rates. In most of the proposed tests the differences are not significant. However, having the ability to adapt the RMW behavior to so many use cases seems more critical. Please, refer to the section [about Fast DDS](#about-fast-dds) to learn about all the feature comparison between Fast DDS and Cyclone DDS.**
 
 The complete description of the benchmark executed on Fast DDS can be found on section [Benchmarking](#benchmarking).
 The answers to these questions are taken from the result of this benchmark.
 
 ### Without configuration, what is the throughput and latency (in addition to any other relevant metrics) when transferring large topics (like ~4K camera images) at medium frequencies (~30Hz)?
 
-We are taking the results from the tests with 2MB data size and 30 Hz from our [Benchmarking](#benchmarking). The following table compares the average latencies of Fast DDS and cycloneDDS implementations with default configurations on inter-process and intra-process deployments:
+We are taking the results from the tests with 2MB data size and 30 Hz from our [Benchmarking](#benchmarking). The following table compares the average latencies of Fast DDS and Cyclone DDS implementations with default configurations on inter-process and intra-process deployments:
 
 |          | Inter-process | Intra-process |
 |-|-|-|
 | Fast DDS | 2.79867 ms   | 1.05944 ms    |
-| cycloneDDS  | 6.114223 ms   | 1.70604 ms   |
+| Cyclone DDS  | 6.114223 ms   | 1.70604 ms   |
 
-Bear in mind that by default Fast DDS uses asynchronous publishing, while cycloneDDS uses synchronous publishing. **Having asynchronous publishing by default has the advantage of preventing a blocking behavior in the write operation, which is usually considered critical in many ROS 2 applications**. Refer to [this post](https://discourse.ros.org/t/rmw-fast-dds-publication-mode-sync-vs-async-and-how-to-change-it/17153) for further information. **If any application is sensitive to the latency, it can still reduce it using Fast DDS with synchronous publishing**, that obtains yet lower latencies:
+Bear in mind that by default Fast DDS uses asynchronous publishing, while Cyclone DDS uses synchronous publishing. **Having asynchronous publishing by default has the advantage of preventing a blocking behavior in the write operation, which is usually considered critical in many ROS 2 applications**. Refer to [this post](https://discourse.ros.org/t/rmw-fast-dds-publication-mode-sync-vs-async-and-how-to-change-it/17153) for further information. **If any application is sensitive to the latency, it can still reduce it using Fast DDS with synchronous publishing**, that obtains yet lower latencies:
 
 |          | Inter-process | Intra-process |
 |-|-|-|
 | Fast DDS (sync) | 2.56477 ms   | 0.9638ms    |
-| cycloneDDS  | 6.114223 ms   | 1.70604 ms   |
+| Cyclone DDS  | 6.114223 ms   | 1.70604 ms   |
 
 
 With the default configuration and the given size and frequencies, none of the implementations saturate the throughput.
 In order to get throughput values, we increased the rate to 1000 messages per second.
-Here we can see that Fast DDS has much better response than cyclone in terms of throughput:
+Here we can see that Fast DDS has much better response than Cyclone DDS in terms of throughput:
 
 * For a single subscriber on inter-process deployments, Fast DDS gets more than **double** the throughput.
 * Even though both implementations are able to keep the maximum publication rate in intra-process
-deployments with a single subscriber, cycloneDDS's throughput degrades rapidly with increasing number of subscribers (see following questions).
+deployments with a single subscriber, Cyclone DDS's throughput degrades rapidly with increasing number of subscribers (see following questions).
 
 |          | Inter-process | Intra-process |
 |-|-|-|
 | Fast DDS | 1999 MBps     | 2000 MBps     |
-| cycloneDDS  | 822 MBps      | 2000 MBps     |
+| Cyclone DDS  | 822 MBps      | 2000 MBps     |
 
 
 ### Without configuration, how does the implementation scale with the number of topics in the system?
 
-Fast DDS seems to be rather unaffected by the number of topics, maintaining similar performance than with a single topic. CycloneDDS however increases about 5% latency with each added topic.
+Fast DDS seems to be rather unaffected by the number of topics, maintaining similar performance than with a single topic. Cyclone DDS however increases about 5% latency with each added topic.
 
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_topics.png" width=50% height=50%>
 
@@ -60,11 +60,11 @@ Fast DDS seems to be rather unaffected by the number of topics, maintaining simi
 
 Regardless of the implementation, performance degrades mostly with the number of nodes subscribed to the same topic.
 It is expected that the latency increases and that the throughput decreases with the number of subscribers.
-However, the throughput with Fast DDS is much less affected than with cycloneDDS.
+However, the throughput with Fast DDS is much less affected than with Cyclone DDS.
 
- * On inter-process deployments, Fast DDS still gets **double** the throughput than cycloneDDS. This difference is increased with the number of nodes.
- * On intra-process deployments, throughput in Fast DDS is almost unaffected by the number of subscribers up to 10 subscribers by topic, increasing only 1% with each new subscriber. In CycloneDDS however, it increases 10% with each subscriber.
- * On intra-process deployments, cycloneDDS's throughput is affected much earlier than in Fast DDS. Fast DDS is still able to keep the expected publication rate of 2000 Mbps with 10 subscribers, but cycloneDDS clearly cannot keep up and it degrades to around 700, one third of the required throughput.
+ * On inter-process deployments, Fast DDS still gets **double** the throughput than Cyclone DDS. This difference is increased with the number of nodes.
+ * On intra-process deployments, throughput in Fast DDS is almost unaffected by the number of subscribers up to 10 subscribers by topic, increasing only 1% with each new subscriber. In Cyclone DDS however, it increases 10% with each subscriber.
+ * On intra-process deployments, Cyclone DDS's throughput is affected much earlier than in Fast DDS. Fast DDS is still able to keep the expected publication rate of 2000 Mbps with 10 subscribers, but Cyclone DDS clearly cannot keep up and it degrades to around 700, one third of the required throughput.
 
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/intraprocess_re_latency_by_subscribers_2m.png" width=50% height=50%>
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_latency_by_subscribers_2m_2.png" width=50% height=50%>
@@ -76,29 +76,29 @@ However, the throughput with Fast DDS is much less affected than with cycloneDDS
 
 For a complete description of the benchmark and the resulting conclusions, see section [Benchmarking](#benchmarking).
 
-Note that we had trouble collecting inter-machine data with cycloneDDS implementation, since cycloneDDS selects only one of the available network interfaces for the communication. In our tests this resulted in cycloneDDS selecting some virtual interface that was not connected to any physical interface. As a result, we got no communication between the processes. Although this can be corrected through configuration, we had no time to repeat the whole benchmark and, thus, we have no data to characterize cycloneDDS on inter-machine deployments.
+Note that we had trouble collecting inter-machine data with Cyclone DDS implementation, since Cyclone DDS selects only one of the available network interfaces for the communication. In our tests this resulted in Cyclone DDS selecting some virtual interface that was not connected to any physical interface. As a result, we got no communication between the processes. Although this can be corrected through configuration, we had no time to repeat the whole benchmark and, thus, we have no data to characterize Cyclone DDS on inter-machine deployments.
 
 Also note that Fast DDS uses Boost.interprocess to implement shared memory and data sharing deliveries. While performance results for Fast DDS on Ẅindows were similar to other platforms on Windows 10 Version 21H1 (May 2021 Update), a recent Windows patch changed the behavior of Boost.intraprocess. This results on bad performance of Fast DDS on updated Windows platforms. Undefining `BOOST_INTERPROCESS_FORCE_GENERIC_EMULATION` on Boost.interprocess restores the previous behavior, which are the results we are presenting here.
 
 
 ### For a pub/sub pair in separate processes, what is the average round-trip time, throughput, and CPU/memory utilization? How does this scale with topic frequency and topic size?
 
-If we want to have a fair comparison, we should be comparing cycloneDDS (which has synchronous publication mode by default) with Fast DDS in synchronous publication mode. However, for the sake of completeness, we are present the results for all configurations.
+If we want to have a fair comparison, we should be comparing Cyclone DDS (which has synchronous publication mode by default) with Fast DDS in synchronous publication mode. However, for the sake of completeness, we are present the results for all configurations.
 
 Also, we found that even though the numbers may vary, the conclusions are similar for all platforms. You can check the complete results on section [Benchmarking](#benchmarking). The general conclusions can be summarized as follows:
 
- * Fast DDS has much better scallability with the data size than cycloneDDS, in latency, CPU usage and throughput. For 2MB data sizes, Fast DDS has double the throughput, half the latency and half the CPU usage. This with the default configuration. Using data-sharing results are much better yet.
- * Fast DDS consistently gets **at least double** the throughput than cycloneDDS, with all configurations.
- * For smaller data sizes, Latency with Fast DDS synchronous mode configurations is better than latency with cycloneDDS. As expected, latency with asynchronous mode is worse.
- * Memory consumption in Fast DDS is higher than in cycloneDDS. This was somehow expected, since Fast DDS supports many more configurations and features that require data structures residing in memory.
+ * Fast DDS has much better scallability with the data size than Cyclone DDS, in latency, CPU usage and throughput. For 2MB data sizes, Fast DDS has double the throughput, half the latency and half the CPU usage. This with the default configuration. Using data-sharing results are much better yet.
+ * Fast DDS consistently gets **at least double** the throughput than Cyclone DDS, with all configurations.
+ * For smaller data sizes, Latency with Fast DDS synchronous mode configurations is better than latency with Cyclone DDS. As expected, latency with asynchronous mode is worse.
+ * Memory consumption in Fast DDS is higher than in Cyclone DDS. This was somehow expected, since Fast DDS supports many more configurations and features that require data structures residing in memory.
 
 
 **Latency**
 
- * Fast DDS (on synchronous mode) has consistently lower latencies than cycloneDDS.
- * Specially with large data sizes, where cycloneDDS has **double** latencies than Fast DDS (without data-sharing).
- * We extended some tests on the Windows platform beyond 2MB that confirm that latency in cycloneDDS increases at a much larger rate than in Fast DDS.
- * Results are even better if using Fast DDS data-sharing delivery, especially on large data sizes, since data copies are avoided. Total latency is **a quarter** of the latency of cycloneDDS.
+ * Fast DDS (on synchronous mode) has consistently lower latencies than Cyclone DDS.
+ * Specially with large data sizes, where Cyclone DDS has **double** latencies than Fast DDS (without data-sharing).
+ * We extended some tests on the Windows platform beyond 2MB that confirm that latency in Cyclone DDS increases at a much larger rate than in Fast DDS.
+ * Results are even better if using Fast DDS data-sharing delivery, especially on large data sizes, since data copies are avoided. Total latency is **a quarter** of the latency of Cyclone DDS.
  * Latencies seem to increase at a similar rate with the number of subscribers.
  * Surprisingly, in all implementations the latency falls down with increasing publication rates. We believe this is a consequence of the process becoming idle on lower rates and the platform's scheduler changing to another job, so that when the next sample is sent, it has to wait until a running slot is available.
 
@@ -114,10 +114,10 @@ The following plot shows the latency on a windows platform beyond 2M. Note that 
 
 In order to get throughput values, we used the tests for 2MB data size and a rate of 1000 messages per second.
 
- * Fast DDS consistently gets **at least double** the throughput than cycloneDDS, with all configurations.
- * For example, all tested Fast DDS configurations can keep with the required publication rate of 2000 Mbps with one subscriber, while cycloneDDS does not get to half that rate.
+ * Fast DDS consistently gets **at least double** the throughput than Cyclone DDS, with all configurations.
+ * For example, all tested Fast DDS configurations can keep with the required publication rate of 2000 Mbps with one subscriber, while Cyclone DDS does not get to half that rate.
  * Fast DDS shared-memory delivery is the implementation that is least affected by the number of subscribers. It is able to keep the required 2000 Mbps rate up to 10 subscribers.
- * We extended some tests on the Windows platform beyond 2MB that confirm that throughput in cycloneDDS decreases at a much larger rate than in Fast DDS.
+ * We extended some tests on the Windows platform beyond 2MB that confirm that throughput in Cyclone DDS decreases at a much larger rate than in Fast DDS.
 
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_throughput.png" width=50% height=50%>
 
@@ -130,7 +130,7 @@ The following plot shows the throughput on a windows platform beyond 2M. Note th
 
 We are considering here the CPU usage of a single participant. For example, in the case of tests with 10 subscribers, the total CPU usage is approximately 11 times the one reflected here (10 subscribers and one publisher).
 
- * Fast DDS seems to scale much better than cycloneDDS with the data size. cycloneDDS's CPU usage is multiplied by 6 from 4KB to 2MB sizes. In the same range, Fast DDS (non data-sharing) only increases by 3. Fast DDS data-sharing is virtually not affected by data size.
+ * Fast DDS seems to scale much better than Cyclone DDS with the data size. Cyclone DDS's CPU usage is multiplied by 6 from 4KB to 2MB sizes. In the same range, Fast DDS (non data-sharing) only increases by 3. Fast DDS data-sharing is virtually not affected by data size.
  * The publication rate is the parameter that most affects the CPU usage. However, all implementations seem to be equally affected.
 
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_cpu_by_subscribers.png" width=50% height=50%>
@@ -142,13 +142,13 @@ We are considering here the CPU usage of a single participant. For example, in t
 
 We are considering here the memory usage of a single participant. For example, in the case of tests with 10 subscribers, the total memory usage is approximately 11 times the one reflected here (10 subscribers and one publisher).
 
-Memory consumption in Fast DDS is higher than in cycloneDDS. This was somehow expected, since Fast DDS supports many more configurations and features that require data structures residing in memory. This is also why all Fast DDS configurations have similar memory requirements. See the section [about Fast DDS](#about-fast-dds) to learn about all the features that Fast DDS supports in comparison with cycloneDDS.
+Memory consumption in Fast DDS is higher than in Cyclone DDS. This was somehow expected, since Fast DDS supports many more configurations and features that require data structures residing in memory. This is also why all Fast DDS configurations have similar memory requirements. See the section [about Fast DDS](#about-fast-dds) to learn about all the features that Fast DDS supports in comparison with Cyclone DDS.
 
 Also, Fast DDS offers mechanisms to reduce the memory use if necessary, by correctly adjusting the configuration as shown in [the documentation](https://fast-dds.docs.eprosima.com/en/latest/fastdds/use_cases/reduce_memory/reduce_memory.html).
 
  * Memory seems fairly stable with the number of subscribers and the publication rate.
  * As expected, data size is the parameter that affects memory the most, since the histories need to allocate larger memory chunks for the data.
- * Especially in cycloneDDS, memory usage grows very quickly with the data size, and with large data sizes the memory usage is larger than that of Fast DDS.
+ * Especially in Cyclone DDS, memory usage grows very quickly with the data size, and with large data sizes the memory usage is larger than that of Fast DDS.
 
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_subscribers.png" width=50% height=50%>
 <img src="https://github.com/eProsima/benchmarking/blob/tsc_rmw_report_2021/performance_results/TSC_RMW_report_2021/fastrtps_images/linux/interprocess_re_mem_by_rate.png" width=50% height=50%>
@@ -334,18 +334,18 @@ This means that every test has around 300 measured samples that are statisticall
 
 Unsurprisingly, the performance of the tested configurations depend on the kind of deployment: inter or intra-process, best effort or reliable, the number of subscribers, the data size, and so forth. However, in most cases the differences among the implementations and configurations can be considered non-significant, and the effect of the number of subscribers, publication rate and data size is similar in most cases too. There are, however, some exceptions that show really big differences, and these are the ones we are highlighting here. For a more detailed discussion about the smaller differences, please refer to the complete report.
 
- * cycloneDDS has very poor performance with large data sizes. In the case of 2MB data:
+ * Cyclone DDS has very poor performance with large data sizes. In the case of 2MB data:
    * Latency is at least 50% larger than Fast DDS without data-sharing.
    * CPU usage is at least 50% larger than Fast DDS without data-sharing.
-   * We extended some tests on the Windows platform beyond 2MB that confirm that latency in cycloneDDS increases at a much larger rate than in Fast DDS.
+   * We extended some tests on the Windows platform beyond 2MB that confirm that latency in Cyclone DDS increases at a much larger rate than in Fast DDS.
  * By large, the best option for large data sizes is Fast DDS with data-sharing:
    * On a linux platform the throughput exceeds 2000 MBps, even with 10 subscribers.
    * On a Raspberry platform, it has still 10 times larger throughput than any other configuration.
    * The effect of the data size on the latency is almost negligible compared to the other configurations.
- * The throughput with cycloneDDS is the poorest by a large margin.
+ * The throughput with Cyclone DDS is the poorest by a large margin.
    * Fast DDS without data-sharing has around 4 times better throughput regardless of the number of
      subscribers.
-   * We extended some tests on the Windows platform beyond 2MB that confirm that throughput in cycloneDDS decreases at a much larger rate than in Fast DDS.
+   * We extended some tests on the Windows platform beyond 2MB that confirm that throughput in Cyclone DDS decreases at a much larger rate than in Fast DDS.
    * As mentioned before, the best throughput is achieved with Fast DDS with data-sharing delivery.
  * Fast DDS consumes around 25% more memory in all its configurations.This was somehow expected, since Fast DDS
    supports many more configurations and features that require data structures residing in memory.
@@ -397,17 +397,17 @@ The following plot shows the throughput on a windows platform beyond 2M:
 
 ## **Prologue - What is really important when performance is similar?**
 
-Fast DDS has plenty of unique features driven by ROS 2 requirements, and the difference in functionality and quality between Fast DDS and CycloneDDS is huge.
+Fast DDS has plenty of unique features driven by ROS 2 requirements, and the difference in functionality and quality between Fast DDS and Cyclone DDS is huge.
 
 It is important to note that for many cases, both implementations have equal performance, and latencies and throughputs are going to be very similar as it has been shown in the benchmarking. In this scenario, it is very hard to choose just looking at numbers or graphs. But being the performance very similar, **there are other dimensions where the difference is really huge**. This section reviews these: A lot More Features, better quality and documentation, stronger team and community. Here is where Fast DDS really makes the difference.
 
 ## **Documentation** :
 
-One good starting point to review and understand these unique features is the [Fast DDS documentation](https://fast-dds.docs.eprosima.com/en/latest/). While Fast DDS has **super complete documentation** , cycloneDDS documentation is [really poor](https://github.com/eclipse-cyclonedds/cyclonedds#documentation) **.**
+One good starting point to review and understand these unique features is the [Fast DDS documentation](https://fast-dds.docs.eprosima.com/en/latest/). While Fast DDS has **super complete documentation** , Cyclone DDS documentation is [really poor](https://github.com/eclipse-cyclonedds/cyclonedds#documentation) **.**
 
 ## **Quality** :
 
-Fast DDS QL1 vs Cyclone is QL2 (and this is a [huge difference](https://www.ros.org/reps/rep-2004.html)). In the case of the RMW the difference is a lot bigger, a QL2 vs QL4.
+Fast DDS QL1 vs Cyclone DDS is QL2 (and this is a [huge difference](https://www.ros.org/reps/rep-2004.html)). In the case of the RMW the difference is a lot bigger, a QL2 vs QL4.
 
 ## **Roadmap - We deliver what we promise** :
 
@@ -419,11 +419,11 @@ Fast DDS QL1 vs Cyclone is QL2 (and this is a [huge difference](https://www.ros.
 
 Besides the planned roadmap, we delivered many new features not planned initially: [Conditions and waitsets](https://fast-dds.docs.eprosima.com/en/latest/fastdds/dds_layer/core/waitsets/waitsets.html#dds-layer-core-waitsets),
 
-On the other hand, [cycloneDDS published a very aggressive roadmap](https://discourse.ros.org/t/cyclonedds-roadmap-multi-network-async-content-filtering-ql1-et-al/17561/19) to win the latest votation, which has been demonstrated as pure [vaporware](https://en.wikipedia.org/wiki/Vaporware).
+On the other hand, [Cyclone DDS published a very aggressive roadmap](https://discourse.ros.org/t/cyclonedds-roadmap-multi-network-async-content-filtering-ql1-et-al/17561/19) to win the latest votation, which has been demonstrated as pure [vaporware](https://en.wikipedia.org/wiki/Vaporware).
 
 ## **Performance** :
 
-As it has been shown in this report, while for many cases the performance of both implementations is similar, Fast DDS outperformed CycloneDDS in very significant cases, being especially noticeable in the Windows platform. Fast DDS supports Shared memory in all supported platforms including windows, while cycloneDDS has [many limitations](https://cyclonedds.io/docs/cyclonedds/latest/shared_memory.html#limitations) and **no windows support.**
+As it has been shown in this report, while for many cases the performance of both implementations is similar, Fast DDS outperformed Cyclone DDS in very significant cases, being especially noticeable in the Windows platform. Fast DDS supports Shared memory in all supported platforms including windows, while Cyclone DDS has [many limitations](https://cyclonedds.io/docs/cyclonedds/latest/shared_memory.html#limitations) and **no windows support.**
 
 ## **Unique**  **Features** : All available in ROS 2.
 
@@ -468,7 +468,7 @@ The flow controller can also be used in situations where you have high bandwidth
 
 ## Shared Memory &amp; Zero-Copy - Full support for **ALL**  **ROS 2 platforms**
 
-[Fast DDS supports Shared memory &amp; Zero-copy](https://www.eprosima.com/index.php/products-all/tools/eprosima-shared-memory) **in all supported platforms** including windows, while cycloneDDS has [many limitations](https://cyclonedds.io/docs/cyclonedds/latest/shared_memory.html#limitations) and **no windows support.**
+[Fast DDS supports Shared memory &amp; Zero-copy](https://www.eprosima.com/index.php/products-all/tools/eprosima-shared-memory) **in all supported platforms** including windows, while Cyclone DDS has [many limitations](https://cyclonedds.io/docs/cyclonedds/latest/shared_memory.html#limitations) and **no windows support.**
 
 Another interesting feature of our shared memory implementation is that it is fully integrated with Fast DDS, and **it does not require to run any external daemon** , as in other implementations.
 
