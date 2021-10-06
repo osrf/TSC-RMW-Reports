@@ -17,7 +17,7 @@
 
 This report is our response to the [Default DDS Provider Questionnaire](https://osrf.github.io/TSC-RMW-Reports/humble/dds_provider_question_template.html) provided by Open Robotics. This report includes [everything required](eclipse-cyclonedds-report/) to understand and reproduce the test results. Artifacts provided include [how-to instructions](eclipse-cyclonedds-report/reproducing.md) for reproducing everything in this report, including test scripts, graph plot scripts, raw data, tabulated data, detailed test result PDF for each test, and the summary plots you see below.
 
-The Eclipse Foundation [eclipse.org](https://www.eclipse.org/) provides our global community of individuals and organizations with a mature, scalable, and business-friendly environment for open source software collaboration and innovation. The Foundation is home to the Eclipse IDE, Jakarta EE, and over 350 open source projects, including runtimes, tools, and frameworks for a wide range of technology domains such as the Internet of Things, automotive, geospatial, systems engineering, and many others. The Eclipse Foundation is a European-based international not-for-profit association supported by over 300[ members](https://www.eclipse.org/membership) who value the Foundation’s unique[ Working Group](https://www.eclipse.org/org/workinggroups/) governance model, open innovation processes, and[ community-building events](http://events.eclipse.org/). 
+The Eclipse Foundation [eclipse.org](https://www.eclipse.org/) provides our global community of individuals and organizations with a mature, scalable, and business-friendly environment for open source software collaboration and innovation. The Foundation is home to the Eclipse IDE, Jakarta EE, and over 350 open source projects, including runtimes, tools, and frameworks for a wide range of technology domains such as the Internet of Things, automotive, geospatial, systems engineering, and many others. The Eclipse Foundation is a European-based international not-for-profit association supported by over 300[ members](https://www.eclipse.org/membership) who value the Foundation’s unique[ Working Group](https://www.eclipse.org/org/workinggroups/) governance model, open innovation processes, and[ community-building events](http://events.eclipse.org/).
 
 [Eclipse Cyclone DDS](https://cyclonedds.io) and [Eclipse iceoryx](https://iceoryx.io/v1.0.1/) are projects of the [Eclipse IoT](https://iot.eclipse.org) and [Eclipse OpenADx](https://openadx.eclipse.org) (Autonomous Driving) WGs. [Eclipse Zenoh](https://zenoh.io) is a project of Eclipse IoT and [Eclipse Edge Native WG](https://edgenative.eclipse.org).
 
@@ -27,7 +27,7 @@ Users get technical support via github issues, [cyclonedds gitter](https://gitte
 
 Contributors to Eclipse Cyclone DDS with iceoryx and Zenoh include ADLINK, Apex.AI, Bosch, Open Robotics, Rover Robotics and dozens of ROS community members. Apex.AI and ADLINK are working to make the Eclipse Cyclone DDS with iceoryx open source functionally safe and ISO 26262 certifiable. You can read about that [here](https://www.apex.ai/apex-middleware).
 
-These are active projects as you can see here: [cyclonedds](https://github.com/eclipse-cyclonedds/cyclonedds/pulse/monthly), [iceoryx](https://github.com/eclipse-iceoryx/iceoryx/pulse/monthly), [zenoh](https://github.com/eclipse-zenoh/zenoh/pulse/monthly), [rmw_cyclonedds](https://github.com/ros2/rmw_cyclonedds/pulse/monthly), [zenoh-plugin-dds](https://github.com/eclipse-zenoh/zenoh-plugin-dds/pulse/monthly), [zenoh-pico](https://github.com/eclipse-zenoh/zenoh-pico/pulse/monthly), [cyclonedds-cxx](https://github.com/eclipse-cyclonedds/cyclonedds-cxx/pulse/monthly). Note that [Eclipse Foundation Development Process](https://www.eclipse.org/projects/dev_process/) results in contributions being made as a smaller number of larger and thoroughly tested chunks. This means that the number of commits instead of number of pull requests is a more appropriate way to measure the liveliness of Eclipse projects. 
+These are active projects as you can see here: [cyclonedds](https://github.com/eclipse-cyclonedds/cyclonedds/pulse/monthly), [iceoryx](https://github.com/eclipse-iceoryx/iceoryx/pulse/monthly), [zenoh](https://github.com/eclipse-zenoh/zenoh/pulse/monthly), [rmw_cyclonedds](https://github.com/ros2/rmw_cyclonedds/pulse/monthly), [zenoh-plugin-dds](https://github.com/eclipse-zenoh/zenoh-plugin-dds/pulse/monthly), [zenoh-pico](https://github.com/eclipse-zenoh/zenoh-pico/pulse/monthly), [cyclonedds-cxx](https://github.com/eclipse-cyclonedds/cyclonedds-cxx/pulse/monthly). Note that [Eclipse Foundation Development Process](https://www.eclipse.org/projects/dev_process/) results in contributions being made as a smaller number of larger and thoroughly tested chunks. This means that the number of commits instead of number of pull requests is a more appropriate way to measure the liveliness of Eclipse projects.
 
 ADLINK’s DDS team co-invented DDS, co-founded the OMG DDS SIG and contributed much of the original DDS specification. ADLINK DDS team co-authored many of the current DDS Specifications and actively participates in spec revisions and future DDS related specs. ADLINK co-chairs the OMG DDS Technical Committee.
 
@@ -135,7 +135,7 @@ Cyclone DDS with built-in iceoryx zero-copy was tested using the rclcpp RMW “L
 ![alt_text](eclipse-cyclonedds-report/plots/Ubuntu_rel_cpu_usage_zerocopy.png)
 
 ### Inter-host Performance
-Inter-host test detailed plots are [here](eclipse-cyclonedds-report/plots), and the most relevant plots are shown below. 
+Inter-host test detailed plots are [here](eclipse-cyclonedds-report/plots), and the most relevant plots are shown below.
 
 * Cyclone DDS wins 90 times while the other implementation wins 35 times
 * Cyclone DDS fails 0 tests while the other implementation fails 8 tests
@@ -198,9 +198,9 @@ __We’ve had a lot of reports from users of problems using ROS 2 over WiFi. Wha
     * __[ROS 2 default behavior on WIFi](https://discourse.ros.org/t/ros2-default-behavior-wifi/13460/38)__
     * __[Bad networks dragging down localhost communication](https://discourse.ros.org/t/bad-networks-dragging-down-localhost-communication/20611)__
 
-The challenges of DDS when operating over WiFi are relatively well known to those that have been  involved with DDS for sufficiently long time. The main causes of these challenges are related (1) the fact that DDS heavily relies on UDP/IP multicast communication which is know to be problematic on WiFi, (2) the verbosity of DDS discovery protocol, and (3) the lossy nature of WiFi. 
+The challenges of DDS when operating over WiFi are relatively well known to those that have been  involved with DDS for sufficiently long time. The main causes of these challenges are related (1) the fact that DDS heavily relies on UDP/IP multicast communication which is know to be problematic on WiFi, (2) the verbosity of DDS discovery protocol, and (3) the lossy nature of WiFi.
 
-In order to alleviate these and other challenges posed by DDS when trying to scale out or run over Wide Area Network we have the designed the zenoh protocol and implemented it as part of the Eclipse Zenoh project (see http://zenoh.io). 
+In order to alleviate these and other challenges posed by DDS when trying to scale out or run over Wide Area Network we have the designed the zenoh protocol and implemented it as part of the Eclipse Zenoh project (see http://zenoh.io).
 
 Below we describe how zenoh can be transparently used by ROS2 applications to improve their behaviour over WiFi and in general to have better scalability as well as transparently operate at Internet scale.
 
@@ -234,7 +234,7 @@ __How long does it take to launch a large application like RViz2 over WiFi?__
 
 Cyclone DDS and other RMW both launch large applications like RViz2 over WiFi in the same amount of time. Rover Robotics has done much testing of [Nav2 bring up with RViz2 over WiFi](https://youtu.be/k7ogOKzgRFw).
 
-This question really depends on the network and the complexity of the robot. However, as zenoh reduced DDS discovery by up to 99.97% the start-up time is dramatically reduced. There is discussion of that here: [Minimizing ROS 2 discovery traffic](https://discourse.ros.org/t/minimising-ros2-discovery-traffic/19614) 
+This question really depends on the network and the complexity of the robot. However, as zenoh reduced DDS discovery by up to 99.97% the start-up time is dramatically reduced. There is discussion of that here: [Minimizing ROS 2 discovery traffic](https://discourse.ros.org/t/minimising-ros2-discovery-traffic/19614)
 
 
 
@@ -248,7 +248,7 @@ __How does performance scale with the number of robots present in a WiFi network
 
 In DDS, the discovery data is sent from everyone to everyone else in spite of actual interest. Additionally, DDS shares discovery data for readers / writers and topics. As tested by iRobot, Cyclone DDS scales well. Additionally, Erik Boasson added _domainTag_ to the OMG DDSI 2.3 specification to support implementing iRobot’s use case - [find any Roomba by serial number](https://static1.squarespace.com/static/51df34b1e4b08840dcfd2841/t/5e60b8674ae5d240e8dc4219/1583396998832/ROS-I+2019+Eclipse+Cyclone+DDS+-+Joe+Speed+-+low+rez.pdf) among ~1,000 robots on the network.
 
-In zenoh, only subscriptions are shared and more importantly the resource generalisation mechanism described in [eclipse-zenoh/zenoh-plugin-dds](https://github.com/eclipse-zenoh/zenoh-plugin-dds) allows to reduce the entire set of subscriptions of a robot to a single expression. 
+In zenoh, only subscriptions are shared and more importantly the resource generalisation mechanism described in [eclipse-zenoh/zenoh-plugin-dds](https://github.com/eclipse-zenoh/zenoh-plugin-dds) allows to reduce the entire set of subscriptions of a robot to a single expression.
 
 Thus the improved scalability provided by the zenoh-plugin-dds over DDS is a consequence of the very nature of the protocol.
 
@@ -265,11 +265,11 @@ No, however the design and architecture of the middleware components do not prev
 
 __What support is there for microcontrollers?__
 
-Zenoh-pico (see [eclipse-zenoh/zenoh-pico](https://github.com/eclipse-zenoh/zenoh-pico)) supports micro-controllers such as STM32, ESP32, and the Zephyr OS reference board, namely the reel board. Zenoh-pico supports micro-ROS with [rmw_zenoh_pico_cpp](https://github.com/atolab/rmw_zenoh/tree/main/rmw_zenoh_pico_cpp). Zenoh-pico uses the Zenoh ROS 2 DDS plugin [zenoh-plugin-dds](https://github.com/eclipse-zenoh/zenoh-plugin-dds/blob/master/README.md) which works with all Tier 1 ROS Middleware and is in next ROS 2 Rolling sync. Zenoh-pico overview and step-by-step "how to" instructions are [here](https://zenoh.io/blog/2021-10-04-zenoh-pico-guide/). Instructions for ROS 2 with Zenoh are [here](https://zenoh.io/blog/2021-04-28-ros2-integration/). Instructions for using Cyclone DDS with Zenoh on constrained networks are [here](https://zenoh.io/blog/2021-09-28-iac-experiences-from-the-trenches/). 
+Zenoh-pico (see [eclipse-zenoh/zenoh-pico](https://github.com/eclipse-zenoh/zenoh-pico)) supports micro-controllers such as STM32, ESP32, and the Zephyr OS reference board, namely the reel board. Zenoh-pico supports micro-ROS with [rmw_zenoh_pico_cpp](https://github.com/atolab/rmw_zenoh/tree/main/rmw_zenoh_pico_cpp). Zenoh-pico uses the Zenoh ROS 2 DDS plugin [zenoh-plugin-dds](https://github.com/eclipse-zenoh/zenoh-plugin-dds/blob/master/README.md) which works with all Tier 1 ROS Middleware and is in next ROS 2 Rolling sync. Zenoh-pico overview and step-by-step "how to" instructions are [here](https://zenoh.io/blog/2021-10-04-zenoh-pico-guide/). Instructions for ROS 2 with Zenoh are [here](https://zenoh.io/blog/2021-04-28-ros2-integration/). Instructions for using Cyclone DDS with Zenoh on constrained networks are [here](https://zenoh.io/blog/2021-09-28-iac-experiences-from-the-trenches/).
 
 __Are there tools available for integrating/bridging with other protocols (MQTT, etc)? What are they, and how do they work?__
 
-Yes. The provided simple APIs and multiple language bindings facilitate integration/bridging with other protocols via Eclipse Cyclone DDS [sister projects](iot.eclipse.org/projects) Eclipse Paho (MQTT), Eclipse Milo (OPC-UA), Eclipse Tahu (legacy SCADA/DCS/ICS), Eclipse Californium (COAP), et al. Cyclone DDS’s 37 sister projects are listed here [iot.eclipse.org/projects](https://iot.eclipse.org/projects/) 
+Yes. The provided simple APIs and multiple language bindings facilitate integration/bridging with other protocols via Eclipse Cyclone DDS [sister projects](iot.eclipse.org/projects) Eclipse Paho (MQTT), Eclipse Milo (OPC-UA), Eclipse Tahu (legacy SCADA/DCS/ICS), Eclipse Californium (COAP), et al. Cyclone DDS’s 37 sister projects are listed here [iot.eclipse.org/projects](https://iot.eclipse.org/projects/)
 
 __How much adherence is there to the RTPS standard?__
 
@@ -302,7 +302,7 @@ __How else does the package measure quality? Please list specific procedures or 
 
 __Where is the development process documented?__
 
-These projects follow the [Eclipse Foundation Development Process](https://www.eclipse.org/projects/dev_process/). It documents the development process used by hundreds of Eclipse Foundation projects including Cyclone DDS, iceoryx and Zenoh. In addition, the contributing guidelines are documented here for [Cyclone DDS](https://github.com/eclipse-cyclonedds/cyclonedds/blob/master/CONTRIBUTING.md), [iceoryx](https://github.com/eclipse-iceoryx/iceoryx/blob/master/CONTRIBUTING.md) and [Zenoh](https://github.com/eclipse-zenoh/zenoh/blob/master/CONTRIBUTING.md). Note that [Eclipse Foundation Development Process](https://www.eclipse.org/projects/dev_process/) results in contributions being a smaller number of larger and thoroughly tested chunks. This means that looking at the number of commits instead of number of pull requests is a more appropriate way to evaluate the liveliness of any Eclipse project including these. 
+These projects follow the [Eclipse Foundation Development Process](https://www.eclipse.org/projects/dev_process/). It documents the development process used by hundreds of Eclipse Foundation projects including Cyclone DDS, iceoryx and Zenoh. In addition, the contributing guidelines are documented here for [Cyclone DDS](https://github.com/eclipse-cyclonedds/cyclonedds/blob/master/CONTRIBUTING.md), [iceoryx](https://github.com/eclipse-iceoryx/iceoryx/blob/master/CONTRIBUTING.md) and [Zenoh](https://github.com/eclipse-zenoh/zenoh/blob/master/CONTRIBUTING.md). Note that [Eclipse Foundation Development Process](https://www.eclipse.org/projects/dev_process/) results in contributions being a smaller number of larger and thoroughly tested chunks. This means that looking at the number of commits instead of number of pull requests is a more appropriate way to evaluate the liveliness of any Eclipse project including these.
 
 __What kinds of tests are run? Smoke tests, unit tests, integration tests, load tests, coverage? What platforms are each of the tests run on?__
 
@@ -326,16 +326,16 @@ Yes. [Trend Micro security researchers](https://www.trendmicro.com/en_us/about/t
 
 _In this section, you can add any additional information that you think is relevant to your RMW implementation. For instance, if your implementation has unique features, you can explain them here. These should be things technical in nature, not just marketing. Please keep your responses limited to 2000 words with a reasonable number of graphs; we’ll truncate anything longer than that during editing of the report. If you cannot fit all of your data into the limit, feel free to provide a link to an external resource which we’ll include in the report._
 
- 
+
 
 Many have adopted the Eclipse Cyclone DDS ROS middleware after performing their technical due diligence of the available ROS middleware implementations. Adopters include:
 
 
 
-* Default ROS middleware for [ROS 2 Galactic](https://discourse.ros.org/t/ros-2-galactic-default-middleware-announced/18064) 
+* Default ROS middleware for [ROS 2 Galactic](https://discourse.ros.org/t/ros-2-galactic-default-middleware-announced/18064)
 * Most [Nav2](https://github.com/ros-planning/navigation2) users run Eclipse Cyclone DDS per the Nav2 WG Leader
 * Default ROS middleware for [Autoware Foundation](https://www.autoware.org/autoware-auto) developers
-* Default ROS middleware for [Apex.OS](https://www.apex.ai/apex-os) 
+* Default ROS middleware for [Apex.OS](https://www.apex.ai/apex-os)
 * Default ROS middleware for [Indy Autonomous Challenge](https://www.indyautonomouschallenge.com) Base Vehicle Software WG
 * Default ROS middleware for [SVL Simulator ](https://www.svlsimulator.com)
 * Default ROS middleware for [SOAFEE](http://soafee.io) "Sophie" Scalable Open Architecture For Embedded Edge open source with Arm, ADLINK, Apex.AI, AutoCore, Capgemini Engineering, Continental, CARIAD, Green Hills Software, Linaro, Marvell, MIH Consortium, Red Hat, SUSE, Tier IV, Volkswagen, Woven Planet (Toyota Research), Zing Robotics as explained [here](https://www.arm.com/company/news/2021/09/new-arm-technologies-to-transform-the-software-defined-future-for-the-automotive-industry). ZDNet explains SOAFEE [here](https://www.zdnet.com/article/arm-lays-the-groundwork-for-the-software-defined-vehicle/).
@@ -359,9 +359,9 @@ Something that is beyond the scope of this report but worth mentioning is that t
 For Cyclone DDS + iceoryx users of LoanedMessage API with shared memory, the behavior is already well optimized and there is little need to change anythings from defaults.
 
 
-## Appendix A: Test Environment 
+## Appendix A: Test Environment
 
-“Ubuntu” AMD Ryzen 5 5600X (turbo disabled), 32GB DDR4-3600 RAM, Ubuntu 20.04.3 HWE  
+“Ubuntu” AMD Ryzen 5 5600X (turbo disabled), 32GB DDR4-3600 RAM, Ubuntu 20.04.3 HWE
 
 * [ROS 2 Galactic Patch Release 1](https://github.com/ros2/ros2/releases/tag/release-galactic-20210716) amd64 binary download
 * [Apex.AI/performance_test](https://gitlab.com/ApexAI/performance_test/)
@@ -369,7 +369,7 @@ For Cyclone DDS + iceoryx users of LoanedMessage API with shared memory, the beh
 “Windows 10” AMD Ryzen 5 5600X (turbo disabled), 32GB DDR4-3600 RAM, Windows 10 Pro Version 21H1 Build 19043.1237
 
 * Visual Studio 2019
-* [ROS 2 Galactic Patch Release 1](https://github.com/ros2/ros2/releases/tag/release-galactic-20210716) built from source 
+* [ROS 2 Galactic Patch Release 1](https://github.com/ros2/ros2/releases/tag/release-galactic-20210716) built from source
 * [Apex.AI/performance_test](https://gitlab.com/ApexAI/performance_test/)
 
 ““RPi4B” Raspberry Pi Model 4B, 4GB RAM, Ubuntu 20.04.3
@@ -379,7 +379,7 @@ For Cyclone DDS + iceoryx users of LoanedMessage API with shared memory, the beh
 
 “macOS M1” Macbook Pro M1 2020, macOS Big Sur
 
-* [ROS 2 Galactic Patch Release 1](https://github.com/ros2/ros2/releases/tag/release-galactic-20210716) built from source 
+* [ROS 2 Galactic Patch Release 1](https://github.com/ros2/ros2/releases/tag/release-galactic-20210716) built from source
 * [Apex.AI/performance_test](https://gitlab.com/ApexAI/performance_test/)
 
 Inter-host is pair of PCs with Intel Xeon E3-1275 v5, 32GB RAM, Ubuntu 20.04.3 HWE
