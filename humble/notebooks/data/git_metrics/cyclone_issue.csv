@@ -1,0 +1,221 @@
+,closed_at,created_at,labels,id,number,state,title,url,last_mod,comments,turn_round
+0,,2021-10-07 12:09:55,[],1019969237,979,closed,remove grammars from legal notice,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/979,,7,15529.0
+1,,2021-10-07 08:50:59,[],1019784283,978,open,Update for 0.8.1,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/978,,0,
+2,,2021-10-06 11:39:41,[],1018123795,977,open,IDL parser buffer not extended when parsing multi-line comment,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/977,,0,
+3,,2021-10-06 11:26:35,[],1018101471,976,open,Wrong 4 bytes copied for hashid on non-little endian machines,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/976,,0,
+4,,2021-10-05 08:44:15,[],1016050606,975,open,Win32 stack trace of current thread,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/975,,1,
+5,,2021-10-04 12:08:38,[],1015096898,974,closed,Fix use of non-existent paths when building as a subproject,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/974,,3,71673.0
+6,,2021-10-01 14:13:50,[],1013401729,973,open,Add checks on inheritance,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/973,,0,
+7,,2021-09-30 19:39:29,[],1012552399,972,closed,Fix incorrect bitshift in filetime_to_time.,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/972,,0,2817.0
+8,,2021-09-30 18:55:10,[],1012513190,971,closed,Implement log_stacktrace on Win32,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/971,,1,45557.0
+9,,2021-09-30 13:03:14,[],1012153121,970,closed,Support anonymous types in union cases,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/970,,0,414314.0
+10,,2021-09-29 14:00:56,[],1011000122,969,closed,Fix for issue #968,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/969,,0,260148.0
+11,,2021-09-29 13:10:36,[],1010940411,968,closed,GUID byte ordering swapped,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/968,,0,263168.0
+12,,2021-09-29 12:54:43,[],1010922329,967,open,ddsconf generated config can mismatch in a cross compilation,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/967,,0,
+13,,2021-09-28 14:02:33,[],1009797963,966,open,Enable shared memory with transient local qos,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/966,,1,
+14,,2021-09-28 14:00:27,[],1009795283,965,open,Enable shared memory support for transient local readers and writers,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/965,,0,
+15,,2021-09-28 05:48:09,[],1009297949,964,open,Create a nightly CI job with latest iceoryx,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/964,,0,
+16,,2021-09-27 09:57:07,[],1007942120,963,open,Add member ID field population and validation,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/963,,3,
+17,,2021-09-24 13:16:26,[],1006456594,962,closed,Fix use-after-free bugs in IDL parser,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/962,,1,7419.0
+18,,2021-09-24 12:11:06,[],1006399096,961,closed,Replace Codecov by Azure Pipelines Code Coverage,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/961,,1,4060.0
+19,,2021-09-23 14:10:40,[],1005484612,960,closed,Config error handling,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/960,,0,688210.0
+20,,2021-09-23 09:34:56,[],1005213425,959,closed,Bump version number for development branch,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/959,,0,15971.0
+21,,2021-09-23 09:31:30,[],1005210407,958,closed,Backport fix for Bison 3.8.1,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/958,,1,14541.0
+22,,2021-09-23 07:40:13,[],1005110342,957,open,Rewrite keyword token implementation in IDL compiler,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/957,,0,
+23,,2021-09-23 06:00:17,[],1005044132,956,open,Help!!! freertos + lwip + dds ， block by lwip_select ,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/956,,5,
+24,,2021-09-22 16:39:40,[],1004503367,955,open,ROS2 galactic CycloneDDS crash,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/955,,1,
+25,,2021-09-21 17:02:59,[],1002878812,954,closed,Update ROS 2 quality declaration,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/954,,0,159005.0
+26,,2021-09-18 11:36:09,[],1000012437,953,open,Emit shared object files with libcyclone* names,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/953,,0,
+27,,2021-09-18 11:15:36,[],1000008370,952,open,Library names are too generic,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/952,,8,
+28,,2021-09-17 18:50:21,[],999631977,951,closed,Build error with bison-3.8.1,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/951,,3,592292.0
+29,,2021-09-17 13:25:33,[],999352963,950,closed,Memory leak in idl_create_annotation_appl,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/950,,1,611673.0
+30,,2021-09-17 12:36:28,[],999305918,949,closed,Avoid some undocumented interfaces in bison,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/949,,1,500656.0
+31,,2021-09-17 10:02:26,[],999175461,948,closed,CMake changes for cross-compilation,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/948,,0,1122695.0
+32,,2021-09-14 14:40:00,[],996100973,947,open,Add compiler option to specify prefix directory,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/947,,2,
+33,,2021-09-13 11:58:22,[],994801305,946,closed,use-after-free in IDLC,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/946,,1,962502.0
+34,,2021-09-13 11:34:48,[],994782022,945,closed,examples: add support for yocto cross compiling,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/945,,12,1505837.0
+35,,2021-09-10 22:57:05,[],993654128,944,open,"Documentation has two different ""default"" values for ParticipantIndex",https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/944,,7,
+36,,2021-09-09 12:56:42,[],992192023,943,closed,use iceoryx user header,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/943,,2,1880787.0
+37,,2021-09-09 12:09:05,[],992148570,942,open,Include fix for annotation reference count bug in IDL tree to 0.8.1,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/942,,0,
+38,,2021-09-09 09:45:06,[],992017582,941,open,Update serdata functions to handle sequences/strings with shared memory,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/941,,0,
+39,,2021-09-08 15:15:06,[],991252447,940,closed,Backport of fix for failing dlopen test to 0.8.x release branch,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/940,,0,4508.0
+40,,2021-09-08 12:30:40,[],991086063,939,open,Use iceoryx user headers,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/939,,0,
+41,,2021-09-07 18:30:23,[],990241705,938,closed,Use correct offset when serializing type consistency qos,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/938,,1,46078.0
+42,,2021-09-07 15:28:53,[],990105930,937,closed,ExplicitlyPublishQosSetToDefault breaks reader and/or writer,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/937,,8,65441.0
+43,,2021-09-07 11:18:59,[],989876173,936,closed,Add python idl locator to idlc.,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/936,,1,1890455.0
+44,,2021-09-07 08:47:39,[],989745361,935,open,Use-after-free in processing topic discovery message,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/935,,0,
+45,,2021-09-07 08:00:04,[],989704299,934,closed,Remove VS analyzer and add example for using built-in topics,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/934,,2,19366.0
+46,,2021-09-07 07:52:06,[],989697867,933,closed,Dereference as void* to avoid crash with -O2,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/933,,3,6764.0
+47,,2021-09-06 14:44:41,[],989244011,932,closed,Fix dlopen_path test on normal VS/Xcode,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/932,,2,168401.0
+48,,2021-09-06 10:10:03,[],989008328,931,closed,Cache Eclipse Iceoryx,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/931,,0,1485243.0
+49,,2021-09-06 08:16:20,[],988905243,930,open,CycloneDDS performance,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/930,,2,
+50,,2021-09-03 16:30:46,[],987936088,929,closed,Improve diagnostic when idlc loads plugin,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/929,,10,1537313.0
+51,,2021-09-03 07:59:11,[],987515352,928,closed,ddsrt_malloc size for maxq_list is incorrect in find_own_ip,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/928,,0,8434.0
+52,,2021-09-03 06:17:41,[],987437479,927,closed,dsrt_malloc size for maxq_list is incorrect in find_own_ip,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/927,,3,7826.0
+53,,2021-09-03 06:05:47,[],987430225,926,closed,ddsrt_malloc size is incorrect in find_own_ip,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/926,,2,276854.0
+54,,2021-09-03 05:22:45,[],987409340,925,closed,[bug 924] head->aba_head.s.a should be discounted in ddsrt_atomic_lifo_pop,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/925,,1,2870.0
+55,,2021-09-03 04:04:40,[],987374942,924,closed,head->aba_head.s.a should be discounted in ddsrt_atomic_lifo_pop,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/924,,1,7462.0
+56,,2021-09-01 15:16:59,[],985281875,923,closed,Keep weak references to annotatable metadata in IDL tree,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/923,,6,679740.0
+57,,2021-09-01 06:52:03,[],984763873,922,open,Add IDL compiler option to specify the output directory for the generated code (fixes #801),https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/922,,3,
+58,,2021-08-31 11:41:40,[],983764355,921,closed,Backport from master into 0.8.x,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/921,,0,4951.0
+59,,2021-08-30 11:04:33,[],982669668,920,closed,Ignore DDS_INLINE_EXPORT in Doxygen build,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/920,,0,1456.0
+60,,2021-08-30 09:40:32,[],982600334,919,closed,Additional annotation parsing,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/919,,8,2170528.0
+61,,2021-08-27 11:35:32,[],981159121,918,open,Improve bounds checking in security plugins,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/918,,0,
+62,,2021-08-26 06:50:23,[],979897353,917,closed,Fix incorrect QoS handling in dds_create_publisher,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/917,,0,21811.0
+63,,2021-08-26 06:23:57,[],979880835,916,closed,participant unlocked twice,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/916,,0,23397.0
+64,,2021-08-25 15:59:32,[],979366720,915,closed,Error while cross compiling with yocto,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/915,,5,3131597.0
+65,,2021-08-24 05:44:20,[],977727158,914,open,Configuration guide needs updating,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/914,,0,
+66,,2021-08-24 04:23:15,[],977689033,913,closed,Fix the wrong description about the default value of ParticipantIndex,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/913,,0,4875.0
+67,,2021-08-23 09:31:43,[],976828120,912,open,Abnormal jitter in latency test,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/912,,12,
+68,,2021-08-18 18:43:23,[],973955526,911,open,"Unicast sending of a message to a known reader (RPC, service)",https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/911,,3,
+69,,2021-08-18 09:36:28,[],973470993,910,closed,Subtle CDR key calculation fixes,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/910,,0,16292.0
+70,,2021-08-17 11:34:49,[],972590615,909,closed,Duplicate increment of input buffer position upon array key readout,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/909,,0,8105.0
+71,,2021-08-10 09:24:59,[],964775572,908,open,idlc segfaults,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/908,,1,
+72,,2021-08-09 17:31:36,[],964215066,907,closed,cmake: _IMPORT_PREFIX,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/907,,1,53369.0
+73,,2021-08-08 15:46:21,[],963459887,906,closed,Make sure to use buffer with truncated name for pthread_setname_np,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/906,,0,53047.0
+74,,2021-08-05 15:13:47,[],961930835,905,open,Proxy writer deletion fails with assertion in entity index,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/905,,0,
+75,,2021-08-05 13:06:49,[],961807552,904,open,Implementation of the XTypes type system,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/904,,0,
+76,,2021-08-05 10:24:31,[],961676811,903,open,XCDR2 support for idlc and cdrstream serializer,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/903,,3,
+77,,2021-08-04 11:17:07,[],960277568,902,open,Possibility of testing byteswapped input in non-default serdata implementations,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/902,,0,
+78,,2021-08-04 11:13:06,[],960272561,901,closed,OpenDDS compatibility,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/901,,0,1991843.0
+79,,2021-08-04 11:10:33,[],960269200,900,closed,"Waitsets, listeners and masks",https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/900,,3,1287990.0
+80,,2021-08-03 10:55:51,[],958991445,899,closed,Skip all work in tracing addrset calculation if no trace needed,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/899,,0,71657.0
+81,,2021-08-02 19:50:16,[],958456538,898,open,Add read/write instrumentation with LTTng,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/898,,1,
+82,,2021-07-29 14:55:20,[],955928553,897,open,IDLC C code generation ignores structure inheritance,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/897,,1,
+83,,2021-07-28 09:09:17,[],954644157,896,open,Sanitize automatic enablement of Iceorxy,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/896,,0,
+84,,2021-07-28 07:48:47,[],954578312,895,closed,"Default message ""using network interface..."" is printed as info",https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/895,,2,2515234.0
+85,,2021-07-26 15:19:35,[],953017584,894,open,Set shared memory subscriber options based on the reader QoS settings,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/894,,0,
+86,,2021-07-22 08:06:00,[],950404266,893,open,0.8.x idlc makes every struct a topic by default,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/893,,6,
+87,,2021-07-22 08:02:17,[],950401439,892,closed,Why is 'Map' a syntax error with the 0.8.x idlc?,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/892,,2,3801.0
+88,,2021-07-21 08:15:07,[],949448250,891,closed,Status mask is not effective if it is previously set to none,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/891,,5,3020046.0
+89,,2021-07-20 06:39:51,[],948331400,890,closed,Update CRL and fix double free,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/890,,0,10.0
+90,,2021-07-20 01:44:00,[],948165832,889,closed,Is there some way to identify a sample ? ,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/889,,1,22826.0
+91,,2021-07-20 01:43:56,[],948165800,888,closed,Is there some way to identify a sample ? ,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/888,,3,193531.0
+92,,2021-07-19 23:20:20,[],948105524,887,closed,"ddssec_builtin_process_handshake_crl test failure ""double free""",https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/887,,2,26545.0
+93,,2021-07-19 13:30:43,[],947657748,886,closed,Returning writer loans,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/886,,2,245882.0
+94,,2021-07-19 13:24:53,[],947652054,885,closed,Fix some configuration issues,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/885,,0,91044.0
+95,,2021-07-19 09:43:18,[],947469954,884,closed,Update CRL (again),https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/884,,0,13742.0
+96,,2021-07-16 14:30:31,[],946347238,883,open,Multiple Partitions in Custom Profile,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/883,,4,
+97,,2021-07-15 07:38:16,[],945092621,882,closed,Increase CRL ,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/882,,0,1301.0
+98,,2021-07-15 00:52:04,[],944900395,881,open,what CPU was cyclone+iceoryx test run on?,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/881,,1,
+99,,2021-07-14 15:13:27,[],944532081,880,closed,Increase the CRL expiration date.,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/880,,1,58212.0
+100,,2021-07-14 11:01:07,[],944305358,879,closed,Fixed memory-allocation for sampleInfo,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/879,,0,1701.0
+101,,2021-07-12 13:06:23,[],942042562,878,closed,Regenerate expired test CRLs,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/878,,0,73047.0
+102,,2021-07-09 05:51:08,[],940440777,877,closed,Adds custom property to ddsc target to indiciate if SHM is supported,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/877,,1,551111.0
+103,,2021-07-08 16:22:46,[],940025965,876,open,Add support for reloading configuration,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/876,,0,
+104,,2021-07-08 15:45:55,[],939994383,875,closed,Fix check whether memcpy-based (de)ser is possible,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/875,,0,321289.0
+105,,2021-07-07 12:49:04,[],938857796,874,open,idlc C code generation assumes default case is last,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/874,,0,
+106,,2021-07-07 12:47:21,[],938856300,873,closed,Fix emitting of non-printable char cases in unions,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/873,,0,69788.0
+107,,2021-07-07 12:47:00,[],938856005,872,closed,"Emit ""default"" flag if union has a default case",https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/872,,0,69829.0
+108,,2021-07-06 07:51:18,[],937617108,871,closed,Add the option to prematurely return a publisher loan using the already existing dds_return_loan function.,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/871,,2,1389471.0
+109,,2021-07-05 12:41:09,[],937052563,870,closed,Return actual length from `dds_get_name`/`dds_get_type_name`,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/870,,0,4497064.0
+110,,2021-07-05 12:33:46,[],937047092,869,closed,"Make ""real"" built-in topic entities inaccessible",https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/869,,0,1303648.0
+111,,2021-07-05 07:36:40,[],936788383,868,closed,Interoperability between Cyclonedds and OpenSplice,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/868,,6,5018794.0
+112,,2021-06-30 15:16:09,[],933819919,867,closed,"Default message ""using network interface..."" is printed as error",https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/867,,1,4913631.0
+113,,2021-06-30 11:46:34,[],933615558,866,closed,Do not list files in CMake add_library INTERFACE,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/866,,3,7871.0
+114,,2021-06-30 10:44:23,[],933556302,865,closed,Fix assert(thread_is_asleep()) receiving short msg,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/865,,0,1719962.0
+115,,2021-06-30 10:25:44,[],933541176,864,closed,Add missing dds_ prefix to is_loan_available,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/864,,0,1740055.0
+116,,2021-06-29 18:18:17,[],932988472,863,closed,Support const expressions in idl_type_spec,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/863,,0,51032.0
+117,,2021-06-28 12:24:28,[],931515624,862,closed,Backport fix for missing braces in mcpp,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/862,,0,1349.0
+118,,2021-06-28 09:55:25,[],931389638,861,closed,Fix warn '[-Wmisleading-indentation]' in if statement,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/861,,0,10311.0
+119,,2021-06-28 09:54:57,[],931389267,860,closed,Fix warn '[-Wmisleading-indentation]' in if statement,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/860,,0,8577.0
+120,,2021-06-28 06:58:40,[],931238428,859,closed,Remove dead code from mcpp (CID 329677),https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/859,,0,2972.0
+121,,2021-06-28 06:58:25,[],931238261,858,closed,List include files in CMakeLists.txt,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/858,,0,2978.0
+122,,2021-06-25 13:33:36,[],930180000,857,closed,Simple renames,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/857,,0,4303.0
+123,,2021-06-25 11:13:32,[],930079965,856,closed,Removed global shared memory mutex,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/856,,0,2111.0
+124,,2021-06-25 07:23:50,[],929907422,855,closed,Use constants for security property names,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/855,,1,367986.0
+125,,2021-06-24 14:35:42,[],929295868,854,closed,Fix include of symlinked files,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/854,,2,73326.0
+126,,2021-06-24 12:24:27,[],929175069,853,closed,CRL support,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/853,,1,2282.0
+127,,2021-06-23 17:33:13,[],928490299,852,closed,Fixes for the remaining Coverity issues,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/852,,0,50381.0
+128,,2021-06-23 17:04:39,[],928468708,851,open,[question] why limit node name to 10 characters in interface warning?,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/851,,3,
+129,,2021-06-23 07:48:38,[],927962310,850,closed,Update Cyclone DDS quality declaration,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/850,,0,30233.0
+130,,2021-06-22 16:11:38,[],927411795,849,closed,Fix FreeRTOS+LwIP builds + one more coverity fix,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/849,,0,68847.0
+131,,2021-06-22 13:43:29,[],927250504,848,closed,Fixes for some of the Coverity issues in the IDL compiler,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/848,,0,1643.0
+132,,2021-06-22 10:58:02,[],927103870,847,open,Added QNX OS support,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/847,,8,
+133,,2021-06-22 08:00:20,[],926945896,846,closed,Coverity fixes to Cyclone core,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/846,,0,2958.0
+134,,2021-06-22 07:53:02,[],926939944,845,closed,Fix the behavior of preprocessor with include directory search list,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/845,,1,205454.0
+135,,2021-06-22 07:45:30,[],926933852,844,closed,IDLC can't find nested IDLs when using include search list,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/844,,7,289674.0
+136,,2021-06-22 02:26:09,[],926760511,843,closed,Cyclone DDS Package configuration file missing ,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/843,,2,195613.0
+137,,2021-06-18 15:46:13,[],925023782,842,closed,Add support for building with mingw-w64,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/842,,10,6285484.0
+138,,2021-06-18 03:00:51,[],924494880,841,closed,Installing Cyclone DDS Error ddsconf.h: No such file or directory,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/841,,10,6331483.0
+139,,2021-06-17 08:17:26,[],923622405,840,closed,Fix mistyped ddsrt_mtime_t.,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/840,,3,1854.0
+140,,2021-06-16 18:29:02,[],922952225,839,closed,Do not publish documentation on pull requests,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/839,,0,50476.0
+141,,2021-06-16 14:16:08,[],922672639,838,closed,Fix dds_find_topic_scoped handling of topics in different participants,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/838,,1,7356.0
+142,,2021-06-15 12:58:33,[],921369793,837,closed,Issue with participant cleanup after finding topic created in one participant through another,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/837,,0,98411.0
+143,,2021-06-15 09:59:06,[],921223267,836,closed,Fixes for errors and warnings on FreeRTOS,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/836,,2,83901.0
+144,,2021-06-14 14:39:38,[],920482570,835,closed,Use original filename if include is located in additional include directory,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/835,,2,238855.0
+145,,2021-06-10 15:55:55,[],917510676,834,closed,Implement Certificate Revocation Lists in security authentication,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/834,,9,1199110.0
+146,,2021-06-10 10:33:13,[],917186993,833,closed,Fixes for issues introduced by merging the iceoryx branch,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/833,,0,95265.0
+147,,2021-06-10 08:33:01,[],917068339,832,closed,IDL includes resolved in a non-local directory should should retain the original path,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/832,,0,606453.0
+148,,2021-06-09 06:59:37,[],915860843,831,closed,Discovering all topics,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/831,,19,7799055.0
+149,,2021-06-08 03:49:03,[],914270913,830,closed,topic descriptor documentation,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/830,,27,4935710.0
+150,,2021-06-07 21:27:11,[],913967944,829,open,Implementing Certificate Revocation Lists in Secure communications,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/829,,2,
+151,,2021-06-07 14:04:35,[],913587153,828,closed,Fix C.UTF-8 warnings generated by idlc,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/828,,0,71345.0
+152,,2021-06-07 12:51:35,[],913514190,827,open,Interoperability between Cyclonedds and OpenSplice,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/827,,1,
+153,,2021-06-07 09:14:41,[],913326295,826,closed,Switch Coverity Scan build to Clang,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/826,,1,84234.0
+154,,2021-06-03 17:53:50,[],910730005,825,closed,Fix submission to Coverity Scan,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/825,,0,63642.0
+155,,2021-06-03 13:52:14,[],910516800,824,closed,"Really fix submission to Coverity Scan, hopefully",https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/824,,1,1134.0
+156,,2021-06-03 13:11:41,[],910480491,823,closed,Fix submission to Coverity Scan,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/823,,1,877.0
+157,,2021-06-03 03:01:37,[],910047600,822,open,When will you release next version.,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/822,,1,
+158,,2021-06-02 14:33:56,[],909569985,821,open,What are the dual licenses this package is available under,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/821,,1,
+159,,2021-06-02 12:51:55,[],909468666,820,closed,libidl version number independent of project,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/820,,6,4130913.0
+160,,2021-06-02 10:31:27,[],909352689,819,open,Multiple Interface: mulitcast will be all disabled while some interfaces don't support multicast,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/819,,0,
+161,,2021-06-01 11:36:47,[],908199844,818,closed,"Allow base types, enums and strings as key",https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/818,,1,259192.0
+162,,2021-05-31 18:16:48,[],907648294,817,open,Why I cannot find idlc_generate() when I cmake helloworld? ,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/817,,1,
+163,,2021-05-31 16:09:59,[],907589354,816,closed,Add pipeline for publishing documentation,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/816,,0,1281191.0
+164,,2021-05-28 17:09:21,[],905759245,815,open,"What's the meaning of payload._release and payload._maximum,",https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/815,,1,
+165,,2021-05-26 14:47:04,[],902504526,814,closed,Typo fix,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/814,,0,1013.0
+166,,2021-05-26 07:58:14,[],901943711,813,open,Compatibility between opendds and cyclonedds,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/813,,1,
+167,,2021-05-25 19:16:47,[],901247397,812,closed,typo fix,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/812,,3,71265.0
+168,,2021-05-25 14:38:26,[],900904236,811,open,valgrind invalid read / write errors with sequence identifier in the IDL,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/811,,6,
+169,,2021-05-25 12:53:29,[],900770311,810,open,Bitmask support in idl compiler front-end,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/810,,0,
+170,,2021-05-25 12:33:38,[],900747454,809,closed,Dereference as void* to avoid crash with -O2,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/809,,1,156127.0
+171,,2021-05-22 15:14:01,[],898822916,808,closed,Segmentation fault during idlc generating,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/808,,6,405704.0
+172,,2021-05-21 14:22:14,[],898091239,807,closed,bug alert!,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/807,,2,434560.0
+173,,2021-05-19 15:57:39,[],895618333,806,closed,Improve handling of external vs internal addresses,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/806,,1,750617.0
+174,,2021-05-18 15:31:12,[],894509714,805,closed,Merge Iceoryx integration into master,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/805,,0,1815869.0
+175,,2021-05-18 02:01:41,[],893865737,804,closed,Use enum as key in IDL,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/804,,1,1503298.0
+176,,2021-05-17 14:57:19,[],893420247,803,closed,Fix broken assert in network partition config,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/803,,1,2512.0
+177,,2021-05-17 09:58:28,[],893161301,802,closed,Automated documentation generation in CI,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/802,,5,182341.0
+178,,2021-05-15 01:18:44,[],892326535,801,open,IDL compiler option to specify the output directory for the generated code,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/801,,0,
+179,,2021-05-14 16:05:47,[],892049759,800,open,How to build cyclonedds static?,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/800,,17,
+180,,2021-05-14 13:16:52,[],891915116,799,open,Memory leak detected in idlc with Asan,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/799,,2,
+181,,2021-05-13 15:04:54,[],891120916,798,closed,how to use dds_read efficiently,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/798,,2,180309.0
+182,,2021-05-12 14:30:37,[],890152140,797,closed,Fixes for idl parser related to enums,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/797,,1,429911.0
+183,,2021-05-11 13:07:58,[],887229369,796,closed,Merge master into iceoryx branch,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/796,,0,6102.0
+184,,2021-05-11 06:01:02,[],886134547,795,open,documentation for idl supported types,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/795,,0,
+185,,2021-05-10 17:01:38,[],884651938,794,open,Building standalone application with using CycloneDDS,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/794,,9,
+186,,2021-05-10 08:57:44,[],883766801,793,closed,Yocto meta layer support,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/793,,1,7773.0
+187,,2021-05-07 18:24:13,[],879493470,792,closed,Update allocator API for special case of heap allocation,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/792,,1,219820.0
+188,,2021-05-07 16:46:14,[],879339272,791,closed,Support stdin as input for compiler + some fixes,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/791,,2,240619.0
+189,,2021-05-07 14:00:56,[],879061005,790,closed,Can't compile with  -DBUILD_IDLC=ON ,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/790,,2,250538.0
+190,,2021-05-07 02:08:15,[],878327469,789,closed,Use PROJECT_SOURCE_DIR instead of CMAKE_SOURCE_DIR.,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/789,,1,19968.0
+191,,2021-05-06 13:46:29,[],877516793,788,closed,Avoid serialization in write for volatile writers,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/788,,6,11509919.0
+192,,2021-05-06 09:36:56,[],877302289,787,closed,Allow Iceoryx use for best-effort readers,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/787,,2,1617.0
+193,,2021-05-06 09:36:40,[],877302049,786,closed,ddsi_ipaddr_is_nearby_address: ignore non-IP ones,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/786,,2,1646.0
+194,,2021-05-04 15:02:49,[],875555231,785,open,dds_take will perform a deserialization even if the data is transmitted via shared memory,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/785,,0,
+195,,2021-05-04 14:57:28,[],875549835,784,closed,Register number of unused labels in union,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/784,,1,8057.0
+196,,2021-05-04 14:45:41,[],875538038,783,closed,dds_write when used with iceoryx performs serialization even if there are only shared memory readers,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/783,,0,11679167.0
+197,,2021-04-30 12:15:46,[],872415486,782,closed,Fix IDL_PRINTA redirect for Visual Studio,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/782,,1,1459.0
+198,,2021-04-29 10:29:05,[],870861353,781,closed,"Suppress heartbeat/ack/historical data if Iceoryx, add test for CI",https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/781,,1,603314.0
+199,,2021-04-29 09:26:52,[],870807849,780,closed,Update README.md,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/780,,0,14773.0
+200,,2021-04-29 07:15:31,[],870690994,779,closed,Add missing build_depend on JDK for IDLC in package.xml,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/779,,2,21891.0
+201,,2021-04-28 14:51:46,[],870036568,778,closed,Improved shared memory documentation,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/778,,1,684354.0
+202,,2021-04-28 13:42:21,[],869963673,777,closed,Delete ddsls,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/777,,4,519401.0
+203,,2021-04-26 11:54:41,[],867621435,776,closed,Add package target to create installers for different platforms,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/776,,4,188468.0
+204,,2021-04-26 08:11:04,[],867403825,775,closed,Some fixes IDL compiler for parsing annotations,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/775,,1,184755.0
+205,,2021-04-26 07:04:57,[],867342653,774,closed,Numeric locator kinds,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/774,,0,24768.0
+206,,2021-04-25 20:36:01,[],867107997,773,closed,Add API to initialise data allocator to allocate on heap,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/773,,2,912519.0
+207,,2021-04-22 18:03:51,[],865268636,772,closed,Revert data allocator api change,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/772,,1,147.0
+208,,2021-04-22 17:57:56,[],865263170,771,closed,Add idl_is_keyless for C++ generator,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/771,,3,511866.0
+209,,2021-04-22 09:45:32,[],864754909,770,closed,Outstanding coverity issues,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/770,,2,12193487.0
+210,,2021-04-22 06:07:32,[],864576351,769,closed,How to tune cyclonedds to reduce cpu usage,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/769,,5,4826017.0
+211,,2021-04-21 22:44:02,[],864362775,768,closed,Update data allocator API to also support allocation on the heap,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/768,,1,35040.0
+212,,2021-04-21 11:25:52,[],863764222,767,closed,Various fixes + merge master,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/767,,1,75634.0
+213,,2021-04-21 07:41:14,[],863546652,766,open,Question about the enum constants,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/766,,1,
+214,,2021-04-16 14:34:55,[],859872717,765,closed,Getting bison to be optional.,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/765,,4,508617.0
+215,,2021-04-16 14:34:25,[],859872302,764,closed,Install the pdb files for msvc,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/764,,4,1043185.0
+216,,2021-04-16 11:58:33,[],859748009,763,closed,Fix defects reported by Coverity Scan,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/763,,1,341191.0
+217,,2021-04-15 18:58:26,[],859165366,762,closed,edit to reflect the progress from original PoC,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/762,,1,6353609.0
+218,,2021-04-13 23:48:13,[],857399829,761,open,macOS 11.x Big Sur for GitHub Actions,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/761,,0,
+219,,2021-04-12 20:11:20,[],856323078,760,closed,New tag for the 0.8.0/iceoryx branch for ROS 2 Rolling,https://api.github.com/repos/eclipse-cyclonedds/cyclonedds/issues/760,,3,41646.0
