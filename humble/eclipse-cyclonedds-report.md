@@ -227,7 +227,7 @@ __How does the system behave when a robot leaves WiFi range and then reconnects?
 
 With Cyclone DDS this behaves the same as well as others. With [zenoh-plugin-dds](https://github.com/eclipse-zenoh/zenoh-plugin-dds) the disruption of a temporary out-of-range WiFi link is quickly resolved once the connection is re-established. As the level of discovery information shared by the zenoh protocol is extremely small when compared to DDS, and much of the information exchanged by DDS is not even necessary, the communication is re-established immediately without inundating the network with discovery data as in the DDS case.
 
-The disruption of a temporary out of range WiFi link is quickly resolved once the connection is re-established. As the level of discovery information shared by the zenoh protocol in extremely small when compared to DDS, and much of the information exchanged by DDS is not even necessary, the communication is re-established immediately without inundating the network with discovery data as in the DDS case.
+The disruption of a temporary out of range WiFi link is quickly resolved once the connection is re-established. As the level of discovery information shared by the zenoh protocol is extremely small when compared to DDS, and much of the information exchanged by DDS is not even necessary, the communication is re-established immediately without inundating the network with discovery data as in the DDS case.
 
 
 __How long does it take to launch a large application like RViz2 over WiFi?__
@@ -240,7 +240,7 @@ This question really depends on the network and the complexity of the robot. How
 
 __What is a solution for default DDS discovery on lossy networks?__
 
-Leveraging the [zenoh-plugin-dds](https://github.com/eclipse-zenoh/zenoh-plugin-dds) addresses the problem of lossy networks where it does not leverage multicast, and the protocol is extremely parsimonious and wire efficient. [Here is overview and tutorial](https://zenoh.io/blog/2021-04-28-ros2-integration/) using ROS 2 turtlebot. This plugin is in the next Rolling sync.
+Leveraging the [zenoh-plugin-dds](https://github.com/eclipse-zenoh/zenoh-plugin-dds) addresses the problem of lossy networks where it does not leverage multicast, and the protocol is extremely parsimonious and wire efficient. [Here is an overview and tutorial](https://zenoh.io/blog/2021-04-28-ros2-integration/) using ROS 2 turtlebot. This plugin is in the next Rolling sync.
 
 
 
@@ -265,7 +265,7 @@ No, however the design and architecture of the middleware components do not prev
 
 __What support is there for microcontrollers?__
 
-Zenoh-pico (see [eclipse-zenoh/zenoh-pico](https://github.com/eclipse-zenoh/zenoh-pico)) supports micro-controllers such as STM32, ESP32, and the Zephyr OS reference board, namely the reel board. Zenoh-pico supports micro-ROS with [rmw_zenoh_pico_cpp](https://github.com/atolab/rmw_zenoh/tree/main/rmw_zenoh_pico_cpp). Zenoh-pico uses the Zenoh ROS 2 DDS plugin [zenoh-plugin-dds](https://github.com/eclipse-zenoh/zenoh-plugin-dds/blob/master/README.md) which works with all Tier 1 ROS Middleware and is in next ROS 2 Rolling sync. Zenoh-pico overview and step-by-step "how to" instructions are [here](https://zenoh.io/blog/2021-10-04-zenoh-pico-guide/). Instructions for ROS 2 with Zenoh are [here](https://zenoh.io/blog/2021-04-28-ros2-integration/). Instructions for using Cyclone DDS with Zenoh on constrained networks are [here](https://zenoh.io/blog/2021-09-28-iac-experiences-from-the-trenches/).
+Zenoh-pico (see [eclipse-zenoh/zenoh-pico](https://github.com/eclipse-zenoh/zenoh-pico)) supports micro-controllers such as STM32, ESP32, and the Zephyr OS reference board, namely the reel board. Zenoh-pico supports micro-ROS with [rmw_zenoh_pico_cpp](https://github.com/atolab/rmw_zenoh/tree/main/rmw_zenoh_pico_cpp). Zenoh-pico uses the Zenoh ROS 2 DDS plugin [zenoh-plugin-dds](https://github.com/eclipse-zenoh/zenoh-plugin-dds/blob/master/README.md) which works with all Tier 1 ROS Middleware and is in the next ROS 2 Rolling sync. Zenoh-pico overview and step-by-step "how to" instructions are [here](https://zenoh.io/blog/2021-10-04-zenoh-pico-guide/). Instructions for ROS 2 with Zenoh are [here](https://zenoh.io/blog/2021-04-28-ros2-integration/). Instructions for using Cyclone DDS with Zenoh on constrained networks are [here](https://zenoh.io/blog/2021-09-28-iac-experiences-from-the-trenches/).
 
 __Are there tools available for integrating/bridging with other protocols (MQTT, etc)? What are they, and how do they work?__
 
@@ -273,7 +273,7 @@ Yes. The provided simple APIs and multiple language bindings facilitate integrat
 
 __How much adherence is there to the RTPS standard?__
 
-Full adherence with one exception; for interoperability with the other middleware, Cyclone DDS has been modified accept some invalid messages that the other ROS middleware sends despite the RTPS specification demanding that those be ignored.
+Full adherence with one exception; for interoperability with the other middleware, Cyclone DDS has been modified to accept some invalid messages that the other ROS middleware sends despite the RTPS specification demanding that those be ignored.
 
 __How much support for the DDS-Security specification is provided in the DDS implementation?__
 
