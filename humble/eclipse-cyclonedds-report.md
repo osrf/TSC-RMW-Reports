@@ -294,7 +294,7 @@ Yes. [Wireshark](https://www.wireshark.org), [performance_test](https://gitlab.c
 
 __What is the currently self-declared REP-2004 quality of the package implementing the RTPS/DDS protocols and the RMW?__
 
-Cyclone DDS and iceoryx are self-declared to be Quality Level 2 [here](https://github.com/eclipse-cyclonedds/cyclonedds/compare/master...eboasson:ql2declaration?expand=1) and [here](https://github.com/eclipse-iceoryx/iceoryx/blob/master/QUALITY_DECLARATION.md).
+Cyclone DDS and iceoryx are self-declared to be Quality Level 2 [here](https://github.com/eclipse-cyclonedds/cyclonedds/blob/81fb530539458223e03fb70383d21c170767dfaa/CYCLONEDDS_QUALITY_DECLARATION.md) and [here](https://github.com/eclipse-iceoryx/iceoryx/blob/master/QUALITY_DECLARATION.md).
 
 __How else does the package measure quality? Please list specific procedures or tools that are used.__
 
