@@ -13,7 +13,7 @@ We consider this whole section should have been entrusted to a neutral third par
 That is why, apart from our full range of performance tests, we asked Sony to perform their own testing.
 The results can be found [here](sony-test-results/ROS-2_Fast-DDS_interprocess_performance-test-result.pdf).
 
-**We also consider that focusing only on the performance of certain use cases is not the best approach. There is a large set of ROS 2 applications, with very different requirements in terms of data sizes, topics, number of nodes and publication rates. In most of the proposed tests the differences are not significant. However, having the ability to adapt the RMW behavior to so many use cases seems more critical. Please, refer to the section [about Fast DDS](#about-fast-dds) to learn about all the feature comparison between Fast DDS and Cyclone DDS.**
+**We also consider that focusing only on the performance of certain use cases is not the best approach. There is a large set of ROS 2 applications, with very different requirements in terms of data sizes, topics, number of nodes and publication rates. In most of the proposed tests the differences are not significant. However, having the ability to adapt the RMW behavior to so many use cases seems more critical. Please, refer to the section [about Fast DDS](#free-form-about-fast-dds) to learn about all the feature comparison between Fast DDS and Cyclone DDS.**
 
 The complete description of the benchmark executed on Fast DDS can be found on section [Benchmarking](#benchmarking).
 The answers to these questions are taken from the result of this benchmark.
@@ -142,7 +142,7 @@ We are considering here the CPU usage of a single participant. For example, in t
 
 We are considering here the memory usage of a single participant. For example, in the case of tests with 10 subscribers, the total memory usage is approximately 11 times the one reflected here (10 subscribers and one publisher).
 
-Memory consumption in Fast DDS is higher than in Cyclone DDS. This was somehow expected, since Fast DDS supports many more configurations and features that require data structures residing in memory. This is also why all Fast DDS configurations have similar memory requirements. See the section [about Fast DDS](#about-fast-dds) to learn about all the features that Fast DDS supports in comparison with Cyclone DDS.
+Memory consumption in Fast DDS is higher than in Cyclone DDS. This was somehow expected, since Fast DDS supports many more configurations and features that require data structures residing in memory. This is also why all Fast DDS configurations have similar memory requirements. See the section [about Fast DDS](#free-form-about-fast-dds) to learn about all the features that Fast DDS supports in comparison with Cyclone DDS.
 
 Also, Fast DDS offers mechanisms to reduce the memory use if necessary, by correctly adjusting the configuration as shown in [the documentation](https://fast-dds.docs.eprosima.com/en/latest/fastdds/use_cases/reduce_memory/reduce_memory.html).
 
