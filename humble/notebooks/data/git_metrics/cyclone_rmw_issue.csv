@@ -1,0 +1,41 @@
+,closed_at,created_at,labels,id,number,state,title,url,last_mod,comments,turn_round
+0,,2021-10-02 03:07:27,[],1013898660,340,open,Fix QoS depth settings for clients/service ignored,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/340,,4,
+1,,2021-09-28 07:50:38,[],1009407155,339,open,User setting for Qos depth is ignored while using Clinet/Service,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/339,,2,
+2,,2021-09-22 16:38:28,[],1004502420,338,open,Galactic CycloneDDS crash,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/338,,3,
+3,,2021-09-08 18:24:32,[],991410756,337,closed,Update rmw_context_impl_t definition,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/337,,1,523333.0
+4,,2021-09-08 15:34:24,[],991271672,336,closed,Fix use of deprecated is_loan_available,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/336,,1,92627.0
+5,,2021-09-03 14:37:56,[],987835651,335,closed,Add quality declaration for rmw_cyclonedds_cpp,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/335,,1,859996.0
+6,,2021-08-30 16:06:19,[],982955041,334,closed,rmw_cyclonedds_cpp/CMakeLists.txt: add -latomic for RISC-V (backport #332),https://api.github.com/repos/ros2/rmw_cyclonedds/issues/334,,0,3169.0
+7,,2021-08-30 16:06:12,[],982954918,333,closed,rmw_cyclonedds_cpp/CMakeLists.txt: add -latomic for RISC-V (backport #332),https://api.github.com/repos/ros2/rmw_cyclonedds/issues/333,,0,3159.0
+8,,2021-08-26 12:26:30,[],980186838,332,closed,rmw_cyclonedds_cpp/CMakeLists.txt: add -latomic for RISC-V,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/332,,10,358564.0
+9,,2021-08-14 14:58:16,"[Label(name=""help wanted"")]",970928441,331,closed,Missing quality declaration for rmw_cyclonedds_cpp,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/331,,4,2586776.0
+10,,2021-08-06 22:15:19,[],963077166,330,closed,Windows 10 - build issue with unresolved external symbol in serdata.hpp,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/330,,2,81207.0
+11,,2021-08-02 23:26:19,[],958583084,329,closed,"Add pub/sub init, publish and take instrumentation using tracetools",https://api.github.com/repos/ros2/rmw_cyclonedds/issues/329,,5,850949.0
+12,,2021-07-29 15:43:31,[],955973596,328,open,Poor Image Transport Performace,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/328,,2,
+13,,2021-07-29 12:34:33,"[Label(name=""enhancement"")]",955796949,327,closed,add -latomic in CMakelist.txt,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/327,,7,4245493.0
+14,,2021-07-27 16:25:43,[],954054969,326,closed,CycloneDDS broke infrastructure for rolling-testing,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/326,,1,1369989.0
+15,,2021-07-06 18:43:03,[],938163260,325,closed,Pass the CRL down to CycloneDDS if it exists.,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/325,,1,153171.0
+16,,2021-06-28 23:22:35,[],932069731,324,closed,Add publishing instrumentation using tracetools,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/324,,5,1988833.0
+17,,2021-06-24 18:52:19,[],929518121,323,closed,Use the new rmw_dds_common::get_security_files API.,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/323,,1,325225.0
+18,,2021-06-22 15:13:40,[],927345610,322,closed,Added shared memory support usage description,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/322,,1,88062.0
+19,,2021-06-09 15:48:13,[],916359564,321,closed,Update Galactic to support zero-copy,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/321,,6,513777.0
+20,,2021-06-09 08:03:56,[],915914480,320,open,Fix typesupport bug.,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/320,,3,
+21,,2021-06-07 15:07:05,"[Label(name=""more-information-needed"")]",913656030,319,open,Interfacing ROS2 CycloneDDS with OpenSplice,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/319,,5,
+22,,2021-06-07 13:02:35,"[Label(name=""more-information-needed"")]",913525340,318,open,Unable to communicate between a FastDDS application and ROS2 using CycloneDDS when ROS_LOCALHOST_ONLY is set to 1,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/318,,2,
+23,,2021-06-03 15:42:54,[],910622597,317,closed,Change index.ros.org -> docs.ros.org links.,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/317,,1,75699.0
+24,,2021-06-02 18:59:57,[],909799534,316,closed,New cyclonedds release for rolling,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/316,,5,98746.0
+25,,2021-06-02 12:51:37,[],909468412,315,closed,Compatibility with older versions of Cyclone DDS,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/315,,2,2512156.0
+26,,2021-05-31 13:40:48,[],907482536,314,closed,Execute ROS 2 tutorials for Cyclone DDS and rmw_cyclonedds commits provided for Galactic patch release 1 ,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/314,,1,692681.0
+27,,2021-05-06 19:12:00,[],877897205,313,closed,Handle allocation errors during message deserialization,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/313,,2,6631.0
+28,,2021-04-30 16:46:35,[],872854474,312,closed,Update includes after rcutils/get_env.h deprecation,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/312,,1,337200.0
+29,,2021-04-26 01:00:40,[],867170431,311,closed,add_peer_addresses: 1/127.0.0.1: unknown address,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/311,,2,76737.0
+30,,2021-04-25 18:47:14,[],867084289,310,closed,Remove ubuntu-18.04 job from CI config matrix and ignore rmw_connextdds,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/310,,2,954426.0
+31,,2021-04-25 10:41:38,[],866977550,309,closed,Fix zero copy issues,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/309,,3,1930796.0
+32,,2021-04-25 09:17:52,[],866959996,308,closed,Fix serialized path when SHM is enabled,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/308,,1,2008280.0
+33,,2021-04-25 08:26:34,[],866949577,307,closed,Fix Publishing when SHM is enabled,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/307,,1,2011372.0
+34,,2021-04-22 15:41:09,[],865096992,306,closed,Update usage of dds_data_allocator APIs,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/306,,12,1288521.0
+35,,2021-04-20 14:23:49,[],862874240,305,closed,Fix the history depth for KEEP_ALL.,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/305,,5,80333.0
+36,,2021-04-17 21:04:10,"[Label(name=""help wanted"")]",860514295,304,closed,User Documentation of Shared Memory transport feature,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/304,,0,5681063.0
+37,,2021-04-17 20:57:34,[],860513158,303,closed,Added shared memory support usage description,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/303,,5,5681459.0
+38,,2021-04-13 21:36:17,[],857341283,302,open,How to deal with serialized messages and iceoryx shared memory transport?,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/302,,2,
+39,,2021-04-13 21:13:57,"[Label(name=""help wanted"")]",857328089,301,closed,Subscriber receives empty sample when using shared memory and no loaned messages,https://api.github.com/repos/ros2/rmw_cyclonedds/issues/301,,1,4119154.0
