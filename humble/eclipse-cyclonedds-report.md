@@ -202,7 +202,7 @@ The challenges of DDS when operating over WiFi are relatively well known to thos
 
 In order to alleviate these and other challenges posed by DDS when trying to scale out or run over Wide Area Network we have the designed the zenoh protocol and implemented it as part of the Eclipse Zenoh project (see http://zenoh.io).
 
-Below we describe how zenoh can be transparently used by ROS2 applications to improve their behaviour over WiFi and in general to have better scalability as well as transparently operate at Internet scale.
+Below we describe how zenoh can be transparently used by ROS 2 applications to improve their behaviour over WiFi and in general to have better scalability as well as transparently operate at Internet scale.
 
 
 __How well does the implementation work out-of-the-box over WiFi?__
