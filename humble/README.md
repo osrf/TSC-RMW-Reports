@@ -21,7 +21,7 @@ The questionnaire is available [here](dds_provider_question_template.md).
 
 ## DDS provider responses
 
-- [rmw_fasrtps_cpp](eProsima-response.md)
+- [Fast DDS TSC RMW report 2021](eProsima-response.md)
 
 - [2021 Eclipse Cyclone DDS ROS Middleware Evaluation Report with iceoryx and Zenoh](eclipse-cyclonedds-report.md)
 
