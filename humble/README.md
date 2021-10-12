@@ -12,12 +12,12 @@
 * [REP-2004 Code Quality Metrics](#CodeQuality)
 * [GitHub User Statistics](#GitHubStats)
 * [User Survey Results](#Survey)
-* [DDS Provider Reponses](#DDSProviderResponses)
+* [DDS Provider Responses](#DDSProviderResponses)
 
 # <a id="Introduction"></a> Introduction
 
 This report is intended to serve as a guide for the selection of the default ROS middleware (RMW) implementation for the ROS 2 Humble Hawksbill release.
-It is intended to provide information about the qualifying Tier 1 RMW implementations through community engagement data, and through response to a questionnaire given to each of the RMW providers.
+It is intended to provide information about the qualifying Tier 1 RMW implementations through community engagement data and through response to a questionnaire given to each of the RMW providers.
 The report is intended to be purely informational and non-prescriptive; meaning it does not make a recommendation for the default middleware.
 The final default ROS 2 Humble middleware implementation will be selected by the ROS 2 Technical Steering Committee (TSC) after evaluation by both the ROS 2 Middleware Working Group and the TSC.
 
@@ -54,7 +54,9 @@ Within the build farm there are also interoperability tests that examine the tra
 For this section of the report we looked at the performance of three different testing regimes:
 
 1. A single, spinning, ROS node backed by an DDS/RMW pair and instrumented to collect general performance data like mean and median CPU and memory consumption.
-1. A publisher subscriber pair where the publisher and subscriber each use a different RMW implementation. These tests are instrumented to collect basic load statistics like CPU and memory utilization. These tests are presently outside the scope of this report, but the results are available in the included Jupyter notebooks.
+1. A publisher subscriber pair where the publisher and subscriber each use a different RMW implementation.
+   These tests are instrumented to collect basic load statistics like CPU and memory utilization.
+   These tests are presently outside the scope of this report, but the results are available in the included Jupyter notebooks.
 1. A ROS publisher and subscriber pair sending messages of varying sizes and instrumented to collect both host load statistics and network performance statistics.
 
 All metrics for this portion of the report were collected using a custom [performance metrics tool](https://github.com/ahcorde/buildfarm_perf_tests/tree/master/test).
