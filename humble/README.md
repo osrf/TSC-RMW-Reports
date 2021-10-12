@@ -13,34 +13,35 @@
 * [GitHub User Statistics](#GitHubStats)
 * [User Survey Results](#Survey)
 * [DDS Provider Responses](#DDSProviderResponses)
+* [Appendix](APPENDIX.md)
 
 # <a id="Introduction"></a> Introduction
 
 This report is intended to serve as a guide for the selection of the default ROS middleware (RMW) implementation for the ROS 2 Humble Hawksbill release.
-It is intended to provide information about the qualifying Tier 1 RMW implementations through community engagement data and through response to a questionnaire given to each of the RMW providers.
+It provides information about the qualifying Tier 1 RMW implementations through objective application performance from the ROS 2 buildfarm, community engagement data, and through response to a questionnaire given to each of the RMW providers.
 The report is intended to be purely informational and non-prescriptive; meaning it does not make a recommendation for the default middleware.
-The final default ROS 2 Humble middleware implementation will be selected by the ROS 2 Technical Steering Committee (TSC) after evaluation by both the ROS 2 Middleware Working Group and the TSC.
+The default ROS 2 Humble middleware implementation will be selected by the ROS 2 Technical Steering Committee (TSC) after evaluation by both the ROS 2 Middleware Working Group and the TSC.
 
-In order to be considered for this report, middleware implementations needed to meet a minimum bar:
+In order to be considered for this report, RMW implementations needed to meet a minimum bar:
 
-1. It is considered a Tier 1 implementation in REP-2000
-1. It, and the middleware it depends on, are open-source projects under a permissive license
+1. It is considered a Tier 1 implementation in [REP-2000](https://www.ros.org/reps/rep-2000.html)
+1. Both the RMW implementation and and the middleware it depends on are open-source projects under a permissive license
 1. It is based on a middleware that uses RTPS or is a DDS implementation
 
-Two rmw implementations currently meet this minimum bar: `rmw_cyclonedds_cpp` based on Cyclone DDS and `rmw_fastrtps_cpp` based on Fast RTPS.
+Two RMW implementations currently meet this minimum bar: `rmw_cyclonedds_cpp` based on Cyclone DDS and `rmw_fastrtps_cpp` based on Fast RTPS.
 From here on out, Cyclone DDS will be used synonymously with `rmw_cyclonedds_cpp` and Fast RTPS will be used synonymously with `rmw_fastrtps_cpp` unless otherwise specified.
 This report evaluates these two DDS implementations along with their RMW implementations for ROS 2, namely Cyclone DDS and Fast RTPS (this is now called Fast DDS, but this report will continue to refer to it as Fast RTPS).
 
-Community engagement is measured objectively by Open Robotics along 4 axes:
+The application performance and community engagement is measured objectively by Open Robotics along 4 axes:
 
-1. Build Farm Performance Metrics - this dataset covers basic RMW performance in terms of memory, CPU utilitization, and lost messages using a simplified network under optimal conditions.
-1. REP-2004 Code Quality Data - this simple table represents the REP-2004 code quality standards as implemented for both the RMW and the underlying DDS implementation.
-1. GitHub User Statistics - this section looks at GitHub community engagement data over the preceding six months for both the RMWs and DDS implementations.
-1. User Survey Results - this section presents the results of a survey of the ROS 2 community asking them about the overall end-user experience.
+* [Build Farm Performance Metrics](#BuildFarm) - this dataset covers basic RMW performance in terms of memory, CPU utilitization, and lost messages using a simplified network under optimal conditions
+* [REP-2004 Code Quality Data](#CodeQuality) - this simple table represents the [REP-2004](https://www.ros.org/reps/rep-2004.html) code quality standards as implemented for both the RMW and the underlying DDS implementation
+* [GitHub User Statistics](#GitHubStats) - this section looks at GitHub community engagement data over the preceding six months for both the RMWs and DDS implementations
+* [User Survey Results](#Survey) - this section presents the results of a survey of the ROS 2 community asking them about the overall end-user experience
 
 The RMW providers were each asked a series of questions that are current concerns of the ROS 2 TSC.
 The questionnaire that was provided is available [here](dds_provider_question_template.md).
-The results in each of the responses are necessarily biased, and because the hardware and setup used for each providers response is different, no direct comparison is possible.
+The results in each of the responses are necessarily biased, and because the hardware and software used for each providers response is different, no direct comparison is possible.
 However, the manner in which the providers responded to the questionnaire should give some insights into how they are thinking about the problems that ROS 2 users are facing.
 
 # <a id="ExecutiveSummary"></a> Executive Summary
@@ -49,7 +50,6 @@ This section will attempt to summarize the most important parts from each of the
 
 In [Section 1](#-1-build-farm-performance-metrics), the plots in [1.2.1](#121-cpu-utilization-in-a-spinning-node-by-rmw) and [1.2.2](#122-memory-utilization-in-a-spinning-node-by-rmw) show nearly identical performance between Cyclone DDS and Fast RTPS with synchronous publishing.
 However, comparing the results to the [2020 report](../galactic/README.md), it is clear that both implementations now use more CPU and more memory than before.
-
 
 Also in [Section 1](#-1-build-farm-performance-metrics), plots in [1.2.3](#123-subscriber-cpu-utilization-latency-and-lost-messages-by-message-type-and-rmw) show Fast RTPS with synchronous publishing to be the best implementation, having the same shape to the curve as message size increases, but with a better score in each case.
 Note, these plots show only a single run of the performance tests each, as they come from a single night of the nightly performance jobs.
@@ -85,34 +85,29 @@ The editors mention several points they found interesting while reading the repo
 
 ## 1.1 Overview and Description
 
-The first dataset collected for evaluating RMW performance comes by way of the [ROS build farm](http://build.ros2.org). The ROS build farm hosts a collection of small integration tests that verify that a given RMW Implementation performs acceptably when connected to either a single ROS node or a single ROS publisher sending messages to a single ROS subscriber.
+The first dataset collected for evaluating RMW performance comes by way of the [ROS build farm](http://build.ros2.org). The ROS build farm hosts a collection of small integration tests that verify that a given RMW implementation performs acceptably when connected to either a single ROS node or a single ROS publisher sending messages to a single ROS subscriber.
 Within the build farm there are also interoperability tests that examine the transport of messages between pairs of RMW/DDS implementations; however these tests are outside of the scope of this report.
-For this section of the report we looked at the performance of three different testing regimes:
+For this section of the report we looked at the performance of two different testing regimes:
 
 1. A single, spinning, ROS node backed by an DDS/RMW pair and instrumented to collect general performance data like mean and median CPU and memory consumption.
-1. A publisher subscriber pair where the publisher and subscriber each use a different RMW implementation.
-   These tests are instrumented to collect basic load statistics like CPU and memory utilization.
-   These tests are presently outside the scope of this report, but the results are available in the included Jupyter notebooks.
 1. A ROS publisher and subscriber pair sending messages of varying sizes and instrumented to collect both host load statistics and network performance statistics.
 
 All metrics for this portion of the report were collected using a custom [performance metrics tool](https://github.com/ahcorde/buildfarm_perf_tests/tree/master/test).
 The Python Jupyter notebooks for pre-processing the data and plotting data can be found respectively [BuildFarmDataProcessing.ipynb](https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/notebooks/BuildFarmDataProcessing.ipynb) and [BuildFarmPlots.ipynb](https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/notebooks/BuildFarmPlots.ipynb).
-The post processed data can be found in the [buildfarm subdirectory](https://github.com/osrf/TSC-RMW-Reports/tree/main/humble/notebooks/data/build_farm).
+The raw and post-processed data can be found in the [build_farm subdirectory](https://github.com/osrf/TSC-RMW-Reports/tree/main/humble/notebooks/data/build_farm).
 
 ## 1.2 Build Farm Test Results
 
 The first set of data collected involved running a single, perpetually spinning ROS node a short time and collecting the peak, mean, and median, CPU and memory utilization statistics.
-The figures below summarize the results for both the Cyclone DDS RMW and Fast RTPS RMW in the asynchronous configuration.
+The figures below summarize the results for the Cyclone DDS RMW in synchronous configuration and Fast RTPS RMW in both the synchronous and asynchronous configuration.
 Full plots of all the RMW variants and configurations are available in [Appendix A](APPENDIX.md#appendix_a).
-The data for these plots was collected on August 31, 2021 as indicated by this build farm log.
-The full data set can be [downloaded using this link](http://build.ros2.org/job/Rci__nightly-performance_ubuntu_focal_amd64/97/artifact/ws/test_results/buildfarm_perf_tests/*.csv/*zip*/buildfarm_perf_tests.zip).
+The data for these plots was collected on August 31, 2021, and can be [downloaded using this link](http://build.ros2.org/job/Rci__nightly-performance_ubuntu_focal_amd64/387/artifact/ws/test_results/buildfarm_perf_tests/*.csv/*zip*/buildfarm_perf_tests.zip).
 Summarized csv files can be found in the [data directory for the build farm test results](https://github.com/osrf/TSC-RMW-Reports/tree/main/humble/notebooks/data/build_farm).
 Figure 1.2.1 provides the CPU performance while Figure 1.2.2 provides the memory performance including virtual, resident, and physical memory allocation.
-Links to the source code for this test along with the analysis are available in the [appendix](APPENDIX.md).
 
 A second bevy of tests were run using a single publisher and a single subscriber communicating across a host machine while varying both the underlying RMW as well as the message size.
 The publisher and subscriber were instrumented to collect both system performance metrics and transmission metrics.
-We have selected a few illustrative examples from the set to share including subscriber CPU versus message size, messages received versus message size, and message latency versus message size in figures 1.2.3, 1.2.4, and 1.2.5 respectively.
+We have selected a few illustrative examples from the set to share including subscriber CPU versus message size, messages received versus message size, and message latency versus message size in figure 1.2.3.
 
 ### 1.2.1 CPU Utilization in a Spinning Node By RMW
 
@@ -134,7 +129,7 @@ The 95% memory measurement indicates the 95% percentile (i.e. peak) memory utili
 ### 1.2.3 Subscriber CPU Utilization, Latency, and Lost Messages By Message Type and RMW
 
 In this plot, 1000 messages of the specified size were sent between a publisher and subscriber on the same machine.
-For each message size, the above plots show how many messages out of 1000 were received by the publisher, the average latency to receive each of the messages, and the average CPU utilization to receive the messages.
+For each message size, the plots show how many messages out of 1000 were received by the publisher, the average latency to receive each of the messages, and the average CPU utilization to receive the messages.
 For this plot, Quality of Service options of best-effort, keep last, and a depth of 10 were used.
 
 ![Build Farm performance by message type](./notebooks/plots/PerfTestVsMsgSize.png)
@@ -259,7 +254,7 @@ The responses from each of the providers is below:
 ## 5.2 Discussion
 
 The two reports were taken with different hardware by different people at different times.
-Additionally, the Fast DDS response is using [this ros2.repos](./ros.repos) file from August 31, 2021, while the Cyclone DDS response is using Galactic Patch Release 1.
+*Additionally, the Fast DDS response is using [this ros2.repos](./ros.repos) file from August 31, 2021, while the Cyclone DDS response is using Galactic Patch Release 1.*
 All of these factors mean that the two reports are not directly comparable in any meaningful sense.
 The reader is encouraged to look at the way in which the providers answered the concerns coming from the community.
 This can give insight into how, and how much, a provider is thinking about any particular issue.
@@ -275,4 +270,4 @@ Here are some interesting points the editors noticed while reading the reports:
 
 * Service scalability is hampered because neither has Content Filtering, but that is on the roadmap for both.
 
-* For the WiFi answers, both providers mentioned that additional configuration is needed in order to make WiFi work better.  In the Fast DDS case, this is by either providing a list of Initial Peer node (through XML configuration), or by setting up a Discovery Server.  In the Cyclone DDS case, this is by deploying Zenoh to deal with WiFi communications in a better way.
+* For the WiFi answers, both providers mentioned that additional configuration is needed in order to make WiFi work better.  In the Fast DDS case, this is by either providing a list of Initial Peer node (through XML configuration), or by setting up a Discovery Server.  In the Cyclone DDS case, this is by deploying Zenoh to deal with WiFi communications in a different way.
