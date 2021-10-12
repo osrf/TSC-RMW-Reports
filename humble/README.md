@@ -45,9 +45,45 @@ However, the manner in which the providers responded to the questionnaire should
 
 # <a id="ExecutiveSummary"></a> Executive Summary
 
-# <a id="BuildFarm"></a> Build Farm Performance Metrics
+This section will attempt to summarize the most important parts from each of the sections in this report.
 
-## Overview and Description
+In [Section 1](#-1-build-farm-performance-metrics), the plots in [1.2.1](#121-cpu-utilization-in-a-spinning-node-by-rmw) and [1.2.2](#122-memory-utilization-in-a-spinning-node-by-rmw) show nearly identical performance between Cyclone DDS and Fast RTPS with synchronous publishing.
+However, comparing the results to the [2020 report](../galactic/README.md), it is clear that both implementations now use more CPU and more memory than before.
+
+
+Also in [Section 1](#-1-build-farm-performance-metrics), plots in [1.2.3](#123-subscriber-cpu-utilization-latency-and-lost-messages-by-message-type-and-rmw) show Fast RTPS with synchronous publishing to be the best implementation, having the same shape to the curve as message size increases, but with a better score in each case.
+Note, these plots show only a single run of the performance tests each, as they come from a single night of the nightly performance jobs.
+They also show clear trade-offs between synchronous and asynchronous publishing modes.
+
+In [Section 2](#-2-rep-2004-code-quality-metrics), adherence to [REP-2004](https://www.ros.org/reps/rep-2004.html) is compared.
+The implementations are quite similar, despite some inconsistencies in the reporting due to differences in self reporting.
+Under most of the categories for the parts that are documented each implementation are comparable.
+Despite this there is an appreciable difference as Cyclone DDS is currently declared as quality level 2, and Fast RTPS is rated as quality level 1.
+
+In [Section 3](#-3-github-user-statistics), data from GitHub about the two vendor's repositories is compared, and we see similar results.
+Issues are handled in a timely fashion for the most part, and those that are not could be special cases.
+It is difficult to draw a meaningful conclusion from the data available.
+
+In [Section 4](#-4-user-survey-results), TODO
+
+<!--
+the user survey results are presented,
+and there is a slight advantage for Cyclone DDS as highlighted in the plots for
+section [4.2.5](#625-survey-question-drill-down-2). There are potential sources
+of bias which may affect this result due to the fact that it relies on self
+reporting. Generally speaking, Cyclone DDS Sync users are more likely to
+recommend Cyclone DDS be used as the default RMW and recommend Cyclone DDS to a friend.
+It is worth noting that [Section 6](#-6-user-survey-results), users of all
+levels who submitted to the survey felt comfortable switching rmw implementations.
+-->
+
+In [Section 5](#-5-dds-provider-responses), the responses to the DDS provider survey are presented.
+There are potential sources of bias which may affect this result due to the fact that it relies on self reporting.
+The editors mention several points they found interesting while reading the reports.
+
+# <a id="BuildFarm"></a> 1. Build Farm Performance Metrics
+
+## 1.1 Overview and Description
 
 The first dataset collected for evaluating RMW performance comes by way of the [ROS build farm](http://build.ros2.org). The ROS build farm hosts a collection of small integration tests that verify that a given RMW Implementation performs acceptably when connected to either a single ROS node or a single ROS publisher sending messages to a single ROS subscriber.
 Within the build farm there are also interoperability tests that examine the transport of messages between pairs of RMW/DDS implementations; however these tests are outside of the scope of this report.
@@ -63,7 +99,7 @@ All metrics for this portion of the report were collected using a custom [perfor
 The Python Jupyter notebooks for pre-processing the data and plotting data can be found respectively [BuildFarmDataProcessing.ipynb](https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/notebooks/BuildFarmDataProcessing.ipynb) and [BuildFarmPlots.ipynb](https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/notebooks/BuildFarmPlots.ipynb).
 The post processed data can be found in the [buildfarm subdirectory](https://github.com/osrf/TSC-RMW-Reports/tree/main/humble/notebooks/data/build_farm).
 
-## Build Farm Test Results
+## 1.2 Build Farm Test Results
 
 The first set of data collected involved running a single, perpetually spinning ROS node a short time and collecting the peak, mean, and median, CPU and memory utilization statistics.
 The figures below summarize the results for both the Cyclone DDS RMW and Fast RTPS RMW in the asynchronous configuration.
@@ -78,7 +114,7 @@ A second bevy of tests were run using a single publisher and a single subscriber
 The publisher and subscriber were instrumented to collect both system performance metrics and transmission metrics.
 We have selected a few illustrative examples from the set to share including subscriber CPU versus message size, messages received versus message size, and message latency versus message size in figures 1.2.3, 1.2.4, and 1.2.5 respectively.
 
-### CPU Utilization in a Spinning Node By RMW
+### 1.2.1 CPU Utilization in a Spinning Node By RMW
 
 This plot shows the CPU usage of a single, empty spinning node.
 The node being empty means that it has no publishers, subscribers, services, actions, or timers attached.
@@ -86,7 +122,7 @@ Thus, this is a test of just the overhead of a node. The 95% CPU measurement ind
 
 ![Build Farm CPU Consumption](./notebooks/plots/BuildFarmRMWCPUConsumption.png )
 
-### Memory Utilization in a Spinning Node By RMW
+### 1.2.2 Memory Utilization in a Spinning Node By RMW
 
 This plot shows the memory usage of a single, empty spinning node.
 The node being empty means that it has no publishers, subscribers, services, actions, or timers attached.
@@ -95,7 +131,7 @@ The 95% memory measurement indicates the 95% percentile (i.e. peak) memory utili
 
 ![Build Farm Memory Consumption](./notebooks/plots/BuildFarmRMWMemoryConsumption.png)
 
-### Subscriber CPU Utilization, Latency, and Lost Messages By Message Type and RMW
+### 1.2.3 Subscriber CPU Utilization, Latency, and Lost Messages By Message Type and RMW
 
 In this plot, 1000 messages of the specified size were sent between a publisher and subscriber on the same machine.
 For each message size, the above plots show how many messages out of 1000 were received by the publisher, the average latency to receive each of the messages, and the average CPU utilization to receive the messages.
@@ -103,7 +139,7 @@ For this plot, Quality of Service options of best-effort, keep last, and a depth
 
 ![Build Farm performance by message type](./notebooks/plots/PerfTestVsMsgSize.png)
 
-## Build Farm Test Discussion
+## 1.3 Build Farm Test Discussion
 
 In the empty spinning node case, both RMW implementations are reasonably close in terms of CPU usage and memory consumption.
 However, comparing the results to the [2020 report](../galactic/README.md), it is clear that both implementations now use more CPU and more memory than before.
@@ -129,40 +165,9 @@ The Fast RTPS sync CPU usage goes up at the PointCloud512k size, drops dramatica
 It isn't completely clear on why that happens.
 Compared to the [2020 report](../galactic/README.md), Cyclone DDS sync and Fast RTPS async are approximately the same, with Fast RTPS sync showing a very different performance curve.
 
-# <a id="GitHubStats"></a> GitHub User Statistics
+# <a id="CodeQuality"></a> 2. REP-2004 Code Quality Metrics
 
-## Overview and Statistics
-
-Responsiveness to issues and pull requests in a GitHub repository is a good proxy measurement for how quickly a given provider responds to their customers and
-users.
-The number of pull requests, and how quickly they are closed, can also give us an indication to how much development is taking place on a given code base and how quickly issues are being resolved.
-To examine the responsiveness and development velocity of both RMW providers we used the GitHub API to collect commit, pull request, and issue data for the 180 days before the report was drafted on October 11, 2021.
-The process of collecting this data was divided into two parts, data collection which can be found in [this notebook](./notebooks/GetGitRMWDDSMetrics.ipynb), and data analysis which can be [found here](./notebooks/PlotGithubStats.ipynb).
-
-## GitHub Engagement Results
-
-### Open and Closed Pull Requests in the Previous Six Months
-
-The following plot gives the open and closed issues and pull requests broken down by both DDS implementation and RMW implementation.
-
-![Open and closed pull requests and issues](./notebooks/plots/PullRequestsAndIssues.png )
-
-### Cumulative Time to Close Pull Requests and Issues
-
-These cumulative histograms give the percentage of issues and pull requests closed within a certain time frame over the 180 day sample period.
-
-![Time to close pull requests and issues](./notebooks/plots/IssueAndPRTurnAround.png)
-
-# GitHub Metrics Discussion
-
-Generally, for the six month period sampled, both providers are doing a great job responding to both issues and pull requests.
-Both the main Cyclone DDS repository and the RMW implementation are slightly faster to close issues and pull requests than the Fast RTPS equivalents.
-Fast RTPS has about 1.5 times as many pull requests and issues as Cyclone DDS.
-This may be down to a number of factors, including the development practices, the number of ROS users, addressing bugs and feature requests, etc.
-
-# <a id="CodeQuality"></a> REP-2004 Code Quality Metrics
-
-## Overview and Description
+## 2.1 Overview and Description
 
 Code quality is an important metric for project health.
 ROS 2 has defined various levels of package quality in [REP-2004](https://ros.org/reps/rep-2004.html).
@@ -170,7 +175,7 @@ Declaring a package to be in one of those quality levels means that it meets all
 The quality level of each of the middlewares and their RMW implementation is summarized below.
 For more details, the reader is encouraged to look at the corresponding source repository for each middleware or RMW, where the quality level is declared in a file named QUALITY_DECLARATION.md or similar.
 
-## Results
+## 2.2 Results
 
 | Package/Quality Metric | [Cyclone DDS](https://github.com/eclipse-cyclonedds/cyclonedds/blob/96a0374bdbb12a7d535dbc81092c3d87f2490ecb/CYCLONEDDS_QUALITY_DECLARATION.md) | [rmw_cyclonedds_cpp](https://github.com/ros2/rmw_cyclonedds/blob/2aa2cf527d079265195b2dca91bb9c82481be0c1/rmw_cyclonedds_cpp/QUALITY_DECLARATION.md) | [Fast RTPS](https://github.com/eProsima/Fast-DDS/blob/4a27fbbbeb08ad83ffa10422eeaa201017382905/QUALITY.md) | [rmw_fastrtps_cpp](https://github.com/ros2/rmw_fastrtps/blob/daeeb8c7c57eec3df0a82aaf91a1b4e94aa889e3/rmw_fastrtps_cpp/QUALITY_DECLARATION.md) |
 | ---------------------- | -------------- | -------------- | -------------- | -------------- |
@@ -186,7 +191,7 @@ For more details, the reader is encouraged to look at the corresponding source r
 
 \* OpenSSL dependency for Fast RTPS is optional, but used in ROS 2.
 
-## Discussion
+## 2.3 Discussion
 
 Compared to last year, Cyclone DDS now has a Quality Level defined for `rmw_cyclonedds_cpp`.
 
@@ -206,11 +211,42 @@ Here are some of the key differences:
 
 As a reminder, all of the quality levels for the various packages are self-declared.
 
-# <a id="Survey"></a> User Survey Results
+# <a id="GitHubStats"></a> 3. GitHub User Statistics
 
-# <a id="DDSProviderResponses"></a> DDS provider responses
+## 3.1 Overview and Statistics
 
-## Overview
+Responsiveness to issues and pull requests in a GitHub repository is a good proxy measurement for how quickly a given provider responds to their customers and
+users.
+The number of pull requests, and how quickly they are closed, can also give us an indication to how much development is taking place on a given code base and how quickly issues are being resolved.
+To examine the responsiveness and development velocity of both RMW providers we used the GitHub API to collect commit, pull request, and issue data for the 180 days before the report was drafted on October 11, 2021.
+The process of collecting this data was divided into two parts, data collection which can be found in [this notebook](./notebooks/GetGitRMWDDSMetrics.ipynb), and data analysis which can be [found here](./notebooks/PlotGithubStats.ipynb).
+
+## 3.2 GitHub Engagement Results
+
+### 3.2.1 Open and Closed Pull Requests in the Previous Six Months
+
+The following plot gives the open and closed issues and pull requests broken down by both DDS implementation and RMW implementation.
+
+![Open and closed pull requests and issues](./notebooks/plots/PullRequestsAndIssues.png )
+
+### 3.2.2 Cumulative Time to Close Pull Requests and Issues
+
+These cumulative histograms give the percentage of issues and pull requests closed within a certain time frame over the 180 day sample period.
+
+![Time to close pull requests and issues](./notebooks/plots/IssueAndPRTurnAround.png)
+
+## 3.3 GitHub Metrics Discussion
+
+Generally, for the six month period sampled, both providers are doing a great job responding to both issues and pull requests.
+Both the main Cyclone DDS repository and the RMW implementation are slightly faster to close issues and pull requests than the Fast RTPS equivalents.
+Fast RTPS has about 1.5 times as many pull requests and issues as Cyclone DDS.
+This may be down to a number of factors, including the development practices, the number of ROS users, addressing bugs and feature requests, etc.
+
+# <a id="Survey"></a> 4. User Survey Results
+
+# <a id="DDSProviderResponses"></a> 5. DDS provider responses
+
+## 5.1 Overview
 
 As previously mentioned, each of the candidate DDS providers was given a [questionnaire](dds_provider_question_template.md) to respond to.
 The questions provided all came from TSC members, and represent a subset of the concerns facing the ROS 2 community.
@@ -220,7 +256,7 @@ The responses from each of the providers is below:
 
 * [Fast DDS TSC RMW report 2021](eProsima-response.md)
 
-## Discussion
+## 5.2 Discussion
 
 The two reports were taken with different hardware by different people at different times.
 Additionally, the Fast DDS response is using [this ros2.repos](./ros.repos) file from August 31, 2021, while the Cyclone DDS response is using Galactic Patch Release 1.
