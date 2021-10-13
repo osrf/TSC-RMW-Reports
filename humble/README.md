@@ -65,18 +65,14 @@ In [Section 3](#-3-github-user-statistics), data from GitHub about the two vendo
 Issues are handled in a timely fashion for the most part, and those that are not could be special cases.
 It is difficult to draw a meaningful conclusion from the data available.
 
-In [Section 4](#-4-user-survey-results), TODO
-
-<!--
-the user survey results are presented,
+In [Section 4](#-4-user-survey-results) the user survey results are presented,
 and there is a slight advantage for Cyclone DDS as highlighted in the plots for
-section [4.2.5](#625-survey-question-drill-down-2). There are potential sources
-of bias which may affect this result due to the fact that it relies on self
-reporting. Generally speaking, Cyclone DDS Sync users are more likely to
-recommend Cyclone DDS be used as the default RMW and recommend Cyclone DDS to a friend.
-It is worth noting that [Section 6](#-6-user-survey-results), users of all
-levels who submitted to the survey felt comfortable switching rmw implementations.
--->
+section [4.2.2] and [4.2.3](#625-survey-question-drill-down-2). Generally
+speaking, more users recommend that the TSC adopt Cyclone as the default, and
+users who have tried both implementations prefer Cyclone DDS over Fast
+RTPS. However, FastDDS has a slightly higher mean net promoter score (both RMWs
+have a high median net promoter score). Keep in mind that this survey relies on
+self reporting which could bias the results
 
 In [Section 5](#-5-dds-provider-responses), the responses to the DDS provider survey are presented.
 There are potential sources of bias which may affect this result due to the fact that it relies on self reporting.
@@ -245,7 +241,7 @@ This may be down to a number of factors, including the development practices, th
 ## 4.1 Overview
 
 
-This section of the report is a  user survey on ROS users' feelings about their selected RMW implementation conducted between October 6th and 13th 2021. The survey was posted to ROS Discourse and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience. In total there were 88 responses with 47 users reporting that they use Cyclone DDS  and 41 users reporting they use Fast DDS. Nearly all of the respondents were ROS 2 users with approximately 85% of them presently working with ROS 2 Foxy or Galactic.
+This section of the report is a  user survey on ROS users' feelings about their selected RMW implementation conducted between October 6th and 13th 2021. The survey was posted to ROS Discourse and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience. In total there were 88 responses with 47 users reporting that they use Cyclone DDS  and 41 users reporting they use Fast RTPS. Nearly all of the respondents were ROS 2 users with approximately 85% of them presently working with ROS 2 Foxy or Galactic.
 
 In the following section we summarize the data and where possible provide the descriptive statistics for both RMWs as well for the ROS community. Section 4.2 gives a summary of the results and section 4.3 includes excerpts of narratives submitted by ROS 2 users.
 
@@ -278,7 +274,7 @@ Our survey also tried to gauge the net promoter score of each Tier 1 DDS impleme
 ### 4.2.4 Histogram of Net Promoter Scores
 ![Net Promoter Score Histogram](./notebooks/plots/DDSNPS.png)
 
-The histograms of both Tier 1 DDS Vendors are fairly similar, with the majority of users scoring their DDS implementation highly. Both vendors have a median score of 9, but Fast DDS has a slightly higher mean score of 8.93 compared to Cyclone DDS's score 8.53. 
+The histograms of both Tier 1 DDS Vendors are fairly similar, with the majority of users scoring their DDS implementation highly. Both vendors have a median score of 9, but Fast RTPS has a slightly higher mean score of 8.93 compared to Cyclone DDS's score 8.53. 
 
 
 ## Section 4.3 Narrative Responses from ROS 2 Users
@@ -355,9 +351,9 @@ how we write ROS code.
 ```
 
 
-### 4.3.3 Fast DDS Users 
+### 4.3.3 Fast RTPS Users 
 
-Our survey also asked Fast DDS users what they liked about Fast DDS and why they thought it should be the default. Many users claimed that the code quality was much better, like the user below.
+Our survey also asked Fast RTPS users what they liked about Fast RTPS and why they thought it should be the default. Many users claimed that the code quality was much better, like the user below.
 
 ```
 Fastdds is a production level DDS implementation. Performance is good, but what
@@ -366,7 +362,7 @@ review process, it's easy to look and add features. The code does not contain
 hacks or subtleties. There are a lot of documentation and examples."_
 ```
 
-Other users claimed that the Fast DDS development road map made software development easier:
+Other users claimed that the Fast RTPS development road map made software development easier:
 
 ```
 One of our requirements is to ensure data persistency and right now only Fast
@@ -376,17 +372,17 @@ and I would have liked to test it and do some benchmarking, but I don't think it
 has been released yet.
 ```
 
-Finally, some Fast DDS users just thought the performance was just better. 
+Finally, some Fast RTPS users just thought the performance was just better. 
 
 
 ```
-It [Fast DDS] turns out to be both more stable and faster in our benchmarks.
+It [Fast RTPS] turns out to be both more stable and faster in our benchmarks.
 ```
 
 
 ### 4.3.4 What Caused Users to Switch to Cyclone DDS
 
-For ROS users who switched to Cyclone DDS from Fast DDS we asked them what motivated that change. The survey asked, "Before you go, is there anything you would like to tell the ROS 2 TSC about your experience with **Fast DDS**? Did you switch DDS vendors? If so, why?"
+For ROS users who switched to Cyclone DDS from Fast RTPS we asked them what motivated that change. The survey asked, "Before you go, is there anything you would like to tell the ROS 2 TSC about your experience with **Fast RTPS**? Did you switch DDS vendors? If so, why?"
 
 
 For some users the switch was motivated by unpatched bugs.
@@ -411,14 +407,14 @@ Experience with the actual products has been about the same. Experience with the
 Other users had difficulties  with installation and concerns about the complexity of using FastDDS. 
 
 ```
-I experienced less problems during the installation and troubleshooting with Cyclone DDS than Fast DDS. Moreover, Cyclone DDS is more lightweight in our target platforms.
+I experienced less problems during the installation and troubleshooting with Cyclone DDS than Fast RTPS. Moreover, Cyclone DDS is more lightweight in our target platforms.
 ```
 
 
-### 4.3.4 What Caused Users to Switch to Fast DDS
+### 4.3.4 What Caused Users to Switch to Fast RTPS
 
 
-For ROS users who switched from Cyclone DDS from Fast DDS we asked them what motivated that change. The survey asked,  "Before you go, is there anything you would like to tell the ROS 2 TSC about your experience with **Cyclone DDS**  Did you switch DDS vendors? If so, why?"
+For ROS users who switched from Cyclone DDS from Fast RTPS we asked them what motivated that change. The survey asked,  "Before you go, is there anything you would like to tell the ROS 2 TSC about your experience with **Cyclone DDS**  Did you switch DDS vendors? If so, why?"
 
 
 
@@ -449,13 +445,13 @@ For other users the choice was based on the availability of certain features.
 
 ```
 I am interested in contributing ROS2 APIs that enable productive connectivity to
-5G networks. I switched to Fast DDS because they were the only ones who
+5G networks. I switched to Fast RTPS because they were the only ones who
 implemented support for 5G network connectivity API called "unique network
 flows" that are part of Galactic.
 
 ```
 
-Some users thought that the documentation and support for Fast DDS was much better. 
+Some users thought that the documentation and support for Fast RTPS was much better. 
 
 ```
 We tried to switch to cyclone when we run into some issues with our
@@ -477,12 +473,12 @@ The responses from each of the providers is below:
 
 * [2021 Eclipse Cyclone DDS ROS Middleware Evaluation Report with iceoryx and Zenoh](eclipse-cyclonedds-report.md)
 
-* [Fast DDS TSC RMW report 2021](eProsima-response.md)
+* [Fast RTPS TSC RMW report 2021](eProsima-response.md)
 
 ## 5.2 Discussion
 
 The two reports were taken with different hardware by different people at different times.
-*Additionally, the Fast DDS response is using [this ros2.repos](./ros.repos) file from August 31, 2021, while the Cyclone DDS response is using Galactic Patch Release 1.*
+*Additionally, the Fast RTPS response is using [this ros2.repos](./ros.repos) file from August 31, 2021, while the Cyclone DDS response is using Galactic Patch Release 1.*
 All of these factors mean that the two reports are not directly comparable in any meaningful sense.
 The reader is encouraged to look at the way in which the providers answered the concerns coming from the community.
 This can give insight into how, and how much, a provider is thinking about any particular issue.
@@ -490,12 +486,12 @@ This can give insight into how, and how much, a provider is thinking about any p
 Since the two reports are vastly different, a detailed comparison will not be provided here.
 Here are some interesting points the editors noticed while reading the reports:
 
-* Looking at the provider responses, Cyclone DDS answered all of the questions.  Fast DDS answered all of the questions except for the one that says "How well does the implementation work out-of-the-box over WiFi?".
+* Looking at the provider responses, Cyclone DDS answered all of the questions.  Fast RTPS answered all of the questions except for the one that says "How well does the implementation work out-of-the-box over WiFi?".
 
 * For the performance scaling tests, the Cyclone DDS plots show up to 50 subscribers, while the Fast DDS ones only show up to 10 subscribers.
 
-* In terms of memory usage, both of the reports agree that Fast DDS has higher memory usage in the usual cases.  According to the eProsima report, this is because Fast DDS support more configurations and options.
+* In terms of memory usage, both of the reports agree that Fast RTPS has higher memory usage in the usual cases.  According to the eProsima report, this is because Fast RTPS support more configurations and options.
 
 * Service scalability is hampered because neither has Content Filtering, but that is on the roadmap for both.
 
-* For the WiFi answers, both providers mentioned that additional configuration is needed in order to make WiFi work better.  In the Fast DDS case, this is by either providing a list of Initial Peer node (through XML configuration), or by setting up a Discovery Server.  In the Cyclone DDS case, this is by deploying Zenoh to deal with WiFi communications in a different way.
+* For the WiFi answers, both providers mentioned that additional configuration is needed in order to make WiFi work better.  In the Fast RTPS case, this is by either providing a list of Initial Peer node (through XML configuration), or by setting up a Discovery Server.  In the Cyclone DDS case, this is by deploying Zenoh to deal with WiFi communications in a different way.
