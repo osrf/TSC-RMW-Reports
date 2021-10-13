@@ -296,11 +296,22 @@ The histograms of both Tier 1 DDS Vendors are fairly similar, with the majority 
 
 ### 4.3.2 Cyclone DDS Users 
 
-	> I have 100% confidence in Cyclone as a middleware. I have encountered a few instances of customers complaining about inconsistent message delivery from their laptops. Every single time this has been the case, those customers have been running fast instead of Cyclone (since it is the default), and it is always fixed immediately when changing to Cyclone.
+	> I have 100% confidence in Cyclone as a middleware. I have encountered a few
+	> instances of customers complaining about inconsistent message delivery from
+	> their laptops. Every single time this has been the case, those customers have
+	> been running fast instead of Cyclone (since it is the default), and it is always
+	> fixed immediately when changing to Cyclone.
 
-	> We have been using this DDS implementation at scale (100 AMR over unreliable wifi) for over a year with next to no issue. In comparison, we have used FastRTPS in the past with a lot of issues. 
+
+	> We have been using this DDS implementation at scale (100 AMR over unreliable
+	> wifi) for over a year with next to no issue. In comparison, we have used
+	>FastRTPS in the past with a lot of issues.
 	
-	> I like that it is open-source (like ROS) and that the developers are accessible, responsive, and very interested to learn about and accommodate your application. I also think the integration of Iceoryx will be game-changing for how we write ROS code.
+	
+	> I like that it is open-source (like ROS) and that the developers are accessible,
+	> responsive, and very interested to learn about and accommodate your
+	> application. I also think the integration of Iceoryx will be game-changing for
+	> how we write ROS code.
 
 
 
