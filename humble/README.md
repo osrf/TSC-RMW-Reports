@@ -286,6 +286,9 @@ The histograms of both Tier 1 DDS Vendors are fairly similar, with the majority 
 	
 ### 4.3.1 How Do Users Evaluate DDS Vendors
 
+In our survey we asked participants to discuss how they evaluated the Tier 1 DDS vendors, below are some of their responses. 
+
+Some users were concerned with the communities behind the development (this sentiment was echoed in a number of responses. 
 
 ```
 At this stage, CycloneDDS and FastDDS are similar enough from a technical and
@@ -299,6 +302,8 @@ pure DDS and not ROS2-based), having almost eight years of experience and
 success with their product.
 ```
 
+Other survey participants used their CI systems to evaluate performance. Here is one such example:
+
 
 ```
 [We] simply monitoring the pass/fail rates and test flakyness of [our] CI over
@@ -307,6 +312,8 @@ this stage, CycloneDDS and FastDDS are similar enough from a technical and
 performance stantly job matrix.
 ```
 
+
+Many users simply tried both vendors, like this user.
 
 ```
 [We] monitored performance of dds implementations and made several PR
@@ -320,6 +327,8 @@ cases (multi process shared memory, multiple network interfaces, etc)
 
 ### 4.3.2 Cyclone DDS Users 
 
+Our survey asked Cyclone users what they thought about Cyclone DDS and why they think it should be the default. One user claimed the out of the box experience wasn't great. 
+
 ```
 I have 100% confidence in Cyclone as a middleware. I have encountered a few
 instances of customers complaining about inconsistent message delivery from
@@ -328,12 +337,15 @@ been running fast instead of Cyclone (since it is the default), and it is always
 fixed immediately when changing to Cyclone.
 ```
 
+Other users claimed that they have had success in production with Cyclone, like this user. 
+
 ```
 We have been using this DDS implementation at scale (100 AMR over unreliable
 wifi) for over a year with next to no issue. In comparison, we have used
 FastRTPS in the past with a lot of issues.
 ```
 
+Multiple users preferred using Cyclone because of its feature set and its open-source model. 
 
 ```
 I like that it is open-source (like ROS) and that the developers are accessible,
@@ -345,12 +357,16 @@ how we write ROS code.
 
 ### 4.3.3 Fast DDS Users 
 
+Our survey also asked Fast DDS users what they liked about Fast DDS and why they thought it should be the default. Many users claimed that the code quality was much better, like the user below.
+
 ```
 Fastdds is a production level DDS implementation. Performance is good, but what
 strikes the most is the quality of its code. It's maintained through a serious
 review process, it's easy to look and add features. The code does not contain
 hacks or subtleties. There are a lot of documentation and examples."_
 ```
+
+Other users claimed that the Fast DDS development road map made software development easier:
 
 ```
 One of our requirements is to ensure data persistency and right now only Fast
@@ -360,15 +376,96 @@ and I would have liked to test it and do some benchmarking, but I don't think it
 has been released yet.
 ```
 
+Finally, some Fast DDS users just thought the performance was just better. 
 
 
 ```
 It [Fast DDS] turns out to be both more stable and faster in our benchmarks.
 ```
 
+
 ### 4.3.4 What Caused Users to Switch to Cyclone DDS
 
+For ROS users who switched to Cyclone DDS from Fast DDS we asked them what motivated that change. The survey asked, "Before you go, is there anything you would like to tell the ROS 2 TSC about your experience with **Fast DDS**? Did you switch DDS vendors? If so, why?"
+
+
+For some users the switch was motivated by unpatched bugs.
+
+```
+We switched from fastdds to cyclonedds as after an official foxy release in the beginning of the year, there was a serious bug in released fastdds version related to a memory transport in a discovery daemon (if I remember correctly)
+
+```
+
+Several users reported issues with crashing services that were fixed by switching to Cyclone.
+
+```
+Crashing services; RMW or DDS layer exceptions being thrown; generally unreliable and requiring significant DDS configuration file customization to get reasonable behavior for mobile robot systems. Several tickets filed in Nav2 which were trivially solved for users by switching the Cyclone 
+```
+
+Other users thought the performance differences were negligible but the developer experience with Cyclone was much better. 
+
+```
+Experience with the actual products has been about the same. Experience with the personnel at FastDDS has been awful. 
+```
+
+Other users had difficulties  with installation and concerns about the complexity of using FastDDS. 
+
+```
+I experienced less problems during the installation and troubleshooting with Cyclone DDS than Fast DDS. Moreover, Cyclone DDS is more lightweight in our target platforms.
+```
+
+
 ### 4.3.4 What Caused Users to Switch to Fast DDS
+
+
+For ROS users who switched from Cyclone DDS from Fast DDS we asked them what motivated that change. The survey asked,  "Before you go, is there anything you would like to tell the ROS 2 TSC about your experience with **Cyclone DDS**  Did you switch DDS vendors? If so, why?"
+
+
+
+For some users the switch was motivated by performance issues.
+
+```
+In most cases Cyclone DDS was working well, but we had some strange behaviors, stability 
+issues (apparently losing some packets) and found out its performance not as good as FastDDS.
+```
+
+
+Other users thought the performance between the two vendors were similar but had concerns about code quality.
+
+```
+I tested and evaluated Cyclone DDS in detail. Despite its performance being
+better than Fastdds in some metrics, I wouldn't base a product on it. The code
+is quite messy and basically maintained and developed by a single person. It
+still lacks many features wrt fastdds and it looks like support for new features
+always results in increasing exponentially the complexity of the
+code. Cyclonedds is definitely very promising, but it shouldnt be a default
+implementation until it goes through a deep cleanup and refactor to be easier to
+debug and more scalable. The amount of documentation is also very small and this
+makes it extremely hard to try and use some of its features.
+```
+
+For other users the choice was based on the availability of certain features. 
+
+
+```
+I am interested in contributing ROS2 APIs that enable productive connectivity to
+5G networks. I switched to Fast DDS because they were the only ones who
+implemented support for 5G network connectivity API called "unique network
+flows" that are part of Galactic.
+
+```
+
+Some users thought that the documentation and support for Fast DDS was much better. 
+
+```
+We tried to switch to cyclone when we run into some issues with our
+containerization, however, there were other problems with Cyclone as
+well. Furthermore, we got more quick support from FastDDS, which also pointed us
+out to their documentation which was quite extensive.
+
+```
+
+
 
 # <a id="DDSProviderResponses"></a> 5. DDS provider responses
 
