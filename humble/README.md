@@ -292,22 +292,25 @@ The histograms of both Tier 1 DDS Vendors are fairly similar, with the majority 
 
 	> [We] monitored performance of dds implementations and made several PR contributions to both of them. Compared DDS implementations in different use cases (multi process shared memory, multiple network interfaces, etc) 
 
-	>
+	
 
 ### 4.3.2 Cyclone DDS Users 
 
 	> I have 100% confidence in Cyclone as a middleware. I have encountered a few
-	> instances of customers complaining about inconsistent message delivery from
-	> their laptops. Every single time this has been the case, those customers have
-	> been running fast instead of Cyclone (since it is the default), and it is always
-	> fixed immediately when changing to Cyclone.
+	  instances of customers complaining about inconsistent message delivery from
+	  their laptops. Every single time this has been the case, those customers have
+	  been running fast instead of Cyclone (since it is the default), and it is always
+	  fixed immediately when changing to Cyclone.
 
+--- 
 
 	> We have been using this DDS implementation at scale (100 AMR over unreliable
-	> wifi) for over a year with next to no issue. In comparison, we have used
-	>FastRTPS in the past with a lot of issues.
+	  wifi) for over a year with next to no issue. In comparison, we have used
+	  FastRTPS in the past with a lot of issues.
 	
-	
+Some regular intro text 
+
+
 	> I like that it is open-source (like ROS) and that the developers are accessible,
 	> responsive, and very interested to learn about and accommodate your
 	> application. I also think the integration of Iceoryx will be game-changing for
@@ -317,7 +320,10 @@ The histograms of both Tier 1 DDS Vendors are fairly similar, with the majority 
 
 ### 4.3.3 Fast DDS Users 
 
-	> Fastdds is a production level DDS implementation. Performance is good, but what strikes the most is the quality of its code. It's maintained through a serious review process, it's easy to look and add features. The code does not contain hacks or subtleties. There are a lot of documentation and examples. 
+	_"Fastdds is a production level DDS implementation. Performance is good, but what
+	strikes the most is the quality of its code. It's maintained through a serious
+	review process, it's easy to look and add features. The code does not contain
+	hacks or subtleties. There are a lot of documentation and examples."_
 
 	> One of our requirements is to ensure data persistency and right now only Fast DDS have this feature implemented. Cyclone DDS was not an option for the moment. Their roadmap published last year said that it would be available soon and I would have liked to test it and do some benchmarking, but I don't think it has been released yet. 
 
