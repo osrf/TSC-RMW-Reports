@@ -59,7 +59,7 @@ They also show clear trade-offs between synchronous and asynchronous publishing 
 In [Section 2](#-2-rep-2004-code-quality-metrics), adherence to [REP-2004](https://www.ros.org/reps/rep-2004.html) is compared.
 The implementations are quite similar, despite some inconsistencies in the reporting due to differences in self reporting.
 Under most of the categories for the parts that are documented each implementation are comparable.
-Cyclone DDS is currently declared as quality level 2 and Fast RTPS is declared as quality level 1.
+Despite this there is a difference as Cyclone DDS is currently declared as quality level 2 and Fast RTPS is declared as quality level 1.
 
 In [Section 3](#-3-github-user-statistics), data from GitHub about the two vendor's repositories is compared, and we see similar results.
 Issues are handled in a timely fashion for the most part, and those that are not could be special cases.
