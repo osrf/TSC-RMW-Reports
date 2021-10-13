@@ -284,18 +284,32 @@ The histograms of both Tier 1 DDS Vendors are fairly similar, with the majority 
 	
 ### 4.3.1 How Do Users Evaluate DDS Vendors
 
+
 ```
-At this stage, CycloneDDS and FastDDS are similar enough from a technical and performance standpoint that my evaluation has shifted more towards a qualitative evaluation of the organizations/developers behind the implementation, particularly with respect to how eager and responsive the developers are to accommodating the needs and requests of the community. I should note that we still internally use RTI Connext as our "mission critical/battle hardened" DDS vendor of choice for the most important components of our stack (these being pure DDS and not ROS2-based), having almost eight years of experience and success with their product. 
+At this stage, CycloneDDS and FastDDS are similar enough from a technical and
+performance standpoint that my evaluation has shifted more towards a qualitative
+evaluation of the organizations/developers behind the implementation,
+particularly with respect to how eager and responsive the developers are to
+accommodating the needs and requests of the community. I should note that we
+still internally use RTI Connext as our "mission critical/battle hardened" DDS
+vendor of choice for the most important components of our stack (these being
+pure DDS and not ROS2-based), having almost eight years of experience and
+success with their product.
 ```
 
 
+```
+[We] simply monitoring the pass/fail rates and test flakyness of [our] CI over
+the matrix of RMW vendors. Feel free to review the historic trend on our nigh At
+this stage, CycloneDDS and FastDDS are similar enough from a technical and
+performance stantly job matrix.
+```
+
 
 ```
-[We] simply monitoring the pass/fail rates and test flakyness of [our] CI over the matrix of RMW vendors. Feel free to review the historic trend on our nigh At this stage, CycloneDDS and FastDDS are similar enough from a technical and performance stantly job matrix.
-```
-
-```
-[We] monitored performance of dds implementations and made several PR contributions to both of them. Compared DDS implementations in different use cases (multi process shared memory, multiple network interfaces, etc) 
+[We] monitored performance of dds implementations and made several PR
+contributions to both of them. Compared DDS implementations in different use
+cases (multi process shared memory, multiple network interfaces, etc)
 ```
 
 
@@ -310,7 +324,7 @@ instances of customers complaining about inconsistent message delivery from
 their laptops. Every single time this has been the case, those customers have
 been running fast instead of Cyclone (since it is the default), and it is always
 fixed immediately when changing to Cyclone.
-
+```
 
 ```
 We have been using this DDS implementation at scale (100 AMR over unreliable
@@ -337,11 +351,17 @@ hacks or subtleties. There are a lot of documentation and examples."_
 ```
 
 ```
-One of our requirements is to ensure data persistency and right now only Fast DDS have this feature implemented. Cyclone DDS was not an option for the moment. Their roadmap published last year said that it would be available soon and I would have liked to test it and do some benchmarking, but I don't think it has been released yet. 
+One of our requirements is to ensure data persistency and right now only Fast
+DDS have this feature implemented. Cyclone DDS was not an option for the
+moment. Their roadmap published last year said that it would be available soon
+and I would have liked to test it and do some benchmarking, but I don't think it
+has been released yet.
 ```
 
+
+
 ```
-It turns out to be both more stable and faster in our benchmarks.
+It [Fast DDS] turns out to be both more stable and faster in our benchmarks.
 ```
 
 ### 4.3.4 What Caused Users to Switch to Cyclone DDS
