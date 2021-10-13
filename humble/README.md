@@ -239,6 +239,13 @@ This may be down to a number of factors, including the development practices, th
 
 # <a id="Survey"></a> 4. User Survey Results
 
+![ROS 2 Distro used by the Respondents broken down by preferred DDS implementation](./notebooks/plots/ROS2Version.png)
+![Preferred DDS Implementation and Confidence in that Decision](./notebooks/plots/ROS2Choice.png)
+![Percentage of Respondents who Tried both DDS Implementations and the Outcome](./notebooks/plots/SwitchChoice.png)
+![Net Promoter Score Histogram](./notebooks/plots/DDSNPS.png)
+
+
+
 # <a id="DDSProviderResponses"></a> 5. DDS provider responses
 
 ## 5.1 Overview
