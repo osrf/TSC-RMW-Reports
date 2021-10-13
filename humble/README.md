@@ -28,20 +28,21 @@ In order to be considered for this report, RMW implementations needed to meet a 
 1. Both the RMW implementation and and the middleware it depends on are open-source projects under a permissive license
 1. It is based on a middleware that uses RTPS or is a DDS implementation
 
-Two RMW implementations currently meet this minimum bar: `rmw_cyclonedds_cpp` based on Cyclone DDS and `rmw_fastrtps_cpp` based on Fast RTPS.
+Two RMW implementations currently meet this minimum bar: `rmw_cyclonedds_cpp` based on Eclipse Cyclone DDS and `rmw_fastrtps_cpp` based on Fast RTPS.
 From here on out, Cyclone DDS will be used synonymously with `rmw_cyclonedds_cpp` and Fast RTPS will be used synonymously with `rmw_fastrtps_cpp` unless otherwise specified.
-This report evaluates these two DDS implementations along with their RMW implementations for ROS 2, namely Cyclone DDS and Fast RTPS (this is now called Fast DDS, but this report will continue to refer to it as Fast RTPS).
+Note that Fast RTPS is now known as Fast DDS, but for historical reasons this report will continue to refer to it as Fast RTPS.
+This report evaluates these two DDS implementations along with their RMW implementations for ROS 2.
 
 The application performance and community engagement is measured objectively by Open Robotics along 4 axes:
 
-* [Build Farm Performance Metrics](#BuildFarm) - this dataset covers basic RMW performance in terms of memory, CPU utilitization, and lost messages using a simplified network under optimal conditions
-* [REP-2004 Code Quality Data](#CodeQuality) - this simple table represents the [REP-2004](https://www.ros.org/reps/rep-2004.html) code quality standards as implemented for both the RMW and the underlying DDS implementation
+* [Build Farm Performance Metrics](#BuildFarm) - this dataset covers basic RMW performance in terms of memory, CPU utilization, and lost messages using a simplified network under optimal conditions
+* [REP-2004 Code Quality Data](#CodeQuality) - this simple table represents the [REP-2004](https://www.ros.org/reps/rep-2004.html) code quality standards as implemented for both the RMWs and DDS implementations
 * [GitHub User Statistics](#GitHubStats) - this section looks at GitHub community engagement data over the preceding six months for both the RMWs and DDS implementations
-* [User Survey Results](#Survey) - this section presents the results of a survey of the ROS 2 community asking them about the overall end-user experience
+* [User Survey Results](#Survey) - this section presents the results of a survey of the ROS 2 community asking about the overall end-user experience
 
-The RMW providers were each asked a series of questions that are current concerns of the ROS 2 TSC.
+In the [DDS Provider Reponses](#DDSProviderResponse) section, each of the RMW providers were asked a series of questions that are current concerns of the ROS 2 TSC.
 The questionnaire that was provided is available [here](dds_provider_question_template.md).
-The results in each of the responses are necessarily biased, and because the hardware and software used for each providers response is different, no direct comparison is possible.
+The responses from the providers are necessarily biased, and because the hardware and software used for each providers response is different, no direct comparison is possible.
 However, the manner in which the providers responded to the questionnaire should give some insights into how they are thinking about the problems that ROS 2 users are facing.
 
 # <a id="ExecutiveSummary"></a> Executive Summary
@@ -58,7 +59,7 @@ They also show clear trade-offs between synchronous and asynchronous publishing 
 In [Section 2](#-2-rep-2004-code-quality-metrics), adherence to [REP-2004](https://www.ros.org/reps/rep-2004.html) is compared.
 The implementations are quite similar, despite some inconsistencies in the reporting due to differences in self reporting.
 Under most of the categories for the parts that are documented each implementation are comparable.
-Despite this there is an appreciable difference as Cyclone DDS is currently declared as quality level 2, and Fast RTPS is rated as quality level 1.
+Despite this there is a difference as Cyclone DDS is currently declared as quality level 2 and Fast RTPS is declared as quality level 1.
 
 In [Section 3](#-3-github-user-statistics), data from GitHub about the two vendor's repositories is compared, and we see similar results.
 Issues are handled in a timely fashion for the most part, and those that are not could be special cases.
@@ -138,7 +139,7 @@ However, comparing the results to the [2020 report](../galactic/README.md), it i
 In terms of messages received both RMW implementations appear to perform well up until the 1MB message size.
 After that point, we see a divergence in the implementations.
 Cyclone DDS starts dropping messages at the 2MB size, and continues to drop more messages as the size increases.
-Fast RTPS async receives all messages at the 2MB size, and starts dropping messages after that.
+Fast RTPS async drops a small number of messages at the 1MB and 2MB size, but starts dropping a large number of messages after that.
 Fast RTPS sync mode receives all messages up until 4MB size, and starts dropping messages after that.
 It should be noted that compared to the [2020 report](../galactic/README.md), both implementations now deal with 2MB sizes better than before, with Fast RTPS showing a larger improvement.
 
@@ -153,7 +154,8 @@ After that, the Cyclone DDS CPU usage goes up quickly with the amount of data be
 The Fast RTPS async CPU usage spikes at 2MB, and then starts going down a lot more dramatically.
 In both of those cases, that is likely happening because more messages are being dropped after 2MB.
 The Fast RTPS sync CPU usage goes up at the PointCloud512k size, drops dramatically for the 1MB, 2MB, and 4MB sizes, and then spikes again for the 8MB size.
-It isn't completely clear on why that happens.
+This is an unexpected result, since CPU usage should increase as the data size goes up.
+This may be a measurement error or other problem in that particular test.
 Compared to the [2020 report](../galactic/README.md), Cyclone DDS sync and Fast RTPS async are approximately the same, with Fast RTPS sync showing a very different performance curve.
 
 # <a id="CodeQuality"></a> 2. REP-2004 Code Quality Metrics
@@ -175,12 +177,12 @@ For more details, the reader is encouraged to look at the corresponding source r
 | 2. Change control      | 1. changes must be in PR<br>2. DCO required<br>3. one review for merge (except when no reviewers available)<br>4. CI required to pass<br>5. documentation required | 1. changes must be in PR<br>2. DCO required<br>3. at least one review required for merge<br>4. CI required to pass<br>5. documentation required | 1. changes must be in a PR<br>2. DCO required<br>3. at least one review required for merge<br>4. CI required to pass<br>5. documentation required | 1. changes must be in PR<br>2. DCO required<br>3. at least one review required for merge<br>4. CI required to pass<br>5. documentation required |
 | 3. Documentation       | 1. concept documentation refers to DDS spec<br>2. API docs are embedded in the code<br>3. Eclipse Public License 2.0/Eclipse Distribution License 1.0<br>4. copyright statement included with the code | 1. features are documented via rmw API<br>2. public API docs in rmw, other API docs embedded in code<br>3. Apache 2.0 license<br>4. copyright statement included with the code | 1. features are documented<br>2. API reference is hosted at [readthedocs](https://fast-dds.docs.eprosima.com/en/latest/fastdds/api_reference/api_reference.html)<br>3. Apache 2.0 license<br>4. copyright statement included with the code | 1. some features are documented<br>2. API docs are embedded in the code<br>3. Apache 2.0 license<br>4. copyright statement included with the code |
 | 4. Testing             | 1. system tests cover features<br>2. tests cover all of the public API<br>3. line coverage should increase with changes<br>4. no performance tests<br>5. uses coverity for static analysis | 1. system tests cover features<br>2. system tests cover APIs<br>3. line coverage should keep or increase, but decreases are allowed if justified<br>4. No performance tests<br>5. uses standard ROS linters and tests | 1. simulation tests cover features<br>2. tests cover typical usage of public API<br>3. line coverage should keep or increase, but decreases are allowed if justified<br>4. automatic performance test on changes<br>5. uses linters, but only for new code | 1. system tests cover features<br>2. unit and system tests cover the API<br>3. line coverage should increase with changes, but decreases allowed with justification<br>4. no performance tests<br>5. uses standard ROS linters and tests |
-| 5. Dependencies        | 1. no ROS deps<br>2. no ROS deps<br>3. OpenSSL external dep | 1. all direct deps have Quality Declaration except for rosidl_typesupport_introspection_c{pp}<br>2. no optional direct runtime ROS deps<br>3. Eclipse Cyclone DDS claims to be at QL 2 | 1. no ROS deps<br>2. no ROS deps<br>3. libasio, libtinyxml2, Fast CDR, foonathan_memory, and OpenSSL* external deps | 1. all direct runtime ROS deps declare quality level<br>2. no optional direct runtime ROS deps<br>3. Fast CDR/Fast RTPS claim to be at QL 1 |
+| 5. Dependencies        | 1. no ROS deps<br>2. no ROS deps<br>3. OpenSSL* external dep | 1. all direct deps have Quality Declaration except for rosidl_typesupport_introspection_c{pp}<br>2. no optional direct runtime ROS deps<br>3. Eclipse Cyclone DDS claims to be at QL 2 | 1. no ROS deps<br>2. no ROS deps<br>3. libasio, libtinyxml2, Fast CDR, foonathan_memory, and OpenSSL* external deps | 1. all direct runtime ROS deps declare quality level<br>2. no optional direct runtime ROS deps<br>3. Fast CDR/Fast RTPS claim to be at QL 1 |
 | 6. Platform            | 1. supports all ROS 2 Tier 1 platforms | 1. supports all ROS 2 Tier 1 platforms | 1. supports all ROS 2 Tier 1 platforms | 1. supports all ROS 2 Tier 1 platforms |
 | 7. Security            | 1. conforms to [REP-2006](https://ros.org/reps/rep-2006.html) | 1. conforms to [REP-2006](https://ros.org/reps/rep-2006.html) | 1. [Vulnerability disclosure policy](https://github.com/eProsima/policies/blob/main/VULNERABILITY.md) | 1. Conforms to [REP-2006](https://ros.org/reps/rep-2006.html) |
 
 
-\* OpenSSL dependency for Fast RTPS is optional, but used in ROS 2.
+\* OpenSSL dependency for Cyclone DDS and Fast RTPS is optional, but used in ROS 2.
 
 ## 2.3 Discussion
 
@@ -486,7 +488,7 @@ Here are some interesting points the editors noticed while reading the reports:
 
 * Looking at the provider responses, Cyclone DDS answered all of the questions.  Fast RTPS answered all of the questions except for the one that says "How well does the implementation work out-of-the-box over WiFi?".
 
-* For the performance tests, the Cyclone DDS plots show up to 50 subscribers, while the Fast RTPS ones only show up to 10 subscribers.
+* For the performance scaling tests, the Cyclone DDS plots show up to 50 subscribers, while the Fast DDS ones only show up to 10 subscribers.
 
 * In terms of memory usage, both of the reports agree that Fast RTPS has higher memory usage in the usual cases.  According to the eProsima report, this is because Fast RTPS support more configurations and options.
 
