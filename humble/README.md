@@ -245,7 +245,7 @@ This may be down to a number of factors, including the development practices, th
 ## 4.1 Overview
 
 
-This section of the report is a  user survey on ROS user’s feelings about their selected RMW implementation conducted between October 6th and 13th 2021. The survey was posted to ROS Discourse and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience. In total there were 88 responses with 47 users reporting that they use Cyclone DDS  and 41 users reporting they use Fast DDS. Nearly all of the respondents were ROS 2 users with approximately 85% of them presently working with ROS 2 Foxy or Galactic.
+This section of the report is a  user survey on ROS users' feelings about their selected RMW implementation conducted between October 6th and 13th 2021. The survey was posted to ROS Discourse and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience. In total there were 88 responses with 47 users reporting that they use Cyclone DDS  and 41 users reporting they use Fast DDS. Nearly all of the respondents were ROS 2 users with approximately 85% of them presently working with ROS 2 Foxy or Galactic.
 
 In the following section we summarize the data and where possible provide the descriptive statistics for both RMWs as well for the ROS community. Section 4.2 gives a summary of the results and section 4.3 includes excerpts of narratives submitted by ROS 2 users.
 
@@ -253,29 +253,29 @@ In the following section we summarize the data and where possible provide the de
 
 For our 2021 ROS 2 User Survey we asked participants to self report the both the version of ROS they used and their preferred DDS implementation. These data are summarized in plot 4.2.1.
 
-### Figure 4.2.1 -- ROS Distro and Preferred DDS Vendor
+### 4.2.1 ROS Distro and Preferred DDS Vendor
 ![ROS 2 Distro used by the Respondents broken down by preferred DDS implementation](./notebooks/plots/ROS2Version.png)
 
-More than half of all respondents are currently using ROS 2 Foxy Fitzroy, the current LTS ROS 2 Release with another 40% using either ROS 2 Galactic or ROS 2 Rolling Ridley. A small minority continue to use ROS 2 Dashing, or Eloquent or do not use ROS 2. These results  were fairly consistent across DDS vendors.
+More than half of all respondents are currently using ROS 2 Foxy Fitzroy, the current LTS ROS 2 Release, with another 40% using either ROS 2 Galactic or ROS 2 Rolling Ridley. A small minority continue to use ROS 2 Dashing, or Eloquent or do not use ROS 2. These results  were fairly consistent across DDS vendors.
 
-This year's survey was extremely direct and asked respondents which DDS vendor they would recommend to the ROS 2 TSC as the Humble default. Each respondent was asked to select their preferred vendor and also to submit their confidence in that selection on scale from one to ten (1 -- low confidence, 10 -- high confidence. These results are summarized in figure 4.2.2.
+This year's survey was extremely direct and asked respondents which DDS vendor they would recommend to the ROS 2 TSC as the Humble default. Each respondent was asked to select their preferred vendor and also to submit their confidence in that selection on scale from one to ten (1 -- low confidence, 10 -- high confidence). These results are summarized in figure 4.2.2.
 
 
-### Figure 4.2.2 -- Vendor Recommendation and Confidence Score
+### 4.2.2 Vendor Recommendation and Confidence Score
 ![Preferred DDS Implementation and Confidence in that Decision](./notebooks/plots/ROS2Choice.png)
 
 Based on the user feedback there was a slight preference for Cyclone DDS (47 responses vs. 41 responses) with the Cyclone users also being slightly more confident in their choice. 
 
 In our survey we asked each community member if they had tried both DDS vendors before making their recommendation to the TSC. These data are captured in figure 4.2.3. 
 
-### Figure 4.2.3 -- Percentage of Users Who Tried both Tier One DDS Vendors
+### 4.2.3 Percentage of Users Who Tried both Tier One DDS Vendors
 ![Percentage of Respondents who Tried both DDS Implementations and the Outcome](./notebooks/plots/SwitchChoice.png)
 
 Slightly less than two thirds of those responding to the survey had tried both Tier 1 DDS vendors. Of those who tried both vendors the majority of them decided to use Cyclone DDS as their default DDS implementation. 
 
 Our survey also tried to gauge the net promoter score of each Tier 1 DDS implementation. A [net promoter score](https://en.wikipedia.org/wiki/Net_promoter_score) is a market research metric that asks a user, "On a scale of one to ten, how likely are you to recommend this product to a friend." A histogram of net promoter scores for each Tier 1 DDS Vendor is provided in figure 4.2.4.
 
-### Figure 4.2.4 -- Histogram of Net Promoter Scores
+### 4.2.4 Histogram of Net Promoter Scores
 ![Net Promoter Score Histogram](./notebooks/plots/DDSNPS.png)
 
 The histograms of both Tier 1 DDS Vendors are fairly similar, with the majority of users scoring their DDS implementation highly. Both vendors have a median score of 9, but Fast DDS has a slightly higher mean score of 8.93 compared to Cyclone DDS's score 8.53. 
@@ -283,54 +283,68 @@ The histograms of both Tier 1 DDS Vendors are fairly similar, with the majority 
 
 ## Section 4.3 Narrative Responses from ROS 2 Users
 
-
-	
 	
 ### 4.3.1 How Do Users Evaluate DDS Vendors
 
-	> At this stage, CycloneDDS and FastDDS are similar enough from a technical and performance standpoint that my evaluation has shifted more towards a qualitative evaluation of the organizations/developers behind the implementation, particularly with respect to how eager and responsive the developers are to accommodating the needs and requests of the community. I should note that we still internally use RTI Connext as our "mission critical/battle hardened" DDS vendor of choice for the most important components of our stack (these being pure DDS and not ROS2-based), having almost eight years of experience and success with their product. 
+```
+At this stage, CycloneDDS and FastDDS are similar enough from a technical and performance standpoint that my evaluation has shifted more towards a qualitative evaluation of the organizations/developers behind the implementation, particularly with respect to how eager and responsive the developers are to accommodating the needs and requests of the community. I should note that we still internally use RTI Connext as our "mission critical/battle hardened" DDS vendor of choice for the most important components of our stack (these being pure DDS and not ROS2-based), having almost eight years of experience and success with their product. 
+```
 
-	> [We] simply monitoring the pass/fail rates and test flakyness of [our] CI over the matrix of RMW vendors. Feel free to review the historic trend on our nightly job matrix.
 
-	> [We] monitored performance of dds implementations and made several PR contributions to both of them. Compared DDS implementations in different use cases (multi process shared memory, multiple network interfaces, etc) 
+
+```
+[We] simply monitoring the pass/fail rates and test flakyness of [our] CI over the matrix of RMW vendors. Feel free to review the historic trend on our nigh At this stage, CycloneDDS and FastDDS are similar enough from a technical and performance stantly job matrix.
+```
+
+```
+[We] monitored performance of dds implementations and made several PR contributions to both of them. Compared DDS implementations in different use cases (multi process shared memory, multiple network interfaces, etc) 
+```
+
+
 
 	
 
 ### 4.3.2 Cyclone DDS Users 
 
-	> I have 100% confidence in Cyclone as a middleware. I have encountered a few
-	  instances of customers complaining about inconsistent message delivery from
-	  their laptops. Every single time this has been the case, those customers have
-	  been running fast instead of Cyclone (since it is the default), and it is always
-	  fixed immediately when changing to Cyclone.
-
---- 
-
-	> We have been using this DDS implementation at scale (100 AMR over unreliable
-	  wifi) for over a year with next to no issue. In comparison, we have used
-	  FastRTPS in the past with a lot of issues.
-	
-Some regular intro text 
+```
+I have 100% confidence in Cyclone as a middleware. I have encountered a few
+instances of customers complaining about inconsistent message delivery from
+their laptops. Every single time this has been the case, those customers have
+been running fast instead of Cyclone (since it is the default), and it is always
+fixed immediately when changing to Cyclone.
 
 
-	> I like that it is open-source (like ROS) and that the developers are accessible,
-	> responsive, and very interested to learn about and accommodate your
-	> application. I also think the integration of Iceoryx will be game-changing for
-	> how we write ROS code.
+```
+We have been using this DDS implementation at scale (100 AMR over unreliable
+wifi) for over a year with next to no issue. In comparison, we have used
+FastRTPS in the past with a lot of issues.
+```
 
+
+```
+I like that it is open-source (like ROS) and that the developers are accessible,
+responsive, and very interested to learn about and accommodate your
+application. I also think the integration of Iceoryx will be game-changing for
+how we write ROS code.
+```
 
 
 ### 4.3.3 Fast DDS Users 
 
-	_"Fastdds is a production level DDS implementation. Performance is good, but what
-	strikes the most is the quality of its code. It's maintained through a serious
-	review process, it's easy to look and add features. The code does not contain
-	hacks or subtleties. There are a lot of documentation and examples."_
+```
+Fastdds is a production level DDS implementation. Performance is good, but what
+strikes the most is the quality of its code. It's maintained through a serious
+review process, it's easy to look and add features. The code does not contain
+hacks or subtleties. There are a lot of documentation and examples."_
+```
 
-	> One of our requirements is to ensure data persistency and right now only Fast DDS have this feature implemented. Cyclone DDS was not an option for the moment. Their roadmap published last year said that it would be available soon and I would have liked to test it and do some benchmarking, but I don't think it has been released yet. 
+```
+One of our requirements is to ensure data persistency and right now only Fast DDS have this feature implemented. Cyclone DDS was not an option for the moment. Their roadmap published last year said that it would be available soon and I would have liked to test it and do some benchmarking, but I don't think it has been released yet. 
+```
 
-	> It turns out to be both more stable and faster in our benchmarks.
-
+```
+It turns out to be both more stable and faster in our benchmarks.
+```
 
 ### 4.3.4 What Caused Users to Switch to Cyclone DDS
 
