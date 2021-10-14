@@ -192,7 +192,7 @@ The packages implementing the DDS/RTPS protocol (`Cyclone DDS` and `Fast RTPS`) 
 The key differences seem to be:
 
 * Cyclone DDS relies on the OMG DDS standard for documenting the features, while Fast RTPS has dedicated documentation
-* Cyclone DDS does not have automated performance tests, while Fast RTPS does
+* Cyclone DDS has manual and nightly performance tests, while Fast RTPS has automated performance tests
 * Cyclone DDS conforms to REP-2006 for security vulnerability reporting, while Fast RTPS has its own, largely equivalent, security process
 
 The packages implementing the interface to ROS 2 (`rmw_cyclonedds_cpp` and `rmw_fastrtps_cpp`) are generally comparable.
@@ -200,7 +200,8 @@ Here are some of the key differences:
 
 * `rmw_cyclonedds_cpp` has a major version number < 1, while `rmw_fastrtps_cpp` has a major version number > 1
 * `rmw_cyclonedds_cpp` features are documented via the `rmw` API, while `rmw_fastrtps_cpp` relies on the README, the `rmw` docs, and the `Fast RTPS` docs
-* `rmw_cyclonedds_cpp` is missing a Quality Declaration for the `rosidl_typesupport_introspection_c{pp}` dependency, while `rmw_fastrtps_cpp` has a Quality Declaration for all dependencies
+* `rmw_cyclonedds_cpp` is missing a Quality Declaration for the `rosidl_typesupport_introspection_c{pp}` dependency, while `rmw_fastrtps_cpp` has a Quality Declaration for all dependencies. 
+
 
 As a reminder, all of the quality levels for the various packages are self-declared.
 
