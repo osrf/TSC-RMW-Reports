@@ -479,7 +479,7 @@ The responses from each of the providers is below:
 ## 5.2 Discussion
 
 The two reports were taken with different hardware by different people at different times.
-*Additionally, the Fast RTPS response is using [this ros2.repos](./ros.repos) file from August 31, 2021, while the Cyclone DDS response is using Galactic Patch Release 1.*
+*Additionally, the Fast RTPS response is using [this ros2.repos](./ros2.repos) file from August 31, 2021, while the Cyclone DDS response is using Galactic Patch Release 1.*
 All of these factors mean that the two reports are not directly comparable in any meaningful sense.
 The reader is encouraged to look at the way in which the providers answered the concerns coming from the community.
 This can give insight into how, and how much, a provider is thinking about any particular issue.
