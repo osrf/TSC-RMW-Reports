@@ -50,7 +50,7 @@ However, the manner in which the providers responded to the questionnaire should
 This section will attempt to summarize the most important parts from each of the sections in this report.
 
 In [Section 1](#-1-build-farm-performance-metrics), the plots in [1.2.1](#121-cpu-utilization-in-a-spinning-node-by-rmw) and [1.2.2](#122-memory-utilization-in-a-spinning-node-by-rmw) show nearly identical performance between Cyclone DDS and Fast RTPS with synchronous publishing.
-However, comparing the results to the [2020 report](../galactic/README.md), it is clear that both implementations now use more CPU and more memory than before.
+Comparing the results to the [2020 report](../galactic/README.md), it is clear that both implementations now use more CPU and more memory than before.
 
 Also in [Section 1](#-1-build-farm-performance-metrics), plots in [1.2.3](#123-subscriber-cpu-utilization-latency-and-lost-messages-by-message-type-and-rmw) show Fast RTPS with synchronous publishing to be the best implementation, having the same shape to the curve as message size increases, but with a better score in each case.
 Note, these plots show only a single run of the performance tests each, as they come from a single night of the nightly performance jobs.
@@ -134,7 +134,8 @@ For this plot, Quality of Service options of best-effort, keep last, and a depth
 ## 1.3 Build Farm Test Discussion
 
 In the empty spinning node case, both RMW implementations are reasonably close in terms of CPU usage and memory consumption.
-However, comparing the results to the [2020 report](../galactic/README.md), it is clear that both implementations now use more CPU and more memory than before.
+However, comparing the results to the [2020 report](../galactic/README.md), both implementations now use more CPU and more memory than before.
+It is unclear on whether this is due to changes in the middleware implementations, the RMW implementations, or in the ROS 2 core.
 
 In terms of messages received both RMW implementations appear to perform well up until the 1MB message size.
 After that point, we see a divergence in the implementations.
