@@ -201,7 +201,6 @@ Here are some of the key differences:
 * `rmw_cyclonedds_cpp` has a major version number < 1, while `rmw_fastrtps_cpp` has a major version number > 1
 * `rmw_cyclonedds_cpp` features are documented via the `rmw` API, while `rmw_fastrtps_cpp` relies on the README, the `rmw` docs, and the `Fast RTPS` docs
 * `rmw_cyclonedds_cpp` is missing a Quality Declaration for the `rosidl_typesupport_introspection_c{pp}` dependency, while `rmw_fastrtps_cpp` has a Quality Declaration for all dependencies. 
-
 As a reminder, all of the quality levels for the various packages are self-declared.
 
 # <a id="GitHubStats"></a> 3. GitHub User Statistics
