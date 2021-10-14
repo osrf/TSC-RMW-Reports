@@ -208,7 +208,7 @@ Responsiveness to issues and pull requests in a GitHub repository is a good prox
 users.
 The number of pull requests, and how quickly they are closed, can also give us an indication to how much development is taking place on a given code base and how quickly issues are being resolved.
 To examine the responsiveness and development velocity of both RMW providers we used the GitHub API to collect commit, pull request, and issue data for the 180 days before the report was drafted on October 11, 2021.
-The process of collecting this data was divided into two parts, data collection which can be found in [this notebook](./notebooks/GetGitRMWDDSMetrics.ipynb), and data analysis which can be [found here](./notebooks/PlotGithubStats.ipynb).
+The process of collecting this data was divided into two parts, data collection which can be found in [this notebook](https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/notebooks/GetGitRMWDDSMetrics.ipynb), and data analysis which can be [found here](https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/notebooks/PlotGithubStats.ipynb).
 
 ## 3.2 GitHub Engagement Results
 
@@ -476,7 +476,7 @@ The responses from each of the providers is below:
 ## 5.2 Discussion
 
 The two reports were taken with different hardware by different people at different times.
-*Additionally, the Fast RTPS response is using [this ros2.repos](./ros2.repos) file from August 31, 2021, while the Cyclone DDS response is using Galactic Patch Release 1.*
+*Additionally, the Fast RTPS response is using [this ros2.repos](https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/ros2.repos) file from August 31, 2021, while the Cyclone DDS response is using Galactic Patch Release 1.*
 All of these factors mean that the two reports are not directly comparable in any meaningful sense.
 The reader is encouraged to look at the way in which the providers answered the concerns coming from the community.
 This can give insight into how, and how much, a provider is thinking about any particular issue.
