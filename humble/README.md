@@ -360,7 +360,7 @@ Our survey also asked Fast RTPS users what they liked about Fast RTPS and why th
 Fastdds is a production level DDS implementation. Performance is good, but what
 strikes the most is the quality of its code. It's maintained through a serious
 review process, it's easy to look and add features. The code does not contain
-hacks or subtleties. There are a lot of documentation and examples."_
+hacks or subtleties. There are a lot of documentation and examples.
 ```
 
 Other users claimed that the Fast RTPS development road map made software development easier:
@@ -389,26 +389,33 @@ For ROS users who switched to Cyclone DDS from Fast RTPS we asked them what moti
 For some users the switch was motivated by unpatched bugs.
 
 ```
-We switched from fastdds to cyclonedds as after an official foxy release in the beginning of the year, there was a serious bug in released fastdds version related to a memory transport in a discovery daemon (if I remember correctly)
-
+We switched from fastdds to cyclonedds as after an official foxy release in the
+beginning of the year, there was a serious bug in released fastdds version
+related to a memory transport in a discovery daemon (if I remember correctly)
 ```
 
 Several users reported issues with crashing services that were fixed by switching to Cyclone.
 
 ```
-Crashing services; RMW or DDS layer exceptions being thrown; generally unreliable and requiring significant DDS configuration file customization to get reasonable behavior for mobile robot systems. Several tickets filed in Nav2 which were trivially solved for users by switching the Cyclone 
+Crashing services; RMW or DDS layer exceptions being thrown; generally
+unreliable and requiring significant DDS configuration file customization to
+get reasonable behavior for mobile robot systems. Several tickets filed in Nav2
+which were trivially solved for users by switching the Cyclone
 ```
 
 Other users thought the performance differences were negligible but the developer experience with Cyclone was much better. 
 
 ```
-Experience with the actual products has been about the same. Experience with the personnel at FastDDS has been awful. 
+Experience with the actual products has been about the same. Experience with
+the personnel at FastDDS has been awful.
 ```
 
 Other users had difficulties  with installation and concerns about the complexity of using FastDDS. 
 
 ```
-I experienced less problems during the installation and troubleshooting with Cyclone DDS than Fast RTPS. Moreover, Cyclone DDS is more lightweight in our target platforms.
+I experienced less problems during the installation and troubleshooting with
+Cyclone DDS than Fast RTPS. Moreover, Cyclone DDS is more lightweight in our
+target platforms.
 ```
 
 
@@ -422,10 +429,10 @@ For ROS users who switched from Cyclone DDS from Fast RTPS we asked them what mo
 For some users the switch was motivated by performance issues.
 
 ```
-In most cases Cyclone DDS was working well, but we had some strange behaviors, stability 
-issues (apparently losing some packets) and found out its performance not as good as FastDDS.
+In most cases Cyclone DDS was working well, but we had some strange behaviors,
+stability issues (apparently losing some packets) and found out its performance
+not as good as FastDDS.
 ```
-
 
 Other users thought the performance between the two vendors were similar but had concerns about code quality.
 
@@ -456,10 +463,9 @@ Some users thought that the documentation and support for Fast RTPS was much bet
 
 ```
 We tried to switch to cyclone when we run into some issues with our
-containerization, however, there were other problems with Cyclone as
-well. Furthermore, we got more quick support from FastDDS, which also pointed us
-out to their documentation which was quite extensive.
-
+containerization, however, there were other problems with Cyclone as well.
+Furthermore, we got more quick support from FastDDS, which also pointed us out
+to their documentation which was quite extensive.
 ```
 
 
