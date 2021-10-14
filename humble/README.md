@@ -134,7 +134,7 @@ For this plot, Quality of Service options of best-effort, keep last, and a depth
 ## 1.3 Build Farm Test Discussion
 
 In the empty spinning node case, both RMW implementations are reasonably close in terms of CPU usage and memory consumption.
-However, comparing the results to the [2020 report](../galactic/README.md), it is clear that ros2 with both implementations now use more CPU and more memory than before.
+However, comparing the results to the [2020 report](../galactic/README.md), both implementations now use more CPU and more memory than before.
 It is unclear on whether this is due to changes in the middleware implementations, the RMW implementations, or in the ROS 2 core.
 
 In terms of messages received both RMW implementations appear to perform well up until the 1MB message size.
