@@ -65,14 +65,10 @@ In [Section 3](#-3-github-user-statistics), data from GitHub about the two vendo
 Issues are handled in a timely fashion for the most part, and those that are not could be special cases.
 It is difficult to draw a meaningful conclusion from the data available.
 
-In [Section 4](#-4-user-survey-results) the user survey results are presented,
-and there is a slight advantage for Cyclone DDS as highlighted in the plots for
-section [4.2.2](#422-vendor-recommendation-and-confidence-score) and [4.2.3](#423-percentage-of-users-who-tried-both-tier-one-dds-vendors). Generally
-speaking, more users recommend that the TSC adopt Cyclone as the default, and
-users who have tried both implementations prefer Cyclone DDS over Fast
-RTPS. However, FastDDS has a slightly higher mean net promoter score (both RMWs
-have a high median net promoter score). Keep in mind that this survey relies on
-self reporting which could bias the results
+In [Section 4](#-4-user-survey-results) the user survey results are presented, and there is a slight advantage for Cyclone DDS as highlighted in the plots for section [4.2.2](#422-vendor-recommendation-and-confidence-score) and [4.2.3](#423-percentage-of-users-who-tried-both-tier-one-dds-vendors).
+Generally speaking, more users recommend that the TSC adopt Cyclone as the default, and users who have tried both implementations prefer Cyclone DDS over Fast RTPS.
+However, Fast RTPS has a slightly higher mean net promoter score (both RMWs have a high median net promoter score).
+Keep in mind that this survey relies on self reporting which could bias the results.
 
 In [Section 5](#-5-dds-provider-responses), the responses to the DDS provider survey are presented.
 There are potential sources of bias which may affect this result due to the fact that it relies on self reporting.
@@ -152,7 +148,7 @@ Compared to the [2020 report](../galactic/README.md), Cyclone DDS sync and Fast 
 
 Finally, for CPU usage all of the RMW implementations are about the same until the 60k message size.
 After that, the Cyclone DDS CPU usage goes up quickly with the amount of data being sent, spiking at the 2MB size and then lowering from there.
-The Fast RTPS async CPU usage spikes at 2MB, and then starts going down a lot more dramatically.
+The Fast RTPS async CPU usage spikes at 2MB, and then starts going down more dramatically.
 In both of those cases, that is likely happening because more messages are being dropped after 2MB.
 The Fast RTPS sync CPU usage goes up at the PointCloud512k size, drops dramatically for the 1MB, 2MB, and 4MB sizes, and then spikes again for the 8MB size.
 This is an unexpected result, since CPU usage should increase as the data size goes up.
@@ -239,9 +235,13 @@ This may be down to a number of factors, including the development practices, th
 
 ## 4.1 Overview
 
-This section of the report is a  user survey on ROS users' feelings about their selected RMW implementation conducted between October 6th and 13th 2021. The survey was posted to ROS Discourse and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience. In total there were 88 responses with 47 users reporting that they use Cyclone DDS  and 41 users reporting they use Fast RTPS. Nearly all of the respondents were ROS 2 users with approximately 85% of them presently working with ROS 2 Foxy or Galactic.
+This section of the report is a user survey on ROS users' feelings about their selected RMW implementation conducted between October 6th and 13th 2021.
+The survey was posted to ROS Discourse and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience.
+In total there were 88 responses with 47 users reporting that they use Cyclone DDS  and 41 users reporting they use Fast RTPS.
+Nearly all of the respondents were ROS 2 users with approximately 85% of them presently working with ROS 2 Foxy or Galactic.
 
-In the following section we summarize the data and where possible provide the descriptive statistics for both RMWs as well for the ROS community. Section 4.2 gives a summary of the results and section 4.3 includes excerpts of narratives submitted by ROS 2 users.
+In the following section we summarize the data and where possible provide the descriptive statistics for both RMWs as well for the ROS community.
+Section 4.2 gives a summary of the results and section 4.3 includes excerpts of narratives submitted by ROS 2 users.
 
 ## 4.2 Overall Survey Results
 
@@ -253,7 +253,7 @@ These data are summarized in plot 4.2.1.
 
 More than half of all respondents are currently using ROS 2 Foxy Fitzroy, the current LTS ROS 2 Release, with another 40% using either ROS 2 Galactic or ROS 2 Rolling Ridley.
 A small minority continue to use ROS 2 Dashing, or Eloquent or do not use ROS 2.
-These results  were fairly consistent across DDS vendors.
+These results were fairly consistent across DDS vendors.
 
 This year's survey was extremely direct and asked respondents which DDS vendor they would recommend to the ROS 2 TSC as the Humble default.
 Each respondent was asked to select their preferred vendor and also to submit their confidence in that selection on scale from one to ten (1 -- low confidence, 10 -- high confidence).
@@ -280,7 +280,8 @@ A histogram of net promoter scores for each Tier 1 DDS Vendor is provided in fig
 ### 4.2.4 Histogram of Net Promoter Scores
 ![Net Promoter Score Histogram](./notebooks/plots/DDSNPS.png)
 
-The histograms of both Tier 1 DDS Vendors are fairly similar, with the majority of users scoring their DDS implementation highly. Both vendors have a median score of 9, but Fast RTPS has a slightly higher mean score of 8.93 compared to Cyclone DDS's score 8.53.
+The histograms of both Tier 1 DDS Vendors are fairly similar, with the majority of users scoring their DDS implementation highly.
+Both vendors have a median score of 9, but Fast RTPS has a slightly higher mean score of 8.93 compared to Cyclone DDS's score 8.53.
 
 
 ## Section 4.3 Narrative Responses from ROS 2 Users
