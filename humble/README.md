@@ -307,10 +307,10 @@ success with their product.
 Other survey participants used their CI systems to evaluate performance. Here is one such example:
 
 ```
-[We] simply monitoring the pass/fail rates and test flakyness of [our] CI over
-the matrix of RMW vendors. Feel free to review the historic trend on our nigh At
-this stage, CycloneDDS and FastDDS are similar enough from a technical and
-performance stantly job matrix.
+[We] simply [monitor] the pass/fail rates and test flakyness of [our] CI over
+the matrix of RMW vendors. Feel free to review the historic trend on our
+[nightly CI. At] this stage, CycloneDDS and FastDDS are similar enough from a
+technical and performance [standpoint].
 ```
 
 Many users simply tried both vendors, like this user.
