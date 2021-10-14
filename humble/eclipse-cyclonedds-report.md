@@ -43,31 +43,30 @@ __Without configuration, what is the throughput and latency (in addition to any 
 
 Here are 4MB messages at 20Hz. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](eclipse-cyclonedds-report/).
 
-<img src="eclipse-cyclonedds-report/plots/imagetopic_latency_mean.png" width="500"><img src="eclipse-cyclonedds-report/plots/imagetopic_jitter.png" width="500">
-<img src="eclipse-cyclonedds-report/plots/imagetopic_throughput.png" width="500"><img src="eclipse-cyclonedds-report/plots/imagetopic_ram_usage.png" width="500">
-<img src="eclipse-cyclonedds-report/plots/imagetopic_cpu_usage.png" width="500">
+<img src="eclipse-cyclonedds-report/plots/imagetopic_latency_mean.png" width="600"><img src="eclipse-cyclonedds-report/plots/imagetopic_jitter.png" width="600">
+<img src="eclipse-cyclonedds-report/plots/imagetopic_throughput.png" width="600"><img src="eclipse-cyclonedds-report/plots/imagetopic_ram_usage.png" width="600">
+<img src="eclipse-cyclonedds-report/plots/imagetopic_cpu_usage.png" width="600">
 
 Note: Regarding Cyclone DDS CPU usage reporting as “0.0%” for Windows 10, the resolution of the timing was such that the measurement is below the threshold. The CPU usage on Windows 10 was probably similar to the Ubuntu results, but we simply couldn’t measure it in this test run.
 
 The tests were run again at 30Hz on using the rclcpp RMW LoanedMessage API with shared memory. Results are shown for Cyclone DDS + iceoryx. The instructions to use zero-copy with Cyclone DDS + iceoryx are [here](https://github.com/ros2/rmw_cyclonedds/blob/galactic/shared_memory_support.md). Software engineers at ADLINK & Apex.AI followed the other middleware's published instructions to use LoanedMessage API, but the other middleware failed these tests without getting any messages through.
 
-<img src="eclipse-cyclonedds-report/plots/imagetopics_zerocopy_latency_mean.png" width="500"><img src="eclipse-cyclonedds-report/plots/imagetopics_zerocopy_jitter.png" width="500">
-<img src="eclipse-cyclonedds-report/plots/imagetopics_zerocopy_throughput.png" width="500"><img src="eclipse-cyclonedds-report/plots/imagetopics_zerocopy_ram_usage.png" width="500">
-<img src="eclipse-cyclonedds-report/plots/imagetopics_zerocopy_cpu_usage.png" width="500">
+<img src="eclipse-cyclonedds-report/plots/imagetopics_zerocopy_latency_mean.png" width="600"><img src="eclipse-cyclonedds-report/plots/imagetopics_zerocopy_jitter.png" width="500"><img src="eclipse-cyclonedds-report/plots/imagetopics_zerocopy_throughput.png" width="600"><img src="eclipse-cyclonedds-report/plots/imagetopics_zerocopy_ram_usage.png" width="600">
+<img src="eclipse-cyclonedds-report/plots/imagetopics_zerocopy_cpu_usage.png" width="600">
 
 __Without configuration, how does the implementation scale with the number of topics in the system?__
 
 Cyclone DDS scales well with the number of topics without configuration. These test findings are consistent with those reported to us by iRobot and Tractonomy. Shown below are the effects of scaling the number of topics and nodes with struct16 messages at 500 Hz on Ubuntu 20.04.3 amd64. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](eclipse-cyclonedds-report/).
 
-<img src="eclipse-cyclonedds-report/plots/scaling_latency_mean_topics.png" width="500"><img src="eclipse-cyclonedds-report/plots/scaling_jitter_topics.png"  width="500">
-<img src="eclipse-cyclonedds-report/plots/scaling_ram_usage_topics.png" width="500"><img src="eclipse-cyclonedds-report/plots/scaling_cpu_usage_topics.png"  width="500">
+<img src="eclipse-cyclonedds-report/plots/scaling_latency_mean_topics.png" width="600"><img src="eclipse-cyclonedds-report/plots/scaling_jitter_topics.png"  width="600">
+<img src="eclipse-cyclonedds-report/plots/scaling_ram_usage_topics.png" width="600"><img src="eclipse-cyclonedds-report/plots/scaling_cpu_usage_topics.png"  width="600">
 
 __Without configuration, how does the implementation scale with the number of nodes in the system?__
 
 Cyclone DDS scales well with the number of nodes without configuration. In the charts below you see scaling the number of nodes with one topic per node with struct16 messages at 500 Hz on Ubuntu 20.04.3 amd64. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](eclipse-cyclonedds-report/).
 
-<img src="eclipse-cyclonedds-report/plots/scaling_latency_mean_nodes.png" width="500"><img src="eclipse-cyclonedds-report/plots/scaling_jitter_nodes.png" width="500">
-<img src="eclipse-cyclonedds-report/plots/scaling_ram_usage_nodes.png" width="500"><img src="eclipse-cyclonedds-report/plots/scaling_cpu_usage_nodes.png" width="500">
+<img src="eclipse-cyclonedds-report/plots/scaling_latency_mean_nodes.png" width="600"><img src="eclipse-cyclonedds-report/plots/scaling_jitter_nodes.png" width="600">
+<img src="eclipse-cyclonedds-report/plots/scaling_ram_usage_nodes.png" width="600"><img src="eclipse-cyclonedds-report/plots/scaling_cpu_usage_nodes.png" width="600">
 
 ### General performance
 
