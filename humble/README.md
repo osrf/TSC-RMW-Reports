@@ -192,7 +192,7 @@ The packages implementing the DDS/RTPS protocol (`Cyclone DDS` and `Fast RTPS`) 
 The key differences seem to be:
 
 * Cyclone DDS relies on the OMG DDS standard for documenting the features, while Fast RTPS has dedicated documentation
-* Cyclone DDS has manual and nightly performance tests, while Fast RTPS has automated performance tests
+* Cyclone DDS has manual and nightly performance tests, while Fast RTPS has automated performance tests. Open Robotics build farm does nightly performance testing with both DDS implementations and rmw packages.
 * Cyclone DDS conforms to REP-2006 for security vulnerability reporting, while Fast RTPS has its own, largely equivalent, security process
 
 The packages implementing the interface to ROS 2 (`rmw_cyclonedds_cpp` and `rmw_fastrtps_cpp`) are generally comparable.
