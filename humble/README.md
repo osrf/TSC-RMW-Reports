@@ -236,7 +236,7 @@ This may be down to a number of factors, including the development practices, th
 ## 4.1 Overview
 
 This section of the report is a user survey on ROS users' feelings about their selected RMW implementation conducted between October 6th and 13th 2021.
-The survey was posted to ROS Discourse and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience.
+The survey was [posted to ROS Discourse](https://discourse.ros.org/t/survey-default-dds-implementation-for-ros-2-humble-due-10-12-2021/22575) and provided ROS 2 users with a chance to rate the performance of their RMW as well as give a narrative description of their experience.
 In total there were 88 responses with 47 users reporting that they use Cyclone DDS  and 41 users reporting they use Fast RTPS.
 Nearly all of the respondents were ROS 2 users with approximately 85% of them presently working with ROS 2 Foxy or Galactic.
 
@@ -476,7 +476,8 @@ The responses from each of the providers is below:
 ## 5.2 Discussion
 
 The two reports were taken with different hardware by different people at different times.
-*Additionally, the Fast RTPS response is using [this ros2.repos](https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/ros2.repos) file from August 31, 2021, while the Cyclone DDS response is using Galactic Patch Release 1.*
+*Additionally, the Fast RTPS response is using [this ros2.repos](https://github.com/osrf/TSC-RMW-Reports/blob/main/humble/ros2.repos) file from August 31, 2021 which was the one specified in the questionnaire.
+Cyclone DDS had issues using the specified repos file, so they used Galactic Patch Release 1 instead.*
 All of these factors mean that the two reports are not directly comparable in any meaningful sense.
 The reader is encouraged to look at the way in which the providers answered the concerns coming from the community.
 This can give insight into how, and how much, a provider is thinking about any particular issue.
@@ -490,6 +491,6 @@ Here are some interesting points the editors noticed while reading the reports:
 
 * In terms of memory usage, both of the reports agree that Fast RTPS has higher memory usage in the usual cases.  According to the eProsima report, this is because Fast RTPS support more configurations and options.
 
-* Service scalability is hampered because neither has Content Filtering, but that is on the roadmap for both.
+* Service scalability suffers on both because all replies are sent to all clients, which would be improved by using Content Filtering.  Both middleware implementations have Content Filtering support, but as of this writing neither RMW implementation supports it.
 
 * For the WiFi answers, both providers mentioned that additional configuration is needed in order to make WiFi work better.  In the Fast RTPS case, this is by either providing a list of Initial Peer node (through XML configuration), or by setting up a Discovery Server.  In the Cyclone DDS case, this is by deploying Zenoh to deal with WiFi communications in a different way.
