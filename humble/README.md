@@ -40,7 +40,7 @@ The application performance and community engagement is measured objectively by 
 * [GitHub User Statistics](#GitHubStats) - this section looks at GitHub community engagement data over the preceding six months for both the RMWs and DDS implementations
 * [User Survey Results](#Survey) - this section presents the results of a survey of the ROS 2 community asking about the overall end-user experience
 
-In the [DDS Provider Reponses](#DDSProviderResponse) section, each of the RMW providers were asked a series of questions that are current concerns of the ROS 2 TSC.
+In the [DDS Provider Responses](#DDSProviderResponses) section, each of the RMW providers were asked a series of questions that are current concerns of the ROS 2 TSC.
 The questionnaire that was provided is available [here](dds_provider_question_template.md).
 The responses from the providers are necessarily biased, and because the hardware and software used for each providers response is different, no direct comparison is possible.
 However, the manner in which the providers responded to the questionnaire should give some insights into how they are thinking about the problems that ROS 2 users are facing.
@@ -67,7 +67,7 @@ It is difficult to draw a meaningful conclusion from the data available.
 
 In [Section 4](#-4-user-survey-results) the user survey results are presented,
 and there is a slight advantage for Cyclone DDS as highlighted in the plots for
-section [4.2.2] and [4.2.3](#625-survey-question-drill-down-2). Generally
+section [4.2.2](#422-vendor-recommendation-and-confidence-score) and [4.2.3](#423-percentage-of-users-who-tried-both-tier-one-dds-vendors). Generally
 speaking, more users recommend that the TSC adopt Cyclone as the default, and
 users who have tried both implementations prefer Cyclone DDS over Fast
 RTPS. However, FastDDS has a slightly higher mean net promoter score (both RMWs
