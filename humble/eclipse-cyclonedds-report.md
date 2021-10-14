@@ -43,8 +43,8 @@ __Without configuration, what is the throughput and latency (in addition to any 
 
 Here are 4MB messages at 20Hz. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](eclipse-cyclonedds-report/).
 
-<img src="eclipse-cyclonedds-report/plots/imagetopic_latency_mean.png"><img src="eclipse-cyclonedds-report/plots/imagetopic_jitter.png" width="50%">
-<img src="eclipse-cyclonedds-report/plots/imagetopic_throughput.png"><img src="eclipse-cyclonedds-report/plots/imagetopic_ram_usage.png" width="50%">
+<img src="eclipse-cyclonedds-report/plots/imagetopic_latency_mean.png" width="50%"><img src="eclipse-cyclonedds-report/plots/imagetopic_jitter.png" width="50%">
+<img src="eclipse-cyclonedds-report/plots/imagetopic_throughput.png" width="50%"><img src="eclipse-cyclonedds-report/plots/imagetopic_ram_usage.png" width="50%">
 <img src="eclipse-cyclonedds-report/plots/imagetopic_cpu_usage.png" width="50%">
 
 Note: Regarding Cyclone DDS CPU usage reporting as “0.0%” for Windows 10, the resolution of the timing was such that the measurement is below the threshold. The CPU usage on Windows 10 was probably similar to the Ubuntu results, but we simply couldn’t measure it in this test run.
@@ -59,8 +59,8 @@ __Without configuration, how does the implementation scale with the number of to
 
 Cyclone DDS scales well with the number of topics without configuration. These test findings are consistent with those reported to us by iRobot and Tractonomy. Shown below are the effects of scaling the number of topics and nodes with struct16 messages at 500 Hz on Ubuntu 20.04.3 amd64. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](eclipse-cyclonedds-report/).
 
-<img src="eclipse-cyclonedds-report/plots/scaling_latency_mean_topics.png" width="50%"><img src="eclipse-cyclonedds-report/plots/scaling_jitter_topics.png">
-<img src="eclipse-cyclonedds-report/plots/scaling_ram_usage_topics.png" width="50%"><img src="eclipse-cyclonedds-report/plots/scaling_cpu_usage_topics.png">
+<img src="eclipse-cyclonedds-report/plots/scaling_latency_mean_topics.png" width="50%"><img src="eclipse-cyclonedds-report/plots/scaling_jitter_topics.png"  width="50%">
+<img src="eclipse-cyclonedds-report/plots/scaling_ram_usage_topics.png" width="50%"><img src="eclipse-cyclonedds-report/plots/scaling_cpu_usage_topics.png"  width="50%">
 
 __Without configuration, how does the implementation scale with the number of nodes in the system?__
 
