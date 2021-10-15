@@ -15,7 +15,7 @@
 
 ## Introduction
 
-This report is our response to the [Default DDS Provider Questionnaire](https://osrf.github.io/TSC-RMW-Reports/humble/dds_provider_question_template.html) provided by Open Robotics. This report includes [everything required](eclipse-cyclonedds-report/) to understand and reproduce the test results. Artifacts provided include [how-to instructions](eclipse-cyclonedds-report/reproducing.md) for reproducing everything in this report, including test scripts, graph plot scripts, raw data, tabulated data, detailed test result PDF for each test, and the summary plots you see below.
+This report is our response to the [Default DDS Provider Questionnaire](https://osrf.github.io/TSC-RMW-Reports/humble/dds_provider_question_template.html) provided by Open Robotics. This report includes [everything required](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/) to understand and reproduce the test results. Artifacts provided include [how-to instructions](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/reproducing.md) for reproducing everything in this report, including test scripts, graph plot scripts, raw data, tabulated data, detailed test result PDF for each test, and the summary plots you see below.
 
 The Eclipse Foundation [eclipse.org](https://www.eclipse.org/) provides our global community of individuals and organizations with a mature, scalable, and business-friendly environment for open source software collaboration and innovation. The Foundation is home to the Eclipse IDE, Jakarta EE, and over 350 open source projects, including runtimes, tools, and frameworks for a wide range of technology domains such as the Internet of Things, automotive, geospatial, systems engineering, and many others. The Eclipse Foundation is a European-based international not-for-profit association supported by over 300[ members](https://www.eclipse.org/membership) who value the Foundation’s unique[ Working Group](https://www.eclipse.org/org/workinggroups/) governance model, open innovation processes, and[ community-building events](http://events.eclipse.org/).
 
@@ -34,14 +34,14 @@ ADLINK’s DDS team co-invented DDS, co-founded the OMG DDS SIG and contributed 
 
 ## Performance
 
-A large number of tests were run with different combinations of data type, message size, message frequency, number of subscribers, and Quality of Service (QoS) settings. From struct16 to pointcloud8m data types and sizes. For frequency, tests were run from 1Hz to 500Hz, to unlimited free-running. Experiments were also run with 1 subscriber up to 10 subscribers. Each scenario is repeated with two different QoS configurations (originally there were 4 QoS configurations, but we realized there was no difference in the results). Scaling tests were run for 1 to 50 topics and nodes. The tests, raw data, tabulated data, and plots are [here](eclipse-cyclonedds-report/). The test result summary spreadsheets are [here](eclipse-cyclonedds-report/tables).
+A large number of tests were run with different combinations of data type, message size, message frequency, number of subscribers, and Quality of Service (QoS) settings. From struct16 to pointcloud8m data types and sizes. For frequency, tests were run from 1Hz to 500Hz, to unlimited free-running. Experiments were also run with 1 subscriber up to 10 subscribers. Each scenario is repeated with two different QoS configurations (originally there were 4 QoS configurations, but we realized there was no difference in the results). Scaling tests were run for 1 to 50 topics and nodes. The tests, raw data, tabulated data, and plots are [here](eclipse-cyclonedds-report/). The test result summary spreadsheets are [here](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/tables).
 
 
 ### Throughput and latency for large messages
 
 __Without configuration, what is the throughput and latency (in addition to any other relevant metrics) when transferring large topics (like ~4K camera images) at medium frequencies (~30Hz)?__
 
-Here are 4MB messages at 20Hz. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](eclipse-cyclonedds-report/).
+Here are 4MB messages at 20Hz. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/).
 
 <img src="eclipse-cyclonedds-report/plots/imagetopic_latency_mean.png"><img src="eclipse-cyclonedds-report/plots/imagetopic_jitter.png">
 <img src="eclipse-cyclonedds-report/plots/imagetopic_throughput.png"><img src="eclipse-cyclonedds-report/plots/imagetopic_ram_usage.png">
@@ -57,14 +57,14 @@ The tests were run again at 30Hz on using the rclcpp RMW LoanedMessage API with 
 
 __Without configuration, how does the implementation scale with the number of topics in the system?__
 
-Cyclone DDS scales well with the number of topics without configuration. These test findings are consistent with those reported to us by iRobot and Tractonomy. Shown below are the effects of scaling the number of topics and nodes with struct16 messages at 500 Hz on Ubuntu 20.04.3 amd64. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](eclipse-cyclonedds-report/).
+Cyclone DDS scales well with the number of topics without configuration. These test findings are consistent with those reported to us by iRobot and Tractonomy. Shown below are the effects of scaling the number of topics and nodes with struct16 messages at 500 Hz on Ubuntu 20.04.3 amd64. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/).
 
 <img src="eclipse-cyclonedds-report/plots/scaling_latency_mean_topics.png"><img src="eclipse-cyclonedds-report/plots/scaling_jitter_topics.png">
 <img src="eclipse-cyclonedds-report/plots/scaling_ram_usage_topics.png"><img src="eclipse-cyclonedds-report/plots/scaling_cpu_usage_topics.png">
 
 __Without configuration, how does the implementation scale with the number of nodes in the system?__
 
-Cyclone DDS scales well with the number of nodes without configuration. In the charts below you see scaling the number of nodes with one topic per node with struct16 messages at 500 Hz on Ubuntu 20.04.3 amd64. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](eclipse-cyclonedds-report/).
+Cyclone DDS scales well with the number of nodes without configuration. In the charts below you see scaling the number of nodes with one topic per node with struct16 messages at 500 Hz on Ubuntu 20.04.3 amd64. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/).
 
 <img src="eclipse-cyclonedds-report/plots/scaling_latency_mean_nodes.png"><img src="eclipse-cyclonedds-report/plots/scaling_jitter_nodes.png">
 <img src="eclipse-cyclonedds-report/plots/scaling_ram_usage_nodes.png"><img src="eclipse-cyclonedds-report/plots/scaling_cpu_usage_nodes.png">
@@ -73,7 +73,7 @@ Cyclone DDS scales well with the number of nodes without configuration. In the c
 
 __Please provide benchmarks for inter-host, inter-process (with and without LoanedMessages), and intra-process (with and without LoanedMessages) throughput for both large and small message sizes, on both Linux and Windows.__
 
-Following is the summary overview of the results for all tests, all platforms. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](eclipse-cyclonedds-report/). Also see [Appendix B: Performance Summary Per Platform](#appendix-b-performance-summary-per-platform).
+Following is the summary overview of the results for all tests, all platforms. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed test result PDFs for every individual test are [here](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/). Also see [Appendix B: Performance Summary Per Platform](#appendix-b-performance-summary-per-platform).
 
 For 569 tests with varying message types, sizes, rates, subscribers, QoS, and platforms the result was the following (also see the graphs below the bullet list):
 
@@ -135,7 +135,7 @@ Cyclone DDS with built-in iceoryx zero-copy was tested using the rclcpp RMW “L
 ![alt_text](eclipse-cyclonedds-report/plots/Ubuntu_rel_cpu_usage_zerocopy.png)
 
 ### Inter-host Performance
-Inter-host test detailed plots are [here](eclipse-cyclonedds-report/plots), and the most relevant plots are shown below.
+Inter-host test detailed plots are [here](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/plots), and the most relevant plots are shown below.
 
 * Cyclone DDS wins 90 times while the other implementation wins 35 times
 * Cyclone DDS fails 0 tests while the other implementation fails 8 tests
@@ -152,7 +152,7 @@ Inter-host test detailed plots are [here](eclipse-cyclonedds-report/plots), and 
 
 __For a pub/sub pair in separate processes, what is the average round-trip time, throughput, and CPU/memory utilization? How does this scale with topic frequency and topic size?__
 
-Multi-process test results are covered elsewhere in this report, the plots are [here](eclipse-cyclonedds-report/plots), the test scripts, raw data, tabulated data are [here](eclipse-cyclonedds-report/).
+Multi-process test results are covered elsewhere in this report, the plots are [here](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/plots), the test scripts, raw data, tabulated data are [here](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/).
 
 
 ## Services
@@ -391,7 +391,7 @@ Inter-host is pair of PCs with Intel Xeon E3-1275 v5, 32GB RAM, Ubuntu 20.04.3 H
 
 ## Appendix B: Performance Summary Per Platform
 
-This section shows the performance summary for each of the tested platforms. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed plots for every individual test are [here](eclipse-cyclonedds-report/).
+This section shows the performance summary for each of the tested platforms. How to instructions, test scripts, raw data, tabulated data, tabulation scripts, plotting scripts and detailed plots for every individual test are [here](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/).
 
 
 ### Ubuntu
