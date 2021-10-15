@@ -319,7 +319,7 @@ Additionally, Open Robotics runs the [full ROS 2 test suite](https://build.ros2.
 
 __Has the DDS Security implementation been audited by a third-party?__
 
-Yes. [Trend Micro security researchers](https://www.trendmicro.com/en_us/about/threat-research.html) working on security vulnerability research audit Eclipse Cyclone DDS with Eclipse iceoryx. These security researchers perform [fuzz testing](https://en.wikipedia.org/wiki/Fuzzing) of Cyclone DDS with icoeryx to test for security vulnerabilities. They are automating the vulnerability searches.
+Yes. [Trend Micro security researchers](https://www.trendmicro.com/en_us/about/threat-research.html) working on security vulnerability research audit Eclipse Cyclone DDS with Eclipse iceoryx. These security researchers perform [fuzz testing](https://en.wikipedia.org/wiki/Fuzzing) of Cyclone DDS with iceoryx to test for security vulnerabilities. They are automating the vulnerability searches.
 
 
 ## Free-form
