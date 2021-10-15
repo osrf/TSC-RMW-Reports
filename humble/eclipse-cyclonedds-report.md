@@ -34,7 +34,7 @@ ADLINK’s DDS team co-invented DDS, co-founded the OMG DDS SIG and contributed 
 
 ## Performance
 
-A large number of tests were run with different combinations of data type, message size, message frequency, number of subscribers, and Quality of Service (QoS) settings. From struct16 to pointcloud8m data types and sizes. For frequency, tests were run from 1Hz to 500Hz, to unlimited free-running. Experiments were also run with 1 subscriber up to 10 subscribers. Each scenario is repeated with two different QoS configurations (originally there were 4 QoS configurations, but we realized there was no difference in the results). Scaling tests were run for 1 to 50 topics and nodes. The tests, raw data, tabulated data, and plots are [here](eclipse-cyclonedds-report/). The test result summary spreadsheets are [here](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/tables).
+A large number of tests were run with different combinations of data type, message size, message frequency, number of subscribers, and Quality of Service (QoS) settings. From struct16 to pointcloud8m data types and sizes. For frequency, tests were run from 1Hz to 500Hz, to unlimited free-running. Experiments were also run with 1 subscriber up to 10 subscribers. Each scenario is repeated with two different QoS configurations (originally there were 4 QoS configurations, but we realized there was no difference in the results). Scaling tests were run for 1 to 50 topics and nodes. The tests, raw data, tabulated data, and plots are [here](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/). The test result summary spreadsheets are [here](https://github.com/osrf/TSC-RMW-Reports/eclipse-cyclonedds-report/tables).
 
 
 ### Throughput and latency for large messages
