@@ -25,7 +25,7 @@ Eclipse Cyclone DDS is a small, easy and performant implementation of the OMG DD
 
 Users get technical support via github issues, [cyclonedds gitter](https://gitter.im/atolab/cyclone-dds), [iceoryx gitter](https://gitter.im/eclipse/iceoryx) and [zenoh gitter](https://gitter.im/atolab/zenoh). Technical support is provided by the contributors and the user community. Project documentation besides READMEs is here: [cyclonedds.io](https://cyclonedds.io/docs), [iceoryx.io](https://iceoryx.io), [zenoh.io](https://zenoh.io) and [blog](https://zenoh.io/blog/2021-09-28-iac-experiences-from-the-trenches/).
 
-Contributors to Eclipse Cyclone DDS with iceoryx and Zenoh include ADLINK, Apex.AI, Bosch, Open Robotics, Rover Robotics and dozens of ROS community members. 
+Contributors to Eclipse Cyclone DDS and Zenoh include ADLINK, Apex.AI, Bosch, Open Robotics, Rover Robotics and dozens of ROS community members. 
 
 These are active projects as you can see here: [cyclonedds](https://github.com/eclipse-cyclonedds/cyclonedds/pulse/monthly), [iceoryx](https://github.com/eclipse-iceoryx/iceoryx/pulse/monthly), [zenoh](https://github.com/eclipse-zenoh/zenoh/pulse/monthly), [rmw_cyclonedds](https://github.com/ros2/rmw_cyclonedds/pulse/monthly), [zenoh-plugin-dds](https://github.com/eclipse-zenoh/zenoh-plugin-dds/pulse/monthly), [zenoh-pico](https://github.com/eclipse-zenoh/zenoh-pico/pulse/monthly), [cyclonedds-cxx](https://github.com/eclipse-cyclonedds/cyclonedds-cxx/pulse/monthly). Note that [Eclipse Foundation Development Process](https://www.eclipse.org/projects/dev_process/) results in contributions being made as a smaller number of larger and thoroughly tested chunks. This means that the number of commits instead of number of pull requests is a more appropriate way to measure the liveliness of Eclipse projects.
 
@@ -111,7 +111,7 @@ For 569 tests with varying message types, sizes, rates, subscribers, QoS, and pl
 
 
 
-### Cyclone DDS with iceoryx Improvement
+### Cyclone DDS Improvement
 
 Cyclone DDS with built-in iceoryx zero-copy was tested using the rclcpp RMW “LoanedMessage” API. As you can see below Cyclone DDS with iceoryx improves upon Cyclone DDS in every measure: latency, jitter, throughput, memory, total CPU usage, relative CPU per message. The instructions to use zero-copy with Cyclone DDS + iceoryx are [here](https://github.com/ros2/rmw_cyclonedds/blob/galactic/shared_memory_support.md). Software engineers at ADLINK & Apex.AI followed the other middleware's published instructions to use LoanedMessage API, but the other middleware failed these tests without getting any messages through.
 
@@ -319,7 +319,7 @@ Additionally, Open Robotics runs the [full ROS 2 test suite](https://build.ros2.
 
 __Has the DDS Security implementation been audited by a third-party?__
 
-Yes. [Trend Micro security researchers](https://www.trendmicro.com/en_us/about/threat-research.html) working on security vulnerability research audit Eclipse Cyclone DDS with Eclipse iceoryx. These security researchers perform [fuzz testing](https://en.wikipedia.org/wiki/Fuzzing) of Cyclone DDS with iceoryx to test for security vulnerabilities. They are automating the vulnerability searches.
+Yes. [Trend Micro security researchers](https://www.trendmicro.com/en_us/about/threat-research.html) working on security vulnerability research audit Eclipse Cyclone DDS. These security researchers perform [fuzz testing](https://en.wikipedia.org/wiki/Fuzzing) of Cyclone DDS to test for security vulnerabilities. They are automating the vulnerability searches.
 
 
 ## Free-form
